@@ -1,0 +1,37 @@
+    {
+      "compilerOptions": {
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node", // Changed from "bundler" to "node" for broader compatibility
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve", // Crucial for JSX parsing
+        "incremental": true,
+        "plugins": [
+          {
+            "name": "next"
+          }
+        ],
+        "paths": {
+          "@/*": ["./*"] // Ensure this alias is correctly set up if you use it (e.g. "@/data/hero-slides")
+        },
+        "target": "es2017", // Or "esnext" for latest features
+        "forceConsistentCasingInFileNames": true,
+        "downlevelIteration": true // Sometimes helps with older JS features in newer TS
+      },
+      "include": [
+        "next-env.d.ts", // Include the Next.js environment types
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js", // Include JS files if you have them
+        "**/*.jsx",
+        ".next/types/**/*.ts" // Include Next.js generated types
+      ],
+      "exclude": ["node_modules"]
+    }
+    
