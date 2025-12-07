@@ -28,7 +28,7 @@ const Footer = () => {
           <div>
             <h3 className="font-serif text-2xl font-bold text-white">VNR</h3>
             <p className="mt-4 text-sm text-text-on-dark/70">
-              Your premier partner in strategic tax advisory, business structuring, and intergenerational wealth planning for South Africa’s leading entrepreneurs.
+              Your premier partner in strategic tax advisory, business structuring, and intergenerational wealth planning for South Africa's leading entrepreneurs. While our head office is in Centurion, we serve clients across South Africa.
             </p>
           </div>
           
@@ -59,7 +59,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-4">
               <li className="flex items-start">
                 <MapPin size={18} className="mr-3 mt-1 flex-shrink-0 text-brand-teal-light" />
-                <span className="text-sm text-text-on-dark/70">1022 Saxby Avenue, Eldoraigne, Centurion, 0157, South Africa</span>
+                <span className="text-sm text-text-on-dark/70">1022 Saxby Avenue, Eldoraigne, Centurion, 0157, South Africa<br />(Head Office - We serve clients nationwide)</span>
               </li>
               <li className="flex items-center">
                 <Mail size={16} className="mr-3 flex-shrink-0 text-brand-teal-light" />

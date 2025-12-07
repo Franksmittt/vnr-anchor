@@ -19,7 +19,7 @@ const ContactPage = () => {
           
           <div className="bg-surface-light p-8 rounded-xl shadow-lg border border-slate-200">
             <h2 className="font-serif text-2xl font-bold text-text-primary mb-6">Connect with Our Experts</h2>
-            <p className="mb-8 text-text-secondary">For a strategic consultation on tax, business structuring, or wealth planning, please complete the form below. Our team will respond promptly.</p>
+            <p className="mb-8 text-text-secondary">For a strategic consultation on tax, business structuring, or wealth planning, please complete the form below. Our team will respond promptly. While our head office is in Centurion, we serve clients across South Africa.</p>
             <form action="#" method="POST" className="space-y-6">
               <div>
                 <label htmlFor="full-name" className="block text-sm font-medium text-text-secondary">Full Name</label>
@@ -73,8 +73,8 @@ const ContactPage = () => {
                    +27 12 653 1633
                 </a>
               </InfoCard>
-              <InfoCard icon={<Building size={24} />} title="Office Address">
-                <p>1022 Saxby Avenue, Eldoraigne<br />Centurion, 0157, South Africa</p>
+              <InfoCard icon={<Building size={24} />} title="Head Office Address">
+                <p>1022 Saxby Avenue, Eldoraigne<br />Centurion, 0157, South Africa<br /><span className="text-sm text-text-secondary">(We serve clients nationwide)</span></p>
               </InfoCard>
               <InfoCard icon={<Clock size={24} />} title="Business Hours">
                 <p>Mon - Fri: 08:00 - 16:30</p>
@@ -90,7 +90,7 @@ const ContactPage = () => {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="VNR Office Location in Centurion, Gauteng"
+                title="VNR Head Office Location in Centurion, South Africa"
               ></iframe>
             </div>
           </div>

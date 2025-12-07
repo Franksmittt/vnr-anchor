@@ -46,7 +46,7 @@ const advisorServices = [
   "Life cover, disability, and dread disease solutions sized for complex corporate structures",
   "Succession planning via Buy & Sell agreements, Keyman policies, and share buy-back funding",
   "Short-term insurance reviews for both personal and commercial risk, including site visits",
-  "Flexible consultations at the VNR office or at your premises anywhere in Gauteng",
+  "Flexible consultations at the VNR office in Centurion or at your premises anywhere in South Africa",
 ];
 
 const estateHighlights = [
@@ -175,7 +175,7 @@ const AnchorWealthPage = () => {
             <h3 className="mt-4 text-2xl font-semibold text-text-primary">Life & risk planning on your terms.</h3>
             <p className="mt-4 text-text-secondary">
               Our independent financial advisor (not affiliated with Anchor) works exclusively with VNR clients.
-              He can meet at our Centurion headquarters or travel to you, ensuring personal cover aligns with
+              He can meet at our Centurion headquarters or travel to you anywhere in South Africa, ensuring personal cover aligns with
               business realities.
             </p>
             <ul className="mt-6 space-y-3 text-text-secondary">

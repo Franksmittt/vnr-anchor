@@ -22,13 +22,13 @@ export const servicesData: Service[] = [
   {
     slug: 'tax-advisory',
     title: 'Tax Advisory & Compliance',
-    subtitle: 'Expert tax planning and SARS compliance services in Centurion to minimize your tax burden and ensure financial peace of mind.',
+    subtitle: 'Expert tax planning and SARS compliance services across South Africa to minimize your tax burden and ensure financial peace of mind.',
     imageUrl: '/images/services/tax-advisory-hero.jpg',
     icon: 'Scale',
     details: ['Individual & Corporate Tax Returns', 'Provisional Tax Submissions', 'VAT, PAYE, SDL, UIF Compliance', 'SARS Dispute Resolution'],
     leadExpert: teamData.find(m => m.slug === 'jannie-venter')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">Navigating the South African tax landscape requires more than just compliance; it demands strategic foresight. At VNR Professional Accountants, our tax advisory services are designed to align your tax strategy with your business objectives, ensuring efficiency while mitigating risk. We move beyond reactive form-filling to become your proactive partner in tax optimization, serving businesses and high-net-worth individuals across <strong>Centurion, Pretoria, Alberton, and the entire Gauteng province</strong>.</p>
+      <p class="text-lg text-slate-600 mb-6">Navigating the South African tax landscape requires more than just compliance; it demands strategic foresight. At VNR Professional Accountants, our tax advisory services are designed to align your tax strategy with your business objectives, ensuring efficiency while mitigating risk. We move beyond reactive form-filling to become your proactive partner in tax optimization, serving businesses and high-net-worth individuals <strong>across South Africa</strong>. While our head office is located in Centurion, we work with clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our Comprehensive Tax Advisory Services</h2>
       <p class="mb-8 text-slate-600">Our SAIPA-accredited experts provide a holistic suite of services to manage every facet of your tax obligations, turning a complex burden into a strategic advantage for your enterprise.</p>
@@ -51,7 +51,7 @@ export const servicesData: Service[] = [
       </ul>
 
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">VAT & Indirect Taxes</h3>
-      <p class="mb-4 text-slate-600">Value-Added Tax (VAT) is one of the most complex areas of South African tax law. Our team provides end-to-end VAT services, from assessing registration requirements to managing submissions and advising on complex transactions, including import/export VAT implications for businesses in Gauteng.</p>
+      <p class="mb-4 text-slate-600">Value-Added Tax (VAT) is one of the most complex areas of South African tax law. Our team provides end-to-end VAT services, from assessing registration requirements to managing submissions and advising on complex transactions, including import/export VAT implications for businesses across South Africa.</p>
       <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
           <li>VAT registration and deregistration services.</li>
           <li>Preparation and submission of bi-monthly VAT201 returns.</li>
@@ -69,7 +69,7 @@ export const servicesData: Service[] = [
       </ul>
     `,
     faqs: [
-        { q: 'Who needs to file a tax return in South Africa?', a: 'Any individual who earns above the annual tax threshold, or any registered company, must file a tax return. We provide expert guidance for all scenarios, whether you are a business owner in Centurion or a high-net-worth individual in Alberton.' },
+        { q: 'Who needs to file a tax return in South Africa?', a: 'Any individual who earns above the annual tax threshold, or any registered company, must file a tax return. We provide expert guidance for all scenarios, serving clients across South Africa from our head office in Centurion.' },
         { q: 'What is the difference between tax avoidance and tax evasion?', a: 'Tax avoidance is the legal use of tax laws and structures to reduce one\'s tax burden, which is a core part of our strategic advisory service. Tax evasion is the illegal non-payment or under-payment of taxes.' },
         { q: 'When is provisional tax due in South Africa?', a: 'The first provisional tax payment is due within six months of the start of the financial year (typically by August 31st). The second payment is due by the financial year-end (typically by February 28/29th).' },
         { q: 'What happens if I miss a SARS deadline?', a: 'Missing a deadline for submission or payment results in administrative penalties and interest being levied by SARS. Consistent non-compliance can negatively affect your Tax Compliance Status, which is crucial for tenders and financing.' },
@@ -85,7 +85,7 @@ export const servicesData: Service[] = [
     details: ['New Company Registrations (Pty, NPC)', 'CIPC Amendments & Annual Returns', 'Trust Formation & Administration', 'Complex Enterprise Valuations'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">The structure of your business is its foundation. A robust, strategically-chosen structure facilitates growth, protects your personal assets from business risks, ensures tax efficiency, and maintains long-term viability. Our team provides expert guidance on architecting and maintaining the optimal legal framework for your vision. We are your partners in <strong>company registration and secretarial services in Centurion, Pretoria, and Alberton</strong>.</p>
+      <p class="text-lg text-slate-600 mb-6">The structure of your business is its foundation. A robust, strategically-chosen structure facilitates growth, protects your personal assets from business risks, ensures tax efficiency, and maintains long-term viability. Our team provides expert guidance on architecting and maintaining the optimal legal framework for your vision. We are your partners in <strong>company registration and secretarial services across South Africa</strong>. While our head office is in Centurion, we serve clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our Core Business Structuring Services</h2>
       <p class="mb-8 text-slate-600">From the initial registration to ongoing compliance and strategic valuations, we provide a complete lifecycle of structuring services to support your entrepreneurial journey.</p>
@@ -141,13 +141,13 @@ export const servicesData: Service[] = [
     details: ['Drafting of Last Will & Testament', 'Intergenerational Wealth Transfer', 'Executor Services', 'Trust & Estate Administration'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">For successful entrepreneurs and high-net-worth families, estate planning is not merely an administrative task—it is the ultimate act of stewardship. True wealth is generational. Our legacy planning services in <strong>Centurion and Alberton</strong> focus on creating robust, tax-efficient structures that protect your assets, provide for your loved ones, and ensure your vision is carried forward with clarity and purpose.</p>
+      <p class="text-lg text-slate-600 mb-6">For successful entrepreneurs and high-net-worth families, estate planning is not merely an administrative task—it is the ultimate act of stewardship. True wealth is generational. Our legacy planning services <strong>across South Africa</strong> focus on creating robust, tax-efficient structures that protect your assets, provide for your loved ones, and ensure your vision is carried forward with clarity and purpose. Our head office is in Centurion, but we work with clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our Integrated Legacy Planning Services</h2>
       <p class="mb-8 text-slate-600">A comprehensive legacy plan is a living strategy that integrates your personal and business succession goals. We provide an end-to-end service to architect this crucial framework.</p>
       
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Drafting of Last Will & Testament</h3>
-      <p class="mb-4 text-slate-600">For a business owner, an off-the-shelf will is insufficient and dangerous. Your will is your final business continuity plan. We specialize in <strong>drafting wills for business owners in South Africa</strong>, ensuring it addresses the complex interplay between your personal estate and company shares, and aligns perfectly with your shareholder agreements to prevent legal disputes.</p>
+      <p class="mb-4 text-slate-600">For a business owner, an off-the-shelf will is insufficient and dangerous. Your will is your final business continuity plan. We specialize in <strong>drafting wills for business owners across South Africa</strong>, ensuring it addresses the complex interplay between your personal estate and company shares, and aligns perfectly with your shareholder agreements to prevent legal disputes.</p>
       <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
           <li>Customised will drafting tailored to high-net-worth estates.</li>
           <li>Integration of business succession clauses and testamentary trusts.</li>
@@ -163,7 +163,7 @@ export const servicesData: Service[] = [
       </ul>
 
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Professional Executor & Administration Services</h3>
-      <p class="mb-4 text-slate-600">Appointing an independent, professional executor is one of the wisest decisions you can make to protect your family from administrative burdens and potential conflict. As your executor, we manage the entire process of <strong>winding up a deceased estate in Gauteng</strong> with impartiality, expertise, and efficiency.</p>
+      <p class="mb-4 text-slate-600">Appointing an independent, professional executor is one of the wisest decisions you can make to protect your family from administrative burdens and potential conflict. As your executor, we manage the entire process of <strong>winding up deceased estates across South Africa</strong> with impartiality, expertise, and efficiency.</p>
       <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
           <li>Acting as independent, professional Executors of your estate.</li>
           <li>Reporting the estate to the Master of the High Court.</li>
@@ -187,7 +187,7 @@ export const servicesData: Service[] = [
     details: ['Annual Financial Statements (AFS)', 'Management Statements', 'Independent Reviews', 'Performance Analysis'],
     leadExpert: teamData.find(m => m.slug === 'henry-landsberg')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">Accurate financial reporting is the bedrock of strategic business decisions. It is the language that translates your daily operations into a clear narrative of performance, risk, and opportunity. We provide clear, compliant, and insightful reports that allow you to understand performance, secure financing, and plan for the future with confidence. Our services cover every aspect of <strong>financial reporting for SMEs in Centurion, Pretoria, and surrounding areas</strong>.</p>
+      <p class="text-lg text-slate-600 mb-6">Accurate financial reporting is the bedrock of strategic business decisions. It is the language that translates your daily operations into a clear narrative of performance, risk, and opportunity. We provide clear, compliant, and insightful reports that allow you to understand performance, secure financing, and plan for the future with confidence. Our services cover every aspect of <strong>financial reporting for SMEs across South Africa</strong>. While our head office is in Centurion, we serve clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">From Compliance to Competitive Edge</h2>
       <p class="mb-8 text-slate-600">We offer a tiered approach to financial reporting, designed to meet your needs whether you require statutory compliance, internal strategic insights, or external assurance.</p>
@@ -234,7 +234,7 @@ export const servicesData: Service[] = [
     details: ['Monthly Payroll Processing', 'Payslip Generation', 'EMP201 & EMP501 Submissions', 'UIF & COID Compliance'],
     leadExpert: teamData.find(m => m.slug === 'henry-landsberg')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">Payroll is far more than a monthly payment run; it is a complex and high-stakes function that sits at the intersection of finance, human resources, and legal compliance. Errors can lead to significant SARS penalties and damage employee trust. Our <strong>outsourced payroll services in Centurion and Gauteng</strong> are designed to completely remove this burden, providing you with the peace of mind that your team is paid accurately and your business remains fully compliant.</p>
+      <p class="text-lg text-slate-600 mb-6">Payroll is far more than a monthly payment run; it is a complex and high-stakes function that sits at the intersection of finance, human resources, and legal compliance. Errors can lead to significant SARS penalties and damage employee trust. Our <strong>outsourced payroll services across South Africa</strong> are designed to completely remove this burden, providing you with the peace of mind that your team is paid accurately and your business remains fully compliant. Our head office is in Centurion, but we work with clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our End-to-End Payroll Administration Services</h2>
       <p class="mb-8 text-slate-600">We manage the entire payroll lifecycle, ensuring every statutory deadline is met and every calculation is precise. This allows you to focus on leading your team, not administering their pay.</p>
@@ -281,7 +281,7 @@ export const servicesData: Service[] = [
     details: ['Sage Platinum Partner Services', 'XERO & DEXT Integration', 'Software Setup & Training', 'Workflow Automation'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">In the modern economy, your accounting system is no longer a historical record-keeper; it is the real-time central nervous system of your business. Migrating to the cloud is the single most impactful step you can take to enhance efficiency, enable collaboration, and unlock the data-driven insights needed for strategic growth. As expert <strong>cloud accounting specialists in Centurion and Gauteng</strong>, we architect and implement systems that transform your financial function.</p>
+      <p class="text-lg text-slate-600 mb-6">In the modern economy, your accounting system is no longer a historical record-keeper; it is the real-time central nervous system of your business. Migrating to the cloud is the single most impactful step you can take to enhance efficiency, enable collaboration, and unlock the data-driven insights needed for strategic growth. As expert <strong>cloud accounting specialists across South Africa</strong>, we architect and implement systems that transform your financial function. While our head office is in Centurion, we serve clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">The Strategic Benefits of Cloud Accounting</h2>
       <p class="mb-8 text-slate-600">Moving to a platform like Sage or Xero offers more than just convenience; it provides a tangible competitive advantage.</p>
@@ -299,7 +299,7 @@ export const servicesData: Service[] = [
       <p class="mb-4 text-slate-600">As a <strong>Sage Platinum Partner</strong>, we hold the highest level of accreditation, signifying deep expertise in their ecosystem. Sage is a powerhouse for South African businesses, offering robust, scalable solutions with deeply integrated local payroll and compliance features.</p>
 
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Xero Certified Advisors</h3>
-      <p class="mb-4 text-slate-600">Xero is renowned for its beautiful, user-friendly interface and a vast ecosystem of integrated third-party apps. As <strong>Xero accountants in Centurion</strong>, we recommend it for service-based businesses and startups looking for an intuitive platform that simplifies daily financial management.</p>
+      <p class="mb-4 text-slate-600">Xero is renowned for its beautiful, user-friendly interface and a vast ecosystem of integrated third-party apps. As <strong>Xero certified advisors across South Africa</strong>, we recommend it for service-based businesses and startups looking for an intuitive platform that simplifies daily financial management.</p>
       
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Dext Integration for Ultimate Efficiency</h3>
       <p class="mb-4 text-slate-600">Eliminate manual data entry forever. We are expert implementers of <strong>Dext (formerly Receipt Bank)</strong>, a tool that uses AI to automatically capture data from invoices and receipts, publishing it directly to Sage or Xero with perfect accuracy.</p>

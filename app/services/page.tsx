@@ -20,7 +20,7 @@ const iconMap: { [key: string]: React.ReactElement } = {
 
 export const metadata = {
   title: 'Our Services | VNR Professional Accountants',
-  description: 'Explore the comprehensive suite of services offered by VNR in Centurion & Gauteng, including expert tax advisory, business structuring, legacy planning, and financial reporting.',
+  description: 'Explore the comprehensive suite of services offered by VNR across South Africa, including expert tax advisory, business structuring, legacy planning, and financial reporting.',
 };
 
 const ServicesPage = () => {
@@ -38,7 +38,7 @@ const ServicesPage = () => {
             Our Suite of Services
           </h1>
           <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-text-secondary">
-            Integrated solutions designed to protect your assets, minimize tax, and facilitate sustainable growth. We provide the clarity and strategic guidance necessary for entrepreneurs in Centurion, Alberton, and across Gauteng to navigate their financial journey with confidence.
+            Integrated solutions designed to protect your assets, minimize tax, and facilitate sustainable growth. We provide the clarity and strategic guidance necessary for entrepreneurs across South Africa to navigate their financial journey with confidence. While our head office is located in Centurion, we serve clients nationwide.
           </p>
         </div>
       </section>

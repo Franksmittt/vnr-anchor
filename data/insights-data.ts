@@ -49,7 +49,7 @@ export const insightsData: Article[] = [
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Shifting Your Perspective: From Tax Compliance to Tax Strategy</h3>
 <p>The fundamental difference lies in timing and intent. Tax compliance is reactive; it happens after the financial year is over, documenting history. Strategic tax planning, however, is proactive. It looks ahead. It involves making deliberate decisions today—about how you structure your company, hold your assets, and plan your investments—to optimize your tax position tomorrow, next year, and ten years from now. It aligns your financial structure with your business goals, whether that’s preparing for a future acquisition, expanding into new markets, or creating a legacy for the next generation.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Unlocking Growth: Key Areas of Advanced Taxation for Entrepreneurs</h3>
-<p>Moving beyond basic deductions opens up a new world of strategic possibilities. Here are the core areas where proactive planning makes the biggest impact for businesses in Centurion, Gauteng, and across South Africa.</p>
+<p>Moving beyond basic deductions opens up a new world of strategic possibilities. Here are the core areas where proactive planning makes the biggest impact for businesses across South Africa.</p>
 <h4>1. Capital Gains Tax (CGT): Structuring for Future Exits</h4>
 <p>For many founders, the ultimate goal is a successful exit. Whether through a sale, merger, or public listing, this event is where years of hard work are realized. However, without foresight, a significant portion of that value can be lost to Capital Gains Tax. Strategic CGT planning begins on day one:</p>
 <ul class="list-disc list-inside space-y-2 text-slate-600 mt-4 mb-6">
@@ -180,7 +180,7 @@ export const insightsData: Article[] = [
     <li>Successfully passing a professional examination, such as the SAIPA Centre of Tax Excellence (CoTE) exam.</li>
 </ul>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="conclusion">Your Strategic Partner in Financial Health</h3>
-<p>Ultimately, a tax consultant is a strategic partner invested in your long-term financial success. For entrepreneurs and individuals in <strong>Centurion, Alberton, and across Gauteng</strong>, having a local expert who understands the nuances of SARS and the challenges of the South African market is invaluable.</p>
+<p>Ultimately, a tax consultant is a strategic partner invested in your long-term financial success. For entrepreneurs and individuals <strong>across South Africa</strong>, having an expert who understands the nuances of SARS and the challenges of the South African market is invaluable. While our head office is in Centurion, we serve clients nationwide.</p>
 <p>If you're looking for a "tax consultant near me" who can provide proactive, strategic advice, our team of SAIPA-accredited experts at VNR is here to help. <a href="/contact" class="text-brand-blue hover:underline">Contact us</a> for a strategic consultation.</p>
 `
   },
@@ -188,7 +188,7 @@ export const insightsData: Article[] = [
     slug: "avoiding-critical-governance-errors",
     featured: false,
     title: "From the SAIPA Board to Your Business: Avoiding Critical Governance Errors",
-    excerpt: "Leverage insights from a former SAIPA board member to implement robust corporate governance and avoid common pitfalls that can derail SMEs in Centurion, Gauteng.",
+    excerpt: "Leverage insights from a former SAIPA board member to implement robust corporate governance and avoid common pitfalls that can derail SMEs across South Africa.",
     category: "Compliance",
     date: "July 10, 2025",
     author: teamData.find(m => m.slug === 'charlie-naude')!,
@@ -207,7 +207,7 @@ export const insightsData: Article[] = [
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="mistake5">Mistake 4: Operating Without a Shareholder Agreement</h3>
 <p>If you have co-founders, a comprehensive shareholder agreement is a non-negotiable ‘business pre-nup.’ Your MOI sets out the rules of the company, but the shareholder agreement governs the relationship between the shareholders. What happens if one founder wants to leave, passes away, becomes disabled, or there is a deadlock on a critical decision? Without an agreement defining these processes, these scenarios can lead to crippling internal disputes, costly legal battles, and the potential collapse of the business. It’s a document you hope you never need, but you must have it.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Your Foundation for Sustainable Success</h3>
-<p>As a professional <strong>Charlie Naudé accountant</strong> and business advisor in Centurion, my goal is to help entrepreneurs build businesses that are not just profitable, but enduring. That endurance begins with a solid foundation of good governance.</p>
+<p>As a professional <strong>Charlie Naudé accountant</strong> and business advisor, my goal is to help entrepreneurs across South Africa build businesses that are not just profitable, but enduring. That endurance begins with a solid foundation of good governance.</p>
 <p>Contact our team to review your current governance structures and ensure they are a source of strength, not a hidden risk.</p>
 `
   },
@@ -215,7 +215,7 @@ export const insightsData: Article[] = [
     slug: "guide-to-registering-your-npo",
     featured: false,
     title: "How to Register an NPO in South Africa: A Step-by-Step Guide",
-    excerpt: "Navigate the specific requirements for registering a Non-Profit Organisation in South Africa to unlock funding and achieve Public Benefit Organisation (PBO) status in Centurion and Gauteng.",
+    excerpt: "Navigate the specific requirements for registering a Non-Profit Organisation in South Africa to unlock funding and achieve Public Benefit Organisation (PBO) status across South Africa.",
     category: "Compliance",
     date: "July 07, 2025",
     author: teamData.find(m => m.slug === 'henry-landsberg')!,
@@ -223,7 +223,7 @@ export const insightsData: Article[] = [
     takeaways: [ "An NPO is a formal legal entity established for a public purpose, essential for attracting major donors.", "Your first step is registering with the Department of Social Development (DSD), which requires a formal constitution.", "The most critical step for fundraising is applying to SARS for Public Benefit Organisation (PBO) status.", "Achieving Section 18A status from SARS allows you to issue tax-deductible receipts, a powerful incentive for donors."],
     toc: [ { id: "what-is-an-npo", title: "Understanding an NPO" }, { id: "dsd-registration", title: "DSD Registration Guide" }, { id: "sars-registration", title: "Registering with SARS" }, { id: "conclusion", title: "From Passion to Professional Entity" } ],
     content: `
-<p class="text-lg text-slate-600 mb-6">Your mission is to make a difference in your community. But to truly grow your impact, attract significant funding, and operate with full legal standing, you need to transform that passion into a formal, recognised entity. This guide demystifies the <strong>NPO registration South Africa</strong> process, providing a clear roadmap for social entrepreneurs in Centurion, Alberton, and across Gauteng.</p>
+<p class="text-lg text-slate-600 mb-6">Your mission is to make a difference in your community. But to truly grow your impact, attract significant funding, and operate with full legal standing, you need to transform that passion into a formal, recognised entity. This guide demystifies the <strong>NPO registration South Africa</strong> process, providing a clear roadmap for social entrepreneurs across South Africa.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="what-is-an-npo">Before You Begin: What is a Non-Profit Organisation?</h3>
 <p>In South Africa, an NPO is a trust, company, or other association of persons established for a public purpose. The key characteristic is that any surplus income is used to advance that public purpose, not to be distributed to its members or office-bearers except as reasonable compensation for services rendered. Formal registration is the first step to gaining credibility with donors, the government, and the public.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="dsd-registration">Step 1: The DSD Registration Guide</h3>
@@ -242,14 +242,14 @@ export const insightsData: Article[] = [
 </ul>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="conclusion">From Passion to Professional Entity</h3>
 <p>Following these steps correctly transforms your vision into a formal, credible organisation capable of attracting significant support and making a lasting impact. The administrative requirements can be complex, but they are a necessary foundation for success.</p>
-<p>At <strong>VNR Professional Accountants in Centurion</strong>, we have the expertise to manage these administrative burdens seamlessly, from drafting your constitution to handling your PBO and Section 18A applications with SARS. This allows you to remain focused on what truly matters: serving your community.</p>
+<p>At <strong>VNR Professional Accountants</strong>, we have the expertise to manage these administrative burdens seamlessly, from drafting your constitution to handling your PBO and Section 18A applications with SARS. While our head office is in Centurion, we serve clients across South Africa. This allows you to remain focused on what truly matters: serving your community.</p>
 `
   },
   {
     slug: "are-you-overpaying-sars-sme-tax-deductions",
     featured: false,
     title: "Are You Overpaying SARS? A Guide to SME Tax Deductions",
-    excerpt: "Many small businesses miss out on legitimate tax deductions. This guide from VNR Professional Accountants covers key areas where you can optimize your expenses to improve cash flow and reduce your tax burden in Centurion and Gauteng.",
+    excerpt: "Many small businesses miss out on legitimate tax deductions. This guide from VNR Professional Accountants covers key areas where you can optimize your expenses to improve cash flow and reduce your tax burden across South Africa.",
     category: "Taxation",
     date: "July 01, 2025",
     author: teamData.find(m => m.slug === 'jannie-venter')!,
@@ -257,7 +257,7 @@ export const insightsData: Article[] = [
     takeaways: [ "Proactively claim a tax allowance for specific doubtful debts before they become fully irrecoverable.", "Deduct qualifying pre-trade expenses (Section 11A) in your first year of business operations.", "Claim wear-and-tear on personal assets (like laptops) that are used for business purposes.", "Ensure your home office and travel claims are structured correctly and supported by meticulous records."],
     toc: [ { id: "intro", title: "Beyond Compliance" }, { id: "deductions", title: "5 Overlooked SME Tax Deductions" }, { id: "conclusion", title: "Unlocking Your Potential" } ],
     content: `
-<p class="text-lg text-slate-600 mb-6">Every South African business owner knows they have to pay tax. But are you certain you aren't paying more than you legally need to? The difference between a compliant business and a truly tax-efficient one often lies in the deductions you may not even know you can claim. This guide from your tax experts at VNR covers some of the key <strong>SME tax deductions in South Africa</strong> that are frequently missed by entrepreneurs in Centurion, Alberton, and across Gauteng.</p>
+<p class="text-lg text-slate-600 mb-6">Every South African business owner knows they have to pay tax. But are you certain you aren't paying more than you legally need to? The difference between a compliant business and a truly tax-efficient one often lies in the deductions you may not even know you can claim. This guide from your tax experts at VNR covers some of the key <strong>SME tax deductions in South Africa</strong> that are frequently missed by entrepreneurs across South Africa.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="deductions">Five Key Deductions SMEs Often Overlook</h3>
 <p>Moving beyond the obvious expenses like rent and salaries can unlock significant cash flow improvements. Here are five areas where proactive planning can reduce your tax burden.</p>
 <h4>1. The Doubtful Debts Allowance (Section 11(j))</h4>
@@ -272,14 +272,14 @@ export const insightsData: Article[] = [
 <p>This is one of the most scrutinized areas by SARS, but also one of the most valuable deductions. Whether you use a company-owned vehicle or your personal vehicle for business travel, the claim is entirely dependent on one thing: a detailed, accurate, and consistently maintained logbook. This logbook must separate private and business mileage and is non-negotiable. Without it, SARS will almost certainly disallow any vehicle-related expense claims. A well-kept logbook is the key to unlocking deductions for fuel, maintenance, insurance, and wear-and-tear on your vehicle.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="conclusion">Unlocking Your Potential</h3>
 <p>Effective tax management is not about what you pay in March; it's about the strategic decisions you make all year round. Ensuring you are claiming every legitimate deduction is a critical part of protecting your cash flow and maximizing the capital available for growth.</p>
-<p>If you're unsure whether you're making the most of the available deductions, schedule a consultation with the VNR team. We specialize in helping entrepreneurs in Centurion and beyond ensure they are not paying a cent more in tax than is legally required.</p>
+<p>If you're unsure whether you're making the most of the available deductions, schedule a consultation with the VNR team. We specialize in helping entrepreneurs across South Africa ensure they are not paying a cent more in tax than is legally required.</p>
 `
   },
   {
     slug: 'business-valuations',
     featured: false,
     title: 'Beyond Profit: The Key Drivers of Business Valuation in South Africa',
-    excerpt: "A company's value is more than its profit. Discover how systems, customer diversification, and governance drive the true value of your enterprise with insights from VNR Professional Accountants in Centurion.",
+    excerpt: "A company's value is more than its profit. Discover how systems, customer diversification, and governance drive the true value of your enterprise with insights from VNR Professional Accountants.",
     category: "Business Growth",
     date: "June 28, 2025",
     author: teamData.find(m => m.slug === 'henry-landsberg')!,
@@ -310,14 +310,14 @@ export const insightsData: Article[] = [
 <p>Trust is a major component of valuation. Financial statements that are clean, accurate, and professionally prepared (and ideally, independently reviewed or audited) provide a buyer with confidence. Messy books, co-mingled personal and business expenses, or inconsistent reporting create uncertainty. This uncertainty translates into perceived risk, and risk always lowers a valuation. Meticulous financial reporting is non-negotiable.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="conclusion">Building a More Valuable Future</h3>
 <p>Increasing your business's value is not an accident; it's the result of deliberate, strategic decisions made over time. By focusing on these key drivers, you transform your company from a simple income-generating entity into a valuable, transferable asset.</p>
-<p>At VNR, our <strong>business valuation services in Centurion</strong> go beyond the numbers. We help you understand the story they tell and identify the strategic levers you can pull to build a more valuable and resilient enterprise. Contact us to begin the process.</p>
+<p>At VNR, our <strong>business valuation services</strong> go beyond the numbers. We help you understand the story they tell and identify the strategic levers you can pull to build a more valuable and resilient enterprise. While our head office is in Centurion, we serve clients across South Africa. Contact us to begin the process.</p>
 `
   },
   {
     slug: "guide-to-avoiding-sars-penalties",
     featured: false,
     title: "Is Your Business Compliant? A Guide to Avoiding SARS Penalties in South Africa",
-    excerpt: "A practical guide for business owners on their key compliance obligations for Income Tax, VAT, and PAYE to avoid costly penalties from SARS, with insights from VNR Professional Accountants in Centurion.",
+    excerpt: "A practical guide for business owners on their key compliance obligations for Income Tax, VAT, and PAYE to avoid costly penalties from SARS, with insights from VNR Professional Accountants.",
     category: "Taxation",
     date: "June 25, 2025",
     author: teamData.find(m => m.slug === 'jannie-venter')!,
@@ -327,7 +327,7 @@ export const insightsData: Article[] = [
     content: `
 <p class="text-lg text-slate-600 mb-6">In the world of entrepreneurship, the line between success and failure can be razor-thin. While you focus on innovation and growth, overlooking the fundamentals of tax compliance can introduce significant financial risk. Costly penalties from the South African Revenue Service (SARS) can erode profits and damage your business's reputation. This guide provides a clear, practical overview of the core obligations your SME needs to manage in 2025 to stay compliant and penalty-free.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="why-comply">Why Good Standing with SARS Matters</h3>
-<p>Timely and accurate compliance is more than just a legal requirement; it's a strategic asset. A valid <strong>Tax Compliance Status (TCS)</strong> pin is a golden key in the world of business. You need it to apply for government tenders, to secure financing from banks, and even to receive government grants or facilitate foreign investment. Maintaining good standing is essential for the operational and financial health of your enterprise in Centurion, Alberton, and across Gauteng.</p>
+<p>Timely and accurate compliance is more than just a legal requirement; it's a strategic asset. A valid <strong>Tax Compliance Status (TCS)</strong> pin is a golden key in the world of business. You need it to apply for government tenders, to secure financing from banks, and even to receive government grants or facilitate foreign investment. Maintaining good standing is essential for the operational and financial health of your enterprise across South Africa.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="checklist">Your Essential Checklist for SARS Compliance</h3>
 <p>Staying compliant involves a regular rhythm of submissions and payments. Here are the four key pillars every business owner must manage:</p>
 <h4>1. Provisional Tax (IRP6)</h4>
@@ -344,14 +344,14 @@ export const insightsData: Article[] = [
     <li><strong>Administrative Non-Compliance Penalties:</strong> These are levied for late submissions or payments. For individuals and trusts, it’s a recurring monthly penalty. For companies, it’s a percentage-based penalty (e.g., 10% on late VAT payments).</li>
     <li><strong>Understatement Penalties (USPs):</strong> These are more severe and are levied for inaccuracies in your declarations. The penalty is calculated as a percentage of the tax shortfall and depends on SARS's assessment of your behaviour—ranging from a standard error to intentional tax evasion.</li>
 </ul>
-<p>At VNR, we don't just file your returns; we implement systems and schedules to ensure you are always ahead of your compliance obligations. Contact our team in Centurion for the peace of mind that comes from knowing your tax affairs are in expert hands.</p>
+<p>At VNR, we don't just file your returns; we implement systems and schedules to ensure you are always ahead of your compliance obligations. While our head office is in Centurion, we serve clients across South Africa. Contact our team for the peace of mind that comes from knowing your tax affairs are in expert hands.</p>
 `
   },
   {
     slug: "how-to-restore-your-dormant-company",
     featured: false,
     title: "Company Deregistered? A Guide to Restore Your Dormant CC in South Africa",
-    excerpt: "If your company has been deregistered by the CIPC due to non-filing of annual returns, there is a process to restore it. This is your step-by-step guide from VNR Professional Accountants in Centurion.",
+    excerpt: "If your company has been deregistered by the CIPC due to non-filing of annual returns, there is a process to restore it. This is your step-by-step guide from VNR Professional Accountants.",
     category: "Compliance",
     date: "June 22, 2025",
     author: teamData.find(m => m.slug === 'henry-landsberg')!,
@@ -378,14 +378,14 @@ export const insightsData: Article[] = [
 <p>This is the formal application for re-instatement. The <strong>CIPC Form CoR 40.5</strong> must be completed accurately and submitted along with all your supporting documents and proof of payment for the application fee. Any errors or omissions on this form can lead to significant delays or rejection of your application.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="conclusion">Getting Back on Track with Expert Help</h3>
 <p>The re-instatement process can be administratively complex and time-consuming. It's a journey where precision matters. An incorrect application can waste valuable time and prolong the period where your business assets are frozen and unusable.</p>
-<p>At VNR Professional Accountants, we are experts in navigating the intricacies of CIPC compliance. We manage the entire re-instatement process for businesses in <strong>Centurion, Alberton, and across Gauteng</strong>, from settling outstanding returns to submitting a perfect application. Let us handle the administrative burden so you can get back to business.</p>
+<p>At VNR Professional Accountants, we are experts in navigating the intricacies of CIPC compliance. We manage the entire re-instatement process for businesses <strong>across South Africa</strong>, from settling outstanding returns to submitting a perfect application. While our head office is in Centurion, we serve clients nationwide. Let us handle the administrative burden so you can get back to business.</p>
 `
   },
   {
     slug: "building-sustainable-wealth-in-south-africa",
     featured: false,
     title: "From Success to Significance: Building Sustainable Wealth in South Africa",
-    excerpt: "True wealth isn't just about financial success; it's about building a lasting, purposeful legacy. Explore the strategic shift from earning income to creating sustainable wealth with experts in Centurion.",
+    excerpt: "True wealth isn't just about financial success; it's about building a lasting, purposeful legacy. Explore the strategic shift from earning income to creating sustainable wealth with experts across South Africa.",
     category: "Legacy Planning",
     date: "June 19, 2025",
     author: teamData.find(m => m.slug === 'charlie-naude')!,
@@ -405,7 +405,7 @@ export const insightsData: Article[] = [
 <h4>Pillar 3: Intentional Legacy and Succession Planning</h4>
 <p>What is the ultimate purpose of the wealth you’ve created? This pillar goes far beyond a simple will. It involves creating a deliberate, documented plan for the smooth and tax-efficient transition of your assets and your leadership. It answers the critical questions: How will the business continue to thrive without you? How will your family be provided for? And how will your values be passed on with your value? An intentional legacy plan ensures the wealth you’ve built serves a purpose long after you are gone.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="conclusion">A Journey of Strategic Decisions</h3>
-<p>Building sustainable wealth is a journey, not a destination. It is the outcome of a series of intentional, strategic decisions made over many years. At VNR, we partner with entrepreneurs in <strong>Centurion, Alberton, and across Gauteng</strong> to architect these decisions. We help you move from success to significance by building a financial legacy that is as resilient and purposeful as the business you created.</p>
+<p>Building sustainable wealth is a journey, not a destination. It is the outcome of a series of intentional, strategic decisions made over many years. At VNR, we partner with entrepreneurs <strong>across South Africa</strong> to architect these decisions. While our head office is in Centurion, we serve clients nationwide. We help you move from success to significance by building a financial legacy that is as resilient and purposeful as the business you created.</p>
 `
   },
   {
@@ -420,7 +420,7 @@ export const insightsData: Article[] = [
     takeaways: [ "The choice between Sage and Xero is a foundational technology decision for any modern South African business.", "Xero is often praised for its user-friendly interface, making it ideal for business owners who are not accounting professionals.", "Sage offers a deeply integrated and robust South African payroll system, a key differentiator in the local market.", "The best platform depends on your specific needs, but the implementation partner is as critical as the software itself."],
     toc: [ { id: "intro", title: "Why This Decision Matters" }, { id: "comparison", title: "Sage vs Xero Comparison" }, { id: "making-choice", title: "Making the Right Choice" } ],
     content: `
-<p class="text-lg text-slate-600 mb-6">In 2025, the conversation is no longer <em>if</em> you should use cloud accounting, but <em>which</em> platform is the right engine for your business's growth. For most South African SMEs, the choice boils down to two titans: Sage and Xero. As certified partners for both platforms, we understand this isn't just a software choice—it's a foundational business decision. This is our practical, high-level guide to help leaders in <strong>Centurion, Alberton, and Gauteng</strong> make that critical decision.</p>
+<p class="text-lg text-slate-600 mb-6">In 2025, the conversation is no longer <em>if</em> you should use cloud accounting, but <em>which</em> platform is the right engine for your business's growth. For most South African SMEs, the choice boils down to two titans: Sage and Xero. As certified partners for both platforms, we understand this isn't just a software choice—it's a foundational business decision. This is our practical, high-level guide to help leaders <strong>across South Africa</strong> make that critical decision.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="comparison">A Head-to-Head Comparison: Sage vs. Xero in South Africa</h3>
 <p>While both platforms are excellent, they have distinct strengths that make them better suited for different types of businesses.</p>
 <h4>1. User Experience (UX) & Ease of Use</h4>
@@ -437,14 +437,14 @@ export const insightsData: Article[] = [
     <li><strong>Choose Xero if:</strong> You are a service-based SME, you prioritize a simple and beautiful user interface for non-accountants, and your primary need is for core accounting with a wide range of international app integrations.</li>
     <li><strong>Choose Sage if:</strong> You have employees and require a robust, integrated South African payroll system, your business involves complex inventory or multi-currency needs, or you are scaling into a larger, more complex enterprise that requires deep financial control.</li>
 </ul>
-<p>Ultimately, the success of your cloud accounting implementation depends as much on your partner as it does on the software. As a <strong>Sage Platinum Partner</strong> and <strong>Xero Certified Advisors</strong> in Centurion, VNR is uniquely positioned to provide impartial advice. We don't just sell software; we architect financial systems. We'll help you choose the right platform and ensure it's implemented perfectly to become a true engine for your growth.</p>
+<p>Ultimately, the success of your cloud accounting implementation depends as much on your partner as it does on the software. As a <strong>Sage Platinum Partner</strong> and <strong>Xero Certified Advisors</strong>, VNR is uniquely positioned to provide impartial advice. While our head office is in Centurion, we serve clients across South Africa. We don't just sell software; we architect financial systems. We'll help you choose the right platform and ensure it's implemented perfectly to become a true engine for your growth.</p>
 `
   },
   {
     slug: "your-will-the-ultimate-business-continuity-plan",
     featured: false,
     title: "A Business Owner’s Guide to Drafting a Will in South Africa",
-    excerpt: "For an entrepreneur, a will is not just a personal document. It is your final, and most critical, business continuity plan. Learn how to protect your business and family with VNR Professional Accountants in Centurion.",
+    excerpt: "For an entrepreneur, a will is not just a personal document. It is your final, and most critical, business continuity plan. Learn how to protect your business and family with VNR Professional Accountants.",
     category: "Legacy Planning",
     date: "June 13, 2025",
     author: teamData.find(m => m.slug === 'jannie-venter')!,
@@ -468,14 +468,14 @@ export const insightsData: Article[] = [
 <h4>5. The Question of the Executor: Who Will Manage This Process?</h4>
 <p>Appointing a family member as executor of a complex estate containing a business can be an unfair burden. They may lack the financial and legal expertise to navigate the process and can be placed in a position of conflict when dealing with other family members. Appointing an independent, professional executor ensures the process is managed impartially, efficiently, and with the necessary expertise.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="conclusion">Your Final Act of Stewardship</h3>
-<p>Drafting your will is not about planning for death; it's about planning for the future. It is your final act of strategic leadership and stewardship for the business you built and the family you love. At VNR, we specialize in <strong>estate planning for entrepreneurs in Centurion and Alberton</strong>, ensuring your will is a robust, strategic document that protects your legacy. Contact us to put a plan in place.</p>
+<p>Drafting your will is not about planning for death; it's about planning for the future. It is your final act of strategic leadership and stewardship for the business you built and the family you love. At VNR, we specialize in <strong>estate planning for entrepreneurs across South Africa</strong>, ensuring your will is a robust, strategic document that protects your legacy. While our head office is in Centurion, we serve clients nationwide. Contact us to put a plan in place.</p>
 `
   },
   {
     slug: "guide-to-payroll-compliance-emp201-irp5",
     featured: false,
     title: "The Ultimate Payroll Compliance Checklist for South African Businesses",
-    excerpt: "A technical guide for business owners covering the full spectrum of payroll compliance, including monthly EMP201 submissions and the bi-annual IRP5 reconciliation in Centurion, Gauteng.",
+    excerpt: "A technical guide for business owners covering the full spectrum of payroll compliance, including monthly EMP201 submissions and the bi-annual IRP5 reconciliation across South Africa.",
     category: "Compliance",
     date: "June 10, 2025",
     author: teamData.find(m => m.slug === 'henry-landsberg')!,
@@ -510,14 +510,14 @@ export const insightsData: Article[] = [
     <li><strong>COID Return of Earnings (W.As.8):</strong> You must submit your annual Return of Earnings to the Compensation Fund (COID), declaring the total salaries paid during the period. Based on this, you will be assessed a fee which, once paid, allows you to obtain a Letter of Good Standing.</li>
 </ul>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="conclusion">From Checklist to Peace of Mind</h3>
-<p>Managing payroll correctly is a specialized, time-consuming function. For most business owners in <strong>Centurion and Alberton</strong>, their time is better spent growing the business. Our outsourced payroll services remove this entire administrative burden, guaranteeing accuracy, timeliness, and full compliance. Contact VNR to ensure your payroll is a source of stability, not stress.</p>
+<p>Managing payroll correctly is a specialized, time-consuming function. For most business owners <strong>across South Africa</strong>, their time is better spent growing the business. Our outsourced payroll services remove this entire administrative burden, guaranteeing accuracy, timeliness, and full compliance. While our head office is in Centurion, we serve clients nationwide. Contact VNR to ensure your payroll is a source of stability, not stress.</p>
 `
   },
   {
     slug: "facing-a-sars-dispute-step-by-step-guide",
     featured: false,
     title: "Facing a SARS Dispute? A Step-by-Step Guide for Businesses in South Africa",
-    excerpt: "Receiving a letter from SARS can be stressful. We provide a clear, step-by-step guide on how to handle disputes, objections, and appeals professionally with VNR Professional Accountants in Centurion.",
+    excerpt: "Receiving a letter from SARS can be stressful. We provide a clear, step-by-step guide on how to handle disputes, objections, and appeals professionally with VNR Professional Accountants.",
     category: "Taxation",
     date: "June 07, 2025",
     author: teamData.find(m => m.slug === 'jannie-venter')!,
@@ -539,7 +539,7 @@ export const insightsData: Article[] = [
 <h4>Step 4: The Appeal Process</h4>
 <p>If SARS disallows your objection, you have the right to appeal. The appeal can follow several paths, including Alternative Dispute Resolution (ADR) with SARS, or escalating the matter to the Tax Board or, for more significant cases, the Tax Court. An expert advisor is essential to guide you on the most appropriate and cost-effective path forward.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="conclusion">Your Strongest Case Forward</h3>
-<p>Navigating a SARS dispute is a specialized field. A procedural error or a poorly argued objection can have significant financial consequences. As expert tax practitioners in <strong>Centurion and Alberton</strong>, we act as your legal representative, managing all communication with SARS and meticulously building the strongest possible case on your behalf. Don't face a dispute alone; let us provide the expertise and peace of mind you need.</p>
+<p>Navigating a SARS dispute is a specialized field. A procedural error or a poorly argued objection can have significant financial consequences. As expert tax practitioners <strong>across South Africa</strong>, we act as your legal representative, managing all communication with SARS and meticulously building the strongest possible case on your behalf. While our head office is in Centurion, we serve clients nationwide. Don't face a dispute alone; let us provide the expertise and peace of mind you need.</p>
 `
   },
   {
@@ -572,7 +572,7 @@ export const insightsData: Article[] = [
 <p>A trust allows you to control how your assets are managed and distributed long after you are gone. This is particularly important if your beneficiaries are minors or are not yet equipped to manage significant wealth. The trust deed, your founding document, can specify exactly how and when capital and income should be distributed, ensuring your wealth is used to support your family's well-being in line with your wishes for generations to come.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="tax-question">Addressing the Tax Question</h4>
 <p>It is true that trusts are taxed at a high flat rate (currently 45% for income). This is why trusts are generally not used for simple income-generating investments. However, the income can be vested in and taxed in the hands of the beneficiaries, who are often in a lower tax bracket. The most significant <strong>tax benefits of a trust</strong> are realized in estate planning, where the savings on executor's fees, Estate Duty, and CGT can be substantial, far outweighing the annual tax compliance costs.</p>
-<p>A trust is a sophisticated and powerful entity. To be effective and compliant, it requires expert drafting, professional trusteeship, and meticulous annual administration. At VNR, we provide a comprehensive service for entrepreneurs in <strong>Centurion and Alberton</strong>, from strategic advice and formation to ongoing administration, ensuring your trust serves as a true cornerstone of your legacy.</p>
+<p>A trust is a sophisticated and powerful entity. To be effective and compliant, it requires expert drafting, professional trusteeship, and meticulous annual administration. At VNR, we provide a comprehensive service for entrepreneurs <strong>across South Africa</strong>, from strategic advice and formation to ongoing administration, ensuring your trust serves as a true cornerstone of your legacy. While our head office is in Centurion, we serve clients nationwide.</p>
 `
   },
   {
@@ -601,7 +601,7 @@ export const insightsData: Article[] = [
 <h4>5. The Cost of Damaged Credibility</h4>
 <p>At some point, you will need to present your financials to a third party—a bank for a loan, an investor for funding, or even a key supplier for credit terms. Presenting messy, amateurish, or inaccurate financial records instantly destroys credibility. It signals that your business is not being run professionally, which can lead to immediate rejection. Clean, professionally prepared financials are a prerequisite for securing the capital you need to grow.</p>
 <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4" id="conclusion">An Investment in Growth</h3>
-<p>Viewing professional accounting as an overhead expense is a startup mindset. A growth mindset sees it as a strategic investment. It's an investment in your time, in compliance, in tax efficiency, and in your ability to make smart, data-driven decisions. For business owners in <strong>Centurion and Alberton</strong>, outsourcing your accounting to a firm like VNR is the first step in building a truly professional and scalable enterprise.</p>
+<p>Viewing professional accounting as an overhead expense is a startup mindset. A growth mindset sees it as a strategic investment. It's an investment in your time, in compliance, in tax efficiency, and in your ability to make smart, data-driven decisions. For business owners <strong>across South Africa</strong>, outsourcing your accounting to a firm like VNR is the first step in building a truly professional and scalable enterprise. While our head office is in Centurion, we serve clients nationwide.</p>
 `
   },
   {
@@ -646,7 +646,7 @@ export const insightsData: Article[] = [
     <li><strong>Due Diligence Preparation:</strong> Ensure all your financial records, contracts, and corporate governance documents are immaculate and organized, ready for the intense scrutiny of a potential buyer.</li>
     <li><strong>Estate & Legacy Planning:</strong> Work with an advisor to structure your personal affairs, including trusts and your will, to manage the proceeds of a future sale in the most tax-efficient way possible.</li>
 </ul>
-<p>At VNR, we are more than just accountants; we are long-term strategic partners. We have the expertise to guide entrepreneurs in <strong>Centurion and Alberton</strong> through every milestone on this financial roadmap. Contact us to discuss which stage you're in and how we can help you prepare for the next.</p>
+<p>At VNR, we are more than just accountants; we are long-term strategic partners. We have the expertise to guide entrepreneurs <strong>across South Africa</strong> through every milestone on this financial roadmap. While our head office is in Centurion, we serve clients nationwide. Contact us to discuss which stage you're in and how we can help you prepare for the next.</p>
 `
   },
 ];

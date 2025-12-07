@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: '%s | VNR Professional Accountants',
     default: 'VNR Professional Accountants: Strategic Wealth & Tax Experts',
   },
-  description: 'Your premier partner in strategic tax advisory, business structuring, and intergenerational wealth planning for South Africa’s leading families and businesses in Centurion, Pretoria, and Gauteng.',
+  description: "Your premier partner in strategic tax advisory, business structuring, and intergenerational wealth planning for South Africa's leading families and businesses. While our head office is in Centurion, we serve clients across South Africa.",
   manifest: '/manifest.json',
 };
 

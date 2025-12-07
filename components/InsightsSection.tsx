@@ -18,7 +18,7 @@ const InsightsSection = () => {
             Navigating the Financial Landscape with Expert Perspectives
           </p>
           <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-600">
-            Stay ahead with expert insights on tax advisory, business structuring, and wealth planning from VNR Professional Accountants in Centurion, Gauteng, also serving Alberton.
+            Stay ahead with expert insights on tax advisory, business structuring, and wealth planning from VNR Professional Accountants. While our head office is in Centurion, we serve clients across South Africa.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ const InsightsSection = () => {
                 <div className="relative w-full h-72 md:h-96">
                   <Image
                     src={featuredArticle.imageUrl}
-                    alt={`${featuredArticle.title} by ${featuredArticle.author.name}, VNR Professional Accountants, Centurion, Alberton`}
+                    alt={`${featuredArticle.title} by ${featuredArticle.author.name}, VNR Professional Accountants`}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 66vw, 100vw"
@@ -56,7 +56,7 @@ const InsightsSection = () => {
                       <Image
                         className="h-10 w-10 rounded-full object-cover"
                         src={featuredArticle.author.imageUrl}
-                        alt={`${featuredArticle.author.name}, expert at VNR Professional Accountants in Centurion`}
+                        alt={`${featuredArticle.author.name}, expert at VNR Professional Accountants`}
                         width={40}
                         height={40}
                       />
@@ -82,7 +82,7 @@ const InsightsSection = () => {
                   <div className="relative flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden">
                     <Image
                       src={insight.imageUrl}
-                      alt={`${insight.title} thumbnail by ${insight.author.name}, VNR Professional Accountants, Alberton`}
+                      alt={`${insight.title} thumbnail by ${insight.author.name}, VNR Professional Accountants`}
                       fill
                       className="object-cover"
                       sizes="96px"
@@ -97,7 +97,7 @@ const InsightsSection = () => {
                       <Image
                         className="h-6 w-6 rounded-full object-cover mr-2"
                         src={insight.author.imageUrl}
-                        alt={`${insight.author.name} small headshot at VNR Professional Accountants, Centurion`}
+                        alt={`${insight.author.name} small headshot at VNR Professional Accountants`}
                         width={24}
                         height={24}
                       />

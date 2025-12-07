@@ -1,0 +1,547 @@
+================================================================================
+VNR PROFESSIONAL ACCOUNTANTS - DESIGN SYSTEM & STYLE GUIDE
+================================================================================
+
+Last Updated: November 2025
+Project: VNR Website (Next.js 14 + TypeScript + Tailwind CSS)
+
+================================================================================
+1. DESIGN PHILOSOPHY
+================================================================================
+
+The VNR website embodies a sophisticated, professional aesthetic that balances:
+- Trust & Authority: Deep blues and structured layouts convey expertise
+- Approachability: Warm teal accents and clear typography ensure accessibility
+- Modern Elegance: Clean lines, subtle animations, and premium spacing
+- Strategic Clarity: Content-first design that guides users to key actions
+
+Target Audience: High-net-worth individuals, entrepreneurs, and business owners
+across South Africa seeking strategic tax advisory, wealth management, and
+business structuring services.
+
+================================================================================
+2. COLOR PALETTE
+================================================================================
+
+PRIMARY BRAND COLORS
+--------------------
+Brand Blue (Primary):
+  - Base: #1d4ed8 (blue-700) - Primary CTAs, icons, accents
+  - Light: #3b82f6 (blue-500) - Hover states, secondary actions
+  - Dark: #1e3a8a (blue-900) - Active states, emphasis
+
+Brand Teal (Secondary):
+  - Base: #0d9488 (teal-600) - Supporting accents, highlights
+  - Light: #2dd4bf (teal-400) - Subtle highlights, decorative elements
+
+SURFACE COLORS
+--------------
+Surface Light: #f8fafc (slate-50)
+  - Background for content sections, cards on light backgrounds
+  - Provides subtle contrast without harsh whites
+
+Surface Dark: #0f172a (slate-900)
+  - Hero sections, footer, navigation
+  - Creates depth and premium feel
+
+TEXT COLORS
+-----------
+Text Primary: #1e293b (slate-800)
+  - Main headings and body text on light backgrounds
+  - Ensures excellent readability
+
+Text Secondary: #475569 (slate-600)
+  - Supporting text, descriptions, metadata
+  - Creates visual hierarchy
+
+Text On Dark: #e2e8f0 (slate-200)
+  - Text on dark backgrounds (hero, footer)
+  - Maintains contrast and readability
+
+GRADIENT USAGE
+--------------
+CTA Sections: from-blue-800 to-teal-700
+  - Creates dynamic, engaging call-to-action backgrounds
+  - Used sparingly for maximum impact
+
+Hero Overlays: from-slate-900/90 via-slate-900/70 to-slate-800/40
+  - Subtle gradient overlays on hero images
+  - Ensures text readability while preserving image impact
+
+================================================================================
+3. TYPOGRAPHY
+================================================================================
+
+FONT FAMILIES
+-------------
+Sans Serif (Body): Inter
+  - Variable: --font-inter
+  - Usage: Body text, navigation, UI elements, descriptions
+  - Characteristics: Modern, clean, highly readable
+
+Serif (Headings): Lora
+  - Variable: --font-lora
+  - Weights: 400, 500, 600, 700
+  - Usage: All headings (h1-h6), hero text, section titles
+  - Characteristics: Elegant, authoritative, adds sophistication
+
+TYPOGRAPHY SCALE
+----------------
+Hero Headlines (H1):
+  - Mobile: text-4xl (2.25rem / 36px)
+  - Tablet: text-5xl (3rem / 48px)
+  - Desktop: text-6xl (3.75rem / 60px)
+  - Weight: font-bold
+  - Tracking: tracking-tight
+  - Font: Serif (Lora)
+
+Section Headings (H2):
+  - Mobile: text-3xl (1.875rem / 30px)
+  - Desktop: text-4xl (2.25rem / 36px)
+  - Weight: font-bold
+  - Font: Serif (Lora)
+
+Subsection Headings (H3):
+  - Size: text-2xl (1.5rem / 24px)
+  - Weight: font-semibold
+  - Font: Serif (Lora)
+
+Card Titles (H3):
+  - Size: text-xl (1.25rem / 20px)
+  - Weight: font-semibold
+  - Font: Serif (Lora)
+
+Body Text:
+  - Size: text-base (1rem / 16px) - standard
+  - Size: text-lg (1.125rem / 18px) - emphasized
+  - Weight: font-normal (400)
+  - Font: Sans (Inter)
+
+Small Text / Metadata:
+  - Size: text-sm (0.875rem / 14px)
+  - Weight: font-medium
+  - Font: Sans (Inter)
+
+TEXT HIERARCHY
+--------------
+- Headings use serif (Lora) for authority and elegance
+- Body text uses sans-serif (Inter) for clarity and modernity
+- Line height: Default (1.5) for body, tighter for headings
+- Letter spacing: tracking-tight for headings, default for body
+
+================================================================================
+4. SPACING & LAYOUT
+================================================================================
+
+CONTAINER SYSTEM
+----------------
+Standard Container: container mx-auto px-6
+  - Max-width: Responsive (sm: 640px, md: 768px, lg: 1024px, xl: 1280px)
+  - Horizontal padding: 1.5rem (24px) on mobile, scales up
+  - Centers content with consistent margins
+
+SECTION SPACING
+---------------
+Standard Section Padding:
+  - Mobile: py-20 (5rem / 80px vertical)
+  - Desktop: sm:py-28 (7rem / 112px vertical)
+  - Creates generous breathing room between sections
+
+Content Spacing:
+  - Between elements: mt-6 (1.5rem / 24px) standard
+  - Between sections: mt-8 (2rem / 32px) for emphasis
+  - Between cards: gap-8 (2rem / 32px) or gap-12 (3rem / 48px)
+
+GRID SYSTEM
+-----------
+Standard Grid Patterns:
+  - 1 column on mobile (grid-cols-1)
+  - 2 columns on tablet (md:grid-cols-2)
+  - 3 columns on desktop (lg:grid-cols-3)
+  - Gap: gap-8 or gap-12 depending on content density
+
+================================================================================
+5. COMPONENT PATTERNS
+================================================================================
+
+BUTTONS
+-------
+Primary CTA Button:
+  - Background: bg-brand-blue (#1d4ed8)
+  - Text: text-white
+  - Padding: px-8 py-3 (horizontal: 2rem, vertical: 0.75rem)
+  - Border radius: rounded-md or rounded-full
+  - Hover: hover:bg-brand-blue-light, hover:scale-105
+  - Shadow: shadow-lg
+  - Transition: transition-transform duration-300
+
+Secondary Button:
+  - Background: bg-white or transparent
+  - Border: border border-slate-300
+  - Text: text-text-primary
+  - Hover: hover:border-brand-blue, hover:text-brand-blue
+
+Rounded Full Button (Special CTAs):
+  - Border radius: rounded-full
+  - Used for prominent call-to-actions
+  - Often includes icons (ChevronRight, ArrowUpRight)
+
+CARDS
+-----
+Standard Card:
+  - Background: bg-white
+  - Border: border border-slate-200
+  - Border radius: rounded-2xl (1rem / 16px)
+  - Shadow: shadow-sm (subtle) to shadow-lg (prominent)
+  - Padding: p-6 to p-8
+  - Hover: hover:shadow-2xl, hover:-translate-y-2 (lift effect)
+
+Dark Card (Service Cards):
+  - Background: bg-surface-dark (#0f172a)
+  - Text: text-white
+  - Border: border-slate-700
+  - Creates premium, sophisticated feel
+
+Icon Cards:
+  - Icon container: rounded-full, bg-brand-blue
+  - Icon size: h-8 w-8 to h-10 w-10
+  - Positioned absolutely above card (translate-y-1/2)
+
+HERO SECTIONS
+-------------
+Structure:
+  - Full viewport height: min-h-[calc(100vh-theme(spacing.20))]
+  - Background image with gradient overlay
+  - Content: max-w-3xl container
+  - Text: White on dark gradient
+  - CTA: Prominent primary button
+
+Gradient Overlay:
+  - from-slate-900/90 via-slate-900/70 to-slate-800/40
+  - Ensures text readability over images
+
+NAVIGATION
+----------
+Header:
+  - Background: bg-surface-dark
+  - Height: h-20 (5rem / 80px)
+  - Sticky: sticky top-0 z-50
+  - Shadow: shadow-lg
+
+Navigation Items:
+  - Active: bg-brand-blue-dark text-white
+  - Inactive: text-text-on-dark/80 hover:bg-white/10
+  - Border radius: rounded-md
+  - Padding: px-4 py-2
+
+Mobile Menu:
+  - Backdrop: bg-black/50 backdrop-blur-sm
+  - Panel: bg-surface-light, max-w-xs
+  - Slide-in from right
+
+================================================================================
+6. ANIMATIONS & INTERACTIONS
+================================================================================
+
+SCROLL ANIMATIONS
+-----------------
+Fade In Up:
+  - Keyframe: fadeInUp
+  - Duration: 0.8s
+  - Easing: ease-out
+  - Effect: Fades in while moving up 20px
+
+Reveal:
+  - Keyframe: reveal
+  - Duration: 1s
+  - Easing: cubic-bezier(0.215, 0.610, 0.355, 1)
+  - Effect: Fades in, moves up 40px, scales from 0.98, blur to clear
+
+Staggered Delays:
+  - First element: 0ms
+  - Second: 200ms
+  - Third: 400ms
+  - Creates cascading reveal effect
+
+HOVER EFFECTS
+-------------
+Card Lift:
+  - Transform: hover:-translate-y-2 (lifts 8px)
+  - Shadow: hover:shadow-2xl (increases shadow)
+  - Border: hover:border-brand-blue/30 (adds color)
+  - Duration: transition-all duration-300
+
+Button Scale:
+  - Transform: hover:scale-105 (5% larger)
+  - Duration: transition-transform duration-300
+
+Icon Color Change:
+  - Icons change color on hover (e.g., slate-400 to brand-blue)
+
+================================================================================
+7. TONE OF VOICE
+================================================================================
+
+OVERALL VOICE
+-------------
+Professional yet Approachable
+  - Authoritative without being condescending
+  - Expert knowledge communicated clearly
+  - Respectful of client intelligence
+
+Strategic & Forward-Looking
+  - Focus on long-term value, not just compliance
+  - Proactive rather than reactive
+  - Solution-oriented language
+
+Trustworthy & Transparent
+  - Clear, honest communication
+  - No jargon without explanation
+  - Direct about capabilities and value
+
+WRITING STYLE
+-------------
+Headlines:
+  - Action-oriented and benefit-focused
+  - Examples: "Anchor-backed investing. VNR-led tax strategy."
+  - "Optimize Your Tax Burden. Maximize Your Returns."
+  - "Build a Legacy. Protect Your Future."
+
+Body Copy:
+  - Clear, concise sentences
+  - Avoid unnecessary jargon
+  - Use active voice
+  - Break complex concepts into digestible points
+
+Service Descriptions:
+  - Lead with client benefit
+  - Follow with technical capability
+  - End with reassurance or next step
+
+Call-to-Actions:
+  - Direct and action-oriented
+  - Examples: "Schedule a Strategic Consultation"
+  - "Explore Anchor Wealth Division"
+  - "Book a Will & Risk Review"
+
+KEY MESSAGING THEMES
+--------------------
+1. Strategic Partnership (not just service provider)
+2. Long-term Legacy Building (beyond immediate needs)
+3. Nationwide Service (while head office in Centurion)
+4. Tax Efficiency & Wealth Protection
+5. Expert Guidance with Personal Touch
+
+================================================================================
+8. ICONOGRAPHY
+================================================================================
+
+ICON LIBRARY
+------------
+Primary: Lucide React Icons
+  - Style: Clean, minimal, modern line icons
+  - Consistent stroke width (2px default)
+  - Rounded corners for friendly feel
+
+Common Icons:
+  - ShieldCheck: Trust, security, accreditation
+  - Users: Team, partnership
+  - TrendingUp: Growth, success
+  - Anchor: Anchor Capital partnership
+  - BookOpen: Resources, knowledge
+  - Phone, Mail: Contact methods
+  - ArrowRight, ChevronRight: Navigation, CTAs
+
+ICON USAGE
+----------
+Size Guidelines:
+  - Small: h-4 w-4 to h-5 w-5 (16-20px) - inline text
+  - Medium: h-6 w-6 (24px) - buttons, cards
+  - Large: h-8 w-8 to h-10 w-10 (32-40px) - feature icons
+
+Color Guidelines:
+  - On dark backgrounds: text-white or text-text-on-dark
+  - On light backgrounds: text-brand-blue or text-slate-600
+  - Hover states: Change to brand-blue or brand-teal-light
+
+================================================================================
+9. IMAGERY
+================================================================================
+
+PHOTOGRAPHY STYLE
+-----------------
+Professional Business Photography:
+  - Clean, well-lit environments
+  - Professional attire
+  - Modern office settings
+  - Strategic business meetings
+
+Hero Images:
+  - High-quality, professional stock or custom photography
+  - Business-focused, not generic
+  - Overlay with gradient for text readability
+  - Full-width, responsive
+
+IMAGE TREATMENT
+---------------
+Border Radius:
+  - Cards: rounded-lg or rounded-2xl
+  - Avatars: rounded-full
+  - Hero: No border radius (full bleed)
+
+Aspect Ratios:
+  - Hero: Full viewport width, variable height
+  - Cards: 16:9 or 4:3
+  - Avatars: 1:1 (square)
+
+Optimization:
+  - Next.js Image component for automatic optimization
+  - Lazy loading for below-fold images
+  - Responsive sizes with sizes attribute
+
+================================================================================
+10. RESPONSIVE DESIGN
+================================================================================
+
+BREAKPOINTS
+-----------
+Mobile First Approach:
+  - Base: < 640px (mobile)
+  - sm: 640px+ (large mobile)
+  - md: 768px+ (tablet)
+  - lg: 1024px+ (desktop)
+  - xl: 1280px+ (large desktop)
+
+RESPONSIVE PATTERNS
+-------------------
+Typography:
+  - Headlines scale up on larger screens
+  - Body text remains consistent
+  - Line length optimized for readability
+
+Layout:
+  - Single column on mobile
+  - Multi-column grids on desktop
+  - Navigation collapses to hamburger menu on mobile
+
+Spacing:
+  - Tighter spacing on mobile (py-16)
+  - Generous spacing on desktop (py-28)
+
+================================================================================
+11. ACCESSIBILITY
+================================================================================
+
+COLOR CONTRAST
+--------------
+- Text on light backgrounds: Meets WCAG AA standards
+- Text on dark backgrounds: High contrast (slate-200 on slate-900)
+- Interactive elements: Clear focus states
+
+FOCUS STATES
+------------
+- Focus rings: focus:ring-2 focus:ring-brand-blue-light
+- Focus offset: focus:ring-offset-2
+- Visible on keyboard navigation
+
+SEMANTIC HTML
+-------------
+- Proper heading hierarchy (h1 → h2 → h3)
+- ARIA labels for icons and interactive elements
+- Alt text for all images
+- Semantic navigation elements
+
+================================================================================
+12. PERFORMANCE
+================================================================================
+
+OPTIMIZATION TECHNIQUES
+-----------------------
+- Next.js Image optimization
+- Code splitting with dynamic imports
+- Lazy loading for below-fold content
+- Static generation where possible
+- Minimal JavaScript for animations (CSS-first)
+
+LOADING STATES
+-------------
+- Skeleton screens for dynamic content
+- Progressive image loading
+- Smooth transitions between states
+
+================================================================================
+13. BRAND ELEMENTS
+================================================================================
+
+LOGO
+----
+Text Logo:
+  - "VNR" in serif font (Lora), bold, text-2xl
+  - "Professional Accountants" in sans-serif (Inter), text-sm
+  - Separated by vertical divider (border-l)
+  - Color: White on dark backgrounds, dark on light
+
+ACCreditations
+-------------
+- SAIPA (South African Institute of Professional Accountants)
+- Displayed with ShieldCheck icon
+- Mentioned in hero sections and footer
+
+PARTNERSHIPS
+------------
+- Anchor Capital: Prominent partnership section
+- Sage Platinum Partner
+- Xero Certified Advisors
+
+================================================================================
+14. CONTENT STRUCTURE
+================================================================================
+
+PAGE LAYOUT PATTERN
+-------------------
+1. Header (sticky navigation)
+2. Hero Section (full-width, impactful)
+3. Authority Bar / Trust Indicators
+4. Main Content Sections (alternating backgrounds)
+5. Call-to-Action Section (gradient background)
+6. Footer (dark background, comprehensive links)
+
+CONTENT SECTIONS
+----------------
+- Why VNR Section: 3-column feature cards
+- Services Grid: 3-column service cards
+- Team Section: Profile cards with hover effects
+- Insights Section: Featured article + sidebar articles
+- Client Journey: Step-by-step process visualization
+
+================================================================================
+15. DO'S AND DON'TS
+================================================================================
+
+DO:
+- Use serif fonts for all headings
+- Maintain generous spacing between sections
+- Use brand blue for primary actions
+- Include hover states on all interactive elements
+- Ensure text is readable on all backgrounds
+- Use rounded-2xl for cards (premium feel)
+- Include icons to break up text
+- Use gradient backgrounds sparingly (CTAs only)
+
+DON'T:
+- Mix font families incorrectly (serif for body, sans for headings)
+- Use too many colors (stick to brand palette)
+- Overcrowd sections with content
+- Use flat buttons without hover states
+- Place text over images without gradient overlay
+- Use sharp corners on cards (use rounded-2xl)
+- Overuse animations (subtle is better)
+- Compromise readability for style
+
+================================================================================
+END OF STYLE GUIDE
+================================================================================
+
+For questions or updates to this guide, please refer to the design system
+implementation in tailwind.config.ts and component patterns in /components.
+

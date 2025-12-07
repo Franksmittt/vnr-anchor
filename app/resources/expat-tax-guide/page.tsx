@@ -84,9 +84,9 @@ const ExpatTaxGuidePage = () => {
               10 Costly Tax Mistakes Expats & Independent Contractors Make (and how to avoid them)
             </h1>
             <p className="mt-6 text-lg text-text-secondary">
-              This guide was created for South Africans earning abroad or contracting remotely. Whether you’re
-              in Dubai, London, Perth, or still bouncing between Centurion and Cape Town, use the checklist to
-              ensure SARS compliance, protect your cash flow, and eliminate stress.
+              This guide was created for South Africans earning abroad or contracting remotely. Whether you're
+              in Dubai, London, Perth, or anywhere in South Africa, use the checklist to
+              ensure SARS compliance, protect your cash flow, and eliminate stress. While our head office is in Centurion, we serve clients across South Africa.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link

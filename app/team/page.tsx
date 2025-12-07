@@ -11,7 +11,7 @@ import CtaSection from '@/components/CtaSection';
 
 export const metadata = {
   title: 'Our Leadership | VNR Professional Accountants',
-  description: 'Meet the team of seasoned financial and tax experts at VNR. Our leadership is dedicated to providing strategic foresight and meticulous guidance for your wealth in Centurion and across South Africa.',
+  description: 'Meet the team of seasoned financial and tax experts at VNR. Our leadership is dedicated to providing strategic foresight and meticulous guidance for your wealth across South Africa. While our head office is in Centurion, we serve clients nationwide.',
 };
 
 const TeamPage = () => {
