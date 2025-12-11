@@ -16,8 +16,9 @@ export async function generateStaticParams() {
   return insightsData.map((article) => ({ slug: article.slug }));
 }
 
-export async function generateMetadata({ params }: { params: InsightPageParams }): Promise<Metadata> {
-  const article = insightsData.find((a) => a.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<InsightPageParams> }): Promise<Metadata> {
+  const { slug } = await params;
+  const article = insightsData.find((a) => a.slug === slug);
   if (!article) {
     return { title: 'Insight Not Found | VNR', description: 'The requested insight could not be found.' };
   }
@@ -27,8 +28,9 @@ export async function generateMetadata({ params }: { params: InsightPageParams }
   };
 }
 
-const InsightPage = async ({ params }: { params: InsightPageParams }) => { 
-  const article = insightsData.find((a) => a.slug === params.slug);
+const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) => { 
+  const { slug } = await params;
+  const article = insightsData.find((a) => a.slug === slug);
   if (!article) notFound();
 
   const expertBio = teamData.find(m => m.slug === article.author.slug)?.intro || '';

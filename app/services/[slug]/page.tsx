@@ -16,8 +16,9 @@ export async function generateStaticParams() {
   return servicesData.map((service) => ({ slug: service.slug }));
 }
 
-export async function generateMetadata({ params }: { params: ServicePageParams }): Promise<Metadata> {
-  const service = servicesData.find((s) => s.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<ServicePageParams> }): Promise<Metadata> {
+  const { slug } = await params;
+  const service = servicesData.find((s) => s.slug === slug);
   if (!service) {
     return { title: 'Service Not Found | VNR', description: 'The requested service could not be found.' };
   }
@@ -27,8 +28,9 @@ export async function generateMetadata({ params }: { params: ServicePageParams }
   };
 }
 
-const ServicePage = async ({ params }: { params: ServicePageParams }) => { 
-  const service = servicesData.find((s) => s.slug === params.slug);
+const ServicePage = async ({ params }: { params: Promise<ServicePageParams> }) => { 
+  const { slug } = await params;
+  const service = servicesData.find((s) => s.slug === slug);
   if (!service) notFound();
 
   const expertBio = teamData.find(m => m.slug === service.leadExpert.slug)?.intro || '';
