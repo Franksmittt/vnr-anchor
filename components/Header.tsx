@@ -17,7 +17,7 @@ const NavItem = ({ href, Icon, children }: { href: string; Icon: React.ElementTy
       className={`flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors duration-200 ${
         isActive
           ? 'bg-brand-blue-dark text-white shadow-inner'
-          : 'text-text-on-dark/80 hover:bg-white/10 hover:text-white'
+          : 'text-text-on-dark/80 hover:bg-brand-teal/20 hover:text-white'
       }`}
       aria-current={isActive ? 'page' : undefined}
     >
@@ -43,13 +43,14 @@ const Header = () => {
     <header className="bg-surface-dark text-text-on-dark shadow-lg sticky top-0 z-50">
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
         <Link href="/" aria-label="VNR Professional Accountants Home Page">
-          <div className="flex items-center">
-            <span className="font-serif text-2xl font-bold text-white">VNR</span>
-            <div className="ml-3 h-8 border-l border-slate-600"></div>
-            <span className="ml-3 text-sm font-medium tracking-wide text-text-on-dark/80">
-              Professional Accountants
-            </span>
-          </div>
+          <Image 
+            src="/images/logos/vnrlogo.jpg" 
+            alt="VNR Professional Accountants Logo" 
+            width={150} 
+            height={50} 
+            className="h-12 w-auto object-contain" 
+            priority
+          />
         </Link>
 
         <nav className="hidden items-center space-x-2 lg:flex" role="navigation" aria-label="Main Navigation">
@@ -102,7 +103,7 @@ const Header = () => {
                   className="flex items-center gap-3 rounded-lg p-3 text-lg font-medium hover:bg-slate-200"
                   aria-current={usePathname() === link.href ? 'page' : undefined}
                 >
-                  <link.Icon className="h-6 w-6 text-brand-blue" />
+                  <link.Icon className="h-6 w-6 text-brand-teal" />
                   {link.label}
                 </Link>
               ))}

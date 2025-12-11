@@ -82,13 +82,13 @@ export const servicesData: Service[] = [
     subtitle: 'Architecting the optimal legal and financial structure for your enterprise to support growth, manage risk, and ensure CIPC compliance.',
     imageUrl: '/images/services/business-structuring-hero.jpg',
     icon: 'Building2',
-    details: ['New Company Registrations (Pty, NPC)', 'CIPC Amendments & Annual Returns', 'Trust Formation & Administration', 'Complex Enterprise Valuations'],
+    details: ['New Company Registrations (Pty, NPC)', 'Trust Formation & Administration'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">The structure of your business is its foundation. A robust, strategically-chosen structure facilitates growth, protects your personal assets from business risks, ensures tax efficiency, and maintains long-term viability. Our team provides expert guidance on architecting and maintaining the optimal legal framework for your vision. We are your partners in <strong>company registration and secretarial services across South Africa</strong>. While our head office is in Centurion, we serve clients nationwide.</p>
+      <p class="text-lg text-slate-600 mb-6">The structure of your business is its foundation. A robust, strategically-chosen structure facilitates growth, protects your personal assets from business risks, ensures tax efficiency, and maintains long-term viability. Our team provides expert guidance on architecting and maintaining the optimal legal framework for your vision. We are your partners in <strong>company registration and business structuring across South Africa</strong>. While our head office is in Centurion, we serve clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our Core Business Structuring Services</h2>
-      <p class="mb-8 text-slate-600">From the initial registration to ongoing compliance and strategic valuations, we provide a complete lifecycle of structuring services to support your entrepreneurial journey.</p>
+      <p class="mb-8 text-slate-600">From the initial registration to trust formation, we provide comprehensive structuring services to support your entrepreneurial journey.</p>
       
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">New Company & NPO Registrations</h3>
       <p class="mb-4 text-slate-600">Choosing the correct entity is the first critical step. We guide you through the complexities of each option, managing the entire CIPC registration process to ensure your business is established correctly from day one.</p>
@@ -97,15 +97,6 @@ export const servicesData: Service[] = [
           <li><strong>Non-Profit Company (NPC) Registration:</strong> Expert assistance in registering NPCs for public benefit, a critical step before applying for PBO status with SARS.</li>
           <li>Guidance on drafting your Memorandum of Incorporation (MOI) to align with your long-term goals.</li>
           <li>Includes Name Reservation, Director Registration, and Issuing of Share Certificates.</li>
-      </ul>
-
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Ongoing CIPC Compliance & Secretarial Services</h3>
-      <p class="mb-4 text-slate-600">Maintaining good standing with the Companies and Intellectual Property Commission (CIPC) is non-negotiable. Failure to comply can lead to penalties or even deregistration. We provide comprehensive company secretarial services to manage these critical administrative duties, freeing you to focus on your business.</p>
-      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
-          <li>Timely submission of <strong>CIPC annual returns</strong> to avoid penalties.</li>
-          <li>Processing director and member amendments.</li>
-          <li>Registered office address changes and maintenance of statutory records.</li>
-          <li>Guidance on corporate governance best practices for SMEs in South Africa.</li>
       </ul>
 
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Trust Formation & Administration</h3>
@@ -130,6 +121,54 @@ export const servicesData: Service[] = [
         { q: 'How long does it take to register a company in South Africa?', a: 'With all documentation correctly submitted, a new company registration with the CIPC typically takes a few business days. We manage the entire process to ensure it is as swift and seamless as possible.' },
         { q: 'What happens if I don\'t file my CIPC annual return?', a: 'Failure to file annual returns can lead to late-filing penalties. If a company fails to file for two or more consecutive years, the CIPC can assume the company is inactive and begin the deregistration process, which can result in its bank accounts being frozen.' },
         { q: 'Why should I consider a trust for my assets?', a: 'A trust is a powerful asset protection tool. It separates your personal assets from your business risks. This means that if your business encounters financial difficulty, the assets held within the trust (like your family home) are generally protected from business creditors.' },
+    ],
+  },
+  {
+    slug: 'secretarial-services',
+    title: 'Secretarial Services',
+    subtitle: 'Comprehensive company secretarial and CIPC compliance services to ensure your business maintains good standing and avoids penalties.',
+    imageUrl: '/images/services/business-structuring-hero.jpg',
+    icon: 'FileText',
+    details: ['CIPC Amendments & Annual Returns', 'Director & Member Changes', 'Registered Office Maintenance', 'Statutory Record Keeping'],
+    leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
+    content: `
+      <p class="text-lg text-slate-600 mb-6">Maintaining good standing with the Companies and Intellectual Property Commission (CIPC) is non-negotiable for any business. Failure to comply can lead to penalties, deregistration, or even frozen bank accounts. Our comprehensive company secretarial services manage these critical administrative duties, freeing you to focus on growing your business. We provide expert <strong>secretarial services across South Africa</strong>. While our head office is in Centurion, we serve clients nationwide.</p>
+      
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our Secretarial Services</h2>
+      <p class="mb-8 text-slate-600">From annual returns to director changes, we handle all your CIPC compliance requirements with precision and timeliness.</p>
+      
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">CIPC Annual Returns & Compliance</h3>
+      <p class="mb-4 text-slate-600">Every company registered in South Africa must file annual returns with the CIPC. Failure to do so can result in late-filing penalties, and if a company fails to file for two or more consecutive years, the CIPC can begin deregistration proceedings. We ensure your returns are filed accurately and on time.</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+          <li>Timely submission of <strong>CIPC annual returns</strong> to avoid penalties and deregistration risks.</li>
+          <li>Preparation and filing of all required CIPC documentation.</li>
+          <li>Monitoring of filing deadlines and proactive reminders.</li>
+          <li>Resolution of any compliance issues or penalties.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Director & Member Amendments</h3>
+      <p class="mb-4 text-slate-600">Changes to your company's directors, members, or shareholders must be properly recorded with the CIPC. We handle all amendments efficiently, ensuring your company records remain accurate and up-to-date.</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+          <li>Processing director appointments and resignations.</li>
+          <li>Member and shareholder changes.</li>
+          <li>Updating company information and registered details.</li>
+          <li>Filing all necessary CIPC forms and documentation.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Registered Office & Statutory Records</h3>
+      <p class="mb-4 text-slate-600">Every company must maintain a registered office address and keep proper statutory records. We help you maintain compliance with all statutory requirements.</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+          <li>Registered office address changes and maintenance.</li>
+          <li>Maintenance of statutory records and registers.</li>
+          <li>Guidance on corporate governance best practices for SMEs in South Africa.</li>
+          <li>Preparation of minutes and resolutions for company meetings.</li>
+      </ul>
+    `,
+    faqs: [
+        { q: 'What happens if I don\'t file my CIPC annual return?', a: 'Failure to file annual returns can lead to late-filing penalties. If a company fails to file for two or more consecutive years, the CIPC can assume the company is inactive and begin the deregistration process, which can result in its bank accounts being frozen.' },
+        { q: 'How often do I need to file annual returns?', a: 'Companies must file annual returns with the CIPC once per year, within the anniversary month of incorporation. We monitor these deadlines and ensure timely filing to avoid penalties.' },
+        { q: 'What information do I need to provide for director changes?', a: 'For director changes, we need the director\'s full name, ID number, residential address, and appointment date. We handle all the necessary CIPC forms and documentation on your behalf.' },
+        { q: 'Can you help if my company has been deregistered?', a: 'Yes, we can assist with the reinstatement process if your company has been deregistered due to non-compliance. This typically involves filing outstanding returns and paying any penalties, followed by an application for reinstatement.' },
     ],
   },
   {
@@ -184,7 +223,7 @@ export const servicesData: Service[] = [
     subtitle: 'Meticulous preparation of financial statements and management accounts for clear, actionable insights and full compliance in South Africa.',
     imageUrl: '/images/services/financial-reporting-hero.jpg',
     icon: 'FileText',
-    details: ['Annual Financial Statements (AFS)', 'Management Statements', 'Independent Reviews', 'Performance Analysis'],
+    details: ['Annual Financial Statements (AFS)', 'Management Statements', 'Independent Reviews'],
     leadExpert: teamData.find(m => m.slug === 'henry-landsberg')!,
     content: `
       <p class="text-lg text-slate-600 mb-6">Accurate financial reporting is the bedrock of strategic business decisions. It is the language that translates your daily operations into a clear narrative of performance, risk, and opportunity. We provide clear, compliant, and insightful reports that allow you to understand performance, secure financing, and plan for the future with confidence. Our services cover every aspect of <strong>financial reporting for SMEs across South Africa</strong>. While our head office is in Centurion, we serve clients nationwide.</p>
@@ -201,7 +240,7 @@ export const servicesData: Service[] = [
           <li>Submission to CIPC along with your annual returns.</li>
       </ul>
 
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Management Accounts & Performance Analysis</h3>
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Management Accounts</h3>
       <p class="mb-4 text-slate-600">While AFS look backward at a completed year, management accounts provide the real-time intelligence needed to steer your business forward. We work with you to develop customized monthly or quarterly reports that go beyond raw numbers, providing actionable insights into your operational performance.</p>
       <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
           <li>Customized dashboards tracking Key Performance Indicators (KPIs).</li>

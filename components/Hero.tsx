@@ -98,14 +98,14 @@ const Hero = () => {
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href={slide.ctaHref}
-                className="inline-block rounded-md bg-brand-blue px-8 py-3 text-center font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-brand-blue-light focus:outline-none focus:ring-2 focus:ring-brand-blue-light focus:ring-offset-2 focus:ring-offset-surface-dark"
+                className="inline-block rounded-md bg-brand-blue px-8 py-3 text-center font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-brand-blue-light focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-surface-dark"
               >
                 {slide.ctaText}
               </Link>
             </div>
 
             <div className="mt-8 flex items-center gap-2 text-sm text-text-on-dark/80">
-              <ShieldCheck size={16} />
+              <ShieldCheck size={16} className="text-brand-teal" />
               <span>{slide.accreditation}</span>
             </div>
           </div>
@@ -120,8 +120,8 @@ const Hero = () => {
             onClick={() => goToSlide(index)}
             className={`h-2 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? 'w-8 bg-white'
-                : 'w-2 bg-white/40 hover:bg-white/60'
+                ? 'w-8 bg-brand-teal'
+                : 'w-2 bg-white/40 hover:bg-brand-teal/60'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

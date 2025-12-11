@@ -13,7 +13,7 @@ const InsightsSection = () => {
     <section className="bg-white py-20 sm:py-28"> {/* EDITED PADDING */}
       <div className="container mx-auto px-6">
         <div className="text-center">
-          <h2 className="text-base font-semibold text-blue-600 tracking-wider uppercase">Latest Insights from VNR Professional Accountants</h2>
+          <h2 className="text-base font-semibold text-brand-blue tracking-wider uppercase">Latest Insights from VNR Professional Accountants</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Navigating the Financial Landscape with Expert Perspectives
           </p>
@@ -29,7 +29,7 @@ const InsightsSection = () => {
               href={`/insights/${featuredArticle.slug}`} 
               className="group block lg:col-span-2"
             >
-              <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-blue-50 h-full">
+              <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-brand-blue/5 h-full">
                 <div className="relative w-full h-72 md:h-96">
                   <Image
                     src={featuredArticle.imageUrl}
@@ -41,8 +41,8 @@ const InsightsSection = () => {
                 </div>
                 <div className="flex flex-1 flex-col justify-between p-6">
                   <div>
-                    <p className="text-sm font-medium text-blue-700">{featuredArticle.category}</p>
-                    <p className="mt-2 text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-blue-700">
+                    <p className="text-sm font-medium text-brand-blue">{featuredArticle.category}</p>
+                    <p className="mt-2 text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-brand-blue">
                       {featuredArticle.title}
                     </p>
                     <p className="mt-3 text-base text-gray-600 line-clamp-3">
@@ -89,8 +89,8 @@ const InsightsSection = () => {
                     />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs font-medium text-blue-600">{insight.category}</p>
-                    <p className="mt-1 text-base font-semibold text-gray-900 group-hover:text-blue-700 line-clamp-2">
+                    <p className="text-xs font-medium text-brand-blue">{insight.category}</p>
+                    <p className="mt-1 text-base font-semibold text-gray-900 group-hover:text-brand-blue line-clamp-2">
                       {insight.title}
                     </p>
                     <div className="mt-2 flex items-center text-xs text-gray-500">
@@ -112,7 +112,7 @@ const InsightsSection = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <Link href="/insights" className="text-base font-semibold text-blue-600 hover:text-blue-800">
+          <Link href="/insights" className="text-base font-semibold text-brand-blue hover:text-brand-blue-dark">
             Explore All Tax and Business Insights <span aria-hidden="true">→</span>
           </Link>
         </div>

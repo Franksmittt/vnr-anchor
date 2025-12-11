@@ -10,13 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         'brand-blue': {
-          DEFAULT: '#1d4ed8', // A strong base blue (blue-700)
-          light: '#3b82f6',   // A lighter accent (blue-500)
-          dark: '#1e3a8a',    // A deeper, more corporate blue (blue-900)
+          DEFAULT: '#234694', // Royal Blue - Primary brand color
+          light: '#3d5ba8',   // Lighter Royal Blue accent
+          dark: '#1a3569',    // Darker Royal Blue for emphasis
         },
         'brand-teal': {
-          DEFAULT: '#0d9488', // The base teal (teal-600)
-          light: '#2dd4bf',   // A brighter accent (teal-400)
+          DEFAULT: '#92C741', // Lime Green - Secondary brand color (checkmark accent)
+          light: '#a8d45f',   // Lighter Lime Green accent
+          dark: '#7ab033',    // Darker Lime Green for emphasis
         },
         'surface': {
           light: '#f8fafc',  // A soft off-white (slate-50) for content sections

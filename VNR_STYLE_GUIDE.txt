@@ -25,14 +25,19 @@ business structuring services.
 
 PRIMARY BRAND COLORS
 --------------------
-Brand Blue (Primary):
-  - Base: #1d4ed8 (blue-700) - Primary CTAs, icons, accents
-  - Light: #3b82f6 (blue-500) - Hover states, secondary actions
-  - Dark: #1e3a8a (blue-900) - Active states, emphasis
+Royal Blue (Primary):
+  - Base: #234694 - Primary CTAs, icons, accents, main brand color
+  - Light: #3d5ba8 - Hover states, secondary actions
+  - Dark: #1a3569 - Active states, emphasis, gradients
+  - RGB: 35, 70, 148
+  - Usage: Used for letters "N", "R", and left stroke of "V" in logo
 
-Brand Teal (Secondary):
-  - Base: #0d9488 (teal-600) - Supporting accents, highlights
-  - Light: #2dd4bf (teal-400) - Subtle highlights, decorative elements
+Lime Green (Secondary):
+  - Base: #92C741 - Supporting accents, highlights, checkmark accent
+  - Light: #a8d45f - Subtle highlights, decorative elements
+  - Dark: #7ab033 - Emphasis, gradients
+  - RGB: 146, 199, 65
+  - Usage: Used for the checkmark accent that forms the right side of "V" in logo
 
 SURFACE COLORS
 --------------
@@ -60,8 +65,8 @@ Text On Dark: #e2e8f0 (slate-200)
 
 GRADIENT USAGE
 --------------
-CTA Sections: from-blue-800 to-teal-700
-  - Creates dynamic, engaging call-to-action backgrounds
+CTA Sections: from-brand-blue-dark to-brand-teal-dark
+  - Creates dynamic, engaging call-to-action backgrounds using Royal Blue and Lime Green
   - Used sparingly for maximum impact
 
 Hero Overlays: from-slate-900/90 via-slate-900/70 to-slate-800/40
@@ -167,7 +172,7 @@ Standard Grid Patterns:
 BUTTONS
 -------
 Primary CTA Button:
-  - Background: bg-brand-blue (#1d4ed8)
+  - Background: bg-brand-blue (#234694 - Royal Blue)
   - Text: text-white
   - Padding: px-8 py-3 (horizontal: 2rem, vertical: 0.75rem)
   - Border radius: rounded-md or rounded-full

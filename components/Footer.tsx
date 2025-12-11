@@ -26,7 +26,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           
           <div>
-            <h3 className="font-serif text-2xl font-bold text-white">VNR</h3>
+            <h3 className="font-serif text-2xl font-bold text-white">VNR <span className="text-brand-teal">Professional Accountants</span></h3>
             <p className="mt-4 text-sm text-text-on-dark/70">
               Your premier partner in strategic tax advisory, business structuring, and intergenerational wealth planning for South Africa's leading entrepreneurs. While our head office is in Centurion, we serve clients across South Africa.
             </p>
@@ -37,6 +37,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-3">
               <FooterLink href="/services/tax-advisory">Tax Advisory</FooterLink>
               <FooterLink href="/services/business-structuring">Business Structuring</FooterLink>
+              <FooterLink href="/services/secretarial-services">Secretarial Services</FooterLink>
               <FooterLink href="/services/legacy-planning">Estate & Legacy Planning</FooterLink>
               <FooterLink href="/services/financial-reporting">Financial Reporting</FooterLink>
               <FooterLink href="/services">View All Services</FooterLink>

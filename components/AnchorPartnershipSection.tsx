@@ -53,7 +53,7 @@ const AnchorPartnershipSection = () => {
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-slate-200 p-6 shadow-sm">
-              <ShieldCheck className="h-10 w-10 text-brand-blue" />
+              <ShieldCheck className="h-10 w-10 text-brand-teal" />
               <h3 className="mt-4 text-xl font-semibold text-text-primary">Tax-Efficient Structuring</h3>
               <p className="mt-3 text-sm text-text-secondary">
                 Every portfolio is architected with tools like Retirement Annuities, Tax-Free Savings
@@ -69,7 +69,7 @@ const AnchorPartnershipSection = () => {
               </p>
             </div>
             <div className="rounded-2xl border border-slate-200 p-6 shadow-sm">
-              <FileSpreadsheet className="h-10 w-10 text-brand-blue" />
+              <FileSpreadsheet className="h-10 w-10 text-brand-teal" />
               <h3 className="mt-4 text-xl font-semibold text-text-primary">Research-Led Allocations</h3>
               <p className="mt-3 text-sm text-text-secondary">
                 Leverage resources like The Navigator, Coffee Table Economics, and Anchor’s market

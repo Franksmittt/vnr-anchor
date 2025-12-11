@@ -54,7 +54,7 @@ const ServicesPage = () => {
                 className="group relative flex flex-col rounded-2xl bg-surface-dark p-8 text-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-brand-blue">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-brand-teal group-hover:bg-brand-teal-dark transition-colors">
                     {iconMap[service.icon]}
                   </div>
                   <h3 className="font-serif text-2xl font-bold">{service.title}</h3>

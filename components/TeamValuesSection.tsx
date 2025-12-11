@@ -32,8 +32,8 @@ const TeamValuesSection = () => {
 
           {/* Card 2: Strategic Partnership */}
           <AnimateOnScroll delay="200ms">
-            <div className="group relative text-center p-8 bg-white rounded-2xl shadow-sm border border-slate-200 transition-all duration-300 hover:shadow-2xl hover:border-brand-blue/30 hover:-translate-y-2 h-full">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-blue shadow-lg group-hover:bg-brand-blue-dark transition-colors">
+            <div className="group relative text-center p-8 bg-white rounded-2xl shadow-sm border border-slate-200 transition-all duration-300 hover:shadow-2xl hover:border-brand-teal/30 hover:-translate-y-2 h-full">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-teal shadow-lg group-hover:bg-brand-teal-dark transition-colors">
                 <HeartHandshake className="h-8 w-8 text-white" />
               </div>
               <h3 className="mt-8 font-serif text-xl font-semibold text-text-primary">Strategic Partnership</h3>

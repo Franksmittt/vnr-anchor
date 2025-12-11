@@ -29,7 +29,7 @@ const ClientJourneySection = () => {
           <div className="relative flex justify-between items-start">
             <div className="absolute top-4 left-0 w-full h-0.5 bg-slate-700" />
             <div
-              className="absolute top-4 left-0 h-0.5 bg-brand-blue-light transition-all duration-500 ease-out"
+              className="absolute top-4 left-0 h-0.5 bg-gradient-to-r from-brand-blue-light to-brand-teal transition-all duration-500 ease-out"
               style={{ width: `${(activeStage / (journeyData.length - 1)) * 100}%` }}
             />
             {journeyData.map((item, index) => (
@@ -38,7 +38,7 @@ const ClientJourneySection = () => {
                   onClick={() => setActiveStage(index)}
                   aria-label={`View stage: ${item.stage}`}
                   className={`flex items-center justify-center w-8 h-8 rounded-full border-2 transition-all duration-300 ${
-                    activeStage >= index ? 'bg-brand-blue-light border-brand-blue' : 'bg-slate-800 border-slate-600 hover:border-brand-blue-light'
+                    activeStage >= index ? 'bg-brand-teal border-brand-teal-dark' : 'bg-slate-800 border-slate-600 hover:border-brand-teal'
                   }`}
                 >
                   <div className={`w-3 h-3 rounded-full transition-colors ${activeStage >= index ? 'bg-white' : 'bg-slate-500'}`} />
