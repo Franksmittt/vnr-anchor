@@ -20,6 +20,54 @@ export interface Service {
 
 export const servicesData: Service[] = [
   {
+    slug: 'secretarial-services',
+    title: 'Secretarial Services',
+    subtitle: 'Comprehensive company secretarial and CIPC compliance services to ensure your business maintains good standing and avoids penalties.',
+    imageUrl: '/images/services/business-structuring-hero.jpg',
+    icon: 'FileText',
+    details: ['CIPC Amendments & Annual Returns', 'Director & Member Changes', 'Registered Office Maintenance', 'Statutory Record Keeping'],
+    leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
+    content: `
+      <p class="text-lg text-slate-600 mb-6">Maintaining good standing with the Companies and Intellectual Property Commission (CIPC) is non-negotiable for any business. Failure to comply can lead to penalties, deregistration, or even frozen bank accounts. Our comprehensive company secretarial services manage these critical administrative duties, freeing you to focus on growing your business. We provide expert <strong>secretarial services across South Africa</strong>. While our head office is in Centurion, we serve clients nationwide.</p>
+      
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our Secretarial Services</h2>
+      <p class="mb-8 text-slate-600">From annual returns to director changes, we handle all your CIPC compliance requirements with precision and timeliness.</p>
+      
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">CIPC Annual Returns & Compliance</h3>
+      <p class="mb-4 text-slate-600">Every company registered in South Africa must file annual returns with the CIPC. Failure to do so can result in late-filing penalties, and if a company fails to file for two or more consecutive years, the CIPC can begin deregistration proceedings. We ensure your returns are filed accurately and on time.</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+          <li>Timely submission of <strong>CIPC annual returns</strong> to avoid penalties and deregistration risks.</li>
+          <li>Preparation and filing of all required CIPC documentation.</li>
+          <li>Monitoring of filing deadlines and proactive reminders.</li>
+          <li>Resolution of any compliance issues or penalties.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Director & Member Amendments</h3>
+      <p class="mb-4 text-slate-600">Changes to your company's directors, members, or shareholders must be properly recorded with the CIPC. We handle all amendments efficiently, ensuring your company records remain accurate and up-to-date.</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+          <li>Processing director appointments and resignations.</li>
+          <li>Member and shareholder changes.</li>
+          <li>Updating company information and registered details.</li>
+          <li>Filing all necessary CIPC forms and documentation.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Registered Office & Statutory Records</h3>
+      <p class="mb-4 text-slate-600">Every company must maintain a registered office address and keep proper statutory records. We help you maintain compliance with all statutory requirements.</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+          <li>Registered office address changes and maintenance.</li>
+          <li>Maintenance of statutory records and registers.</li>
+          <li>Guidance on corporate governance best practices for SMEs in South Africa.</li>
+          <li>Preparation of minutes and resolutions for company meetings.</li>
+      </ul>
+    `,
+    faqs: [
+        { q: 'What happens if I don\'t file my CIPC annual return?', a: 'Failure to file annual returns can lead to late-filing penalties. If a company fails to file for two or more consecutive years, the CIPC can assume the company is inactive and begin the deregistration process, which can result in its bank accounts being frozen.' },
+        { q: 'How often do I need to file annual returns?', a: 'Companies must file annual returns with the CIPC once per year, within the anniversary month of incorporation. We monitor these deadlines and ensure timely filing to avoid penalties.' },
+        { q: 'What information do I need to provide for director changes?', a: 'For director changes, we need the director\'s full name, ID number, residential address, and appointment date. We handle all the necessary CIPC forms and documentation on your behalf.' },
+        { q: 'Can you help if my company has been deregistered?', a: 'Yes, we can assist with the reinstatement process if your company has been deregistered due to non-compliance. This typically involves filing outstanding returns and paying any penalties, followed by an application for reinstatement.' },
+    ],
+  },
+  {
     slug: 'tax-advisory',
     title: 'Tax Advisory & Compliance',
     subtitle: 'Expert tax planning and SARS compliance services across South Africa to minimize your tax burden and ensure financial peace of mind.',
@@ -121,54 +169,6 @@ export const servicesData: Service[] = [
         { q: 'How long does it take to register a company in South Africa?', a: 'With all documentation correctly submitted, a new company registration with the CIPC typically takes a few business days. We manage the entire process to ensure it is as swift and seamless as possible.' },
         { q: 'What happens if I don\'t file my CIPC annual return?', a: 'Failure to file annual returns can lead to late-filing penalties. If a company fails to file for two or more consecutive years, the CIPC can assume the company is inactive and begin the deregistration process, which can result in its bank accounts being frozen.' },
         { q: 'Why should I consider a trust for my assets?', a: 'A trust is a powerful asset protection tool. It separates your personal assets from your business risks. This means that if your business encounters financial difficulty, the assets held within the trust (like your family home) are generally protected from business creditors.' },
-    ],
-  },
-  {
-    slug: 'secretarial-services',
-    title: 'Secretarial Services',
-    subtitle: 'Comprehensive company secretarial and CIPC compliance services to ensure your business maintains good standing and avoids penalties.',
-    imageUrl: '/images/services/business-structuring-hero.jpg',
-    icon: 'FileText',
-    details: ['CIPC Amendments & Annual Returns', 'Director & Member Changes', 'Registered Office Maintenance', 'Statutory Record Keeping'],
-    leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
-    content: `
-      <p class="text-lg text-slate-600 mb-6">Maintaining good standing with the Companies and Intellectual Property Commission (CIPC) is non-negotiable for any business. Failure to comply can lead to penalties, deregistration, or even frozen bank accounts. Our comprehensive company secretarial services manage these critical administrative duties, freeing you to focus on growing your business. We provide expert <strong>secretarial services across South Africa</strong>. While our head office is in Centurion, we serve clients nationwide.</p>
-      
-      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our Secretarial Services</h2>
-      <p class="mb-8 text-slate-600">From annual returns to director changes, we handle all your CIPC compliance requirements with precision and timeliness.</p>
-      
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">CIPC Annual Returns & Compliance</h3>
-      <p class="mb-4 text-slate-600">Every company registered in South Africa must file annual returns with the CIPC. Failure to do so can result in late-filing penalties, and if a company fails to file for two or more consecutive years, the CIPC can begin deregistration proceedings. We ensure your returns are filed accurately and on time.</p>
-      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
-          <li>Timely submission of <strong>CIPC annual returns</strong> to avoid penalties and deregistration risks.</li>
-          <li>Preparation and filing of all required CIPC documentation.</li>
-          <li>Monitoring of filing deadlines and proactive reminders.</li>
-          <li>Resolution of any compliance issues or penalties.</li>
-      </ul>
-
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Director & Member Amendments</h3>
-      <p class="mb-4 text-slate-600">Changes to your company's directors, members, or shareholders must be properly recorded with the CIPC. We handle all amendments efficiently, ensuring your company records remain accurate and up-to-date.</p>
-      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
-          <li>Processing director appointments and resignations.</li>
-          <li>Member and shareholder changes.</li>
-          <li>Updating company information and registered details.</li>
-          <li>Filing all necessary CIPC forms and documentation.</li>
-      </ul>
-
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Registered Office & Statutory Records</h3>
-      <p class="mb-4 text-slate-600">Every company must maintain a registered office address and keep proper statutory records. We help you maintain compliance with all statutory requirements.</p>
-      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
-          <li>Registered office address changes and maintenance.</li>
-          <li>Maintenance of statutory records and registers.</li>
-          <li>Guidance on corporate governance best practices for SMEs in South Africa.</li>
-          <li>Preparation of minutes and resolutions for company meetings.</li>
-      </ul>
-    `,
-    faqs: [
-        { q: 'What happens if I don\'t file my CIPC annual return?', a: 'Failure to file annual returns can lead to late-filing penalties. If a company fails to file for two or more consecutive years, the CIPC can assume the company is inactive and begin the deregistration process, which can result in its bank accounts being frozen.' },
-        { q: 'How often do I need to file annual returns?', a: 'Companies must file annual returns with the CIPC once per year, within the anniversary month of incorporation. We monitor these deadlines and ensure timely filing to avoid penalties.' },
-        { q: 'What information do I need to provide for director changes?', a: 'For director changes, we need the director\'s full name, ID number, residential address, and appointment date. We handle all the necessary CIPC forms and documentation on your behalf.' },
-        { q: 'Can you help if my company has been deregistered?', a: 'Yes, we can assist with the reinstatement process if your company has been deregistered due to non-compliance. This typically involves filing outstanding returns and paying any penalties, followed by an application for reinstatement.' },
     ],
   },
   {
