@@ -1,97 +1,270 @@
-import Link from 'next/link';
-import { servicesData } from '@/data/services-data';
-import { Check, ArrowRight, Scale, Building2, GitBranchPlus, FileText, UserCheck, Cloud, Gavel } from 'lucide-react';
-import React from 'react';
+'use client';
+
+import React, { useState, useMemo } from 'react';
+import { pricingData } from '@/data/pricing-data';
+import { 
+  FileText, Briefcase, BarChart3, Users, ScrollText, CheckSquare, 
+  TrendingUp, Landmark, Network, Clock, Monitor, Car, Search 
+} from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import ClientJourneySection from '@/components/ClientJourneySection';
-import FaqAccordion from '@/components/FaqAccordion';
-import CtaSection from '@/components/CtaSection';
-import { servicesFaqs } from '@/data/services-faq-data';
 
-const iconMap: { [key: string]: React.ReactElement } = {
-  Scale: <Scale className="h-8 w-8 text-white" />,
-  Building2: <Building2 className="h-8 w-8 text-white" />,
-  GitBranchPlus: <GitBranchPlus className="h-8 w-8 text-white" />,
-  FileText: <FileText className="h-8 w-8 text-white" />,
-  UserCheck: <UserCheck className="h-8 w-8 text-white" />,
-  Cloud: <Cloud className="h-8 w-8 text-white" />,
-  Gavel: <Gavel className="h-8 w-8 text-white" />,
+const categoryIcons: { [key: string]: React.ElementType } = {
+  'Tax Advisory & Compliance': FileText,
+  'Persons earning Business Income': Briefcase,
+  'Financial / Statutory Reporting': BarChart3,
+  'Payroll Administration': Users,
+  'Registrations and Secretarial Services': ScrollText,
+  'Confirmations': CheckSquare,
+  'Business Valuations': TrendingUp,
+  'Estate and Legacy Planning': Landmark,
+  'Business Structuring': Network,
+  'Hourly Tariffs': Clock,
+  'Software Subscription Fees': Monitor,
+  'Disbursements': Car,
 };
 
-export const metadata = {
-  title: 'Our Services | VNR Professional Accountants',
-  description: 'Explore the comprehensive suite of services offered by VNR across South Africa, including expert tax advisory, business structuring, legacy planning, and financial reporting.',
-};
+function formatPrice(priceIncl: string | number, priceExcl: string | number) {
+  // Handle "FREE"
+  if (typeof priceExcl === 'string' && priceExcl.toUpperCase().includes('FREE')) {
+    return (
+      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-teal/20 text-brand-teal-dark border border-brand-teal/30">
+        FREE
+      </span>
+    );
+  }
+  
+  // Handle POR
+  if (!priceIncl || priceIncl === '' || priceExcl === 'POR' || priceExcl === '') {
+    return (
+      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand-blue/10 text-brand-blue-dark border border-brand-blue/20 cursor-pointer hover:bg-brand-blue/20 transition-colors">
+        Request Quote
+      </span>
+    );
+  }
+
+  // Handle percentage
+  if (typeof priceExcl === 'string' && priceExcl.includes('%')) {
+    return (
+      <div className="flex flex-col items-end">
+        <span className="text-lg font-bold text-text-primary">{priceExcl}</span>
+        <span className="text-xs text-text-secondary font-medium">of Gross Assets</span>
+      </div>
+    );
+  }
+
+  // Numeric Price
+  const inclVal = typeof priceIncl === 'number' ? priceIncl : parseFloat(String(priceIncl));
+  const exclVal = typeof priceExcl === 'number' ? priceExcl : parseFloat(String(priceExcl));
+  
+  if (isNaN(inclVal) || isNaN(exclVal)) {
+    return <span className="text-sm text-text-secondary">Contact for info</span>;
+  }
+
+  const formatter = new Intl.NumberFormat('en-ZA', { style: 'currency', currency: 'ZAR' });
+  
+  return (
+    <div className="flex flex-col items-end">
+      <span className="text-lg font-bold text-text-primary">{formatter.format(inclVal)}</span>
+      <span className="text-xs text-text-secondary font-medium">excl. {formatter.format(exclVal)}</span>
+    </div>
+  );
+}
 
 const ServicesPage = () => {
-  const breadcrumbItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Our Services', href: '/services' },
-  ];
+  const [currentCategory, setCurrentCategory] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Get unique categories
+  const categories = useMemo(() => {
+    return Array.from(new Set(pricingData.map(s => s.category))).sort();
+  }, []);
+
+  // Set first category as default
+  React.useEffect(() => {
+    if (categories.length > 0 && !currentCategory) {
+      setCurrentCategory(categories[0]);
+    }
+  }, [categories, currentCategory]);
+
+  // Filter services
+  const filteredServices = useMemo(() => {
+    let filtered = pricingData;
+    
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      filtered = pricingData.filter(s => 
+        (s.description && s.description.toLowerCase().includes(q)) ||
+        (s.code && s.code.toLowerCase().includes(q)) ||
+        (s.category && s.category.toLowerCase().includes(q))
+      );
+    } else if (currentCategory) {
+      filtered = pricingData.filter(s => s.category === currentCategory);
+    }
+    
+    return filtered;
+  }, [searchQuery, currentCategory]);
+
+  const handleCategoryClick = (cat: string) => {
+    setCurrentCategory(cat);
+    setSearchQuery('');
+  };
+
   return (
-    <div className="bg-white">
+    <div className="bg-surface-light min-h-screen">
       {/* Hero Section */}
-      <section className="bg-surface-light py-20 md:py-28 border-b border-slate-200">
-        <div className="container mx-auto px-6 text-center">
-          <Breadcrumbs items={breadcrumbItems} className="flex justify-center text-slate-500" />
-          <h1 className="mt-4 font-serif text-4xl font-bold tracking-tight text-text-primary sm:text-5xl lg:text-6xl">
-            Our Suite of Services
-          </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-text-secondary">
-            Integrated solutions designed to protect your assets, minimize tax, and facilitate sustainable growth. We provide the clarity and strategic guidance necessary for entrepreneurs across South Africa to navigate their financial journey with confidence. While our head office is located in Centurion, we serve clients nationwide.
-          </p>
-        </div>
-      </section>
-
-      {/* Services Grid Section */}
-      <section className="py-20 md:py-28">
+      <section className="bg-white py-12 md:py-16 border-b border-slate-200">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {servicesData.map((service) => (
-              <Link
-                key={service.title}
-                href={`/services/${service.slug}`}
-                className="group relative flex flex-col rounded-2xl bg-surface-dark p-8 text-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-brand-teal group-hover:bg-brand-teal-dark transition-colors">
-                    {iconMap[service.icon]}
+          <Breadcrumbs 
+            items={[
+              { name: 'Home', href: '/' },
+              { name: 'Services & Pricing', href: '/services' },
+            ]} 
+            className="flex justify-start text-slate-500 mb-4" 
+          />
+          <div className="flex items-center gap-3 mb-2">
+            <div className="bg-brand-blue p-2 rounded-lg">
+              <FileText className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold">{service.title}</h3>
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight text-text-primary">VNR Services & Pricing</h1>
+              <p className="text-sm text-text-secondary">2026 Price List</p>
                 </div>
-                <p className="mt-6 flex-grow text-text-on-dark/70">{service.subtitle}</p>
-                <ul className="mt-6 space-y-3 pt-6 border-t border-slate-700">
-                  {service.details.map((detail) => (
-                    <li key={detail} className="flex items-start">
-                      <Check className="h-6 w-6 flex-shrink-0 text-brand-teal-light mr-3" />
-                      <span className="text-text-on-dark/90">{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="absolute top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <ArrowRight className="h-6 w-6 text-white" />
                 </div>
-              </Link>
-            ))}
+          <div className="flex flex-wrap gap-4 text-sm text-text-secondary mt-4">
+            <span className="flex items-center gap-1">
+              <Clock className="w-4 h-4" />
+              Effective July 2026
+            </span>
+            <span className="flex items-center gap-1">
+              <CheckSquare className="w-4 h-4" />
+              VAT @ 15%
+            </span>
           </div>
         </div>
       </section>
 
-      <ClientJourneySection />
+      {/* Main Layout */}
+      <div className="container mx-auto px-6 py-8">
+        <div className="flex flex-col lg:flex-row gap-6">
+          
+          {/* Sidebar Navigation */}
+          <aside className="w-full lg:w-72 bg-white border border-slate-200 rounded-xl shadow-sm flex-shrink-0">
+            <div className="p-4 border-b border-slate-100 bg-surface-light rounded-t-xl">
+              <h2 className="text-xs font-semibold text-text-secondary uppercase tracking-wider">Categories</h2>
+            </div>
+            
+            <nav className="p-2 space-y-1 max-h-[calc(100vh-300px)] overflow-y-auto custom-scrollbar">
+              {categories.map(cat => {
+                const isActive = cat === currentCategory && !searchQuery;
+                const Icon = categoryIcons[cat] || FileText;
+                
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => handleCategoryClick(cat)}
+                    className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors duration-150 flex items-center gap-3 rounded-lg ${
+                      isActive
+                        ? 'bg-brand-blue/10 text-brand-blue-dark border-r-4 border-brand-blue'
+                        : 'text-text-secondary hover:bg-surface-light hover:text-text-primary border-r-4 border-transparent'
+                    }`}
+                  >
+                    <Icon className={`w-4 h-4 ${isActive ? 'text-brand-blue' : 'text-text-secondary'}`} />
+                    <span className="truncate">{cat}</span>
+                  </button>
+                );
+              })}
+            </nav>
+          </aside>
 
-      <div className="bg-white">
-        <div className="container mx-auto px-6 py-20 sm:py-28 max-w-4xl"> {/* EDITED PADDING */}
-          <h2 className="font-serif text-3xl font-bold text-text-primary text-center mb-12"> {/* EDITED MARGIN */}
-            Frequently Asked Questions
-          </h2>
-          <div className="mt-6">
-            <FaqAccordion faqs={servicesFaqs} />
+          {/* Content Area */}
+          <main className="flex-1 min-w-0">
+            
+            {/* Search Bar */}
+            <div className="mb-6">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Search className="w-5 h-5 text-text-secondary" />
+                </div>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="block w-full pl-10 pr-3 py-3 border border-slate-300 rounded-xl leading-5 bg-white placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition duration-150 text-sm shadow-sm"
+                  placeholder="Search for services, codes, or keywords (e.g., 'Tax Return', 'IT12')..."
+                />
+              </div>
+            </div>
+
+            {/* Services List */}
+            <div className="space-y-4">
+              {filteredServices.length === 0 ? (
+                <div className="flex flex-col items-center justify-center h-64 text-text-secondary bg-white rounded-xl border border-slate-200">
+                  <FileText className="w-12 h-12 mb-4 text-slate-300" />
+                  <p className="text-lg font-medium text-text-primary">No services found</p>
+                  <p className="text-sm">Try adjusting your search terms</p>
+                </div>
+              ) : (
+                <>
+                  {/* Header */}
+                  <div className="mb-6">
+                    {searchQuery ? (
+                      <div className="text-sm font-medium text-text-secondary uppercase tracking-wider">
+                        Search Results ({filteredServices.length})
+                      </div>
+                    ) : (
+                      <div>
+                        <h2 className="text-2xl font-bold text-text-primary">{currentCategory}</h2>
+                        <p className="text-sm text-text-secondary mt-1">Select a service below to view pricing details.</p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Service Cards */}
+                  <div className="space-y-4">
+                    {filteredServices.map((service, index) => {
+                      const hasCode = service.code && service.code.length > 0;
+                      
+                      return (
+                        <div
+                          key={index}
+                          className="bg-white p-4 md:p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                        >
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-1 flex-wrap">
+                              {hasCode && (
+                                <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-medium bg-surface-light text-text-secondary border border-slate-200">
+                                  {service.code}
+                                </span>
+                              )}
+                              {searchQuery && (
+                                <span className="text-xs text-brand-blue font-medium">{service.category}</span>
+                              )}
+                            </div>
+                            <p className="text-text-primary font-medium text-sm md:text-base leading-snug">
+                              {service.description}
+                            </p>
+                            {service.subcategory && (
+                              <p className="text-xs text-text-secondary mt-1">{service.subcategory}</p>
+                            )}
+                          </div>
+                          <div className="flex-none pt-2 sm:pt-0 border-t sm:border-0 border-slate-100 mt-2 sm:mt-0">
+                            {formatPrice(service.priceIncl, service.priceExcl)}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Disclaimer Footer */}
+            <div className="bg-white border-t border-slate-200 p-4 text-xs text-text-secondary text-center lg:text-left mt-8 rounded-xl">
+              <p>Prices subject to change. Terms & Conditions apply. Accounts payable upon presentation. Interest charged at 1.25% pm on outstanding balances.</p>
           </div>
+          </main>
         </div>
       </div>
-
-      <CtaSection />
-
     </div>
   );
 };
