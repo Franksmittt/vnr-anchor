@@ -34,7 +34,7 @@ export const teamData: TeamMember[] = [
        { title: "Maximizing Your Deductible Expenses", category: "Taxation", url: "/insights/deductible-expenses-guide" },
     ],
     bio: `
-      <p>As a co-founder of VNR, Jannie brings a genuine passion for helping South African businesses thrive. He's not just about numbers—he's about people. Jannie believes that when local businesses succeed, our communities flourish. That's why he takes the time to understand not just your tax situation, but your dreams and goals too.</p>
+      <p>As a co-founder of VNR, Jannie brings a genuine passion for helping South African businesses thrive. He's not just about numbers. He's about people. Jannie believes that when local businesses succeed, our communities flourish. That's why he takes the time to understand not just your tax situation, but your dreams and goals too.</p>
       <p>With years of experience in Centurion, Pretoria, and across Gauteng, Jannie has helped countless entrepreneurs navigate the complexities of tax while keeping their focus on what matters most: growing their business and supporting their families.</p>
       <h3>Areas of Expertise</h3>
       <ul>
@@ -65,10 +65,10 @@ export const teamData: TeamMember[] = [
       { title: "5 Common Mistakes in Estate Planning", category: "Legacy Planning", url: "/insights/estate-planning-mistakes" },
     ],
     bio: `
-      <p>As a co-founder of VNR, Charlie believes that every South African entrepreneur deserves a partner who truly understands their journey. He's seen firsthand how the right business structure and financial strategy can transform a small idea into a thriving enterprise. That's what drives him—helping local businesses build something lasting.</p>
+      <p>As a co-founder of VNR, Charlie believes that every South African entrepreneur deserves a partner who truly understands their journey. He's seen firsthand how the right business structure and financial strategy can transform a small idea into a thriving enterprise. That's what drives him: helping local businesses build something lasting.</p>
       <p>Charlie's approach is personal. He doesn't just look at your numbers; he looks at your vision. Whether you're a startup in Johannesburg or an established business in Cape Town, Charlie takes the time to understand where you want to go and helps you get there.</p>
       <h3>A Foundation of Excellence</h3>
-      <p>With a strong academic foundation from North-West University and years of experience, Charlie combines technical expertise with genuine care for his clients' success. He's not just an accountant—he's a partner in your growth.</p>
+      <p>With a strong academic foundation from North-West University and years of experience, Charlie combines technical expertise with genuine care for his clients' success. He's not just an accountant. He's a partner in your growth.</p>
     `,
     funFact: "Charlie loves exploring South Africa's diverse landscapes, from the Drakensberg mountains to the Karoo. When he's not helping businesses structure for success, you might find him planning his next road trip or sharing stories about local entrepreneurs he's met along the way."
   },
@@ -92,7 +92,7 @@ export const teamData: TeamMember[] = [
     ],
     bio: `
       <p>Henry brings a fresh, energetic approach to accounting. He knows that behind every number is a real person with real dreams, and he's passionate about making sure those numbers tell the right story. Whether you're a small business owner in Centurion or a growing company in Durban, Henry makes sure you understand exactly where your business stands.</p>
-      <p>His award-winning work ethic isn't just about getting things right—it's about making sure you feel confident and in control of your finances. Henry believes that when you understand your numbers, you make better decisions. And better decisions mean a brighter future for your business.</p>
+      <p>His award-winning work ethic isn't just about getting things right. It's about making sure you feel confident and in control of your finances. Henry believes that when you understand your numbers, you make better decisions. And better decisions mean a brighter future for your business.</p>
       <h3>Areas of Expertise</h3>
       <ul>
         <li>Financial Statement Preparation</li>

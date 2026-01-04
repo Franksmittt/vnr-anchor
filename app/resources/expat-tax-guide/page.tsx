@@ -53,7 +53,7 @@ const mistakes = [
       "Register for provisional tax, submit IRP6 estimates bi-annually, and set aside cash so SARS penalties and interest don’t erode earnings.",
   },
   {
-    title: "Failing to claim legitimate deductions—or claiming the wrong ones without records.",
+    title: "Failing to claim legitimate deductions, or claiming the wrong ones without records.",
     action:
       "Keep separate business/personal ledgers, maintain logbooks, receipts, and supporting schedules for every deduction.",
   },

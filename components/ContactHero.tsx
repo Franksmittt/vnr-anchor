@@ -14,7 +14,7 @@ const ContactHero = () => {
                 <Breadcrumbs items={breadcrumbItems} className="flex justify-center text-slate-500" />
                 <h1 className="mt-4 font-serif text-4xl md:text-5xl font-extrabold text-text-primary">Get in Touch</h1>
                 <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
-                    We are here to help you navigate your financial journey. Whether you have a question about our services or want to schedule a consultation, we look forward to hearing from you.
+                    We're here to help. Whether you have a quick question or want to plan a full consultation, we'd love to hear from you. No pressure, just a friendly conversation about how we can help.
                 </p>
                 <p className="mt-4 text-base font-semibold text-brand-blue max-w-2xl mx-auto">
                     📍 Head Office: Centurion | 🌍 Serving clients across South Africa

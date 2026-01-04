@@ -14,21 +14,21 @@ const testimonials: Testimonial[] = [
     name: 'Sarah M.',
     location: 'Cape Town',
     role: 'Small Business Owner',
-    content: 'VNR made us feel like family, not just another client. When we had questions, they answered. When we were stressed about tax season, they calmed our nerves. They don\'t just do our books—they truly care about our success.',
+    content: 'VNR made us feel like family, not just another client. When we had questions, they answered. When we were stressed about tax season, they calmed our nerves. They don\'t just do our books, they truly care about our success.',
     service: 'Tax Advisory & Bookkeeping',
   },
   {
     name: 'Michael T.',
     location: 'Durban',
     role: 'Tech Startup Founder',
-    content: 'Moving to cloud accounting with VNR was the best decision we made. They didn\'t just set up the system—they taught us how to use it. Now we actually understand our numbers, and that\'s changed everything for our business.',
+    content: 'Moving to cloud accounting with VNR was the best decision we made. They didn\'t just set up the system, they taught us how to use it. Now we actually understand our numbers, and that\'s changed everything for our business.',
     service: 'Cloud Accounting',
   },
   {
     name: 'Linda K.',
     location: 'Johannesburg',
     role: 'Family Business Owner',
-    content: 'We needed help with estate planning, and VNR walked us through every step with patience and care. They helped us protect what we\'ve built for our children. It wasn\'t just professional—it was personal, and that meant everything.',
+    content: 'We needed help with estate planning, and VNR walked us through every step with patience and care. They helped us protect what we\'ve built for our children. It wasn\'t just professional, it was personal, and that meant everything.',
     service: 'Estate & Legacy Planning',
   },
 ];
@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
               Real People, Real Results
             </h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              Don't just take our word for it—hear from entrepreneurs across South Africa who've made VNR their trusted partner.
+              Don't just take our word for it. Hear from entrepreneurs across South Africa who've made VNR their trusted partner.
             </p>
           </div>
         </AnimateOnScroll>

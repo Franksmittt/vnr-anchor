@@ -31,7 +31,7 @@ const Footer = () => {
               Your trusted partner in strategic tax advisory, business structuring, and intergenerational wealth planning. We're here to help South African entrepreneurs build something lasting.
             </p>
             <p className="mt-3 text-sm font-semibold text-brand-teal">
-              📍 Head Office: Centurion | 🌍 From the busy streets of Centurion to the heart of the Karoo—we are your nationwide accounting partners.
+              📍 Head Office: Centurion | 🌍 From the busy streets of Centurion to the heart of the Karoo, we are your nationwide accounting partners.
             </p>
           </div>
           

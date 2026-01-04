@@ -6,12 +6,10 @@ const CtaSection = () => {
     <section className="bg-gradient-to-r from-brand-blue-dark to-brand-teal-dark">
       <div className="container mx-auto px-6 py-16 sm:py-24 text-center"> {/* EDITED PADDING */}
         <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-          Align Your Anchor portfolio, tax plan, and estate strategy.
+          Bring Your Wealth Strategy Together
         </h2>
         <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
-          Book a strategy consultation with VNR Professional Accountants to scope your Anchor Capital onboarding,
-          tax-efficient structuring (TFSA, RA, offshore wrappers), and our independent advisor plus estate partners in
-          one conversation. While our head office is in Centurion, we serve clients across South Africa.
+          Let's sit down and talk about your Anchor portfolio, your tax plan, and your estate strategy. We'll help you connect all the pieces in one conversation. Whether you're planning for retirement or building wealth, we're here to make sure everything works together. Our head office is in Centurion, but we serve clients across South Africa.
         </p>
         <Link
           href="/contact"

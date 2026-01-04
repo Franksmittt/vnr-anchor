@@ -37,7 +37,7 @@ function formatPrice(priceIncl: string | number, priceExcl: string | number) {
   if (!priceIncl || priceIncl === '' || priceExcl === 'POR' || priceExcl === '') {
     return (
       <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand-blue/10 text-brand-blue-dark border border-brand-blue/20 cursor-pointer hover:bg-brand-blue/20 transition-colors">
-        Request Quote
+        Let's Chat
       </span>
     );
   }

@@ -28,10 +28,10 @@ const ContactPage = () => {
           
           <div className="bg-surface-light p-8 rounded-xl shadow-lg border border-slate-200">
             <h2 className="font-serif text-2xl font-bold text-text-primary mb-6">Connect with Our Experts</h2>
-            <p className="mb-8 text-text-secondary">We'd love to hear from you. Whether you have a quick question or want to plan a full consultation, just fill out the form below and we'll get back to you within 24 hours. No pressure, no sales pitch—just a friendly conversation about how we can help.</p>
+            <p className="mb-8 text-text-secondary">We'd love to hear from you. Whether you have a quick question or want to plan a full consultation, just fill out the form below and we'll get back to you within 24 hours. No pressure, no sales pitch. Just a friendly conversation about how we can help.</p>
             <div className="mb-8 p-4 bg-brand-blue/5 border-l-4 border-brand-blue rounded-lg">
               <p className="text-sm font-semibold text-brand-blue mb-1">📍 Head Office Location: Centurion</p>
-              <p className="text-sm text-text-secondary">🌍 From the busy streets of Centurion to the heart of the Karoo—we serve clients across South Africa. Virtual consultations make us your local advisor, anywhere in SA.</p>
+              <p className="text-sm text-text-secondary">🌍 From the busy streets of Centurion to the heart of the Karoo, we serve clients across South Africa. Virtual consultations make us your local advisor, anywhere in SA.</p>
             </div>
             <form action="#" method="POST" className="space-y-6">
               <div>

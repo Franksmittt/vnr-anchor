@@ -205,11 +205,11 @@ const AnchorWealthPage = () => {
           </div>
           <div className="rounded-2xl bg-surface-light p-8 border border-slate-200">
             <p className="text-sm font-semibold tracking-widest uppercase text-brand-blue">Estate & Will Clinic</p>
-            <h3 className="mt-4 text-2xl font-semibold text-text-primary">Your wills stay current—free of charge.</h3>
+            <h3 className="mt-4 text-2xl font-semibold text-text-primary">Your wills stay current, free of charge.</h3>
             <p className="mt-4 text-text-secondary">
               We now ask every client if their will is up to date. If it is not, we draft or refresh it at no cost
               when VNR or our trusted executor partner is appointed. Specialist partners manage estate planning
-              and administration—without naming them publicly per your request.
+              and administration, without naming them publicly per your request.
             </p>
             <ul className="mt-6 space-y-3 text-text-secondary">
               {estateHighlights.map((highlight) => (
