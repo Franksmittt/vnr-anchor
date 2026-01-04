@@ -4,24 +4,23 @@ import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Briefcase, Users, Newspaper, Mail, Phone, Menu, X, Anchor as AnchorIcon, BookOpen } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
 
 // This is a new, refined NavItem for our specific design system
-const NavItem = ({ href, Icon, children }: { href: string; Icon: React.ElementType; children: React.ReactNode }) => {
+const NavItem = ({ href, children }: { href: string; children: React.ReactNode }) => {
   const pathname = usePathname();
   const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
 
   return (
     <Link
       href={href}
-      className={`flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+      className={`rounded-md px-4 py-2 text-sm font-medium transition-colors duration-200 ${
         isActive
           ? 'bg-brand-blue-dark text-white shadow-inner'
           : 'text-text-on-dark/80 hover:bg-brand-teal/20 hover:text-white'
       }`}
       aria-current={isActive ? 'page' : undefined}
     >
-      <Icon className="h-5 w-5" />
       {children}
     </Link>
   );
@@ -31,12 +30,11 @@ const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: '/services', label: 'Services', Icon: Briefcase },
-    { href: '/anchor-wealth', label: 'Anchor Wealth', Icon: AnchorIcon },
-    { href: '/resources/expat-tax-guide', label: 'Tax Guide', Icon: BookOpen },
-    { href: '/team', label: 'Meet the Team', Icon: Users },
-    { href: '/insights', label: 'Learning & Growth', Icon: Newspaper },
-    { href: '/contact', label: 'Get in Touch', Icon: Mail },
+    { href: '/services', label: 'Services' },
+    { href: '/anchor-wealth', label: 'Anchor Wealth' },
+    { href: '/resources/expat-tax-guide', label: 'Tax Guide' },
+    { href: '/team', label: 'Meet the Team' },
+    { href: '/insights', label: 'Learning & Growth' },
   ];
 
   return (
@@ -55,17 +53,23 @@ const Header = () => {
 
         <nav className="hidden items-center space-x-2 lg:flex" role="navigation" aria-label="Main Navigation">
           {navLinks.map((link) => (
-            <NavItem key={link.label} href={link.href} Icon={link.Icon}>
+            <NavItem key={link.label} href={link.href}>
               {link.label}
             </NavItem>
           ))}
         </nav>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
+          <Link
+            href="/contact"
+            className="hidden lg:inline-flex items-center justify-center rounded-md bg-brand-teal px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-brand-teal-dark hover:shadow-lg hover:scale-105"
+          >
+            Get in Touch
+          </Link>
 
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="ml-4 p-2 lg:hidden"
+            className="p-2 lg:hidden"
             aria-label="Open main menu"
             aria-controls="mobile-menu"
             aria-expanded={isMobileMenuOpen}
@@ -100,16 +104,22 @@ const Header = () => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 rounded-lg p-3 text-lg font-medium hover:bg-slate-200"
+                  className="rounded-lg p-3 text-lg font-medium hover:bg-slate-200"
                   aria-current={usePathname() === link.href ? 'page' : undefined}
                 >
-                  <link.Icon className="h-6 w-6 text-brand-teal" />
                   {link.label}
                 </Link>
               ))}
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-4 inline-flex items-center justify-center rounded-md bg-brand-teal px-6 py-3 text-sm font-semibold text-white shadow-md"
+              >
+                Get in Touch
+              </Link>
               <a
                 href="tel:+27126531633"
-                className="mt-4 inline-flex items-center justify-center rounded-full bg-brand-blue px-4 py-3 text-sm font-semibold text-white"
+                className="mt-2 inline-flex items-center justify-center rounded-md bg-brand-blue px-4 py-3 text-sm font-semibold text-white"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Call Us Today
