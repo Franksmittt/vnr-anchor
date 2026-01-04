@@ -52,7 +52,7 @@ const AnchorPartnershipSection = () => {
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
-            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200 p-6 shadow-sm">
               <ShieldCheck className="h-10 w-10 text-brand-teal" />
               <h3 className="mt-4 text-xl font-semibold text-text-primary">Tax-Efficient Structuring</h3>
               <p className="mt-3 text-sm text-text-secondary">
@@ -60,7 +60,7 @@ const AnchorPartnershipSection = () => {
                 Accounts, and endowments to preserve returns while staying SARS-compliant.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200 p-6 shadow-sm">
               <Globe2 className="h-10 w-10 text-brand-blue" />
               <h3 className="mt-4 text-xl font-semibold text-text-primary">Global + Local Reach</h3>
               <p className="mt-3 text-sm text-text-secondary">
@@ -68,7 +68,7 @@ const AnchorPartnershipSection = () => {
                 discretionary mandates while retaining VNR’s on-the-ground advisory team.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200 p-6 shadow-sm">
               <FileSpreadsheet className="h-10 w-10 text-brand-teal" />
               <h3 className="mt-4 text-xl font-semibold text-text-primary">Research-Led Allocations</h3>
               <p className="mt-3 text-sm text-text-secondary">
@@ -76,7 +76,7 @@ const AnchorPartnershipSection = () => {
                 webinars to make informed, timely allocation decisions.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200 p-6 shadow-sm">
               <Anchor className="h-10 w-10 text-brand-blue" />
               <h3 className="mt-4 text-xl font-semibold text-text-primary">Single Point of Contact</h3>
               <p className="mt-3 text-sm text-text-secondary">

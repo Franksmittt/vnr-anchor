@@ -36,7 +36,7 @@ const ServicesSection = () => {
               <AnimateOnScroll key={service.slug} delay={`${index * 150}ms`}>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="group relative block p-8 bg-surface-light rounded-2xl border border-slate-200 transition-all duration-300 hover:bg-white hover:shadow-2xl hover:-translate-y-2 h-full"
+                  className="group relative block p-8 bg-surface-light rounded-xl border border-slate-200 transition-all duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1 h-full"
                 >
                   <div className="relative z-10">
                     <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white shadow-md border border-slate-100 transition-all duration-300 group-hover:bg-brand-teal group-hover:scale-110">
@@ -49,7 +49,7 @@ const ServicesSection = () => {
                       {service.subtitle}
                     </p>
                     <div className="mt-6 font-semibold text-brand-teal flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                      Let's Chat <ArrowRight className="ml-2 h-4 w-4" />
                     </div>
                   </div>
                 </Link>

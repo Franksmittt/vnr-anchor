@@ -108,7 +108,7 @@ const TeamMemberPage = async ({ params }: { params: Promise<TeamPageParams> }) =
                 alt={member.name}
                 width={500}
                 height={500}
-                className="rounded-2xl object-cover aspect-square shadow-lg"
+                className="rounded-xl object-cover aspect-square shadow-lg"
                 priority
               />
               <div className="mt-6 flex space-x-4">
@@ -140,6 +140,13 @@ const TeamMemberPage = async ({ params }: { params: Promise<TeamPageParams> }) =
                 ))}
               </ul>
             </div>
+
+            {member.funFact && (
+              <div className="mt-12 p-6 bg-brand-teal/5 rounded-xl border border-brand-teal/20">
+                <h3 className="font-serif text-xl font-semibold text-brand-blue-dark mb-3">A Little About {member.name.split(' ')[0]}</h3>
+                <p className="text-text-secondary">{member.funFact}</p>
+              </div>
+            )}
 
             {member.articles && member.articles.length > 0 && (
                 <div className="mt-12">

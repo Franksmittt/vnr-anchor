@@ -17,7 +17,7 @@ const CtaSection = () => {
           href="/contact"
           className="mt-8 inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-brand-blue-dark bg-white hover:bg-brand-teal/10 hover:text-brand-teal-dark transition-all duration-300 transform hover:scale-105"
         >
-          Schedule a Strategic Consultation
+          Let's Start a Conversation
           <ChevronRight className="w-5 h-5 ml-2" />
         </Link>
       </div>

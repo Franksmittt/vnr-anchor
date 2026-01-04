@@ -28,10 +28,10 @@ const ContactPage = () => {
           
           <div className="bg-surface-light p-8 rounded-xl shadow-lg border border-slate-200">
             <h2 className="font-serif text-2xl font-bold text-text-primary mb-6">Connect with Our Experts</h2>
-            <p className="mb-8 text-text-secondary">For a strategic consultation on tax, business structuring, or wealth planning, please complete the form below. Our team will respond promptly.</p>
-            <div className="mb-8 p-4 bg-brand-blue/5 border-l-4 border-brand-blue rounded-r-lg">
+            <p className="mb-8 text-text-secondary">We'd love to hear from you. Whether you have a quick question or want to plan a full consultation, just fill out the form below and we'll get back to you within 24 hours. No pressure, no sales pitch—just a friendly conversation about how we can help.</p>
+            <div className="mb-8 p-4 bg-brand-blue/5 border-l-4 border-brand-blue rounded-lg">
               <p className="text-sm font-semibold text-brand-blue mb-1">📍 Head Office Location: Centurion</p>
-              <p className="text-sm text-text-secondary">🌍 We serve clients across South Africa - distance is no barrier to expert service!</p>
+              <p className="text-sm text-text-secondary">🌍 From the busy streets of Centurion to the heart of the Karoo—we serve clients across South Africa. Virtual consultations make us your local advisor, anywhere in SA.</p>
             </div>
             <form action="#" method="POST" className="space-y-6">
               <div>
@@ -68,7 +68,7 @@ const ContactPage = () => {
                   type="submit"
                   className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-blue hover:bg-brand-teal focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-teal transition-colors"
                 >
-                  Send Message
+                  Let's Start a Conversation
                 </button>
               </div>
             </form>

@@ -29,7 +29,7 @@ const InsightsSection = () => {
               href={`/insights/${featuredArticle.slug}`} 
               className="group block lg:col-span-2"
             >
-              <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-brand-blue/5 h-full">
+              <div className="flex flex-col overflow-hidden rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-brand-blue/5 h-full">
                 <div className="relative w-full h-72 md:h-96">
                   <Image
                     src={featuredArticle.imageUrl}
@@ -78,7 +78,7 @@ const InsightsSection = () => {
                 href={`/insights/${insight.slug}`} 
                 className="group block flex-grow" 
               >
-                <div className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 bg-white h-full">
+                <div className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 bg-white h-full">
                   <div className="relative flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden">
                     <Image
                       src={insight.imageUrl}
@@ -113,7 +113,7 @@ const InsightsSection = () => {
         
         <div className="mt-16 text-center">
           <Link href="/insights" className="text-base font-semibold text-brand-blue hover:text-brand-blue-dark">
-            Explore All Tax and Business Insights <span aria-hidden="true">→</span>
+            Discover More Insights <span aria-hidden="true">→</span>
           </Link>
         </div>
 

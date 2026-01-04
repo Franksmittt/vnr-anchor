@@ -52,6 +52,10 @@ const config: Config = {
         'reveal': 'reveal 1s cubic-bezier(0.215, 0.610, 0.355, 1) forwards',
         'subtle-lift': 'subtleLift 0.3s ease-out forwards',
       },
+      borderRadius: {
+        'card': '1rem', // rounded-xl default for cards
+        'card-lg': '1.5rem', // rounded-2xl for larger cards
+      },
     },
   },
   plugins: [],

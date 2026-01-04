@@ -20,7 +20,7 @@ const AdvisorEstateSection = () => {
         </div>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2">
-          <div className="rounded-2xl bg-white p-8 shadow-lg border border-slate-200">
+          <div className="rounded-xl bg-white p-8 shadow-lg border border-slate-200">
             <div className="flex items-center gap-4">
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue">
                 <HeartPulse className="h-7 w-7" />
@@ -53,7 +53,7 @@ const AdvisorEstateSection = () => {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-white p-8 shadow-lg border border-slate-200">
+          <div className="rounded-xl bg-white p-8 shadow-lg border border-slate-200">
             <div className="flex items-center gap-4">
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue">
                 <FileSignature className="h-7 w-7" />

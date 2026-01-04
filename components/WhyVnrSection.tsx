@@ -32,7 +32,7 @@ const WhyVnrSection = () => {
 
           {/* Card 2: Unwavering Expertise */}
           <AnimateOnScroll delay="200ms">
-            <div className="group relative text-center p-8 bg-white rounded-2xl shadow-sm border border-slate-200 transition-all duration-300 hover:shadow-2xl hover:border-brand-blue/30 hover:-translate-y-2 h-full">
+            <div className="group relative text-center p-8 bg-white rounded-xl shadow-sm border border-slate-200 transition-all duration-300 hover:shadow-lg hover:border-brand-blue/30 hover:-translate-y-1 h-full">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-blue shadow-lg group-hover:bg-brand-blue-dark transition-colors">
                 <ShieldCheck className="h-8 w-8 text-white" />
               </div>
@@ -45,7 +45,7 @@ const WhyVnrSection = () => {
 
           {/* Card 3: Enduring Legacy */}
           <AnimateOnScroll delay="400ms">
-            <div className="group relative text-center p-8 bg-white rounded-2xl shadow-sm border border-slate-200 transition-all duration-300 hover:shadow-2xl hover:border-brand-teal/30 hover:-translate-y-2 h-full">
+            <div className="group relative text-center p-8 bg-white rounded-xl shadow-sm border border-slate-200 transition-all duration-300 hover:shadow-lg hover:border-brand-teal/30 hover:-translate-y-1 h-full">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-teal shadow-lg group-hover:bg-brand-teal-dark transition-colors">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>

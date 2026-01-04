@@ -34,9 +34,9 @@ const Header = () => {
     { href: '/services', label: 'Services', Icon: Briefcase },
     { href: '/anchor-wealth', label: 'Anchor Wealth', Icon: AnchorIcon },
     { href: '/resources/expat-tax-guide', label: 'Tax Guide', Icon: BookOpen },
-    { href: '/team', label: 'Our Team', Icon: Users },
-    { href: '/insights', label: 'Insights', Icon: Newspaper },
-    { href: '/contact', label: 'Contact', Icon: Mail },
+    { href: '/team', label: 'Meet the Team', Icon: Users },
+    { href: '/insights', label: 'Learning & Growth', Icon: Newspaper },
+    { href: '/contact', label: 'Get in Touch', Icon: Mail },
   ];
 
   return (

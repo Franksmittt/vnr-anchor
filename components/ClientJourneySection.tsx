@@ -58,7 +58,7 @@ const ClientJourneySection = () => {
                 key={item.stage}
                 className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${activeStage === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
               >
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center bg-slate-800/50 p-8 rounded-2xl border border-slate-700 backdrop-blur-sm">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center bg-slate-800/50 p-8 rounded-xl border border-slate-700 backdrop-blur-sm">
                   <div className="md:col-span-3">
                     <h3 className="font-serif text-2xl font-bold text-white">{item.title}</h3>
                     <p className="mt-4 text-text-on-dark/80">{item.description}</p>

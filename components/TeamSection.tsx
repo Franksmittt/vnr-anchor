@@ -25,7 +25,7 @@ const TeamSection = () => {
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {featuredMembers.map((member, index) => (
             <AnimateOnScroll key={member.slug} delay={`${index * 150}ms`}>
-              <div className="group relative overflow-hidden rounded-2xl bg-surface-dark shadow-lg text-center h-full flex flex-col">
+              <div className="group relative overflow-hidden rounded-xl bg-surface-dark shadow-lg text-center h-full flex flex-col">
                 <div className="p-8 flex-grow">
                   <Image
                     className="mx-auto h-36 w-36 rounded-full object-cover ring-4 ring-slate-700 transition-all duration-300 group-hover:ring-brand-blue-light"

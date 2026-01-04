@@ -28,10 +28,10 @@ const Footer = () => {
           <div>
             <h3 className="font-serif text-2xl font-bold text-white">VNR <span className="text-brand-teal">Professional Accountants</span></h3>
             <p className="mt-4 text-sm text-text-on-dark/70">
-              Your premier partner in strategic tax advisory, business structuring, and intergenerational wealth planning for South Africa's leading entrepreneurs.
+              Your trusted partner in strategic tax advisory, business structuring, and intergenerational wealth planning. We're here to help South African entrepreneurs build something lasting.
             </p>
             <p className="mt-3 text-sm font-semibold text-brand-teal">
-              📍 Head Office: Centurion | 🌍 Serving clients nationwide across South Africa
+              📍 Head Office: Centurion | 🌍 From the busy streets of Centurion to the heart of the Karoo—we are your nationwide accounting partners.
             </p>
           </div>
           

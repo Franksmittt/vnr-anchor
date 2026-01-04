@@ -21,17 +21,17 @@ export interface Service {
 export const servicesData: Service[] = [
   {
     slug: 'secretarial-services',
-    title: 'Secretarial Services',
-    subtitle: 'Comprehensive company secretarial and CIPC compliance services to ensure your business maintains good standing and avoids penalties.',
+    title: 'Secretarial Services: Keep Your Business Compliant',
+    subtitle: 'We understand that CIPC paperwork can feel like a maze. Let us handle the administrative burden so you can focus on what you do best—running your business.',
     imageUrl: '/images/services/business-structuring-hero.jpg',
     icon: 'FileText',
     details: ['CIPC Amendments & Annual Returns', 'Director & Member Changes', 'Registered Office Maintenance', 'Statutory Record Keeping'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">Maintaining good standing with the Companies and Intellectual Property Commission (CIPC) is non-negotiable for any business. Failure to comply can lead to penalties, deregistration, or even frozen bank accounts. Our comprehensive company secretarial services manage these critical administrative duties, freeing you to focus on growing your business. We provide expert <strong>secretarial services across South Africa</strong>. While our head office is in Centurion, we serve clients nationwide.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that keeping up with CIPC requirements can feel overwhelming. You\'re busy building your business, and the last thing you need is paperwork piling up. That\'s where we step in. We handle all the administrative tasks—filing annual returns, updating director information, maintaining your records—so you can sleep soundly knowing your business stays compliant. We serve clients <strong>across South Africa</strong> from our Centurion head office.</p>
       
-      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our Secretarial Services</h2>
-      <p class="mb-8 text-slate-600">From annual returns to director changes, we handle all your CIPC compliance requirements with precision and timeliness.</p>
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Keep Your Business Compliant</h2>
+      <p class="mb-8 text-slate-600">Think of us as your compliance partner. We stay on top of deadlines, handle the paperwork, and make sure everything is filed correctly and on time.</p>
       
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">CIPC Annual Returns & Compliance</h3>
       <p class="mb-4 text-slate-600">Every company registered in South Africa must file annual returns with the CIPC. Failure to do so can result in late-filing penalties, and if a company fails to file for two or more consecutive years, the CIPC can begin deregistration proceedings. We ensure your returns are filed accurately and on time.</p>
@@ -61,25 +61,25 @@ export const servicesData: Service[] = [
       </ul>
     `,
     faqs: [
-        { q: 'What happens if I don\'t file my CIPC annual return?', a: 'Failure to file annual returns can lead to late-filing penalties. If a company fails to file for two or more consecutive years, the CIPC can assume the company is inactive and begin the deregistration process, which can result in its bank accounts being frozen.' },
-        { q: 'How often do I need to file annual returns?', a: 'Companies must file annual returns with the CIPC once per year, within the anniversary month of incorporation. We monitor these deadlines and ensure timely filing to avoid penalties.' },
-        { q: 'What information do I need to provide for director changes?', a: 'For director changes, we need the director\'s full name, ID number, residential address, and appointment date. We handle all the necessary CIPC forms and documentation on your behalf.' },
-        { q: 'Can you help if my company has been deregistered?', a: 'Yes, we can assist with the reinstatement process if your company has been deregistered due to non-compliance. This typically involves filing outstanding returns and paying any penalties, followed by an application for reinstatement.' },
+        { q: 'What happens if I forget to file my annual return?', a: 'Don\'t panic—we\'ve helped many businesses get back on track. If you miss a filing, there are penalties, but we\'ll work with you to resolve it quickly. If it\'s been a while, we can help with reinstatement too. You\'re not alone in this.' },
+        { q: 'How often do I need to file?', a: 'Once a year, around the anniversary of when your company was registered. But here\'s the thing—you don\'t have to remember. We\'ll remind you well in advance and handle everything for you.' },
+        { q: 'What do you need from me for director changes?', a: 'Just the basics: name, ID number, address, and when they started. We\'ll take care of all the forms and filing. Simple as that.' },
+        { q: 'My company was deregistered—can you help?', a: 'Absolutely. We\'ve helped many businesses get reinstated. It involves catching up on missed filings and paying any penalties, but we\'ll guide you through every step. Let\'s get your business back on track.' },
     ],
   },
   {
     slug: 'tax-advisory',
-    title: 'Tax Advisory & Compliance',
-    subtitle: 'Expert tax planning and SARS compliance services across South Africa to minimize your tax burden and ensure financial peace of mind.',
+    title: 'Tax Advisory: Your Peace of Mind',
+    subtitle: 'We know tax season can be stressful. Let\'s simplify your compliance together so you can focus on what you love—growing your business.',
     imageUrl: '/images/services/tax-advisory-hero.jpg',
     icon: 'Scale',
     details: ['Individual & Corporate Tax Returns', 'Provisional Tax Submissions', 'VAT, PAYE, SDL, UIF Compliance', 'SARS Dispute Resolution'],
     leadExpert: teamData.find(m => m.slug === 'jannie-venter')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">Navigating the South African tax landscape requires more than just compliance; it demands strategic foresight. At VNR Professional Accountants, our tax advisory services are designed to align your tax strategy with your business objectives, ensuring efficiency while mitigating risk. We move beyond reactive form-filling to become your proactive partner in tax optimization, serving businesses and high-net-worth individuals <strong>across South Africa</strong>. While our head office is located in Centurion, we work with clients nationwide.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that tax season can feel overwhelming. You\'re juggling deadlines, paperwork, and the constant worry of making a mistake. That\'s where we come in. At VNR, we don\'t just file your returns—we become your trusted partner, taking the stress off your shoulders so you can focus on what matters most: your business and your family. Whether you\'re in Cape Town, Durban, or anywhere in between, we\'re here to help. Our head office is in Centurion, but we serve clients across South Africa.</p>
       
-      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our Comprehensive Tax Advisory Services</h2>
-      <p class="mb-8 text-slate-600">Our SAIPA-accredited experts provide a holistic suite of services to manage every facet of your tax obligations, turning a complex burden into a strategic advantage for your enterprise.</p>
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Help You Navigate Tax Season</h2>
+      <p class="mb-8 text-slate-600">Our SAIPA-accredited team takes a personal approach to your tax needs. We sit down with you (virtually or in person), understand your unique situation, and create a strategy that works for you—not just a one-size-fits-all solution.</p>
       
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Corporate & Personal Income Tax</h3>
       <p class="mb-4 text-slate-600">We ensure meticulous accuracy and strategic planning for both your business and personal tax returns (ITR14 and ITR12). Our approach focuses on maximizing legitimate deductions and structuring director remuneration tax-efficiently to support long-term wealth creation.</p>
@@ -117,26 +117,27 @@ export const servicesData: Service[] = [
       </ul>
     `,
     faqs: [
-        { q: 'Who needs to file a tax return in South Africa?', a: 'Any individual who earns above the annual tax threshold, or any registered company, must file a tax return. We provide expert guidance for all scenarios, serving clients across South Africa from our head office in Centurion.' },
-        { q: 'What is the difference between tax avoidance and tax evasion?', a: 'Tax avoidance is the legal use of tax laws and structures to reduce one\'s tax burden, which is a core part of our strategic advisory service. Tax evasion is the illegal non-payment or under-payment of taxes.' },
-        { q: 'When is provisional tax due in South Africa?', a: 'The first provisional tax payment is due within six months of the start of the financial year (typically by August 31st). The second payment is due by the financial year-end (typically by February 28/29th).' },
-        { q: 'What happens if I miss a SARS deadline?', a: 'Missing a deadline for submission or payment results in administrative penalties and interest being levied by SARS. Consistent non-compliance can negatively affect your Tax Compliance Status, which is crucial for tenders and financing.' },
-        { q: 'How can VNR help me during a SARS audit?', a: 'We manage the entire audit process for you, from compiling and reviewing the requested documentation to communicating directly with the SARS auditor. Our goal is to ensure the process is handled efficiently and to build the strongest possible case to support your tax position.' },
+        { q: 'Will I be just another number?', a: 'Absolutely not. You\'ll have a direct line to your advisor. We take the time to understand your business, your goals, and your concerns. When you call, you\'ll speak to someone who knows your story—not a call center.' },
+        { q: 'Who needs to file a tax return in South Africa?', a: 'If you earn above the annual tax threshold or run a registered company, you\'ll need to file. Don\'t worry—we\'ll guide you through every step. We serve clients across South Africa from our Centurion head office.' },
+        { q: 'What\'s the difference between tax avoidance and tax evasion?', a: 'Tax avoidance is perfectly legal—it\'s about using the tax laws smartly to reduce what you owe. Tax evasion is illegal. We help you do things the right way, legally and ethically.' },
+        { q: 'When is provisional tax due?', a: 'Typically, the first payment is due by August 31st, and the second by February 28th. But don\'t stress—we\'ll remind you well in advance and help you calculate exactly what you need to pay.' },
+        { q: 'What if I miss a deadline?', a: 'We\'ve all been there. The good news is, we can help you get back on track. SARS does charge penalties, but we\'ll work with you to minimize them and get you compliant again. You\'re not alone in this.' },
+        { q: 'What happens if SARS audits me?', a: 'Take a deep breath. We\'ve got your back. We\'ll handle all the communication, gather the documents, and build a strong case for you. You won\'t have to face SARS alone—we\'ll be right there with you every step of the way.' },
     ],
   },
   {
     slug: 'business-structuring',
-    title: 'Business Structuring',
-    subtitle: 'Architecting the optimal legal and financial structure for your enterprise to support growth, manage risk, and ensure CIPC compliance.',
+    title: 'Business Structuring: Build on Solid Ground',
+    subtitle: 'We understand that starting a business is exciting but also overwhelming. Let\'s set you up with the right structure from day one, so you can focus on growing, not worrying.',
     imageUrl: '/images/services/business-structuring-hero.jpg',
     icon: 'Building2',
     details: ['New Company Registrations (Pty, NPC)', 'Trust Formation & Administration'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">The structure of your business is its foundation. A robust, strategically-chosen structure facilitates growth, protects your personal assets from business risks, ensures tax efficiency, and maintains long-term viability. Our team provides expert guidance on architecting and maintaining the optimal legal framework for your vision. We are your partners in <strong>company registration and business structuring across South Africa</strong>. While our head office is in Centurion, we serve clients nationwide.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that choosing the right business structure can feel confusing. Should you go with a Pty Ltd? What about a trust? Don\'t worry—we\'ll sit down with you and explain everything in plain language. We\'ll help you choose the structure that protects your personal assets, saves you tax, and sets you up for long-term success. We\'re your partners in <strong>company registration and business structuring across South Africa</strong>, serving clients nationwide from our Centurion head office.</p>
       
-      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our Core Business Structuring Services</h2>
-      <p class="mb-8 text-slate-600">From the initial registration to trust formation, we provide comprehensive structuring services to support your entrepreneurial journey.</p>
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Help You Get Started Right</h2>
+      <p class="mb-8 text-slate-600">From registering your company to setting up trusts, we\'re here to guide you through every step. Think of us as your business setup partners.</p>
       
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">New Company & NPO Registrations</h3>
       <p class="mb-4 text-slate-600">Choosing the correct entity is the first critical step. We guide you through the complexities of each option, managing the entire CIPC registration process to ensure your business is established correctly from day one.</p>
@@ -173,17 +174,17 @@ export const servicesData: Service[] = [
   },
   {
     slug: 'legacy-planning',
-    title: 'Estate & Legacy Planning',
-    subtitle: 'Ensuring your wealth is protected and seamlessly transferred for generations to come through meticulous, long-term planning.',
+    title: 'Estate & Legacy Planning: Protect What Matters',
+    subtitle: 'We understand that thinking about the future can be difficult. Let\'s make sure your family is taken care of and your legacy lives on, exactly as you envision it.',
     imageUrl: '/images/services/legacy-planning-hero.jpg',
     icon: 'GitBranchPlus',
     details: ['Drafting of Last Will & Testament', 'Intergenerational Wealth Transfer', 'Executor Services', 'Trust & Estate Administration'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">For successful entrepreneurs and high-net-worth families, estate planning is not merely an administrative task—it is the ultimate act of stewardship. True wealth is generational. Our legacy planning services <strong>across South Africa</strong> focus on creating robust, tax-efficient structures that protect your assets, provide for your loved ones, and ensure your vision is carried forward with clarity and purpose. Our head office is in Centurion, but we work with clients nationwide.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that planning for the future isn\'t easy. It means thinking about difficult things. But here\'s what we know: when you take care of it now, you give your family peace of mind later. We\'ll help you create a plan that protects what you\'ve built, takes care of the people you love, and ensures your values live on. Our legacy planning services <strong>across South Africa</strong> are designed to give you confidence that everything will be handled exactly as you want. We work with clients nationwide from our Centurion head office.</p>
       
-      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our Integrated Legacy Planning Services</h2>
-      <p class="mb-8 text-slate-600">A comprehensive legacy plan is a living strategy that integrates your personal and business succession goals. We provide an end-to-end service to architect this crucial framework.</p>
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Help You Protect Your Legacy</h2>
+      <p class="mb-8 text-slate-600">A good estate plan isn\'t just about documents—it\'s about peace of mind. We\'ll work with you to create a plan that reflects your values and protects your family\'s future.</p>
       
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Drafting of Last Will & Testament</h3>
       <p class="mb-4 text-slate-600">For a business owner, an off-the-shelf will is insufficient and dangerous. Your will is your final business continuity plan. We specialize in <strong>drafting wills for business owners across South Africa</strong>, ensuring it addresses the complex interplay between your personal estate and company shares, and aligns perfectly with your shareholder agreements to prevent legal disputes.</p>
@@ -219,17 +220,17 @@ export const servicesData: Service[] = [
   },
   {
     slug: 'financial-reporting',
-    title: 'Financial Reporting',
-    subtitle: 'Meticulous preparation of financial statements and management accounts for clear, actionable insights and full compliance in South Africa.',
+    title: 'Financial Reporting: See Your Business Clearly',
+    subtitle: 'We understand that numbers can feel overwhelming. Let\'s turn your financial data into clear insights you can actually use to grow your business.',
     imageUrl: '/images/services/financial-reporting-hero.jpg',
     icon: 'FileText',
     details: ['Annual Financial Statements (AFS)', 'Management Statements', 'Independent Reviews'],
     leadExpert: teamData.find(m => m.slug === 'henry-landsberg')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">Accurate financial reporting is the bedrock of strategic business decisions. It is the language that translates your daily operations into a clear narrative of performance, risk, and opportunity. We provide clear, compliant, and insightful reports that allow you to understand performance, secure financing, and plan for the future with confidence. Our services cover every aspect of <strong>financial reporting for SMEs across South Africa</strong>. While our head office is in Centurion, we serve clients nationwide.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that financial statements can look like a foreign language. But here\'s the thing—they don\'t have to be. We\'ll prepare your reports in a way that makes sense, showing you exactly where your business stands and where it\'s heading. Whether you need annual statements for SARS or monthly reports to guide your decisions, we\'ve got you covered. Our services cover every aspect of <strong>financial reporting for SMEs across South Africa</strong>, serving clients nationwide from our Centurion head office.</p>
       
-      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">From Compliance to Competitive Edge</h2>
-      <p class="mb-8 text-slate-600">We offer a tiered approach to financial reporting, designed to meet your needs whether you require statutory compliance, internal strategic insights, or external assurance.</p>
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Reports That Actually Help You</h2>
+      <p class="mb-8 text-slate-600">We create reports that do more than just check a compliance box—they give you real insights into your business so you can make smart decisions.</p>
       
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Annual Financial Statements (AFS)</h3>
       <p class="mb-4 text-slate-600">For most companies in South Africa, the preparation of Annual Financial Statements is a legal requirement. These formal reports are essential for SARS, CIPC, financial institutions, and investors. Our team meticulously compiles your AFS in accordance with the latest <strong>International Financial Reporting Standards (IFRS) for SMEs</strong>, ensuring your business is fully compliant and professionally presented.</p>
@@ -266,17 +267,17 @@ export const servicesData: Service[] = [
   },
   {
     slug: 'payroll-administration',
-    title: 'Payroll Administration',
-    subtitle: 'Comprehensive payroll solutions to ensure your team is paid accurately and on time, while maintaining full SARS & Labour Law compliance across South Africa.',
+    title: 'Payroll Administration: Your Team Deserves Better',
+    subtitle: 'We understand that payroll mistakes can hurt your team and your business. Let us handle it perfectly, every time, so you can focus on leading, not calculating.',
     imageUrl: '/images/services/payroll-hero.jpg',
     icon: 'UserCheck',
     details: ['Monthly Payroll Processing', 'Payslip Generation', 'EMP201 & EMP501 Submissions', 'UIF & COID Compliance'],
     leadExpert: teamData.find(m => m.slug === 'henry-landsberg')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">Payroll is far more than a monthly payment run; it is a complex and high-stakes function that sits at the intersection of finance, human resources, and legal compliance. Errors can lead to significant SARS penalties and damage employee trust. Our <strong>outsourced payroll services across South Africa</strong> are designed to completely remove this burden, providing you with the peace of mind that your team is paid accurately and your business remains fully compliant. Our head office is in Centurion, but we work with clients nationwide.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that payroll is stressful. One mistake can mean unhappy employees, SARS penalties, and sleepless nights. That's why we take it off your plate completely. We handle every calculation, every submission, every payslip—perfectly, every time. Your team gets paid accurately, and you get peace of mind. Our <strong>payroll services across South Africa</strong> ensure your business stays compliant while you focus on what matters most. We work with clients nationwide from our Centurion head office.</p>
       
-      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Our End-to-End Payroll Administration Services</h2>
-      <p class="mb-8 text-slate-600">We manage the entire payroll lifecycle, ensuring every statutory deadline is met and every calculation is precise. This allows you to focus on leading your team, not administering their pay.</p>
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Take Payroll Off Your Shoulders</h2>
+      <p class="mb-8 text-slate-600">We handle everything from monthly payslips to annual reconciliations. You just focus on your team—we\'ll make sure they\'re paid right, every time.</p>
       
       <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Monthly Payroll Processing & SARS Submissions</h3>
       <p class="mb-4 text-slate-600">Our core service ensures your monthly payroll is executed flawlessly. We handle all calculations, generate professional payslips, and manage your statutory submissions to SARS, keeping you compliant month after month.</p>
@@ -313,17 +314,17 @@ export const servicesData: Service[] = [
   },
   {
     slug: 'cloud-accounting',
-    title: 'Cloud Accounting',
-    subtitle: 'Modernizing your financial operations with leading cloud platforms like Sage and XERO for unparalleled efficiency and real-time data.',
+    title: 'Cloud Accounting: Work Smarter, Not Harder',
+    subtitle: 'We understand that manual bookkeeping eats up your time. Let\'s move you to the cloud so you can access your numbers anytime, anywhere, and make better decisions faster.',
     imageUrl: '/images/services/cloud-accounting-hero.jpg',
     icon: 'Cloud',
     details: ['Sage Platinum Partner Services', 'XERO & DEXT Integration', 'Software Setup & Training', 'Workflow Automation'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">In the modern economy, your accounting system is no longer a historical record-keeper; it is the real-time central nervous system of your business. Migrating to the cloud is the single most impactful step you can take to enhance efficiency, enable collaboration, and unlock the data-driven insights needed for strategic growth. As expert <strong>cloud accounting specialists across South Africa</strong>, we architect and implement systems that transform your financial function. While our head office is in Centurion, we serve clients nationwide.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that you\'re tired of being tied to your desk, digging through spreadsheets, and wondering if your numbers are up to date. Moving to cloud accounting changes everything. You can check your finances from your phone, your team can collaborate in real-time, and you\'ll always know exactly where your business stands. As expert <strong>cloud accounting specialists across South Africa</strong>, we\'ll help you choose the right system and get you set up smoothly. We serve clients nationwide from our Centurion head office.</p>
       
-      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">The Strategic Benefits of Cloud Accounting</h2>
-      <p class="mb-8 text-slate-600">Moving to a platform like Sage or Xero offers more than just convenience; it provides a tangible competitive advantage.</p>
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Why Cloud Accounting Makes Life Easier</h2>
+      <p class="mb-8 text-slate-600">When your accounting is in the cloud, you get real-time insights, automatic backups, and the freedom to work from anywhere. It\'s not just convenient—it\'s a game-changer for your business.</p>
       <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
           <li><strong>Real-Time Data:</strong> Make critical decisions based on up-to-the-minute financial information, not outdated reports.</li>
           <li><strong>Workflow Automation:</strong> Automate invoicing, payment reminders, and bank reconciliations to free up valuable time.</li>

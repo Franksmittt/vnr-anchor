@@ -39,9 +39,10 @@ h1, h2, h3, h4, h5, h6 {
   /* FIX: Add this rule to apply the animation delay from the CSS variable */
   .animate-reveal {
     animation-delay: var(--animation-delay, 0ms);
+    animation: reveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
   .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
+    animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
 }
 
