@@ -6,12 +6,21 @@ import ContactHero from '@/components/ContactHero';
 import InfoCard from '@/components/InfoCard';
 import { faqs } from '@/data/contact-data';
 import FaqAccordion from '@/components/FaqAccordion';
+import { generateOrganizationSchema } from '@/lib/seo';
 
 const ContactPage = () => {
+  // Generate structured data for contact page
+  const organizationSchema = generateOrganizationSchema();
   const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=1022+Saxby+Avenue,Eldoraigne,Centurion,South+Africa`;
 
   return (
     <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c') }}
+      />
+      
       <ContactHero />
 
       <div className="container mx-auto px-6 py-20 sm:py-28"> {/* EDITED PADDING */}
@@ -19,7 +28,11 @@ const ContactPage = () => {
           
           <div className="bg-surface-light p-8 rounded-xl shadow-lg border border-slate-200">
             <h2 className="font-serif text-2xl font-bold text-text-primary mb-6">Connect with Our Experts</h2>
-            <p className="mb-8 text-text-secondary">For a strategic consultation on tax, business structuring, or wealth planning, please complete the form below. Our team will respond promptly. While our head office is in Centurion, we serve clients across South Africa.</p>
+            <p className="mb-8 text-text-secondary">For a strategic consultation on tax, business structuring, or wealth planning, please complete the form below. Our team will respond promptly.</p>
+            <div className="mb-8 p-4 bg-brand-blue/5 border-l-4 border-brand-blue rounded-r-lg">
+              <p className="text-sm font-semibold text-brand-blue mb-1">📍 Head Office Location: Centurion</p>
+              <p className="text-sm text-text-secondary">🌍 We serve clients across South Africa - distance is no barrier to expert service!</p>
+            </div>
             <form action="#" method="POST" className="space-y-6">
               <div>
                 <label htmlFor="full-name" className="block text-sm font-medium text-text-secondary">Full Name</label>
@@ -74,7 +87,8 @@ const ContactPage = () => {
                 </a>
               </InfoCard>
               <InfoCard icon={<Building size={24} />} title="Head Office Address">
-                <p>1022 Saxby Avenue, Eldoraigne<br />Centurion, 0157, South Africa<br /><span className="text-sm text-text-secondary">(We serve clients nationwide)</span></p>
+                <p className="mb-2">1022 Saxby Avenue, Eldoraigne<br />Centurion, 0157, South Africa</p>
+                <p className="text-sm font-semibold text-brand-blue">📍 Head Office | 🌍 Serving clients nationwide across South Africa</p>
               </InfoCard>
               <InfoCard icon={<Clock size={24} />} title="Business Hours">
                 <p>Mon - Fri: 08:00 - 16:30</p>

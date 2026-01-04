@@ -5,6 +5,11 @@ import { Linkedin, Mail, CheckCircle } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { Metadata } from 'next';
+import { generateMetadata as generateSEOMetadata, generatePersonSchema, generateBreadcrumbSchema } from '@/lib/seo';
+
+interface TeamPageParams {
+  slug: string;
+}
 
 export async function generateStaticParams() {
   return teamData.map((member) => ({
@@ -12,19 +17,36 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const member = teamData.find((m) => m.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<TeamPageParams> }): Promise<Metadata> {
+  const { slug } = await params;
+  const member = teamData.find((m) => m.slug === slug);
   if (!member) {
-    return { title: 'Team Member Not Found' };
+    return { 
+      title: 'Team Member Not Found | VNR',
+      description: 'The requested team member could not be found.',
+      robots: { index: false, follow: false },
+    };
   }
-  return {
-    title: `${member.name} - ${member.title} | VNR Professional Accountants`,
+  return generateSEOMetadata({
+    title: `${member.name} - ${member.title}`,
     description: member.intro,
-  };
+    path: `/team/${slug}`,
+    keywords: [
+      member.name,
+      member.title.toLowerCase(),
+      'accountant',
+      'tax consultant',
+      'Centurion',
+      'South Africa',
+    ],
+    image: member.imageUrl,
+    type: 'profile',
+  });
 }
 
-const TeamMemberPage = ({ params }: { params: { slug: string } }) => {
-  const member = teamData.find((m) => m.slug === params.slug);
+const TeamMemberPage = async ({ params }: { params: Promise<TeamPageParams> }) => {
+  const { slug } = await params;
+  const member = teamData.find((m) => m.slug === slug);
   if (!member) {
     notFound();
   }
@@ -35,8 +57,33 @@ const TeamMemberPage = ({ params }: { params: { slug: string } }) => {
     { name: member.name, href: `/team/${member.slug}` },
   ];
 
+  // Generate structured data
+  const personSchema = generatePersonSchema({
+    name: member.name,
+    jobTitle: member.title,
+    image: member.imageUrl,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/team/${member.slug}`,
+    email: member.email,
+    sameAs: member.linkedinUrl ? [member.linkedinUrl] : [],
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema(
+    breadcrumbItems.map(b => ({ name: b.name, url: b.href }))
+  );
+
   return (
-    <div className="bg-white text-text-primary">
+    <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema).replace(/</g, '\\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
+      />
+      
+      <div className="bg-white text-text-primary">
       {/* Profile Hero Section */}
       <div className="bg-surface-light border-b border-slate-200">
         <div className="container mx-auto max-w-5xl px-6 py-16">
@@ -113,6 +160,7 @@ const TeamMemberPage = ({ params }: { params: { slug: string } }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

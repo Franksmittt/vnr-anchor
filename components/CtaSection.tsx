@@ -11,7 +11,7 @@ const CtaSection = () => {
         <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
           Book a strategy consultation with VNR Professional Accountants to scope your Anchor Capital onboarding,
           tax-efficient structuring (TFSA, RA, offshore wrappers), and our independent advisor plus estate partners in
-          one conversation.
+          one conversation. While our head office is in Centurion, we serve clients across South Africa.
         </p>
         <Link
           href="/contact"

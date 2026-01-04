@@ -19,7 +19,7 @@ const ClientJourneySection = () => {
               A Partner for Every Stage of Your Business Journey
             </p>
             <p className="mt-6 max-w-3xl mx-auto text-lg text-text-on-dark/80">
-              From the first steps of incorporation to securing your legacy, VNR provides tailored expertise to navigate the challenges and opportunities at each phase.
+              From the first steps of incorporation to securing your legacy, VNR provides tailored expertise to navigate the challenges and opportunities at each phase. While our head office is in Centurion, we serve entrepreneurs across South Africa.
             </p>
           </div>
         </AnimateOnScroll>

@@ -7,6 +7,7 @@ import CtaSection from '@/components/CtaSection';
 import { teamData } from '@/data/team-data';
 import type { Metadata } from 'next';
 import FaqAccordion from '@/components/FaqAccordion';
+import { generateMetadata as generateSEOMetadata, generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seo';
 
 interface ServicePageParams {
   slug: string;
@@ -20,12 +21,26 @@ export async function generateMetadata({ params }: { params: Promise<ServicePage
   const { slug } = await params;
   const service = servicesData.find((s) => s.slug === slug);
   if (!service) {
-    return { title: 'Service Not Found | VNR', description: 'The requested service could not be found.' };
+    return { 
+      title: 'Service Not Found | VNR', 
+      description: 'The requested service could not be found.',
+      robots: { index: false, follow: false },
+    };
   }
-  return {
-    title: `${service.title} | VNR Services`,
+  
+  return generateSEOMetadata({
+    title: service.title,
     description: service.subtitle,
-  };
+    path: `/services/${slug}`,
+    keywords: [
+      service.title.toLowerCase(),
+      ...service.details.map(d => d.toLowerCase()),
+      'Centurion',
+      'South Africa',
+    ],
+    image: service.imageUrl,
+    type: 'website',
+  });
 }
 
 const ServicePage = async ({ params }: { params: Promise<ServicePageParams> }) => { 
@@ -41,8 +56,29 @@ const ServicePage = async ({ params }: { params: Promise<ServicePageParams> }) =
     { name: service.title, href: `/services/${service.slug}` },
   ];
 
+  // Generate structured data
+  const serviceSchema = generateServiceSchema({
+    name: service.title,
+    description: service.subtitle,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/services/${service.slug}`,
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema(
+    breadcrumbs.map(b => ({ name: b.name, url: b.href }))
+  );
+
   return (
     <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, '\\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
+      />
+      
       <ServiceHero 
         title={service.title}
         subtitle={service.subtitle}

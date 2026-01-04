@@ -3,11 +3,24 @@ import { Metadata } from "next";
 import { Anchor, CheckCircle2, ShieldCheck, Globe2, TrendingUp, ArrowUpRight, PhoneCall, BookOpen, Download } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export const metadata: Metadata = {
-  title: "Anchor Wealth Division | VNR Professional Accountants",
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: "Anchor Wealth Division",
   description:
     "Discover how VNR Professional Accountants partners with Anchor Capital to deliver tax-efficient investment structuring, independent financial advice, and estate planning support for South African entrepreneurs and expats.",
-};
+  path: '/anchor-wealth',
+  keywords: [
+    'Anchor Capital',
+    'wealth management',
+    'investment structuring',
+    'estate planning',
+    'financial advice',
+    'expats',
+    'entrepreneurs',
+    'South Africa',
+  ],
+});
 
 const anchorLandingUrl = "https://landing.anchorcapital.co.za/vnr-wealth-division";
 const pdfDownloadUrl = "https://drive.google.com/file/d/1n9UrKyDvR8nWT9j8X2aQPi6sHSETbf6F/view?usp=drive_link";
@@ -46,7 +59,7 @@ const advisorServices = [
   "Life cover, disability, and dread disease solutions sized for complex corporate structures",
   "Succession planning via Buy & Sell agreements, Keyman policies, and share buy-back funding",
   "Short-term insurance reviews for both personal and commercial risk, including site visits",
-  "Flexible consultations at the VNR office in Centurion or at your premises anywhere in South Africa",
+              "Flexible consultations at our Centurion head office or at your premises anywhere in South Africa - we serve clients nationwide",
 ];
 
 const estateHighlights = [
@@ -93,6 +106,9 @@ const AnchorWealthPage = () => {
               you expect from VNR. Every portfolio conversation starts with tax-efficient structuring,
               including Retirement Annuities, Tax-Free Investments, and offshore architecture built for
               South African entrepreneurs and expats.
+            </p>
+            <p className="mt-4 text-base font-semibold text-brand-teal-light">
+              📍 Head Office: Centurion | 🌍 Serving clients across South Africa
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -175,8 +191,8 @@ const AnchorWealthPage = () => {
             <h3 className="mt-4 text-2xl font-semibold text-text-primary">Life & risk planning on your terms.</h3>
             <p className="mt-4 text-text-secondary">
               Our independent financial advisor (not affiliated with Anchor) works exclusively with VNR clients.
-              He can meet at our Centurion headquarters or travel to you anywhere in South Africa, ensuring personal cover aligns with
-              business realities.
+              He can meet at our Centurion head office or travel to you anywhere in South Africa, ensuring personal cover aligns with
+              business realities. We serve clients nationwide - distance is no barrier to expert service.
             </p>
             <ul className="mt-6 space-y-3 text-text-secondary">
               {advisorServices.map((service) => (

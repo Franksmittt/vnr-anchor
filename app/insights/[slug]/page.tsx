@@ -7,6 +7,7 @@ import LeadExpertCard from '@/components/LeadExpertCard';
 import { teamData } from '@/data/team-data';
 import type { Metadata } from 'next';
 import RelatedServices from '@/components/RelatedServices';
+import { generateMetadata as generateSEOMetadata, generateArticleSchema, generateBreadcrumbSchema } from '@/lib/seo';
 
 interface InsightPageParams {
   slug: string;
@@ -20,12 +21,42 @@ export async function generateMetadata({ params }: { params: Promise<InsightPage
   const { slug } = await params;
   const article = insightsData.find((a) => a.slug === slug);
   if (!article) {
-    return { title: 'Insight Not Found | VNR', description: 'The requested insight could not be found.' };
+    return { 
+      title: 'Insight Not Found | VNR', 
+      description: 'The requested insight could not be found.',
+      robots: { index: false, follow: false },
+    };
   }
-  return {
-    title: `${article.title} | VNR Insights`,
+  
+  // Parse date for publishedTime
+  let publishedTime: string | undefined;
+  try {
+    if (article.date) {
+      const parsedDate = new Date(article.date);
+      if (!isNaN(parsedDate.getTime())) {
+        publishedTime = parsedDate.toISOString();
+      }
+    }
+  } catch {
+    // Keep undefined
+  }
+  
+  return generateSEOMetadata({
+    title: article.title,
     description: article.excerpt,
-  };
+    path: `/insights/${slug}`,
+    keywords: [
+      article.category.toLowerCase(),
+      'tax advice',
+      'accounting',
+      'South Africa',
+      'Centurion',
+    ],
+    image: article.imageUrl,
+    type: 'article',
+    publishedTime,
+    authors: [article.author.name],
+  });
 }
 
 const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) => { 
@@ -35,8 +66,49 @@ const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) =
 
   const expertBio = teamData.find(m => m.slug === article.author.slug)?.intro || '';
 
+  // Generate structured data
+  let publishedTime: string | undefined;
+  try {
+    if (article.date) {
+      const parsedDate = new Date(article.date);
+      if (!isNaN(parsedDate.getTime())) {
+        publishedTime = parsedDate.toISOString();
+      }
+    }
+  } catch {
+    // Keep undefined
+  }
+
+  const articleSchema = generateArticleSchema({
+    title: article.title,
+    description: article.excerpt,
+    image: article.imageUrl,
+    publishedTime,
+    author: {
+      name: article.author.name,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/team/${article.author.slug}`,
+    },
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/insights/${slug}`,
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Insights', url: '/insights' },
+    { name: article.title, url: `/insights/${slug}` },
+  ]);
+
   return (
     <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
+      />
+      
       <ArticleHero article={article} />
 
       <div className="bg-white py-16 sm:py-24">

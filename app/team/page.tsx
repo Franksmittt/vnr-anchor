@@ -9,10 +9,14 @@ import CareersSection from '@/components/CareersSection';
 import AuthorityBar from '@/components/AuthorityBar';
 import CtaSection from '@/components/CtaSection';
 
-export const metadata = {
-  title: 'Our Leadership | VNR Professional Accountants',
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+
+export const metadata = generateSEOMetadata({
+  title: 'Our Leadership',
   description: 'Meet the team of seasoned financial and tax experts at VNR. Our leadership is dedicated to providing strategic foresight and meticulous guidance for your wealth across South Africa. While our head office is in Centurion, we serve clients nationwide.',
-};
+  path: '/team',
+  keywords: ['team', 'leadership', 'accountants', 'tax experts', 'Centurion', 'South Africa'],
+});
 
 const TeamPage = () => {
   const breadcrumbItems = [

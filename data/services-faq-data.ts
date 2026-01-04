@@ -4,8 +4,8 @@ export const servicesFaqs = [
     a: "<p>While both roles are crucial, a traditional accountant often focuses on historical financial reporting and compliance. A tax consultant, a role we specialize in at VNR, takes a more strategic and forward-looking approach, actively structuring your finances to legally minimize tax liability and align with your long-term goals.</p>"
   },
   {
-    q: "My business is based in Alberton, can you still help?",
-    a: "<p>Absolutely. While our head office is in Centurion, we leverage modern cloud accounting technology to serve clients seamlessly across Gauteng, including a strong client base in Alberton. We provide the same level of dedicated, expert service regardless of your location.</p>"
+    q: "My business is based in Alberton (or anywhere else in South Africa), can you still help?",
+    a: "<p>Absolutely! While our head office is in Centurion, we serve clients across South Africa. We leverage modern cloud accounting technology and remote consultation capabilities to provide the same level of dedicated, expert service regardless of your location. Whether you're in Cape Town, Durban, Johannesburg, Port Elizabeth, or anywhere else in the country, we can help you.</p>"
   },
   {
     q: "What does it mean that you are SAIPA-accredited?",

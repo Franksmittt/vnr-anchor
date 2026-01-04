@@ -16,6 +16,9 @@ const ContactHero = () => {
                 <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
                     We are here to help you navigate your financial journey. Whether you have a question about our services or want to schedule a consultation, we look forward to hearing from you.
                 </p>
+                <p className="mt-4 text-base font-semibold text-brand-blue max-w-2xl mx-auto">
+                    📍 Head Office: Centurion | 🌍 Serving clients across South Africa
+                </p>
             </div>
         </div>
     );

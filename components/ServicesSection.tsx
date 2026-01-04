@@ -24,7 +24,7 @@ const ServicesSection = () => {
               A Holistic Approach to Your Financial Legacy
             </p>
             <p className="mt-6 max-w-2xl mx-auto text-lg text-text-secondary">
-              From company registration and trust formation to strategic tax advisory, VNR provides integrated services to empower South Africa’s top entrepreneurs.
+              From company registration and trust formation to strategic tax advisory, VNR provides integrated services to empower South Africa's top entrepreneurs. While our head office is in Centurion, we serve clients nationwide.
             </p>
           </div>
         </AnimateOnScroll>

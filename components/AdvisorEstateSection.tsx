@@ -14,7 +14,7 @@ const AdvisorEstateSection = () => {
           </h2>
           <p className="mt-6 text-lg text-text-secondary">
             Beyond Anchor Capital portfolios, VNR clients gain access to an on-call independent
-            financial advisor who can meet you at our offices or wherever you are. Together we make
+            financial advisor who can meet you at our Centurion offices or anywhere you are in South Africa. Together we make
             sure life cover, succession, wills, and short-term insurance stay as current as your tax plan.
           </p>
         </div>

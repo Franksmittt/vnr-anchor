@@ -3,11 +3,25 @@ import { Metadata } from "next";
 import { Download, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export const metadata: Metadata = {
-  title: "10 Costly Tax Mistakes for Expats & Contractors | VNR Professional Accountants",
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: "10 Costly Tax Mistakes for Expats & Contractors",
   description:
     "Access the VNR checklist covering the top 10 tax mistakes South African expats and independent contractors make, and download the free PDF to stay compliant.",
-};
+  path: '/resources/expat-tax-guide',
+  keywords: [
+    'expats',
+    'contractors',
+    'tax mistakes',
+    'South Africa',
+    'tax compliance',
+    'independent contractors',
+    'tax guide',
+    'free PDF',
+  ],
+  type: 'article',
+});
 
 const pdfDownloadUrl = "https://drive.google.com/file/d/1n9UrKyDvR8nWT9j8X2aQPi6sHSETbf6F/view?usp=drive_link";
 const marketingUrl = "https://marketing.vnr.co.za/expats-contractors?fbclid=IwY2xjawORGzVleHRuA2FlbQIxMABicmlkETBpR2h1dmZXMkZQTlBFaWxuc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHjLoS2AcTuGmBBQaa-NLjTNdKeeeiPvVj6j_-wZHlmXZriUp8UYsoLIkIVbz_aem_2vey8ij1xay9z3OuOTOxGA";

@@ -267,7 +267,7 @@ export const servicesData: Service[] = [
   {
     slug: 'payroll-administration',
     title: 'Payroll Administration',
-    subtitle: 'Comprehensive payroll solutions to ensure your team is paid accurately and on time, while maintaining full SARS & Labour Law compliance in Centurion.',
+    subtitle: 'Comprehensive payroll solutions to ensure your team is paid accurately and on time, while maintaining full SARS & Labour Law compliance across South Africa.',
     imageUrl: '/images/services/payroll-hero.jpg',
     icon: 'UserCheck',
     details: ['Monthly Payroll Processing', 'Payslip Generation', 'EMP201 & EMP501 Submissions', 'UIF & COID Compliance'],
