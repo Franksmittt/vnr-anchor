@@ -17,7 +17,7 @@ const LeadExpertCard: React.FC<LeadExpertCardProps> = ({ name, title, imageUrl, 
     <h3 className="font-serif text-lg font-bold text-text-primary mb-4 tracking-wide">Lead Expert</h3>
     <div className="flex items-center space-x-4 mb-4">
       <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-offset-2 ring-brand-blue-light">
-        <Image src={imageUrl} alt={name} fill sizes="64px" className="object-cover" />
+        <Image src={imageUrl} alt={name} fill sizes="64px" className="object-cover" loading="lazy" />
       </div>
       <div>
         <Link href={`/team/${slug}`} className="font-bold text-text-primary hover:text-brand-blue transition-colors">{name}</Link>

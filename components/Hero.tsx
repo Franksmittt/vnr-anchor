@@ -44,24 +44,32 @@ const Hero = () => {
 
   return (
     <section className="relative text-white min-h-[calc(100vh-theme(spacing.20))] flex items-center overflow-hidden">
-      {/* Background Images with Fade Transition */}
-      {slidesData.map((slideData, index) => (
-        <div
-          key={slideData.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <Image
-            src={slideData.imageUrl}
-            alt={slideData.altText}
-            fill
-            priority={index === 0}
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-      ))}
+      {/* Background Images with Fade Transition - Only load current and next slide */}
+      {slidesData.map((slideData, index) => {
+        // Only render current slide and next slide for better performance
+        const isCurrent = index === currentSlide;
+        const isNext = index === (currentSlide + 1) % slidesData.length;
+        if (!isCurrent && !isNext) return null;
+        
+        return (
+          <div
+            key={slideData.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              isCurrent ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={slideData.imageUrl}
+              alt={slideData.altText}
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className="object-cover"
+              loading={index === 0 ? 'eager' : 'lazy'}
+            />
+          </div>
+        );
+      })}
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-800/40"></div>

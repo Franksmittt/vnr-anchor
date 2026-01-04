@@ -37,6 +37,7 @@ const InsightsSection = () => {
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 66vw, 100vw"
+                    loading="lazy"
                   />
                 </div>
                 <div className="flex flex-1 flex-col justify-between p-6">

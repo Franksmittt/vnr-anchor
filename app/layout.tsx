@@ -9,6 +9,8 @@ const inter = Inter({
   subsets: ["latin"],
   display: 'swap',
   variable: '--font-inter',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 const lora = Lora({
@@ -16,6 +18,8 @@ const lora = Lora({
   display: 'swap',
   variable: '--font-lora',
   weight: ['400', '500', '600', '700'],
+  preload: true,
+  fallback: ['Georgia', 'serif'],
 });
 
 export const metadata: Metadata = {

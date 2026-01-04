@@ -33,6 +33,7 @@ const TeamSection = () => {
                     alt={`${member.name}, ${member.title} at VNR Professional Accountants`} 
                     width={144}
                     height={144}
+                    loading="lazy"
                   />
                   <div className="mt-6">
                     <h3 className="font-serif text-xl font-semibold text-white">
