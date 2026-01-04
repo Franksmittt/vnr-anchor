@@ -1,0 +1,156 @@
+================================================================================
+VNR PROFESSIONAL ACCOUNTANTS - SOFTWARE COMPANIES & PARTNERSHIPS
+================================================================================
+
+This document lists all software companies, partnerships, certifications, and 
+affiliations mentioned in the VNR website codebase for logo sourcing purposes.
+
+================================================================================
+SOFTWARE COMPANIES & PLATFORMS
+================================================================================
+
+1. SAGE BUSINESS CLOUD
+   - Partnership Level: PLATINUM PARTNER (Highest level)
+   - Services: Sage Business Cloud Accounting, Sage Business Cloud Payroll
+   - Mentioned in: Cloud Accounting service page, insights articles
+   - Notes: Deeply integrated South African payroll, robust for complex businesses
+
+2. XERO
+   - Partnership Level: CERTIFIED ADVISORS
+   - Services: Xero Accounting (Standard, Premium)
+   - Mentioned in: Cloud Accounting service page, insights articles
+   - Notes: User-friendly interface, vast app ecosystem, great for service-based businesses
+
+3. DEXT (formerly Receipt Bank)
+   - Partnership Level: Expert Implementers
+   - Services: AI-powered invoice and receipt data capture
+   - Mentioned in: Cloud Accounting service page
+   - Notes: Integrates with Sage and Xero, automates data entry
+
+4. QUICKBOOKS ONLINE
+   - Services: QuickBooks Online (Simple Start, Essentials, Plus)
+   - Mentioned in: Services pricing page
+   - Notes: Cloud accounting platform
+
+5. SIMPLEPAY
+   - Services: Payroll processing (per employee)
+   - Mentioned in: Services pricing page
+   - Notes: Payroll software
+
+6. PASTEL PARTNER (Legacy)
+   - Mentioned in: Cloud Accounting FAQ
+   - Notes: Traditional desktop accounting software (migration from)
+
+================================================================================
+STRATEGIC PARTNERSHIPS
+================================================================================
+
+1. ANCHOR CAPITAL
+   - Partnership Type: Strategic Wealth Management Partner
+   - Services: Investment management, portfolio structuring, wealth management
+   - Website: https://landing.anchorcapital.co.za/vnr-wealth-division
+   - Assets Under Management: ±R260bn (with Credo)
+   - Locations: Johannesburg, Cape Town, Durban, Pretoria
+   - Notes: 
+     - VNR routes all investment enquiries through Anchor partnership
+     - Provides tax-efficient structuring (TFSA, RA, offshore wrappers)
+     - Independent advisor works exclusively with VNR clients
+     - Research tools: The Navigator, Coffee Table Economics, quarterly webinars
+
+2. CREDO
+   - Relationship: Part of Anchor Capital's asset management structure
+   - Notes: Manages assets alongside Anchor Capital
+
+================================================================================
+PROFESSIONAL CERTIFICATIONS & ACCREDITATIONS
+================================================================================
+
+1. SAIPA (South African Institute of Professional Accountants)
+   - Status: ACCREDITED
+   - Team Members: All team members are SAIPA-accredited
+   - Notes: Leading professional accounting body in South Africa
+   - Website: https://www.saipa.co.za (likely)
+
+2. SARS (South African Revenue Service)
+   - Status: REGISTERED TAX PRACTITIONERS
+   - Team Members: Jannie Venter, Charlie Naudé, Henry Landsberg
+   - Services: Tax returns, VAT, PAYE, SDL, UIF compliance
+   - Notes: All team members registered with SARS
+
+3. CIPC (Companies and Intellectual Property Commission)
+   - Status: SERVICE PROVIDER
+   - Services: Company registrations, annual returns, amendments
+   - Notes: VNR handles CIPC compliance for clients
+
+================================================================================
+GOVERNMENT & REGULATORY BODIES (Service Providers)
+================================================================================
+
+1. SARS (South African Revenue Service)
+   - Services: Tax compliance, VAT, PAYE, SDL, UIF
+   - Notes: VNR acts as intermediary for clients
+
+2. CIPC (Companies and Intellectual Property Commission)
+   - Services: Company registrations, annual returns, director changes
+   - Notes: VNR handles all CIPC filings
+
+3. DEPARTMENT OF LABOUR
+   - Services: UIF registration, UI-19 declarations, COID compliance
+   - Notes: VNR handles payroll-related Department of Labour submissions
+
+4. MASTER OF THE HIGH COURT
+   - Services: Trust registration, estate administration
+   - Notes: VNR handles trust registrations and estate matters
+
+5. COMPENSATION FUND (COID)
+   - Services: Return of Earnings (W.As.8), Letters of Good Standing
+   - Notes: VNR handles Workman's Compensation compliance
+
+================================================================================
+EDUCATIONAL INSTITUTIONS
+================================================================================
+
+1. NORTH-WEST UNIVERSITY
+   - Team Members: Charlie Naudé (B.Com, B.Com Hons)
+   - Notes: Where Charlie earned his accounting qualifications
+
+================================================================================
+LOGO REQUIREMENTS SUMMARY
+================================================================================
+
+PRIMARY LOGOS NEEDED:
+---------------------
+1. Sage Business Cloud (Platinum Partner badge/logo)
+2. Xero (Certified Advisor badge/logo)
+3. Anchor Capital (Partnership logo)
+4. SAIPA (Accreditation logo/badge)
+5. Dext (Logo - if available)
+
+SECONDARY LOGOS (Optional):
+---------------------------
+6. QuickBooks Online
+7. SimplePay
+8. Credo (if separate from Anchor)
+
+GOVERNMENT BODIES (Usually don't need logos, but for reference):
+-----------------------------------------------------------------
+- SARS (South African Revenue Service)
+- CIPC (Companies and Intellectual Property Commission)
+- Department of Labour
+- Master of the High Court
+- Compensation Fund
+
+================================================================================
+NOTES FOR LOGO PLACEMENT
+================================================================================
+
+- Sage Platinum Partner logo: Should be prominently displayed on Cloud Accounting page
+- Xero Certified Advisor logo: Should be displayed alongside Sage logo
+- Anchor Capital logo: Featured on Anchor Wealth Division page and homepage
+- SAIPA accreditation: Can be displayed in footer or team section
+- Dext logo: Can be shown in Cloud Accounting service details
+
+================================================================================
+END OF LIST
+================================================================================
+
