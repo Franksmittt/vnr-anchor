@@ -10,7 +10,7 @@ const FoundersNoteSection = () => {
             <div className="relative">
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/images/team/jannie-venter.jpg"
+                  src="/images/team/charlie+jannie.jpg"
                   alt="VNR Founders - Jannie Venter and Charlie Naudé"
                   fill
                   className="object-cover"
