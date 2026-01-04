@@ -70,14 +70,20 @@ PROFESSIONAL CERTIFICATIONS & ACCREDITATIONS
    - Team Members: All team members are SAIPA-accredited
    - Notes: Leading professional accounting body in South Africa
    - Website: https://www.saipa.co.za (likely)
+   - Logo: Already exists at /images/logos/SAIPA-LOGO-Full-Name-HighRes.jpg
 
-2. SARS (South African Revenue Service)
+2. SAIT (South African Institute of Tax Practitioners)
+   - Status: ACCREDITED (appears in AuthorityBar)
+   - Notes: Professional tax body
+   - Logo: Already exists at /images/logos/Sait-logo.png
+
+3. SARS (South African Revenue Service)
    - Status: REGISTERED TAX PRACTITIONERS
    - Team Members: Jannie Venter, Charlie Naudé, Henry Landsberg
    - Services: Tax returns, VAT, PAYE, SDL, UIF compliance
    - Notes: All team members registered with SARS
 
-3. CIPC (Companies and Intellectual Property Commission)
+4. CIPC (Companies and Intellectual Property Commission)
    - Status: SERVICE PROVIDER
    - Services: Company registrations, annual returns, amendments
    - Notes: VNR handles CIPC compliance for clients
@@ -120,11 +126,12 @@ LOGO REQUIREMENTS SUMMARY
 
 PRIMARY LOGOS NEEDED:
 ---------------------
-1. Sage Business Cloud (Platinum Partner badge/logo)
-2. Xero (Certified Advisor badge/logo)
-3. Anchor Capital (Partnership logo)
-4. SAIPA (Accreditation logo/badge)
-5. Dext (Logo - if available)
+1. Sage Business Cloud (Platinum Partner badge/logo) ✅ Already exists: /images/logos/Sage-Logo.png
+2. Xero (Certified Advisor badge/logo) ❌ NEEDED
+3. Anchor Capital (Partnership logo) ✅ Already exists: /images/logos/anchor_long.png, anchor_logo_square.png, anchor_fav.jpg
+4. SAIPA (Accreditation logo/badge) ✅ Already exists: /images/logos/SAIPA-LOGO-Full-Name-HighRes.jpg
+5. SAIT (Accreditation logo/badge) ✅ Already exists: /images/logos/Sait-logo.png
+6. Dext (Logo - if available) ❌ NEEDED
 
 SECONDARY LOGOS (Optional):
 ---------------------------
