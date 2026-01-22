@@ -8,6 +8,16 @@ const SITE_NAME = 'VNR Professional Accountants';
 const DEFAULT_DESCRIPTION = "Your premier partner in strategic tax advisory, business structuring, and intergenerational wealth planning for South Africa's leading families and businesses.";
 
 /**
+ * Ensures image URL is absolute for JSON-LD and Open Graph.
+ */
+function ensureAbsoluteImageUrl(image: string | undefined): string {
+  if (!image) return `${BASE_URL}/images/og-default.jpg`;
+  if (image.startsWith('http://') || image.startsWith('https://')) return image;
+  const path = image.startsWith('/') ? image : `/${image}`;
+  return `${BASE_URL}${path}`;
+}
+
+/**
  * Constructs a canonical URL with proper trailing slash handling
  * Ensures consistency between next.config.js trailingSlash setting and canonical tags
  */
@@ -95,7 +105,7 @@ export function generateMetadata({
   };
 } {
   const canonical = constructCanonicalUrl(path);
-  const ogImage = image || `${BASE_URL}/images/og-default.jpg`;
+  const ogImage = ensureAbsoluteImageUrl(image);
   
   const defaultKeywords = [
     'VNR Professional Accountants',
@@ -315,6 +325,25 @@ export function generateOrganizationSchema() {
 }
 
 /**
+ * Generates FAQPage structured data (JSON-LD)
+ */
+export function generateFAQSchema(faqs: Array<{ q: string; a: string }>, url: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a.replace(/<[^>]*>/g, '').trim(),
+      },
+    })),
+    ...(url && { mainEntityOfPage: { '@type': 'WebPage', '@id': url } }),
+  };
+}
+
+/**
  * Generates Person structured data (JSON-LD)
  */
 export function generatePersonSchema({
@@ -337,7 +366,7 @@ export function generatePersonSchema({
     '@type': 'Person',
     name,
     jobTitle,
-    ...(image && { image }),
+    ...(image && { image: ensureAbsoluteImageUrl(image) }),
     ...(url && { url }),
     ...(email && { email }),
     ...(sameAs.length > 0 && { sameAs }),

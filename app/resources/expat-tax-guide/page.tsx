@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { Download, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+import { generateMetadata as generateSEOMetadata, generateArticleSchema, generateBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = generateSEOMetadata({
   title: "10 Costly Tax Mistakes for Expats & Contractors",
@@ -79,6 +79,19 @@ const mistakes = [
   },
 ];
 
+const EXPAT_GUIDE_URL = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/resources/expat-tax-guide`;
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Home', url: '/' },
+  { name: 'Expat & Contractor Tax Guide', url: '/resources/expat-tax-guide' },
+]);
+const articleSchema = generateArticleSchema({
+  title: "10 Costly Tax Mistakes Expats & Independent Contractors Make (and how to avoid them)",
+  description: "Access the VNR checklist covering the top 10 tax mistakes South African expats and independent contractors make, and download the free PDF to stay compliant.",
+  url: EXPAT_GUIDE_URL,
+  publishedTime: '2025-01-01T00:00:00.000Z',
+  author: { name: 'VNR Professional Accountants' },
+});
+
 const ExpatTaxGuidePage = () => {
   const breadcrumbs = [
     { name: "Home", href: "/" },
@@ -87,6 +100,8 @@ const ExpatTaxGuidePage = () => {
 
   return (
     <div className="bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c') }} />
       <section className="bg-surface-light border-b border-slate-200 py-16 sm:py-24">
         <div className="container mx-auto px-6">
           <Breadcrumbs items={breadcrumbs} className="text-slate-500" />

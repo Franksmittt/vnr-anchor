@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Services & Pricing',
@@ -18,11 +18,24 @@ export const metadata: Metadata = generateSEOMetadata({
   ],
 });
 
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Home', url: '/' },
+  { name: 'Services & Pricing', url: '/services' },
+]);
+
 export default function ServicesLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
+      />
+      {children}
+    </>
+  );
 }
 

@@ -39,19 +39,19 @@ const Header = () => {
 
   return (
     <header className="bg-surface-dark text-text-on-dark shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto flex h-20 items-center justify-between px-6">
+      <div className="container mx-auto flex h-16 sm:h-20 items-center justify-between px-4 sm:px-6">
         <Link href="/" aria-label="VNR Professional Accountants Home Page">
           <Image 
             src="/images/logos/vnrlogo.jpg" 
             alt="VNR Professional Accountants Logo" 
             width={150} 
             height={50} 
-            className="h-12 w-auto object-contain" 
+            className="h-10 sm:h-12 w-auto object-contain" 
             priority
           />
         </Link>
 
-        <nav className="hidden items-center space-x-2 lg:flex" role="navigation" aria-label="Main Navigation">
+        <nav className="hidden items-center space-x-1 sm:space-x-2 lg:flex" role="navigation" aria-label="Main Navigation">
           {navLinks.map((link) => (
             <NavItem key={link.label} href={link.href}>
               {link.label}
@@ -59,10 +59,10 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <Link
             href="/contact"
-            className="hidden lg:inline-flex items-center justify-center rounded-md bg-brand-teal px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-brand-teal-dark hover:shadow-lg hover:scale-105"
+            className="hidden lg:inline-flex items-center justify-center rounded-md bg-brand-teal px-5 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-brand-teal-dark hover:shadow-lg hover:scale-105"
           >
             Get in Touch
           </Link>
@@ -74,7 +74,7 @@ const Header = () => {
             aria-controls="mobile-menu"
             aria-expanded={isMobileMenuOpen}
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>
         </div>
       </div>
@@ -98,13 +98,13 @@ const Header = () => {
                 <X className="h-6 w-6" />
               </button>
             </div>
-            <nav className="mt-8 flex flex-col space-y-2" aria-label="Mobile Navigation">
+            <nav className="mt-6 sm:mt-8 flex flex-col space-y-2" aria-label="Mobile Navigation">
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-lg p-3 text-lg font-medium hover:bg-slate-200"
+                  className="rounded-lg p-3 text-base sm:text-lg font-medium hover:bg-slate-200 transition-colors"
                   aria-current={usePathname() === link.href ? 'page' : undefined}
                 >
                   {link.label}
@@ -113,15 +113,15 @@ const Header = () => {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-4 inline-flex items-center justify-center rounded-md bg-brand-teal px-6 py-3 text-sm font-semibold text-white shadow-md"
+                className="mt-4 inline-flex items-center justify-center rounded-md bg-brand-teal px-5 sm:px-6 py-2.5 sm:py-3 text-sm font-semibold text-white shadow-md transition-colors"
               >
                 Get in Touch
               </Link>
               <a
                 href="tel:+27126531633"
-                className="mt-2 inline-flex items-center justify-center rounded-md bg-brand-blue px-4 py-3 text-sm font-semibold text-white"
+                className="mt-2 inline-flex items-center justify-center rounded-md bg-brand-blue px-4 sm:px-5 py-2.5 sm:py-3 text-sm font-semibold text-white transition-colors"
               >
-                <Phone className="mr-2 h-5 w-5" />
+                <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Call Us Today
               </a>
             </nav>

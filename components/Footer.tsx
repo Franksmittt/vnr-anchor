@@ -22,22 +22,22 @@ const Footer = () => {
 
   return (
     <footer className="bg-surface-dark text-text-on-dark">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
           
           <div>
-            <h3 className="font-serif text-2xl font-bold text-white">VNR <span className="text-brand-teal">Professional Accountants</span></h3>
-            <p className="mt-4 text-sm text-text-on-dark/70">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">VNR <span className="text-brand-teal">Professional Accountants</span></h3>
+            <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-text-on-dark/70">
               Your trusted partner in strategic tax advisory, business structuring, and intergenerational wealth planning. We're here to help South African entrepreneurs build something lasting.
             </p>
-            <p className="mt-3 text-sm font-semibold text-brand-teal">
+            <p className="mt-3 text-xs sm:text-sm font-semibold text-brand-teal">
               📍 Head Office: Centurion | 🌍 From the busy streets of Centurion to the heart of the Karoo, we are your nationwide accounting partners.
             </p>
           </div>
           
           <div>
-            <h3 className="font-serif font-semibold text-white">Key Services</h3>
-            <ul className="mt-4 space-y-3">
+            <h3 className="font-serif text-base sm:text-lg font-semibold text-white">Key Services</h3>
+            <ul className="mt-3 sm:mt-4 space-y-2 sm:space-y-3">
               <FooterLink href="/services/tax-advisory">Tax Advisory</FooterLink>
               <FooterLink href="/services/business-structuring">Business Structuring</FooterLink>
               <FooterLink href="/services/secretarial-services">Secretarial Services</FooterLink>
@@ -48,8 +48,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-serif font-semibold text-white">Quick Links</h3>
-            <ul className="mt-4 space-y-3">
+            <h3 className="font-serif text-base sm:text-lg font-semibold text-white">Quick Links</h3>
+            <ul className="mt-3 sm:mt-4 space-y-2 sm:space-y-3">
               <FooterLink href="/team">Our Leadership</FooterLink>
               <FooterLink href="/anchor-wealth">Anchor Wealth Division</FooterLink>
               <FooterLink href="/resources/expat-tax-guide">Expat & Contractor Tax Guide</FooterLink>
@@ -59,25 +59,25 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-serif font-semibold text-white">Get in Touch</h3>
-            <ul className="mt-4 space-y-4">
+            <h3 className="font-serif text-base sm:text-lg font-semibold text-white">Get in Touch</h3>
+            <ul className="mt-3 sm:mt-4 space-y-3 sm:space-y-4">
               <li className="flex items-start">
-                <MapPin size={18} className="mr-3 mt-1 flex-shrink-0 text-brand-teal-light" />
-                <span className="text-sm text-text-on-dark/70">1022 Saxby Avenue, Eldoraigne<br />Centurion, 0157, South Africa<br /><span className="text-brand-teal font-semibold">Head Office - Serving clients across South Africa</span></span>
+                <MapPin size={16} className="sm:w-[18px] sm:h-[18px] mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0 text-brand-teal-light" />
+                <span className="text-xs sm:text-sm text-text-on-dark/70">1022 Saxby Avenue, Eldoraigne<br />Centurion, 0157, South Africa<br /><span className="text-brand-teal font-semibold">Head Office - Serving clients across South Africa</span></span>
               </li>
               <li className="flex items-center">
-                <Mail size={16} className="mr-3 flex-shrink-0 text-brand-teal-light" />
-                <a href="mailto:info@vnr.co.za" className="text-sm text-text-on-dark/70 hover:text-white">info@vnr.co.za</a>
+                <Mail size={14} className="sm:w-4 sm:h-4 mr-2 sm:mr-3 flex-shrink-0 text-brand-teal-light" />
+                <a href="mailto:info@vnr.co.za" className="text-xs sm:text-sm text-text-on-dark/70 hover:text-white break-all">info@vnr.co.za</a>
               </li>
               <li className="flex items-center">
-                <Phone size={16} className="mr-3 flex-shrink-0 text-brand-teal-light" />
-                <a href="tel:+27126531633" className="text-sm text-text-on-dark/70 hover:text-white">+27 12 653 1633</a>
+                <Phone size={14} className="sm:w-4 sm:h-4 mr-2 sm:mr-3 flex-shrink-0 text-brand-teal-light" />
+                <a href="tel:+27126531633" className="text-xs sm:text-sm text-text-on-dark/70 hover:text-white">+27 12 653 1633</a>
               </li>
             </ul>
           </div>
         </div>
-        <hr className="my-8 border-slate-700" />
-        <div className="text-center text-sm text-text-on-dark/60">
+        <hr className="my-6 sm:my-8 border-slate-700" />
+        <div className="text-center text-xs sm:text-sm text-text-on-dark/60">
           © {currentYear} VNR Professional Accountants (Pty) Ltd. All Rights Reserved.
         </div>
       </div>

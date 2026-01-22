@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
-import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo';
+import { faqs } from '@/data/contact-data';
+
+const contactUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/contact`;
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Contact Us',
@@ -15,11 +18,29 @@ export const metadata: Metadata = generateSEOMetadata({
   ],
 });
 
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Home', url: '/' },
+  { name: 'Contact', url: '/contact' },
+]);
+const faqSchema = generateFAQSchema(faqs, contactUrl);
+
 export default function ContactLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, '\\u003c') }}
+      />
+      {children}
+    </>
+  );
 }
 

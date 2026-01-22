@@ -8,38 +8,38 @@ const TeamSection = () => {
   const featuredMembers = teamData.slice(0, 3);
 
   return (
-    <section className="bg-white py-20 sm:py-28">
-      <div className="container mx-auto px-6">
+    <section className="bg-white py-16 sm:py-20 lg:py-28">
+      <div className="container mx-auto px-4 sm:px-6">
         <AnimateOnScroll>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-base font-semibold text-brand-blue tracking-wider uppercase">Our Leadership Cadre</h2>
-            <p className="mt-2 font-serif text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+            <h2 className="text-xs sm:text-base font-semibold text-brand-blue tracking-wider uppercase">Our Leadership Cadre</h2>
+            <p className="mt-2 font-serif text-2xl sm:text-3xl font-bold tracking-tight text-text-primary lg:text-4xl">
               The Architects of Your Financial Legacy
             </p>
-            <p className="mt-6 text-lg text-text-secondary">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-text-secondary">
               Meet our SAIPA-accredited experts dedicated to strategic tax advisory, business structuring, and intergenerational wealth planning for South Africa's top entrepreneurs. While our head office is in Centurion, we serve clients across South Africa.
             </p>
           </div>
         </AnimateOnScroll>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {featuredMembers.map((member, index) => (
             <AnimateOnScroll key={member.slug} delay={`${index * 150}ms`}>
               <div className="group relative overflow-hidden rounded-xl bg-surface-dark shadow-lg text-center h-full flex flex-col">
-                <div className="p-8 flex-grow">
+                <div className="p-6 sm:p-8 flex-grow">
                   <Image
-                    className="mx-auto h-36 w-36 rounded-full object-cover ring-4 ring-slate-700 transition-all duration-300 group-hover:ring-brand-blue-light"
+                    className="mx-auto h-28 w-28 sm:h-36 sm:w-36 rounded-full object-cover ring-4 ring-slate-700 transition-all duration-300 group-hover:ring-brand-blue-light"
                     src={member.imageUrl}
                     alt={`${member.name}, ${member.title} at VNR Professional Accountants`} 
                     width={144}
                     height={144}
                     loading="lazy"
                   />
-                  <div className="mt-6">
-                    <h3 className="font-serif text-xl font-semibold text-white">
+                  <div className="mt-4 sm:mt-6">
+                    <h3 className="font-serif text-lg sm:text-xl font-semibold text-white">
                       {member.name}
                     </h3>
-                    <p className="mt-1 text-base text-brand-blue-light">
+                    <p className="mt-1 text-sm sm:text-base text-brand-blue-light">
                       {member.title}
                     </p>
                   </div>
@@ -62,8 +62,8 @@ const TeamSection = () => {
             </AnimateOnScroll>
           ))}
         </div>
-        <div className="mt-16 text-center">
-          <Link href="/team" className="font-semibold text-brand-blue hover:text-brand-blue-dark transition-colors">
+        <div className="mt-12 sm:mt-16 text-center">
+          <Link href="/team" className="text-sm sm:text-base font-semibold text-brand-blue hover:text-brand-blue-dark transition-colors">
             Meet the Entire Team <span aria-hidden="true">→</span>
           </Link>
         </div>

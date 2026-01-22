@@ -43,7 +43,7 @@ const Hero = () => {
   const slide = slidesData[currentSlide];
 
   return (
-    <section className="relative text-white min-h-[calc(100vh-theme(spacing.20))] flex items-center overflow-hidden">
+    <section className="relative text-white min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-5rem)] flex items-center overflow-hidden">
       {/* Background Images with Fade Transition - Only load current and next slide */}
       {slidesData.map((slideData, index) => {
         // Only render current slide and next slide for better performance
@@ -91,29 +91,29 @@ const Hero = () => {
       </button>
 
       {/* Content with Fade Transition */}
-      <div className="relative container mx-auto px-6 z-10">
+      <div className="relative container mx-auto px-4 sm:px-6 z-10 py-12 sm:py-16">
         <div className="max-w-3xl">
           <div
             key={currentSlide}
             className="animate-fade-in-up"
           >
-            <h1 className="font-serif text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
               {slide.headline}
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-text-on-dark/90">
+            <p className="mt-4 sm:mt-6 max-w-xl text-base sm:text-lg text-text-on-dark/90">
               {slide.description}
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-8 sm:mt-10 flex flex-wrap gap-4">
               <Link
                 href={slide.ctaHref}
-                className="inline-block rounded-md bg-brand-blue px-8 py-3 text-center font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-brand-blue-light focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-surface-dark"
+                className="inline-block rounded-md bg-brand-blue px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base text-center font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-brand-blue-light focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-surface-dark"
               >
                 {slide.ctaText}
               </Link>
             </div>
 
-            <div className="mt-8 flex items-center gap-2 text-sm text-text-on-dark/80">
-              <ShieldCheck size={16} className="text-brand-teal" />
+            <div className="mt-6 sm:mt-8 flex items-center gap-2 text-xs sm:text-sm text-text-on-dark/80">
+              <ShieldCheck size={14} className="sm:w-4 sm:h-4 text-brand-teal" />
               <span>{slide.accreditation}</span>
             </div>
           </div>
@@ -121,7 +121,7 @@ const Hero = () => {
       </div>
 
       {/* Slide Indicators (Dots) */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {slidesData.map((_, index) => (
           <button
             key={index}

@@ -35,35 +35,35 @@ const testimonials: Testimonial[] = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="bg-surface-light py-20 sm:py-28">
-      <div className="container mx-auto px-6">
+    <section className="bg-surface-light py-16 sm:py-20 lg:py-28">
+      <div className="container mx-auto px-4 sm:px-6">
         <AnimateOnScroll>
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold tracking-widest uppercase text-brand-blue mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-brand-blue mb-3 sm:mb-4">
               Client Stories
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-3 sm:mb-4">
               Real People, Real Results
             </h2>
-            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
               Don't just take our word for it. Hear from entrepreneurs across South Africa who've made VNR their trusted partner.
             </p>
           </div>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <AnimateOnScroll key={index} delay={`${index * 150}ms`}>
-              <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col">
-                <Quote className="h-8 w-8 text-brand-teal mb-4" />
-                <p className="text-text-secondary mb-6 flex-grow italic">
+              <div className="bg-white p-6 sm:p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                <Quote className="h-6 w-6 sm:h-8 sm:w-8 text-brand-teal mb-3 sm:mb-4" />
+                <p className="text-sm sm:text-base text-text-secondary mb-5 sm:mb-6 flex-grow italic">
                   "{testimonial.content}"
                 </p>
-                <div className="border-t border-slate-200 pt-4">
-                  <p className="font-semibold text-text-primary">{testimonial.name}</p>
-                  <p className="text-sm text-text-secondary">{testimonial.role}</p>
-                  <p className="text-sm text-brand-blue mt-1">{testimonial.location}</p>
-                  <p className="text-xs text-text-secondary mt-2">{testimonial.service}</p>
+                <div className="border-t border-slate-200 pt-3 sm:pt-4">
+                  <p className="text-sm sm:text-base font-semibold text-text-primary">{testimonial.name}</p>
+                  <p className="text-xs sm:text-sm text-text-secondary">{testimonial.role}</p>
+                  <p className="text-xs sm:text-sm text-brand-blue mt-1">{testimonial.location}</p>
+                  <p className="text-[10px] sm:text-xs text-text-secondary mt-2">{testimonial.service}</p>
                 </div>
               </div>
             </AnimateOnScroll>

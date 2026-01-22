@@ -112,25 +112,25 @@ const ServicesPage = () => {
   return (
     <div className="bg-surface-light min-h-screen">
       {/* Hero Section */}
-      <section className="bg-white py-12 md:py-16 border-b border-slate-200">
-        <div className="container mx-auto px-6">
+      <section className="bg-white py-8 sm:py-12 md:py-16 border-b border-slate-200">
+        <div className="container mx-auto px-4 sm:px-6">
           <Breadcrumbs 
             items={[
               { name: 'Home', href: '/' },
               { name: 'Services & Pricing', href: '/services' },
             ]} 
-            className="flex justify-start text-slate-500 mb-4" 
+            className="flex justify-start text-slate-500 mb-3 sm:mb-4" 
           />
-          <div className="flex items-center gap-3 mb-2">
-            <div className="bg-brand-blue p-2 rounded-lg">
-              <FileText className="w-6 h-6 text-white" />
-                  </div>
+          <div className="flex items-center gap-2 sm:gap-3 mb-2">
+            <div className="bg-brand-blue p-1.5 sm:p-2 rounded-lg">
+              <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+            </div>
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-text-primary">VNR Services & Pricing</h1>
-              <p className="text-sm text-text-secondary">2026 Price List</p>
-                </div>
-                </div>
-          <div className="flex flex-wrap gap-4 text-sm text-text-secondary mt-4">
+              <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-text-primary">VNR Services & Pricing</h1>
+              <p className="text-xs sm:text-sm text-text-secondary">2026 Price List</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-text-secondary mt-3 sm:mt-4">
             <span className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
               Effective July 2026
@@ -144,16 +144,16 @@ const ServicesPage = () => {
       </section>
 
       {/* Main Layout */}
-      <div className="container mx-auto px-6 py-8">
-        <div className="flex flex-col lg:flex-row gap-6">
+      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-6">
           
           {/* Sidebar Navigation */}
           <aside className="w-full lg:w-72 bg-white border border-slate-200 rounded-xl shadow-sm flex-shrink-0">
-            <div className="p-4 border-b border-slate-100 bg-surface-light rounded-t-xl">
+            <div className="p-3 sm:p-4 border-b border-slate-100 bg-surface-light rounded-t-xl">
               <h2 className="text-xs font-semibold text-text-secondary uppercase tracking-wider">Categories</h2>
             </div>
             
-            <nav className="p-2 space-y-1 max-h-[calc(100vh-300px)] overflow-y-auto custom-scrollbar">
+            <nav className="p-2 space-y-1 max-h-[400px] lg:max-h-[calc(100vh-300px)] overflow-y-auto custom-scrollbar">
               {categories.map(cat => {
                 const isActive = cat === currentCategory && !searchQuery;
                 const Icon = categoryIcons[cat] || FileText;
@@ -162,13 +162,13 @@ const ServicesPage = () => {
                   <button
                     key={cat}
                     onClick={() => handleCategoryClick(cat)}
-                    className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors duration-150 flex items-center gap-3 rounded-lg ${
+                    className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-medium transition-colors duration-150 flex items-center gap-2 sm:gap-3 rounded-lg ${
                       isActive
                         ? 'bg-brand-blue/10 text-brand-blue-dark border-r-4 border-brand-blue'
                         : 'text-text-secondary hover:bg-surface-light hover:text-text-primary border-r-4 border-transparent'
                     }`}
                   >
-                    <Icon className={`w-4 h-4 ${isActive ? 'text-brand-blue' : 'text-text-secondary'}`} />
+                    <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 ${isActive ? 'text-brand-blue' : 'text-text-secondary'}`} />
                     <span className="truncate">{cat}</span>
                   </button>
                 );
@@ -177,20 +177,20 @@ const ServicesPage = () => {
           </aside>
 
           {/* Content Area */}
-          <main className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0" role="region" aria-label="Services and pricing list">
             
             {/* Search Bar */}
-            <div className="mb-6">
+            <div className="mb-4 sm:mb-6">
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search className="w-5 h-5 text-text-secondary" />
+                  <Search className="w-4 h-4 sm:w-5 sm:h-5 text-text-secondary" />
                 </div>
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="block w-full pl-10 pr-3 py-3 border border-slate-300 rounded-xl leading-5 bg-white placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition duration-150 text-sm shadow-sm"
-                  placeholder="Search for services, codes, or keywords (e.g., 'Tax Return', 'IT12')..."
+                  className="block w-full pl-9 sm:pl-10 pr-3 py-2.5 sm:py-3 border border-slate-300 rounded-xl leading-5 bg-white placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition duration-150 text-xs sm:text-sm shadow-sm"
+                  placeholder="Search services, codes, keywords..."
                 />
               </div>
             </div>
@@ -206,51 +206,51 @@ const ServicesPage = () => {
               ) : (
                 <>
                   {/* Header */}
-                  <div className="mb-6">
+                  <div className="mb-4 sm:mb-6">
                     {searchQuery ? (
-                      <div className="text-sm font-medium text-text-secondary uppercase tracking-wider">
+                      <div className="text-xs sm:text-sm font-medium text-text-secondary uppercase tracking-wider">
                         Search Results ({filteredServices.length})
                       </div>
                     ) : (
                       <div>
-                        <h2 className="text-2xl font-bold text-text-primary">{currentCategory}</h2>
-                        <p className="text-sm text-text-secondary mt-1">Select a service below to view pricing details.</p>
+                        <h2 className="text-xl sm:text-2xl font-bold text-text-primary">{currentCategory}</h2>
+                        <p className="text-xs sm:text-sm text-text-secondary mt-1">Select a service below to view pricing details.</p>
                       </div>
                     )}
                   </div>
 
                   {/* Service Cards */}
-                  <div className="space-y-4">
+                  <div className="space-y-3 sm:space-y-4">
                     {filteredServices.map((service, index) => {
                       const hasCode = service.code && service.code.length > 0;
                       
                       return (
                         <div
                           key={index}
-                          className="bg-white p-4 md:p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                          className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4"
                         >
                           <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 mb-1 flex-wrap">
+                            <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                               {hasCode && (
-                                <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-medium bg-surface-light text-text-secondary border border-slate-200">
+                                <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] sm:text-xs font-mono font-medium bg-surface-light text-text-secondary border border-slate-200">
                                   {service.code}
                                 </span>
                               )}
                               {searchQuery && (
-                                <span className="text-xs text-brand-blue font-medium">{service.category}</span>
+                                <span className="text-[10px] sm:text-xs text-brand-blue font-medium">{service.category}</span>
                               )}
                             </div>
-                            <p className="text-text-primary font-medium text-sm md:text-base leading-snug">
+                            <p className="text-text-primary font-medium text-sm sm:text-base leading-snug">
                               {service.description}
                             </p>
                             {service.subcategory && (
-                              <p className="text-xs text-text-secondary mt-1">{service.subcategory}</p>
+                              <p className="text-[10px] sm:text-xs text-text-secondary mt-1">{service.subcategory}</p>
                             )}
                           </div>
                           <div className="flex-none pt-2 sm:pt-0 border-t sm:border-0 border-slate-100 mt-2 sm:mt-0">
                             {formatPrice(service.priceIncl, service.priceExcl)}
-                          </div>
-                        </div>
+          </div>
+        </div>
                       );
                     })}
                   </div>
@@ -259,10 +259,10 @@ const ServicesPage = () => {
             </div>
 
             {/* Disclaimer Footer */}
-            <div className="bg-white border-t border-slate-200 p-4 text-xs text-text-secondary text-center lg:text-left mt-8 rounded-xl">
+            <div className="bg-white border-t border-slate-200 p-4 text-[10px] sm:text-xs text-text-secondary text-center lg:text-left mt-6 sm:mt-8 rounded-xl">
               <p>Prices subject to change. Terms & Conditions apply. Accounts payable upon presentation. Interest charged at 1.25% pm on outstanding balances.</p>
           </div>
-          </main>
+          </div>
         </div>
       </div>
     </div>

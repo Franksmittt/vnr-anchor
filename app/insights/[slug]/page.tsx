@@ -139,8 +139,8 @@ const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) =
         </div>
       </div>
       
-      {/* Suggesting a default `currentSlug` to avoid breaking RelatedServices */}
-      <RelatedServices currentSlug="tax-advisory" />
+      {/* No "current" service on article pages; exclude none so we show 2 relevant services */}
+      <RelatedServices currentSlug="" />
       <CtaSection />
     </>
   );

@@ -7,7 +7,7 @@ import CtaSection from '@/components/CtaSection';
 import { teamData } from '@/data/team-data';
 import type { Metadata } from 'next';
 import FaqAccordion from '@/components/FaqAccordion';
-import { generateMetadata as generateSEOMetadata, generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seo';
+import { generateMetadata as generateSEOMetadata, generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo';
 
 interface ServicePageParams {
   slug: string;
@@ -67,6 +67,9 @@ const ServicePage = async ({ params }: { params: Promise<ServicePageParams> }) =
     breadcrumbs.map(b => ({ name: b.name, url: b.href }))
   );
 
+  const serviceUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/services/${service.slug}`;
+  const faqSchema = service.faqs?.length ? generateFAQSchema(service.faqs, serviceUrl) : null;
+
   return (
     <>
       {/* Structured Data */}
@@ -78,6 +81,12 @@ const ServicePage = async ({ params }: { params: Promise<ServicePageParams> }) =
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, '\\u003c') }}
+        />
+      )}
       
       <ServiceHero 
         title={service.title}

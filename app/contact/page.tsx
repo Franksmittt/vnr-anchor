@@ -6,67 +6,58 @@ import ContactHero from '@/components/ContactHero';
 import InfoCard from '@/components/InfoCard';
 import { faqs } from '@/data/contact-data';
 import FaqAccordion from '@/components/FaqAccordion';
-import { generateOrganizationSchema } from '@/lib/seo';
+
+const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=1022+Saxby+Avenue,Eldoraigne,Centurion,South+Africa`;
 
 const ContactPage = () => {
-  // Generate structured data for contact page
-  const organizationSchema = generateOrganizationSchema();
-  const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=1022+Saxby+Avenue,Eldoraigne,Centurion,South+Africa`;
-
   return (
     <>
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c') }}
-      />
-      
       <ContactHero />
 
-      <div className="container mx-auto px-6 py-20 sm:py-28"> {/* EDITED PADDING */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
           
-          <div className="bg-surface-light p-8 rounded-xl shadow-lg border border-slate-200">
-            <h2 className="font-serif text-2xl font-bold text-text-primary mb-6">Connect with Our Experts</h2>
-            <p className="mb-8 text-text-secondary">We'd love to hear from you. Whether you have a quick question or want to plan a full consultation, just fill out the form below and we'll get back to you within 24 hours. No pressure, no sales pitch. Just a friendly conversation about how we can help.</p>
-            <div className="mb-8 p-4 bg-brand-blue/5 border-l-4 border-brand-blue rounded-lg">
-              <p className="text-sm font-semibold text-brand-blue mb-1">📍 Head Office Location: Centurion</p>
-              <p className="text-sm text-text-secondary">🌍 From the busy streets of Centurion to the heart of the Karoo, we serve clients across South Africa. Virtual consultations make us your local advisor, anywhere in SA.</p>
+          <div className="bg-surface-light p-6 sm:p-8 rounded-xl shadow-lg border border-slate-200">
+            <h2 className="font-serif text-xl sm:text-2xl font-bold text-text-primary mb-4 sm:mb-6">Connect with Our Experts</h2>
+            <p className="mb-6 sm:mb-8 text-sm sm:text-base text-text-secondary">We'd love to hear from you. Whether you have a quick question or want to plan a full consultation, just fill out the form below and we'll get back to you within 24 hours. No pressure, no sales pitch. Just a friendly conversation about how we can help.</p>
+            <div className="mb-6 sm:mb-8 p-3 sm:p-4 bg-brand-blue/5 border-l-4 border-brand-blue rounded-lg">
+              <p className="text-xs sm:text-sm font-semibold text-brand-blue mb-1">📍 Head Office Location: Centurion</p>
+              <p className="text-xs sm:text-sm text-text-secondary">🌍 From the busy streets of Centurion to the heart of the Karoo, we serve clients across South Africa. Virtual consultations make us your local advisor, anywhere in SA.</p>
             </div>
-            <form action="#" method="POST" className="space-y-6">
+            <form action="#" method="POST" className="space-y-4 sm:space-y-6">
               <div>
-                <label htmlFor="full-name" className="block text-sm font-medium text-text-secondary">Full Name</label>
+                <label htmlFor="full-name" className="block text-xs sm:text-sm font-medium text-text-secondary">Full Name</label>
                 <input
                   type="text"
                   name="full-name"
                   id="full-name"
                   autoComplete="name"
-                  className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-brand-blue-light focus:border-brand-blue"
+                  className="mt-1 block w-full px-3 py-2.5 text-sm bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-brand-teal focus:border-brand-blue"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-text-secondary">Email Address</label>
+                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-text-secondary">Email Address</label>
                 <input
                   type="email"
                   name="email"
                   id="email"
                   autoComplete="email"
-                  className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-brand-blue-light focus:border-brand-blue"
+                  className="mt-1 block w-full px-3 py-2.5 text-sm bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-brand-teal focus:border-brand-blue"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-text-secondary">How can we assist you?</label>
+                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-text-secondary">How can we assist you?</label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
-                  className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-brand-blue-light focus:border-brand-blue"
+                  className="mt-1 block w-full px-3 py-2.5 text-sm bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-brand-teal focus:border-brand-blue resize-y"
                 ></textarea>
               </div>
               <div>
                 <button
                   type="submit"
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-blue hover:bg-brand-teal focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-teal transition-colors"
+                  className="w-full flex justify-center py-2.5 sm:py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-blue hover:bg-brand-teal focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-teal transition-colors"
                 >
                   Let's Start a Conversation
                 </button>
@@ -74,8 +65,8 @@ const ContactPage = () => {
             </form>
           </div>
 
-          <div className="space-y-12">
-            <div className="space-y-8">
+          <div className="space-y-8 sm:space-y-12">
+            <div className="space-y-6 sm:space-y-8">
               <InfoCard icon={<Mail size={24} />} title="Email Address">
                 <a href="mailto:info@vnr.co.za" className="text-brand-blue hover:underline">
                   info@vnr.co.za
@@ -112,9 +103,9 @@ const ContactPage = () => {
       </div>
 
       <div className="bg-surface-light border-t border-slate-200">
-        <div className="container mx-auto px-6 py-20 sm:py-28 max-w-4xl"> {/* EDITED PADDING */}
-          <h2 className="font-serif text-3xl font-bold text-text-primary text-center mb-12">Quick Questions</h2> {/* EDITED MARGIN */}
-          <div className="mt-6">
+        <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 max-w-4xl">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-text-primary text-center mb-8 sm:mb-12">Quick Questions</h2>
+          <div className="mt-4 sm:mt-6">
             <FaqAccordion faqs={faqs} />
           </div>
         </div>

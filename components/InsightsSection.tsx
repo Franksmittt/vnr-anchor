@@ -10,19 +10,19 @@ const InsightsSection = () => {
     .slice(0, 4);
 
   return (
-    <section className="bg-white py-20 sm:py-28"> {/* EDITED PADDING */}
-      <div className="container mx-auto px-6">
+    <section className="bg-white py-16 sm:py-20 lg:py-28">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center">
-          <h2 className="text-base font-semibold text-brand-blue tracking-wider uppercase">Latest Insights from VNR Professional Accountants</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-xs sm:text-base font-semibold text-brand-blue tracking-wider uppercase">Latest Insights from VNR Professional Accountants</h2>
+          <p className="mt-2 font-serif text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
             Navigating the Financial Landscape with Expert Perspectives
           </p>
-          <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-600">
+          <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-base sm:text-lg text-gray-600">
             Stay ahead with expert insights on tax advisory, business structuring, and wealth planning from VNR Professional Accountants. While our head office is in Centurion, we serve clients across South Africa.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
           {featuredArticle && (
             <Link 
               key={featuredArticle.slug} 
@@ -30,7 +30,7 @@ const InsightsSection = () => {
               className="group block lg:col-span-2"
             >
               <div className="flex flex-col overflow-hidden rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-brand-blue/5 h-full">
-                <div className="relative w-full h-72 md:h-96">
+                <div className="relative w-full h-56 sm:h-72 md:h-96">
                   <Image
                     src={featuredArticle.imageUrl}
                     alt={`${featuredArticle.title} by ${featuredArticle.author.name}, VNR Professional Accountants`}
@@ -40,13 +40,13 @@ const InsightsSection = () => {
                     loading="lazy"
                   />
                 </div>
-                <div className="flex flex-1 flex-col justify-between p-6">
+                <div className="flex flex-1 flex-col justify-between p-5 sm:p-6">
                   <div>
-                    <p className="text-sm font-medium text-brand-blue">{featuredArticle.category}</p>
-                    <p className="mt-2 text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-brand-blue">
+                    <p className="text-xs sm:text-sm font-medium text-brand-blue">{featuredArticle.category}</p>
+                    <p className="mt-2 text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-brand-blue">
                       {featuredArticle.title}
                     </p>
-                    <p className="mt-3 text-base text-gray-600 line-clamp-3">
+                    <p className="mt-3 text-sm sm:text-base text-gray-600 line-clamp-3">
                       {featuredArticle.excerpt === 'As an entrepreneur in South Africa, it’s easy to view taxation as a compliance hurdle. This guide reframes tax as a powerful strategic lever for protecting assets, fueling growth, and building sustainable wealth.' 
                         ? 'Discover how tax planning and SARS compliance for SMEs in South Africa can protect assets and fuel growth with VNR Professional Accountants.'
                         : featuredArticle.excerpt}
@@ -79,8 +79,8 @@ const InsightsSection = () => {
                 href={`/insights/${insight.slug}`} 
                 className="group block flex-grow" 
               >
-                <div className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 bg-white h-full">
-                  <div className="relative flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden">
+                <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 bg-white h-full">
+                  <div className="relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden">
                     <Image
                       src={insight.imageUrl}
                       alt={`${insight.title} thumbnail by ${insight.author.name}, VNR Professional Accountants`}
@@ -112,8 +112,8 @@ const InsightsSection = () => {
           </div>
         </div>
         
-        <div className="mt-16 text-center">
-          <Link href="/insights" className="text-base font-semibold text-brand-blue hover:text-brand-blue-dark">
+        <div className="mt-12 sm:mt-16 text-center">
+          <Link href="/insights" className="text-sm sm:text-base font-semibold text-brand-blue hover:text-brand-blue-dark">
             Discover More Insights <span aria-hidden="true">→</span>
           </Link>
         </div>

@@ -3,9 +3,9 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const FoundersNoteSection = () => {
   return (
-    <section className="bg-white py-20 sm:py-28">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+    <section className="bg-white py-16 sm:py-20 lg:py-28">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-6xl mx-auto">
           <AnimateOnScroll>
             <div className="relative">
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
@@ -26,10 +26,10 @@ const FoundersNoteSection = () => {
               <p className="text-sm font-semibold tracking-widest uppercase text-brand-blue mb-4">
                 A Note from Our Founders
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-primary mb-6">
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-4 sm:mb-6">
                 Why We Do This
               </h2>
-              <div className="prose prose-lg max-w-none text-text-secondary space-y-4">
+              <div className="prose prose-sm sm:prose-lg max-w-none text-text-secondary space-y-3 sm:space-y-4">
                 <p>
                   When we started VNR, we had a simple vision: to be the kind of accountants we wished existed when we were building our own careers. We wanted to create a place where South African entrepreneurs could find not just expertise, but genuine partnership.
                 </p>

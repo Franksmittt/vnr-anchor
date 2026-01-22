@@ -9,7 +9,7 @@ import CareersSection from '@/components/CareersSection';
 import AuthorityBar from '@/components/AuthorityBar';
 import CtaSection from '@/components/CtaSection';
 
-import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
   title: 'Our Leadership',
@@ -18,6 +18,11 @@ export const metadata = generateSEOMetadata({
   keywords: ['team', 'leadership', 'accountants', 'tax experts', 'Centurion', 'South Africa'],
 });
 
+const teamBreadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Home', url: '/' },
+  { name: 'Our Leadership', url: '/team' },
+]);
+
 const TeamPage = () => {
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
@@ -25,10 +30,11 @@ const TeamPage = () => {
   ];
   return (
     <div className="bg-surface-light">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(teamBreadcrumbSchema).replace(/</g, '\\u003c') }} />
       {/* Hero Section */}
       <section className="relative bg-surface-dark text-white overflow-hidden">
         <Image
-          src="/images/backgrounds/team-hero-bg.jpg"
+          src="/images/slider/hero_1.png"
           alt="VNR Professional Accountants expert team environment"
           fill
           priority
