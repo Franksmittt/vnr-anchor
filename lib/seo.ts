@@ -266,6 +266,29 @@ export function generateServiceSchema({
 }
 
 /**
+ * Generates ItemList structured data (JSON-LD) for listing pages
+ */
+export function generateItemListSchema(
+  items: Array<{ name: string; url: string }>,
+  listUrl: string,
+  name?: string
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    ...(name && { name }),
+    numberOfItems: items.length,
+    url: listUrl.startsWith('http') ? listUrl : constructCanonicalUrl(listUrl),
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: item.url.startsWith('http') ? item.url : constructCanonicalUrl(item.url),
+    })),
+  };
+}
+
+/**
  * Generates BreadcrumbList structured data (JSON-LD)
  */
 export function generateBreadcrumbSchema(items: Array<{ name: string; url: string }>) {

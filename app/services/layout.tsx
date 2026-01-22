@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
+import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema, generateItemListSchema } from '@/lib/seo';
+import { servicesData } from '@/data/services-data';
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Services & Pricing',
@@ -23,6 +24,9 @@ const breadcrumbSchema = generateBreadcrumbSchema([
   { name: 'Services & Pricing', url: '/services' },
 ]);
 
+const servicesListItems = servicesData.map((s) => ({ name: s.title, url: `/services/${s.slug}` }));
+const itemListSchema = generateItemListSchema(servicesListItems, '/services', 'VNR Services & Pricing');
+
 export default function ServicesLayout({
   children,
 }: {
@@ -33,6 +37,10 @@ export default function ServicesLayout({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema).replace(/</g, '\\u003c') }}
       />
       {children}
     </>

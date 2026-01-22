@@ -91,10 +91,9 @@ export const metadata: Metadata = {
     },
   },
   manifest: '/manifest.json',
-  verification: {
-    // Add Google Search Console verification when available
-    // google: 'verification-token',
-  },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
+    verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION },
+  }),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
