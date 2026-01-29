@@ -19,7 +19,7 @@ export const teamData: TeamMember[] = [
     slug: "jannie-venter",
     name: "Jannie Venter",
     title: "Co-Founder & Director",
-    intro: "With a postgraduate certification in Advanced Taxation, Jannie is a leading expert in tax advisory in Centurion and Gauteng, helping clients navigate complex fiscal landscapes with strategic foresight.",
+    intro: "With a postgraduate certification in Advanced Taxation, Jannie is a leading expert in tax advisory across South Africa, helping clients navigate complex fiscal landscapes with strategic foresight.",
     email: "jannie@vnr.co.za",
     linkedinUrl: "https://www.linkedin.com/in/jannie-venter/",
     imageUrl: "/images/team/jannie-venter.jpg",
@@ -35,7 +35,7 @@ export const teamData: TeamMember[] = [
     ],
     bio: `
       <p>As a co-founder of VNR, Jannie brings a genuine passion for helping South African businesses thrive. He's not just about numbers. He's about people. Jannie believes that when local businesses succeed, our communities flourish. That's why he takes the time to understand not just your tax situation, but your dreams and goals too.</p>
-      <p>With years of experience in Centurion, Pretoria, and across Gauteng, Jannie has helped countless entrepreneurs navigate the complexities of tax while keeping their focus on what matters most: growing their business and supporting their families.</p>
+      <p>With years of experience across South Africa, Jannie has helped countless entrepreneurs navigate the complexities of tax while keeping their focus on what matters most: growing their business and supporting their families.</p>
       <h3>Areas of Expertise</h3>
       <ul>
         <li>Corporate & Personal Tax Planning</li>
@@ -76,7 +76,7 @@ export const teamData: TeamMember[] = [
     slug: "henry-landsberg",
     name: "Henry Landsberg",
     title: "Accounting & Tax Manager",
-    intro: "An award-winning professional, Henry manages our accounting and compliance divisions, ensuring meticulous accuracy and operational efficiency for our clients in Centurion, Gauteng.",
+    intro: "An award-winning professional, Henry manages our accounting and compliance divisions, ensuring meticulous accuracy and operational efficiency for our clients across South Africa.",
     email: "henry@vnr.co.za",
     linkedinUrl: "https://www.linkedin.com/in/henry-landsberg/",
     imageUrl: "/images/team/henry-landsberg.jpg",
@@ -91,7 +91,7 @@ export const teamData: TeamMember[] = [
       { title: "CIPC Compliance: Are You at Risk?", category: "Compliance", url: "/insights/cipc-compliance-risk" },
     ],
     bio: `
-      <p>Henry brings a fresh, energetic approach to accounting. He knows that behind every number is a real person with real dreams, and he's passionate about making sure those numbers tell the right story. Whether you're a small business owner in Centurion or a growing company in Durban, Henry makes sure you understand exactly where your business stands.</p>
+      <p>Henry brings a fresh, energetic approach to accounting. He knows that behind every number is a real person with real dreams, and he's passionate about making sure those numbers tell the right story. Whether you're a small business owner or a growing company, Henry makes sure you understand exactly where your business stands.</p>
       <p>His award-winning work ethic isn't just about getting things right. It's about making sure you feel confident and in control of your finances. Henry believes that when you understand your numbers, you make better decisions. And better decisions mean a brighter future for your business.</p>
       <h3>Areas of Expertise</h3>
       <ul>

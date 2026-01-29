@@ -17,7 +17,7 @@ const ContactHero = () => {
                     We're here to help. Whether you have a quick question or want to plan a full consultation, we'd love to hear from you. No pressure, just a friendly conversation about how we can help.
                 </p>
                 <p className="mt-4 text-base font-semibold text-brand-blue max-w-2xl mx-auto">
-                    📍 Head Office: Centurion | 🌍 Serving clients across South Africa
+                    📍 Head Office | 🌍 Serving clients across South Africa
                 </p>
             </div>
         </section>

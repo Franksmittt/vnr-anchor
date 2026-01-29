@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VNR Premium Signature - Horizon Layout</title>
+<style>
+    /* DESIGN SYSTEM FUSION:
+       - Layout: Matches your reference image (Left Brand | Center Headshot | Right Info)
+       - Style: Apple "Dark Mode" Monolith + Samsung "Galaxy" Vibrancy
+       - Colors: VNR Style Guide (Royal Blue #234694, Lime #92C741, Charcoal #0f172a)
+    */
+
+    :root {
+        --vnr-blue: #234694;
+        --vnr-lime: #92C741;
+        --bg-charcoal: #0f172a; /* VNR Surface Dark */
+        --bg-panel: #1e293b;    /* Slightly lighter for contrast */
+        --text-white: #ffffff;
+        --text-grey: #94a3b8;
+        --border-glass: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+        background-color: #000;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    /* MAIN CONTAINER - The "Horizon" Bar */
+    .sig-container {
+        width: 750px; /* Wide banner format like your reference */
+        height: 200px;
+        background: linear-gradient(180deg, var(--bg-charcoal), #020617);
+        border: 1px solid var(--border-glass);
+        border-radius: 24px; /* Samsung Squircle smoothing */
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 2fr; /* Ratio: Brand | Photo | Info */
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    }
+
+    /* === LEFT COLUMN: BRANDING === */
+    .col-brand {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid var(--border-glass);
+        position: relative;
+        background: radial-gradient(circle at bottom left, rgba(35, 70, 148, 0.2), transparent 70%);
+    }
+
+    .vnr-logo-img {
+        max-width: 140px;
+        max-height: 70px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* === CENTER COLUMN: THE HEADSHOT === */
+    .col-photo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* The "Portal" Effect */
+    .photo-frame {
+        width: 130px;
+        height: 130px;
+        border-radius: 45px; /* Heavy Squircle - Samsung Style */
+        background: #000;
+        position: relative;
+        z-index: 2;
+        padding: 4px; /* Gap between border and photo */
+        /* The Gradient Border */
+        background: linear-gradient(135deg, var(--vnr-blue), var(--vnr-lime));
+        box-shadow: 0 0 30px rgba(35, 70, 148, 0.4); /* Glow */
+    }
+
+    .photo-inner {
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-charcoal);
+        background-image: url('https://ui-avatars.com/api/?name=Jannie+V&background=1e293b&color=fff&size=256'); /* Placeholder – replace with real photo URL if needed */
+        background-size: cover;
+        background-position: center;
+        border-radius: 41px; /* Inner Squircle */
+    }
+
+    /* Background curves mimicking your reference image, but subtle/dark */
+    .bg-curve {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        opacity: 0.1;
+        background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, var(--vnr-blue) 10px, var(--vnr-blue) 11px);
+        z-index: 1;
+        mask-image: radial-gradient(circle, transparent 30%, black 100%);
+    }
+
+    /* === RIGHT COLUMN: INFO === */
+    .col-info {
+        padding: 0 40px; /* Generous breathing room */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .name-block {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--border-glass);
+    }
+
+    .name {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--text-white);
+        letter-spacing: -0.5px;
+        margin: 0;
+    }
+
+    .role {
+        font-size: 13px;
+        color: var(--vnr-lime); /* Pop of color */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin-top: 4px;
+    }
+
+    /* Contact block: icon left, text right, one row per line */
+    .contact-container {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 10px 14px;
+        align-items: center;
+    }
+
+    .contact-icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--vnr-lime);
+        flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+    }
+
+    .contact-link {
+        color: var(--text-grey);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+        transition: color 0.2s;
+        display: flex;
+        align-items: center;
+    }
+
+    .contact-link:hover { color: var(--text-white); }
+    .highlight { color: var(--text-white); font-weight: 500; }
+
+</style>
+</head>
+<body>
+
+<div class="sig-container">
+    
+    <div class="col-brand">
+        <img src="public/images/logos/vnrlogo1.png" alt="VNR Professional Accountants" class="vnr-logo-img" />
+    </div>
+
+    <div class="col-photo">
+        <div class="bg-curve"></div> <div class="photo-frame">
+            <div class="photo-inner"></div> 
+            </div>
+    </div>
+
+    <div class="col-info">
+        <div class="name-block">
+            <h1 class="name">Jannie Venter</h1>
+            <div class="role">Co-Founder & Director</div>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <a href="tel:+27126531633" class="contact-link">
+                <span class="highlight">+27 12 653 1633</span>
+            </a>
+
+            <div class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <a href="mailto:jannie@vnr.co.za" class="contact-link">
+                jannie@vnr.co.za
+            </a>
+
+            <div class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <a href="https://vnr.co.za" class="contact-link">
+                www.vnr.co.za
+            </a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

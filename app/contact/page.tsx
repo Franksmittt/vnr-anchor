@@ -7,7 +7,7 @@ import InfoCard from '@/components/InfoCard';
 import { faqs } from '@/data/contact-data';
 import FaqAccordion from '@/components/FaqAccordion';
 
-const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=1022+Saxby+Avenue,Eldoraigne,Centurion,South+Africa`;
+const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=1022+Saxby+Avenue,Eldoraigne,South+Africa`;
 
 const ContactPage = () => {
   return (
@@ -21,8 +21,8 @@ const ContactPage = () => {
             <h2 className="font-serif text-xl sm:text-2xl font-bold text-text-primary mb-4 sm:mb-6">Connect with Our Experts</h2>
             <p className="mb-6 sm:mb-8 text-sm sm:text-base text-text-secondary">We'd love to hear from you. Whether you have a quick question or want to plan a full consultation, just fill out the form below and we'll get back to you within 24 hours. No pressure, no sales pitch. Just a friendly conversation about how we can help.</p>
             <div className="mb-6 sm:mb-8 p-3 sm:p-4 bg-brand-blue/5 border-l-4 border-brand-blue rounded-lg">
-              <p className="text-xs sm:text-sm font-semibold text-brand-blue mb-1">📍 Head Office Location: Centurion</p>
-              <p className="text-xs sm:text-sm text-text-secondary">🌍 From the busy streets of Centurion to the heart of the Karoo, we serve clients across South Africa. Virtual consultations make us your local advisor, anywhere in SA.</p>
+              <p className="text-xs sm:text-sm font-semibold text-brand-blue mb-1">📍 Head Office</p>
+              <p className="text-xs sm:text-sm text-text-secondary">🌍 We serve clients across South Africa. Virtual consultations make us your local advisor, anywhere in SA.</p>
             </div>
             <form action="#" method="POST" className="space-y-4 sm:space-y-6">
               <div>
@@ -78,7 +78,7 @@ const ContactPage = () => {
                 </a>
               </InfoCard>
               <InfoCard icon={<Building size={24} />} title="Head Office Address">
-                <p className="mb-2">1022 Saxby Avenue, Eldoraigne<br />Centurion, 0157, South Africa</p>
+                <p className="mb-2">1022 Saxby Avenue, Eldoraigne<br />0157, South Africa</p>
                 <p className="text-sm font-semibold text-brand-blue">📍 Head Office | 🌍 Serving clients nationwide across South Africa</p>
               </InfoCard>
               <InfoCard icon={<Clock size={24} />} title="Business Hours">
@@ -95,7 +95,7 @@ const ContactPage = () => {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="VNR Head Office Location in Centurion, South Africa"
+                title="VNR Head Office Location, South Africa"
               ></iframe>
             </div>
           </div>

@@ -114,7 +114,6 @@ export function generateMetadata({
     'secretarial services',
     'financial reporting',
     'estate planning',
-    'Centurion accountants',
     'tax consultant',
     'SARS compliance',
     'CIPC services',
@@ -249,8 +248,7 @@ export function generateServiceSchema({
       address: {
         '@type': 'PostalAddress',
         streetAddress: '1022 Saxby Avenue',
-        addressLocality: 'Centurion',
-        addressRegion: 'Gauteng',
+        addressLocality: 'Eldoraigne',
         postalCode: '0157',
         addressCountry: 'ZA',
       },
@@ -320,8 +318,7 @@ export function generateOrganizationSchema() {
     address: {
       '@type': 'PostalAddress',
       streetAddress: '1022 Saxby Avenue, Eldoraigne',
-      addressLocality: 'Centurion',
-      addressRegion: 'Gauteng',
+      addressLocality: 'Eldoraigne',
       postalCode: '0157',
       addressCountry: 'ZA',
     },

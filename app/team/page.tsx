@@ -13,9 +13,9 @@ import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema } fro
 
 export const metadata = generateSEOMetadata({
   title: 'Our Leadership',
-  description: 'Meet the team of seasoned financial and tax experts at VNR. Our leadership is dedicated to providing strategic foresight and meticulous guidance for your wealth across South Africa. While our head office is in Centurion, we serve clients nationwide.',
+  description: 'Meet the team of seasoned financial and tax experts at VNR. Our leadership is dedicated to providing strategic foresight and meticulous guidance for your wealth across South Africa. We serve clients nationwide.',
   path: '/team',
-  keywords: ['team', 'leadership', 'accountants', 'tax experts', 'Centurion', 'South Africa'],
+  keywords: ['team', 'leadership', 'accountants', 'tax experts', 'South Africa'],
 });
 
 const teamBreadcrumbSchema = generateBreadcrumbSchema([

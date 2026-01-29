@@ -12,7 +12,7 @@ const WhyVnrSection = () => {
               Your Strategic Financial Partner
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-text-secondary">
-              We move beyond compliance to provide the strategic partnership that ambitious entrepreneurs need to thrive in South Africa. Our head office is in Centurion, but we serve clients across the entire country.
+              We move beyond compliance to provide the strategic partnership that ambitious entrepreneurs need to thrive in South Africa. We serve clients across the entire country.
             </p>
           </div>
         </AnimateOnScroll>

@@ -7,7 +7,7 @@ export const slidesData = [
     imageUrl: "/images/slider/hero_1.png",
     altText: "Strategic business meeting with VNR Professional Accountants, experts in tax advisory and business structuring across South Africa.",
     headline: "Your Wealth, Our Partnership",
-    description: "We've partnered with Anchor Capital to bring you investment solutions that work hand-in-hand with smart tax planning. Think of it as one conversation, one strategy, one trusted team. Whether you're planning for retirement or building wealth, we're here to help you do it right. Our head office is in Centurion, but we serve clients across South Africa.",
+    description: "We've partnered with Anchor Capital to bring you investment solutions that work hand-in-hand with smart tax planning. Think of it as one conversation, one strategy, one trusted team. Whether you're planning for retirement or building wealth, we're here to help you do it right. We serve clients across South Africa.",
     ctaText: "Let's Plan Your Future",
     ctaHref: "/anchor-wealth",
     accreditation: "SAIPA-Accredited Tax and Accounting Experts",

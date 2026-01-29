@@ -36,7 +36,6 @@ export async function generateMetadata({ params }: { params: Promise<TeamPagePar
       member.title.toLowerCase(),
       'accountant',
       'tax consultant',
-      'Centurion',
       'South Africa',
     ],
     image: member.imageUrl,

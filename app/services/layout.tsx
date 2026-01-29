@@ -15,7 +15,6 @@ export const metadata: Metadata = generateSEOMetadata({
     'financial reporting',
     'CIPC',
     'SARS',
-    'Centurion',
   ],
 });
 

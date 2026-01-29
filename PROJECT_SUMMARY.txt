@@ -12,7 +12,7 @@ Styling: Tailwind CSS
 ================================================================================
 
 Company: VNR Professional Accountants
-Head Office: 1022 Saxby Avenue, Eldoraigne, Centurion, 0157, South Africa
+Head Office: 1022 Saxby Avenue, Eldoraigne, 0157, South Africa
 Service Area: Nationwide across South Africa
 Website: https://www.vnr.co.za
 
@@ -22,7 +22,7 @@ Brand Colors:
 - Background: White (#FFFFFF)
 
 Key Messaging:
-- Head office located in Centurion
+- Head office in Eldoraigne; serving clients nationwide
 - Serves clients across South Africa
 - Distance is no barrier to expert service
 
@@ -588,7 +588,7 @@ Deployment Ready:
 12. NATIONWIDE SERVICE MESSAGING
 ================================================================================
 
-Key Message: "Head Office: Centurion | Serving clients across South Africa"
+Key Message: "Head Office | Serving clients across South Africa"
 
 Locations Updated:
 ✅ Footer - Prominent badge
@@ -605,7 +605,7 @@ Locations Updated:
 ✅ FAQ sections - Service area mentions
 
 Visual Indicators:
-- 📍 Head Office: Centurion
+- 📍 Head Office
 - 🌍 Serving clients nationwide across South Africa
 
 ================================================================================

@@ -18,7 +18,7 @@ const InsightsSection = () => {
             Navigating the Financial Landscape with Expert Perspectives
           </p>
           <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-base sm:text-lg text-gray-600">
-            Stay ahead with expert insights on tax advisory, business structuring, and wealth planning from VNR Professional Accountants. While our head office is in Centurion, we serve clients across South Africa.
+            Stay ahead with expert insights on tax advisory, business structuring, and wealth planning from VNR Professional Accountants. We serve clients across South Africa.
           </p>
         </div>
 

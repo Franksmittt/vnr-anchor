@@ -59,7 +59,7 @@ const advisorServices = [
   "Life cover, disability, and dread disease solutions sized for complex corporate structures",
   "Succession planning via Buy & Sell agreements, Keyman policies, and share buy-back funding",
   "Short-term insurance reviews for both personal and commercial risk, including site visits",
-              "Flexible consultations at our Centurion head office or at your premises anywhere in South Africa - we serve clients nationwide",
+              "Flexible consultations at our head office or at your premises anywhere in South Africa - we serve clients nationwide",
 ];
 
 const estateHighlights = [
@@ -114,7 +114,7 @@ const AnchorWealthPage = () => {
               South African entrepreneurs and expats.
             </p>
             <p className="mt-4 text-sm sm:text-base font-semibold text-brand-teal-light">
-              📍 Head Office: Centurion | 🌍 Serving clients across South Africa
+              📍 Head Office | 🌍 Serving clients across South Africa
             </p>
             <div className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
               <Link
@@ -197,7 +197,7 @@ const AnchorWealthPage = () => {
             <h3 className="mt-4 text-xl sm:text-2xl font-semibold text-text-primary">Life & risk planning on your terms.</h3>
             <p className="mt-4 text-sm sm:text-base text-text-secondary">
               Our independent financial advisor (not affiliated with Anchor) works exclusively with VNR clients.
-              He can meet at our Centurion head office or travel to you anywhere in South Africa, ensuring personal cover aligns with
+              He can meet at our head office or travel to you anywhere in South Africa, ensuring personal cover aligns with
               business realities. We serve clients nationwide - distance is no barrier to expert service.
             </p>
             <ul className="mt-5 sm:mt-6 space-y-2 sm:space-y-3 text-sm sm:text-base text-text-secondary">

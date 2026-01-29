@@ -9,7 +9,7 @@ const CtaSection = () => {
           Bring Your Wealth Strategy Together
         </h2>
         <p className="mt-4 text-base sm:text-lg text-white/90 max-w-2xl mx-auto">
-          Let's sit down and talk about your Anchor portfolio, your tax plan, and your estate strategy. We'll help you connect all the pieces in one conversation. Whether you're planning for retirement or building wealth, we're here to make sure everything works together. Our head office is in Centurion, but we serve clients across South Africa.
+          Let's sit down and talk about your Anchor portfolio, your tax plan, and your estate strategy. We'll help you connect all the pieces in one conversation. Whether you're planning for retirement or building wealth, we're here to make sure everything works together. We serve clients across South Africa.
         </p>
         <Link
           href="/contact"

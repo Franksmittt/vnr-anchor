@@ -6,11 +6,10 @@ const contactUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Contact Us',
-  description: 'Get in touch with VNR Professional Accountants. Our head office is in Centurion, and we serve clients across South Africa. Contact us for strategic tax advisory, business structuring, and wealth planning services.',
+  description: 'Get in touch with VNR Professional Accountants. We serve clients across South Africa. Contact us for strategic tax advisory, business structuring, and wealth planning services.',
   path: '/contact',
   keywords: [
     'contact',
-    'Centurion',
     'accountants',
     'tax consultant',
     'South Africa',

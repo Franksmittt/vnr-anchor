@@ -35,7 +35,6 @@ export async function generateMetadata({ params }: { params: Promise<ServicePage
     keywords: [
       service.title.toLowerCase(),
       ...service.details.map(d => d.toLowerCase()),
-      'Centurion',
       'South Africa',
     ],
     image: service.imageUrl,

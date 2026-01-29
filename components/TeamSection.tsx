@@ -17,7 +17,7 @@ const TeamSection = () => {
               The Architects of Your Financial Legacy
             </p>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg text-text-secondary">
-              Meet our SAIPA-accredited experts dedicated to strategic tax advisory, business structuring, and intergenerational wealth planning for South Africa's top entrepreneurs. While our head office is in Centurion, we serve clients across South Africa.
+              Meet our SAIPA-accredited experts dedicated to strategic tax advisory, business structuring, and intergenerational wealth planning for South Africa's top entrepreneurs. We serve clients across South Africa.
             </p>
           </div>
         </AnimateOnScroll>

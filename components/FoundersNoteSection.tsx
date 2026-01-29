@@ -37,7 +37,7 @@ const FoundersNoteSection = () => {
                   We've seen too many business owners lose sleep over tax deadlines, compliance worries, and financial uncertainty. We've watched brilliant entrepreneurs get bogged down in paperwork when they should be focused on growth. That's not how it should be.
                 </p>
                 <p>
-                  Today, whether you're in the bustling streets of Centurion or the quiet towns of the Karoo, we're here to be your trusted partner. We believe that when local businesses thrive, our communities flourish. That's why we serve clients across South Africa. Every entrepreneur deserves access to expert guidance, no matter where they are.
+                  Today, whether you're in a bustling city or a quiet town, we're here to be your trusted partner. We believe that when local businesses thrive, our communities flourish. That's why we serve clients across South Africa. Every entrepreneur deserves access to expert guidance, no matter where they are.
                 </p>
                 <p className="font-semibold text-brand-blue">
                   Jannie Venter & Charlie Naudé, Co-Founders

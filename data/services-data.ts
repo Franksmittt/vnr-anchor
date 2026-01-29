@@ -28,7 +28,7 @@ export const servicesData: Service[] = [
     details: ['CIPC Amendments & Annual Returns', 'Director & Member Changes', 'Registered Office Maintenance', 'Statutory Record Keeping'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">We understand that keeping up with CIPC requirements can feel overwhelming. You\'re busy building your business, and the last thing you need is paperwork piling up. That\'s where we step in. We handle all the administrative tasks like filing annual returns, updating director information, and maintaining your records, so you can sleep soundly knowing your business stays compliant. We serve clients <strong>across South Africa</strong> from our Centurion head office.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that keeping up with CIPC requirements can feel overwhelming. You\'re busy building your business, and the last thing you need is paperwork piling up. That\'s where we step in. We handle all the administrative tasks like filing annual returns, updating director information, and maintaining your records, so you can sleep soundly knowing your business stays compliant. We serve clients <strong>across South Africa</strong>.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Keep Your Business Compliant</h2>
       <p class="mb-8 text-slate-600">Think of us as your compliance partner. We stay on top of deadlines, handle the paperwork, and make sure everything is filed correctly and on time.</p>
@@ -76,7 +76,7 @@ export const servicesData: Service[] = [
     details: ['Individual & Corporate Tax Returns', 'Provisional Tax Submissions', 'VAT, PAYE, SDL, UIF Compliance', 'SARS Dispute Resolution'],
     leadExpert: teamData.find(m => m.slug === 'jannie-venter')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">We understand that tax season can feel overwhelming. You\'re juggling deadlines, paperwork, and the constant worry of making a mistake. That\'s where we come in. At VNR, we don\'t just file your returns. We become your trusted partner, taking the stress off your shoulders so you can focus on what matters most: your business and your family. Whether you\'re in Cape Town, Durban, or anywhere in between, we\'re here to help. Our head office is in Centurion, but we serve clients across South Africa.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that tax season can feel overwhelming. You\'re juggling deadlines, paperwork, and the constant worry of making a mistake. That\'s where we come in. At VNR, we don\'t just file your returns. We become your trusted partner, taking the stress off your shoulders so you can focus on what matters most: your business and your family. Whether you\'re in Cape Town, Durban, or anywhere in between, we\'re here to help. We serve clients across South Africa.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Help You Navigate Tax Season</h2>
       <p class="mb-8 text-slate-600">Our SAIPA-accredited team takes a personal approach to your tax needs. We sit down with you (virtually or in person), understand your unique situation, and create a strategy that works for you. Not just a one-size-fits-all solution.</p>
@@ -118,7 +118,7 @@ export const servicesData: Service[] = [
     `,
     faqs: [
         { q: 'Will I be just another number?', a: 'Absolutely not. You\'ll have a direct line to your advisor. We take the time to understand your business, your goals, and your concerns. When you call, you\'ll speak to someone who knows your story, not a call center.' },
-        { q: 'Who needs to file a tax return in South Africa?', a: 'If you earn above the annual tax threshold or run a registered company, you\'ll need to file. Don\'t worry, we\'ll guide you through every step. We serve clients across South Africa from our Centurion head office.' },
+        { q: 'Who needs to file a tax return in South Africa?', a: 'If you earn above the annual tax threshold or run a registered company, you\'ll need to file. Don\'t worry, we\'ll guide you through every step. We serve clients across South Africa.' },
         { q: 'What\'s the difference between tax avoidance and tax evasion?', a: 'Tax avoidance is perfectly legal. It\'s about using the tax laws smartly to reduce what you owe. Tax evasion is illegal. We help you do things the right way, legally and ethically.' },
         { q: 'When is provisional tax due?', a: 'Typically, the first payment is due by August 31st, and the second by February 28th. But don\'t stress. We\'ll remind you well in advance and help you calculate exactly what you need to pay.' },
         { q: 'What if I miss a deadline?', a: 'We\'ve all been there. The good news is, we can help you get back on track. SARS does charge penalties, but we\'ll work with you to minimize them and get you compliant again. You\'re not alone in this.' },
@@ -134,7 +134,7 @@ export const servicesData: Service[] = [
     details: ['New Company Registrations (Pty, NPC)', 'Trust Formation & Administration'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">We understand that choosing the right business structure can feel confusing. Should you go with a Pty Ltd? What about a trust? Don\'t worry, we\'ll sit down with you and explain everything in plain language. We\'ll help you choose the structure that protects your personal assets, saves you tax, and sets you up for long-term success. We\'re your partners in <strong>company registration and business structuring across South Africa</strong>, serving clients nationwide from our Centurion head office.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that choosing the right business structure can feel confusing. Should you go with a Pty Ltd? What about a trust? Don\'t worry, we\'ll sit down with you and explain everything in plain language. We\'ll help you choose the structure that protects your personal assets, saves you tax, and sets you up for long-term success. We\'re your partners in <strong>company registration and business structuring across South Africa</strong>, serving clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Help You Get Started Right</h2>
       <p class="mb-8 text-slate-600">From registering your company to setting up trusts, we\'re here to guide you through every step. Think of us as your business setup partners.</p>
@@ -181,7 +181,7 @@ export const servicesData: Service[] = [
     details: ['Drafting of Last Will & Testament', 'Intergenerational Wealth Transfer', 'Executor Services', 'Trust & Estate Administration'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">We understand that planning for the future isn\'t easy. It means thinking about difficult things. But here\'s what we know: when you take care of it now, you give your family peace of mind later. We\'ll help you create a plan that protects what you\'ve built, takes care of the people you love, and ensures your values live on. Our legacy planning services <strong>across South Africa</strong> are designed to give you confidence that everything will be handled exactly as you want. We work with clients nationwide from our Centurion head office.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that planning for the future isn\'t easy. It means thinking about difficult things. But here\'s what we know: when you take care of it now, you give your family peace of mind later. We\'ll help you create a plan that protects what you\'ve built, takes care of the people you love, and ensures your values live on. Our legacy planning services <strong>across South Africa</strong> are designed to give you confidence that everything will be handled exactly as you want. We work with clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Help You Protect Your Legacy</h2>
       <p class="mb-8 text-slate-600">A good estate plan isn\'t just about documents. It\'s about peace of mind. We\'ll work with you to create a plan that reflects your values and protects your family\'s future.</p>
@@ -227,7 +227,7 @@ export const servicesData: Service[] = [
     details: ['Annual Financial Statements (AFS)', 'Management Statements', 'Independent Reviews'],
     leadExpert: teamData.find(m => m.slug === 'henry-landsberg')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">We understand that financial statements can look like a foreign language. But here\'s the thing: they don\'t have to be. We\'ll prepare your reports in a way that makes sense, showing you exactly where your business stands and where it\'s heading. Whether you need annual statements for SARS or monthly reports to guide your decisions, we\'ve got you covered. Our services cover every aspect of <strong>financial reporting for SMEs across South Africa</strong>, serving clients nationwide from our Centurion head office.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that financial statements can look like a foreign language. But here\'s the thing: they don\'t have to be. We\'ll prepare your reports in a way that makes sense, showing you exactly where your business stands and where it\'s heading. Whether you need annual statements for SARS or monthly reports to guide your decisions, we\'ve got you covered. Our services cover every aspect of <strong>financial reporting for SMEs across South Africa</strong>, serving clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Reports That Actually Help You</h2>
       <p class="mb-8 text-slate-600">We create reports that do more than just check a compliance box. They give you real insights into your business so you can make smart decisions.</p>
@@ -274,7 +274,7 @@ export const servicesData: Service[] = [
     details: ['Monthly Payroll Processing', 'Payslip Generation', 'EMP201 & EMP501 Submissions', 'UIF & COID Compliance'],
     leadExpert: teamData.find(m => m.slug === 'henry-landsberg')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">We understand that payroll is stressful. One mistake can mean unhappy employees, SARS penalties, and sleepless nights. That's why we take it off your plate completely. We handle every calculation, every submission, every payslip. Perfectly, every time. Your team gets paid accurately, and you get peace of mind. Our <strong>payroll services across South Africa</strong> ensure your business stays compliant while you focus on what matters most. We work with clients nationwide from our Centurion head office.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that payroll is stressful. One mistake can mean unhappy employees, SARS penalties, and sleepless nights. That's why we take it off your plate completely. We handle every calculation, every submission, every payslip. Perfectly, every time. Your team gets paid accurately, and you get peace of mind. Our <strong>payroll services across South Africa</strong> ensure your business stays compliant while you focus on what matters most. We work with clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Take Payroll Off Your Shoulders</h2>
       <p class="mb-8 text-slate-600">We handle everything from monthly payslips to annual reconciliations. You just focus on your team. We\'ll make sure they\'re paid right, every time.</p>
@@ -321,7 +321,7 @@ export const servicesData: Service[] = [
     details: ['Sage Platinum Partner Services', 'XERO & DEXT Integration', 'Software Setup & Training', 'Workflow Automation'],
     leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">We understand that you\'re tired of being tied to your desk, digging through spreadsheets, and wondering if your numbers are up to date. Moving to cloud accounting changes everything. You can check your finances from your phone, your team can collaborate in real-time, and you\'ll always know exactly where your business stands. As expert <strong>cloud accounting specialists across South Africa</strong>, we\'ll help you choose the right system and get you set up smoothly. We serve clients nationwide from our Centurion head office.</p>
+      <p class="text-lg text-slate-600 mb-6">We understand that you\'re tired of being tied to your desk, digging through spreadsheets, and wondering if your numbers are up to date. Moving to cloud accounting changes everything. You can check your finances from your phone, your team can collaborate in real-time, and you\'ll always know exactly where your business stands. As expert <strong>cloud accounting specialists across South Africa</strong>, we\'ll help you choose the right system and get you set up smoothly. We serve clients nationwide.</p>
       
       <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">Why Cloud Accounting Makes Life Easier</h2>
       <p class="mb-8 text-slate-600">When your accounting is in the cloud, you get real-time insights, automatic backups, and the freedom to work from anywhere. It\'s not just convenient. It\'s a game-changer for your business.</p>

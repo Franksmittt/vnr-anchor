@@ -50,7 +50,6 @@ export async function generateMetadata({ params }: { params: Promise<InsightPage
       'tax advice',
       'accounting',
       'South Africa',
-      'Centurion',
     ],
     image: article.imageUrl,
     type: 'article',

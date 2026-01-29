@@ -42,7 +42,7 @@ const Header = () => {
       <div className="container mx-auto flex h-16 sm:h-20 items-center justify-between px-4 sm:px-6">
         <Link href="/" aria-label="VNR Professional Accountants Home Page">
           <Image 
-            src="/images/logos/vnrlogo.jpg" 
+            src="/images/logos/vnrlogo1.png" 
             alt="VNR Professional Accountants Logo" 
             width={150} 
             height={50} 

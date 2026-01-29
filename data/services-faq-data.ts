@@ -5,7 +5,7 @@ export const servicesFaqs = [
   },
   {
     q: "My business is based in Alberton (or anywhere else in South Africa), can you still help?",
-    a: "<p>Absolutely! While our head office is in Centurion, we serve clients across South Africa. We leverage modern cloud accounting technology and remote consultation capabilities to provide the same level of dedicated, expert service regardless of your location. Whether you're in Cape Town, Durban, Johannesburg, Port Elizabeth, or anywhere else in the country, we can help you.</p>"
+    a: "<p>Absolutely! We serve clients across South Africa. We leverage modern cloud accounting technology and remote consultation capabilities to provide the same level of dedicated, expert service regardless of your location. Whether you're in Cape Town, Durban, Johannesburg, Port Elizabeth, or anywhere else in the country, we can help you.</p>"
   },
   {
     q: "What does it mean that you are SAIPA-accredited?",

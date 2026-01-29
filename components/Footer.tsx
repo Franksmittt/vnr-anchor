@@ -31,7 +31,7 @@ const Footer = () => {
               Your trusted partner in strategic tax advisory, business structuring, and intergenerational wealth planning. We're here to help South African entrepreneurs build something lasting.
             </p>
             <p className="mt-3 text-xs sm:text-sm font-semibold text-brand-teal">
-              📍 Head Office: Centurion | 🌍 From the busy streets of Centurion to the heart of the Karoo, we are your nationwide accounting partners.
+              📍 Head Office | 🌍 We are your nationwide accounting partners across South Africa.
             </p>
           </div>
           
@@ -63,7 +63,7 @@ const Footer = () => {
             <ul className="mt-3 sm:mt-4 space-y-3 sm:space-y-4">
               <li className="flex items-start">
                 <MapPin size={16} className="sm:w-[18px] sm:h-[18px] mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0 text-brand-teal-light" />
-                <span className="text-xs sm:text-sm text-text-on-dark/70">1022 Saxby Avenue, Eldoraigne<br />Centurion, 0157, South Africa<br /><span className="text-brand-teal font-semibold">Head Office - Serving clients across South Africa</span></span>
+                <span className="text-xs sm:text-sm text-text-on-dark/70">1022 Saxby Avenue, Eldoraigne<br />0157, South Africa<br /><span className="text-brand-teal font-semibold">Head Office - Serving clients across South Africa</span></span>
               </li>
               <li className="flex items-center">
                 <Mail size={14} className="sm:w-4 sm:h-4 mr-2 sm:mr-3 flex-shrink-0 text-brand-teal-light" />
