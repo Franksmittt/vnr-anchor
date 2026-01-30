@@ -59,18 +59,19 @@
 
     /* MAIN CONTAINER - The "Horizon" Bar */
     .sig-container {
-        width: 750px;
+        width: 750px; /* Wide banner format like your reference */
         height: 200px;
         background: linear-gradient(180deg, var(--bg-charcoal), #020617);
         border: 1px solid var(--border-glass);
-        border-radius: 24px;
+        border-radius: 24px; /* Samsung Squircle smoothing */
         display: grid;
-        grid-template-columns: 1.2fr 1fr 2fr;
+        grid-template-columns: 1.2fr 1fr 2fr; /* Ratio: Brand | Photo | Info */
         position: relative;
         overflow: hidden;
         box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     }
 
+    /* === LEFT COLUMN: BRANDING === */
     .col-brand {
         display: flex;
         flex-direction: column;
@@ -100,6 +101,7 @@
     }
     .col-brand .website-link:hover { color: var(--vnr-lime); }
 
+    /* === CENTER COLUMN: THE HEADSHOT === */
     .col-photo {
         position: relative;
         display: flex;
@@ -107,15 +109,18 @@
         justify-content: center;
     }
 
+    /* The "Portal" Effect */
     .photo-frame {
         width: 130px;
         height: 130px;
-        border-radius: 45px;
-        background: linear-gradient(135deg, var(--vnr-blue), var(--vnr-lime));
+        border-radius: 45px; /* Heavy Squircle - Samsung Style */
+        background: #000;
         position: relative;
         z-index: 2;
-        padding: 4px;
-        box-shadow: 0 0 30px rgba(35, 70, 148, 0.4);
+        padding: 4px; /* Gap between border and photo */
+        /* The Gradient Border */
+        background: linear-gradient(135deg, var(--vnr-blue), var(--vnr-lime));
+        box-shadow: 0 0 30px rgba(35, 70, 148, 0.4); /* Glow */
     }
 
     .photo-inner {
@@ -125,9 +130,10 @@
         background-image: url('/images/signature/jannie%20email%20signature.jpg');
         background-size: cover;
         background-position: center;
-        border-radius: 41px;
+        border-radius: 41px; /* Inner Squircle */
     }
 
+    /* Background curves mimicking your reference image, but subtle/dark */
     .bg-curve {
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
@@ -137,8 +143,9 @@
         mask-image: radial-gradient(circle, transparent 30%, black 100%);
     }
 
+    /* === RIGHT COLUMN: INFO === */
     .col-info {
-        padding: 0 40px;
+        padding: 0 40px; /* Generous breathing room */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -160,13 +167,14 @@
 
     .role {
         font-size: 13px;
-        color: var(--vnr-lime);
+        color: var(--vnr-lime); /* Pop of color */
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: 600;
         margin-top: 4px;
     }
 
+    /* Contact block: icon left, text right, one row per line */
     .contact-container {
         display: grid;
         grid-template-columns: 28px 1fr;
@@ -174,7 +182,9 @@
         gap: 10px 14px;
         align-items: center;
     }
-    .sig-container .contact-container { grid-template-rows: auto auto auto; }
+    .sig-container .contact-container {
+        grid-template-rows: auto auto auto;
+    }
 
     .contact-icon {
         width: 20px;
@@ -185,7 +195,12 @@
         color: var(--vnr-lime);
         flex-shrink: 0;
     }
-    .contact-icon svg { width: 18px; height: 18px; display: block; }
+
+    .contact-icon svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+    }
 
     .contact-link {
         color: var(--text-grey);
@@ -197,31 +212,43 @@
         display: flex;
         align-items: center;
     }
+
     .contact-link:hover { color: var(--text-white); }
     .highlight { color: var(--text-white); font-weight: 500; }
 
+    /* ========== OPTION 2: Horizontal banner, rounded geometric accents (blue & green) ========== */
     .sig-classic {
         width: 750px;
         height: 200px;
         background: #ffffff;
         border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(45, 45, 50, 0.12);
+        box-shadow: 0 8px 32px rgba(35, 70, 148, 0.12);
         display: grid;
-        grid-template-columns: 160px 1fr;
-        grid-template-rows: auto 1fr;
+        grid-template-columns: 160px 1fr 140px;
         gap: 0;
         align-items: stretch;
         overflow: hidden;
         position: relative;
     }
+    /* Subtle light dot grid background (blue/green tint) */
+    .sig-classic::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle, rgba(35, 70, 148, 0.06) 1px, transparent 1px);
+        background-size: 12px 12px;
+        pointer-events: none;
+        border-radius: 20px;
+    }
     .sig-classic .col-photo {
         grid-column: 1;
-        grid-row: 1 / -1;
-        background: #2D2D32;
+        background: linear-gradient(135deg, #1a3a6e 0%, #0f172a 100%);
         justify-content: center;
         align-items: center;
-        padding: 0 24px;
+        padding: 0 20px;
         border-radius: 20px 0 0 20px;
+        position: relative;
+        z-index: 1;
     }
     .sig-classic .photo-frame {
         width: 110px;
@@ -229,90 +256,88 @@
         border-radius: 50%;
         background: linear-gradient(135deg, var(--vnr-blue), var(--vnr-lime));
         padding: 3px;
-        box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+        box-shadow: 0 6px 24px rgba(35, 70, 148, 0.35);
     }
-    .sig-classic .photo-inner { border-radius: 50%; background-color: #2D2D32; }
+    .sig-classic .photo-inner {
+        border-radius: 50%;
+        background-color: #1a3a6e;
+    }
+    .sig-classic .col-info {
+        padding: 20px 28px 20px 32px;
+        background: transparent;
+        position: relative;
+        z-index: 1;
+    }
     .sig-classic .col-brand {
-        grid-column: 2;
-        grid-row: 1;
-        background: #ffffff;
-        border-right: none;
-        padding: 20px 0 12px 28px;
-        align-items: flex-start;
-        border-bottom: 3px solid var(--vnr-lime);
-        border-radius: 0 12px 0 0;
+        grid-column: 3;
+        background: transparent;
+        border: none;
+        padding: 20px 24px 20px 20px;
+        align-items: flex-end;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
     }
     .sig-classic .vnr-logo-img { max-width: 120px; max-height: 52px; }
-    .sig-classic .col-info {
-        grid-column: 2;
-        grid-row: 2;
-        padding: 16px 32px 20px 28px;
-        border-left: none;
-        background: #ffffff;
-        border-radius: 0 0 20px 0;
-    }
     .sig-classic .name-block {
-        margin-bottom: 14px;
+        margin-bottom: 16px;
         padding-bottom: 12px;
-        border-bottom: 1px solid #e5e7eb;
+        border-bottom: 1px solid rgba(35, 70, 148, 0.12);
+        text-align: center;
     }
-    .sig-classic .contact-container { gap: 10px 14px; }
-    .sig-classic .name { color: #2D2D32; font-size: 22px; }
+    .sig-classic .name { color: #1a3a6e; font-size: 22px; }
     .sig-classic .role { color: var(--vnr-blue); }
-    .sig-classic .name-block { border-bottom-color: #e5e7eb; }
+    .sig-classic .name-block { border-bottom-color: rgba(35, 70, 148, 0.12); }
     .sig-classic .contact-link { color: #4b5563; }
     .sig-classic .contact-link:hover { color: var(--vnr-blue); }
-    .sig-classic .highlight { color: #2D2D32; }
+    .sig-classic .highlight { color: #1a3a6e; }
     .sig-classic .contact-icon { color: var(--vnr-lime); }
     .sig-classic .bg-curve { display: none; }
-    .sig-classic .geo-accent {
-        position: absolute;
-        bottom: 0;
-        left: 160px;
-        width: 40px;
-        height: 40px;
-        background: var(--vnr-blue);
-        border-radius: 0 16px 0 0;
-        opacity: 0.9;
-    }
 
-    .sig-accent {
-        width: 750px;
-        height: 200px;
-        background: var(--bg-charcoal);
-        border: 1px solid var(--border-glass);
-        border-radius: 16px;
-        box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    /* Option 2: Contact block – two-column layout */
+    .sig-classic .contact-wrapper {
         display: grid;
-        grid-template-columns: 8px 130px 1fr;
-        gap: 0;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 24px;
+        align-items: start;
+    }
+    .sig-classic .contact-wrapper .contact-col:first-child {
+        padding-right: 24px;
+        border-right: 1px solid rgba(35, 70, 148, 0.12);
+    }
+    .sig-classic .contact-col {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .sig-classic .contact-col .contact-row {
+        display: flex;
         align-items: center;
-        padding: 0;
-        position: relative;
-        overflow: hidden;
+        gap: 10px;
+        font-size: 13px;
     }
-    .sig-accent .accent-bar {
-        width: 8px;
-        height: 100%;
-        background: linear-gradient(180deg, var(--vnr-lime), var(--vnr-blue));
-        border-radius: 16px 0 0 16px;
+    .sig-classic .contact-col .contact-row .contact-icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
     }
-    .sig-accent .col-photo { justify-content: center; padding: 0 20px; }
-    .sig-accent .photo-frame {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        padding: 3px;
-        background: linear-gradient(135deg, var(--vnr-blue), var(--vnr-lime));
-        box-shadow: 0 0 20px rgba(35, 70, 148, 0.35);
+    .sig-classic .contact-col .contact-row .contact-icon svg {
+        width: 14px;
+        height: 14px;
     }
-    .sig-accent .photo-inner { border-radius: 50%; }
-    .sig-accent .col-info { padding: 0 36px; position: relative; padding-top: 4px; }
-    .sig-accent .logo-top { position: absolute; top: 0; right: 0; }
-    .sig-accent .logo-top .vnr-logo-img { max-width: 100px; max-height: 48px; }
-    .sig-accent .name { font-size: 24px; }
-    .sig-accent .role { color: var(--vnr-lime); }
-    .sig-accent .bg-curve { display: none; }
+    .sig-classic .contact-col .contact-row a {
+        color: #475569;
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        transition: color 0.2s;
+    }
+    .sig-classic .contact-col .contact-row a:hover {
+        color: var(--vnr-blue);
+    }
+    .sig-classic .contact-col .contact-row a.highlight {
+        color: #1a3a6e;
+    }
 </style>
 </head>
 <body>
@@ -320,6 +345,7 @@
 <h1 class="page-title">VNR Email Signatures</h1>
 <p class="page-subtitle">Choose your favourite design below — same content, different style.</p>
 
+<!-- OPTION 1: Horizon (Dark) -->
 <section class="signature-option">
     <h2><span>Option 1</span> — Horizon (Dark)</h2>
     <div class="sig-container">
@@ -356,72 +382,53 @@
     </div>
 </section>
 
+<!-- OPTION 2: Horizontal banner, rounded geometric accents (Jannie – blue & green) -->
 <section class="signature-option">
     <h2><span>Option 2</span> — Horizontal banner</h2>
     <div class="sig-classic">
-        <div class="geo-accent" aria-hidden="true"></div>
         <div class="col-photo">
             <div class="photo-frame">
                 <div class="photo-inner"></div>
+            </div>
+        </div>
+        <div class="col-info">
+            <div class="name-block">
+                <h1 class="name">Jannie Venter</h1>
+                <div class="role">Co-Founder & Director</div>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-col">
+                    <div class="contact-row">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                        </span>
+                        <a href="tel:+27821234567" class="highlight">+27 82 123 4567</a>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </span>
+                        <a href="tel:+27126531633" class="highlight">+27 12 653 1633</a>
+                    </div>
+                </div>
+                <div class="contact-col">
+                    <div class="contact-row">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </span>
+                        <a href="mailto:jannie@vnr.co.za">jannie@vnr.co.za</a>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </span>
+                        <a href="https://vnr.co.za">www.vnr.co.za</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-brand">
             <img src="/images/logos/vnrlogo1.png" alt="VNR Professional Accountants" class="vnr-logo-img" />
-        </div>
-        <div class="col-info">
-            <div class="name-block">
-                <h1 class="name">Jannie Venter</h1>
-                <div class="role">Co-Founder & Director</div>
-            </div>
-            <div class="contact-container">
-                <div class="contact-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                </div>
-                <a href="tel:+27126531633" class="contact-link"><span class="highlight">+27 12 653 1633</span></a>
-                <div class="contact-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </div>
-                <a href="mailto:jannie@vnr.co.za" class="contact-link">jannie@vnr.co.za</a>
-                <div class="contact-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                </div>
-                <a href="https://vnr.co.za" class="contact-link">www.vnr.co.za</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="signature-option">
-    <h2><span>Option 3</span> — Accent Strip</h2>
-    <div class="sig-accent">
-        <div class="accent-bar"></div>
-        <div class="col-photo">
-            <div class="photo-frame">
-                <div class="photo-inner"></div>
-            </div>
-        </div>
-        <div class="col-info">
-            <div class="logo-top">
-                <img src="/images/logos/vnrlogo1.png" alt="VNR Professional Accountants" class="vnr-logo-img" />
-            </div>
-            <div class="name-block">
-                <h1 class="name">Jannie Venter</h1>
-                <div class="role">Co-Founder & Director</div>
-            </div>
-            <div class="contact-container">
-                <div class="contact-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                </div>
-                <a href="tel:+27126531633" class="contact-link"><span class="highlight">+27 12 653 1633</span></a>
-                <div class="contact-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </div>
-                <a href="mailto:jannie@vnr.co.za" class="contact-link">jannie@vnr.co.za</a>
-                <div class="contact-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                </div>
-                <a href="https://vnr.co.za" class="contact-link">www.vnr.co.za</a>
-            </div>
         </div>
     </div>
 </section>
