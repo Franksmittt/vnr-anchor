@@ -10,14 +10,13 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 const categoryIcons: { [key: string]: React.ElementType } = {
   'Tax Advisory & Compliance': FileText,
-  'Persons earning Business Income': Briefcase,
-  'Financial / Statutory Reporting': BarChart3,
+  'Financial Reporting': BarChart3,
   'Payroll Administration': Users,
-  'Registrations and Secretarial Services': ScrollText,
+  'Secretarial and Registrations': ScrollText,
   'Confirmations': CheckSquare,
-  'Business Valuations': TrendingUp,
-  'Estate and Legacy Planning': Landmark,
   'Business Structuring': Network,
+  'Estate and Legacy Planning': Landmark,
+  'Cloud Accounting and Financial Record Keeping Solutions': Monitor,
   'Hourly Tariffs': Clock,
   'Software Subscription Fees': Monitor,
   'Disbursements': Car,
