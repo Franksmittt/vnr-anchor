@@ -201,41 +201,80 @@
     .highlight { color: var(--text-white); font-weight: 500; }
 
     .sig-classic {
-        width: 720px;
+        width: 750px;
         height: 200px;
         background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 12px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(45, 45, 50, 0.12);
         display: grid;
-        grid-template-columns: 140px 120px 1fr;
+        grid-template-columns: 160px 1fr;
+        grid-template-rows: auto 1fr;
         gap: 0;
-        align-items: center;
-        padding: 0 32px;
+        align-items: stretch;
+        overflow: hidden;
+        position: relative;
     }
-    .sig-classic .col-photo { justify-content: flex-start; }
+    .sig-classic .col-photo {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        background: #2D2D32;
+        justify-content: center;
+        align-items: center;
+        padding: 0 24px;
+        border-radius: 20px 0 0 20px;
+    }
     .sig-classic .photo-frame {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
         border-radius: 50%;
         background: linear-gradient(135deg, var(--vnr-blue), var(--vnr-lime));
         padding: 3px;
-        box-shadow: 0 4px 16px rgba(35, 70, 148, 0.25);
+        box-shadow: 0 6px 24px rgba(0,0,0,0.25);
     }
-    .sig-classic .photo-inner { border-radius: 50%; background-color: #fff; }
-    .sig-classic .col-info { padding: 0 28px; border-left: 1px solid #e2e8f0; }
-    .sig-classic .name-block { margin-bottom: 18px; padding-bottom: 18px; }
-    .sig-classic .contact-container { gap: 12px 14px; }
-    .sig-classic .name { color: #0f172a; font-size: 22px; }
+    .sig-classic .photo-inner { border-radius: 50%; background-color: #2D2D32; }
+    .sig-classic .col-brand {
+        grid-column: 2;
+        grid-row: 1;
+        background: #ffffff;
+        border-right: none;
+        padding: 20px 0 12px 28px;
+        align-items: flex-start;
+        border-bottom: 3px solid var(--vnr-lime);
+        border-radius: 0 12px 0 0;
+    }
+    .sig-classic .vnr-logo-img { max-width: 120px; max-height: 52px; }
+    .sig-classic .col-info {
+        grid-column: 2;
+        grid-row: 2;
+        padding: 16px 32px 20px 28px;
+        border-left: none;
+        background: #ffffff;
+        border-radius: 0 0 20px 0;
+    }
+    .sig-classic .name-block {
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    .sig-classic .contact-container { gap: 10px 14px; }
+    .sig-classic .name { color: #2D2D32; font-size: 22px; }
     .sig-classic .role { color: var(--vnr-blue); }
-    .sig-classic .name-block { border-bottom-color: #e2e8f0; }
-    .sig-classic .contact-link { color: #64748b; }
+    .sig-classic .name-block { border-bottom-color: #e5e7eb; }
+    .sig-classic .contact-link { color: #4b5563; }
     .sig-classic .contact-link:hover { color: var(--vnr-blue); }
-    .sig-classic .highlight { color: #0f172a; }
-    .sig-classic .contact-icon { color: var(--vnr-blue); }
-    .sig-classic .col-brand { border-right: 1px solid #e2e8f0; background: none; }
-    .sig-classic .vnr-logo-img { max-width: 120px; max-height: 56px; }
+    .sig-classic .highlight { color: #2D2D32; }
+    .sig-classic .contact-icon { color: var(--vnr-lime); }
     .sig-classic .bg-curve { display: none; }
+    .sig-classic .geo-accent {
+        position: absolute;
+        bottom: 0;
+        left: 160px;
+        width: 40px;
+        height: 40px;
+        background: var(--vnr-blue);
+        border-radius: 0 16px 0 0;
+        opacity: 0.9;
+    }
 
     .sig-accent {
         width: 750px;
@@ -318,15 +357,16 @@
 </section>
 
 <section class="signature-option">
-    <h2><span>Option 2</span> — Classic Light</h2>
+    <h2><span>Option 2</span> — Horizontal banner</h2>
     <div class="sig-classic">
-        <div class="col-brand">
-            <img src="/images/logos/vnrlogo1.png" alt="VNR Professional Accountants" class="vnr-logo-img" />
-        </div>
+        <div class="geo-accent" aria-hidden="true"></div>
         <div class="col-photo">
             <div class="photo-frame">
                 <div class="photo-inner"></div>
             </div>
+        </div>
+        <div class="col-brand">
+            <img src="/images/logos/vnrlogo1.png" alt="VNR Professional Accountants" class="vnr-logo-img" />
         </div>
         <div class="col-info">
             <div class="name-block">
