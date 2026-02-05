@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Scale, Building2, GitBranchPlus, BarChart3, Cloud, Gavel, ArrowRight, Users, FileText } from 'lucide-react';
+import { Scale, Building2, GitBranchPlus, BarChart3, Cloud, Gavel, ArrowRight, Users, FileText, CheckSquare } from 'lucide-react';
 import { servicesData } from '../data/services-data';
 import AnimateOnScroll from './AnimateOnScroll';
 
@@ -11,6 +11,7 @@ const iconMap: { [key: string]: React.ElementType } = {
   UserCheck: Users,
   Cloud,
   Gavel,
+  CheckSquare,
 };
 
 const ServicesSection = () => {

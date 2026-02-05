@@ -3,7 +3,7 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const FoundersNoteSection = () => {
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-28">
+    <section id="about-us" className="bg-white py-16 sm:py-20 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-6xl mx-auto">
           <AnimateOnScroll>

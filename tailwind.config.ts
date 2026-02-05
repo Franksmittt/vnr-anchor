@@ -20,7 +20,7 @@ const config: Config = {
           dark: '#7ab033',    // Darker Lime Green for emphasis
         },
         'surface': {
-          light: '#f8fafc',  // A soft off-white (slate-50) for content sections
+          light: '#e8ecf1',  // Grey/Blue base - soft grey-blue for content sections
           dark: '#0f172a',   // A deep, rich slate (slate-900) for hero/footer sections
         },
         'text': {

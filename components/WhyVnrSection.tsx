@@ -4,7 +4,7 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const WhyVnrSection = () => {
   return (
-    <section className="bg-surface-light py-16 sm:py-20 lg:py-28 overflow-hidden">
+    <section id="why" className="bg-surface-light py-16 sm:py-20 lg:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
         <AnimateOnScroll>
           <div className="text-center">

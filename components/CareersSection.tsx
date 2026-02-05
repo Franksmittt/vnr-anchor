@@ -16,7 +16,7 @@ const CareersSection = () => {
             </p>
             <div className="mt-8">
               <Link
-                href="mailto:info@vnr.co.za?subject=Career%20Inquiry"
+                href="/contact"
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-blue hover:bg-brand-blue-dark transition-colors"
               >
                 Contact Our Team

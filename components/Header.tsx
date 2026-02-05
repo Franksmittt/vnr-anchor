@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Menu, X } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 
-// This is a new, refined NavItem for our specific design system
 const NavItem = ({ href, children }: { href: string; children: React.ReactNode }) => {
   const pathname = usePathname();
   const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
@@ -26,16 +25,125 @@ const NavItem = ({ href, children }: { href: string; children: React.ReactNode }
   );
 };
 
-const Header = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+interface DropdownItem {
+  href: string;
+  label: string;
+}
 
-  const navLinks = [
-    { href: '/services', label: 'Services' },
+const NavDropdown = ({
+  label,
+  items,
+  isActive,
+  isOpen,
+  onOpenChange,
+}: {
+  label: string;
+  items: DropdownItem[];
+  isActive: boolean;
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        onOpenChange(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [onOpenChange]);
+
+  return (
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={() => onOpenChange(true)}
+      onMouseLeave={() => onOpenChange(false)}
+    >
+      <button
+        type="button"
+        onClick={() => onOpenChange(!isOpen)}
+        className={`flex items-center gap-1 rounded-md px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+          isActive
+            ? 'bg-brand-blue-dark text-white shadow-inner'
+            : 'text-text-on-dark/80 hover:bg-brand-teal/20 hover:text-white'
+        }`}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        {label}
+        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
+      {isOpen && (
+        <div className="absolute left-0 top-full z-50 pt-2 min-w-[200px] rounded-lg bg-surface-dark border border-slate-600/50 py-2 shadow-xl">
+          {items.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => onOpenChange(false)}
+              className="block px-4 py-2.5 text-sm text-text-on-dark/90 hover:bg-brand-teal/20 hover:text-white transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const navStructure = {
+  topLevel: [
+    { href: '/', label: 'Home', type: 'link' as const },
+    {
+      label: 'About',
+      type: 'dropdown' as const,
+      items: [
+        { href: '/#why', label: 'Why VNR' },
+        { href: '/#about-us', label: 'About Us' },
+        { href: '/team', label: 'Meet the Team' },
+      ],
+    },
+    {
+      label: 'Services',
+      type: 'dropdown' as const,
+      items: [
+        { href: '/services', label: 'All Services' },
+        { href: '/process-flow', label: 'Process Flow' },
+      ],
+    },
+    {
+      label: 'Resources',
+      type: 'dropdown' as const,
+      items: [
+        { href: '/anchor-wealth', label: 'Anchor Wealth' },
+        { href: '/resources/expat-tax-guide', label: 'Tax Guide' },
+        { href: '/insights', label: 'Learning & Growth' },
+      ],
+    },
+  ],
+  mobileLinks: [
+    { href: '/', label: 'Home' },
+    { href: '/#why', label: 'Why VNR' },
+    { href: '/#about-us', label: 'About Us' },
+    { href: '/team', label: 'Meet the Team' },
+    { href: '/services', label: 'All Services' },
+    { href: '/process-flow', label: 'Process Flow' },
     { href: '/anchor-wealth', label: 'Anchor Wealth' },
     { href: '/resources/expat-tax-guide', label: 'Tax Guide' },
-    { href: '/team', label: 'Meet the Team' },
     { href: '/insights', label: 'Learning & Growth' },
-  ];
+  ],
+};
+
+const Header = () => {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
+
+  const isDropdownActive = (items: DropdownItem[]) =>
+    items.some((item) => pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href)));
 
   return (
     <header className="bg-surface-dark text-text-on-dark shadow-lg sticky top-0 z-50">
@@ -51,12 +159,23 @@ const Header = () => {
           />
         </Link>
 
-        <nav className="hidden items-center space-x-1 sm:space-x-2 lg:flex" role="navigation" aria-label="Main Navigation">
-          {navLinks.map((link) => (
-            <NavItem key={link.label} href={link.href}>
-              {link.label}
-            </NavItem>
-          ))}
+        <nav className="hidden items-center gap-1 lg:flex" role="navigation" aria-label="Main Navigation">
+          {navStructure.topLevel.map((item) =>
+            item.type === 'link' ? (
+              <NavItem key={item.label} href={item.href}>
+                {item.label}
+              </NavItem>
+            ) : (
+              <NavDropdown
+                key={item.label}
+                label={item.label}
+                items={item.items}
+                isActive={isDropdownActive(item.items)}
+                isOpen={openDropdown === item.label}
+                onOpenChange={(open) => setOpenDropdown(open ? item.label : null)}
+              />
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-4">
@@ -98,14 +217,14 @@ const Header = () => {
                 <X className="h-6 w-6" />
               </button>
             </div>
-            <nav className="mt-6 sm:mt-8 flex flex-col space-y-2" aria-label="Mobile Navigation">
-              {navLinks.map((link) => (
+            <nav className="mt-6 sm:mt-8 flex flex-col space-y-1" aria-label="Mobile Navigation">
+              {navStructure.mobileLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="rounded-lg p-3 text-base sm:text-lg font-medium hover:bg-slate-200 transition-colors"
-                  aria-current={usePathname() === link.href ? 'page' : undefined}
+                  aria-current={pathname === link.href ? 'page' : undefined}
                 >
                   {link.label}
                 </Link>

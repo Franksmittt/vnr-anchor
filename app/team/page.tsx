@@ -31,6 +31,19 @@ const TeamPage = () => {
   return (
     <div className="bg-surface-light">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(teamBreadcrumbSchema).replace(/</g, '\\u003c') }} />
+      {/* Group Photo - Replace with full team photo when Ansu sends it */}
+      <section className="relative w-full aspect-[21/9] min-h-[200px] bg-slate-800 overflow-hidden">
+        <Image
+          src="/images/team/charlie+jannie.jpg"
+          alt="VNR Professional Accountants team"
+          fill
+          priority
+          className="object-cover object-top"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/60 to-transparent" />
+      </section>
+
       {/* Hero Section */}
       <section className="relative bg-surface-dark text-white overflow-hidden">
         <Image

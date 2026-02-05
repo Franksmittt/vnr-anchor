@@ -22,7 +22,7 @@ const categoryIcons: { [key: string]: React.ElementType } = {
   'Disbursements': Car,
 };
 
-function formatPrice(priceIncl: string | number, priceExcl: string | number) {
+function formatPrice(priceIncl: string | number, priceExcl: string | number, category?: string) {
   // Handle "FREE"
   if (typeof priceExcl === 'string' && priceExcl.toUpperCase().includes('FREE')) {
     return (
@@ -32,11 +32,15 @@ function formatPrice(priceIncl: string | number, priceExcl: string | number) {
     );
   }
   
-  // Handle POR
+  // Handle POR - show category-specific wording for Business Structuring, Tax Advisory, and Financial Record Keeping
   if (!priceIncl || priceIncl === '' || priceExcl === 'POR' || priceExcl === '') {
+    const porLabel = 
+      category === 'Business Structuring' || category === 'Tax Advisory & Compliance' ? 'Per Quote / Hourly Tariff' :
+      category === 'Cloud Accounting and Financial Record Keeping Solutions' ? 'Per Quote' :
+      "Let's Chat";
     return (
       <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand-blue/10 text-brand-blue-dark border border-brand-blue/20 cursor-pointer hover:bg-brand-blue/20 transition-colors">
-        Let's Chat
+        {porLabel}
       </span>
     );
   }
@@ -247,7 +251,7 @@ const ServicesPage = () => {
                             )}
                           </div>
                           <div className="flex-none pt-2 sm:pt-0 border-t sm:border-0 border-slate-100 mt-2 sm:mt-0">
-                            {formatPrice(service.priceIncl, service.priceExcl)}
+                            {formatPrice(service.priceIncl, service.priceExcl, service.category)}
           </div>
         </div>
                       );

@@ -18,6 +18,7 @@ export interface Service {
   faqs: FAQ[];
 }
 
+// Order: 1.Registrations & Secretarial, 2.Payroll, 3.Tax, 4.Financial Reporting, 5.Confirmations, 6.Estate & Legacy, 7.Cloud Accounting, 8.Hourly Tariffs
 export const servicesData: Service[] = [
   {
     slug: 'secretarial-services',
@@ -65,6 +66,53 @@ export const servicesData: Service[] = [
         { q: 'How often do I need to file?', a: 'Once a year, around the anniversary of when your company was registered. But here\'s the thing: you don\'t have to remember. We\'ll remind you well in advance and handle everything for you.' },
         { q: 'What do you need from me for director changes?', a: 'Just the basics: name, ID number, address, and when they started. We\'ll take care of all the forms and filing. Simple as that.' },
         { q: 'My company was deregistered. Can you help?', a: 'Absolutely. We\'ve helped many businesses get reinstated. It involves catching up on missed filings and paying any penalties, but we\'ll guide you through every step. Let\'s get your business back on track.' },
+    ],
+  },
+  {
+    slug: 'payroll-administration',
+    title: 'Payroll Administration: Your Team Deserves Better',
+    subtitle: 'We understand that payroll mistakes can hurt your team and your business. Let us handle it perfectly, every time, so you can focus on leading, not calculating.',
+    imageUrl: '/images/services/payroll.jpg',
+    icon: 'UserCheck',
+    details: ['Monthly Payroll Processing', 'Payslip Generation', 'EMP201 & EMP501 Submissions', 'UIF & COID Compliance'],
+    leadExpert: teamData.find(m => m.slug === 'henry-landsberg')!,
+    content: `
+      <p class="text-lg text-slate-600 mb-6">We understand that payroll is stressful. One mistake can mean unhappy employees, SARS penalties, and sleepless nights. That's why we take it off your plate completely. We handle every calculation, every submission, every payslip. Perfectly, every time. Your team gets paid accurately, and you get peace of mind. Our <strong>payroll services across South Africa</strong> ensure your business stays compliant while you focus on what matters most. We work with clients nationwide.</p>
+      
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Take Payroll Off Your Shoulders</h2>
+      <p class="mb-8 text-slate-600">We handle everything from monthly payslips to annual reconciliations. You just focus on your team. We\'ll make sure they\'re paid right, every time.</p>
+      
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Monthly Payroll Processing & SARS Submissions</h3>
+      <p class="mb-4 text-slate-600">Our core service ensures your monthly payroll is executed flawlessly. We handle all calculations, generate professional payslips, and manage your statutory submissions to SARS, keeping you compliant month after month.</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+          <li>Accurate calculation of salaries, wages, overtime, and commissions.</li>
+          <li>Processing of all deductions including PAYE, UIF, SDL, and employee benefits.</li>
+          <li>Generation and secure distribution of electronic payslips.</li>
+          <li>Timely preparation and submission of the monthly <strong>EMP201 return to SARS</strong> before the 7th.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Bi-Annual & Annual SARS Reconciliations</h3>
+      <p class="mb-4 text-slate-600">SARS requires employers to reconcile their payroll data twice a year. This is a critical control to ensure that the taxes paid over match the values declared on employee tax certificates. We manage this entire complex process to ensure a smooth and successful submission.</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+          <li>Interim (August) and Final (May) <strong>EMP501 reconciliation</strong> and submission.</li>
+          <li>Generation and distribution of annual IRP5 and IT3(a) tax certificates to all employees.</li>
+          <li>Ensuring perfect alignment between monthly EMP201 payments and the final EMP501 declaration.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Department of Labour & COID Compliance</h3>
+      <p class="mb-4 text-slate-600">Payroll compliance extends beyond SARS. We ensure you meet your obligations to the Department of Labour, protecting your business and supporting your employees.</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+          <li>New employee registration with the Unemployment Insurance Fund (UIF).</li>
+          <li>Submission of monthly UI-19 declarations to the Department of Labour.</li>
+          <li>Annual submission of the Return of Earnings (W.As.8) to the Compensation Fund (COID).</li>
+          <li>Assistance in obtaining a <strong>Letter of Good Standing</strong> from the Compensation Fund, often required for tenders.</li>
+      </ul>
+    `,
+    faqs: [
+        { q: 'What is an EMP201 and when is it due?', a: 'The EMP201 is the monthly declaration submitted to SARS that details the total Pay-As-You-Earn (PAYE), Skills Development Levy (SDL), and Unemployment Insurance Fund (UIF) deducted from your employees. The payment and submission are due by the 7th day of the month following the one in which the deductions were made.' },
+        { q: 'What is the purpose of the EMP501 reconciliation?', a: 'The EMP501 is a bi-annual reconciliation that summarizes all the monthly EMP201 submissions for a six-month period. It is used to generate the employees\' IRP5/IT3(a) tax certificates and ensures that what the company has paid to SARS matches the tax deducted from its employees for that period.' },
+        { q: 'What is COID and why do I need a Letter of Good Standing?', a: 'COID stands for Compensation for Occupational Injuries and Diseases. Businesses must submit a Return of Earnings annually and pay an assessment fee. A Letter of Good Standing from the Compensation Fund proves you are compliant and is often a mandatory requirement to be awarded contracts or tenders.' },
+        { q: 'Can you manage payroll for a business with only a few employees?', a: 'Absolutely. Our outsourced payroll services are scalable and cost-effective for businesses of all sizes, from a single employee to large teams. Outsourcing ensures compliance from day one and saves valuable founder time, regardless of company size.' },
     ],
   },
   {
@@ -156,66 +204,12 @@ export const servicesData: Service[] = [
           <li>Registration of the trust with the Master of the High Court.</li>
           <li>Ongoing administrative services to ensure the trust remains compliant.</li>
       </ul>
-      
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Strategic Business Valuations</h3>
-      <p class="mb-4 text-slate-600">Understanding the true value of your business is critical for strategic planning, securing funding, BEE transactions, or preparing for an exit. Our valuation experts use industry-accepted methodologies to provide a defensible and realistic valuation of your enterprise.</p>
-      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
-          <li>Valuations for mergers, acquisitions, and disposals.</li>
-          <li>Determining value for shareholder agreements and estate planning purposes.</li>
-          <li>Independent valuations for potential investors or financial institutions.</li>
-      </ul>
     `,
     faqs: [
         { q: 'What is the best legal structure for my new business?', a: 'The optimal structure, such as a Sole Proprietorship vs. a Pty Ltd, depends on your personal liability tolerance, tax implications, and growth plans. A Pty Ltd is generally recommended as it creates a separate legal entity, protecting your personal assets. We provide tailored advice to help you choose correctly.' },
         { q: 'How long does it take to register a company in South Africa?', a: 'With all documentation correctly submitted, a new company registration with the CIPC typically takes a few business days. We manage the entire process to ensure it is as swift and seamless as possible.' },
         { q: 'What happens if I don\'t file my CIPC annual return?', a: 'Failure to file annual returns can lead to late-filing penalties. If a company fails to file for two or more consecutive years, the CIPC can assume the company is inactive and begin the deregistration process, which can result in its bank accounts being frozen.' },
         { q: 'Why should I consider a trust for my assets?', a: 'A trust is a powerful asset protection tool. It separates your personal assets from your business risks. This means that if your business encounters financial difficulty, the assets held within the trust (like your family home) are generally protected from business creditors.' },
-    ],
-  },
-  {
-    slug: 'legacy-planning',
-    title: 'Estate & Legacy Planning: Protect What Matters',
-    subtitle: 'We understand that thinking about the future can be difficult. Let\'s make sure your family is taken care of and your legacy lives on, exactly as you envision it.',
-    imageUrl: '/images/services/estate-legacy-planning.jpg',
-    icon: 'GitBranchPlus',
-    details: ['Drafting of Last Will & Testament', 'Intergenerational Wealth Transfer', 'Executor Services', 'Trust & Estate Administration'],
-    leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
-    content: `
-      <p class="text-lg text-slate-600 mb-6">We understand that planning for the future isn\'t easy. It means thinking about difficult things. But here\'s what we know: when you take care of it now, you give your family peace of mind later. We\'ll help you create a plan that protects what you\'ve built, takes care of the people you love, and ensures your values live on. Our legacy planning services <strong>across South Africa</strong> are designed to give you confidence that everything will be handled exactly as you want. We work with clients nationwide.</p>
-      
-      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Help You Protect Your Legacy</h2>
-      <p class="mb-8 text-slate-600">A good estate plan isn\'t just about documents. It\'s about peace of mind. We\'ll work with you to create a plan that reflects your values and protects your family\'s future.</p>
-      
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Drafting of Last Will & Testament</h3>
-      <p class="mb-4 text-slate-600">For a business owner, an off-the-shelf will is insufficient and dangerous. Your will is your final business continuity plan. We specialize in <strong>drafting wills for business owners across South Africa</strong>, ensuring it addresses the complex interplay between your personal estate and company shares, and aligns perfectly with your shareholder agreements to prevent legal disputes.</p>
-      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
-          <li>Customised will drafting tailored to high-net-worth estates.</li>
-          <li>Integration of business succession clauses and testamentary trusts.</li>
-          <li>Regular reviews to ensure your will remains current with legislation and life changes.</li>
-      </ul>
-
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Intergenerational Wealth Transfer</h3>
-      <p class="mb-4 text-slate-600">Transferring wealth to the next generation requires careful planning to be effective and tax-efficient. We utilize a range of strategic tools, including trusts and planned donations, to ensure your assets are passed on smoothly, minimizing exposure to Estate Duty and Donations Tax.</p>
-      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
-          <li>Strategic use of family trusts for asset protection and seamless transfer.</li>
-          <li>Advice on minimizing <strong>Estate Duty in South Africa</strong>.</li>
-          <li>Planning for liquidity to cover estate costs without forcing the sale of assets.</li>
-      </ul>
-
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Professional Executor & Administration Services</h3>
-      <p class="mb-4 text-slate-600">Appointing an independent, professional executor is one of the wisest decisions you can make to protect your family from administrative burdens and potential conflict. As your executor, we manage the entire process of <strong>winding up deceased estates across South Africa</strong> with impartiality, expertise, and efficiency.</p>
-      <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
-          <li>Acting as independent, professional Executors of your estate.</li>
-          <li>Reporting the estate to the Master of the High Court.</li>
-          <li>Managing estate assets, settling liabilities, and distributing inheritances.</li>
-          <li>Ensuring all legal and tax compliance throughout the administration process.</li>
-      </ul>
-    `,
-    faqs: [
-        { q: 'What is Estate Duty and how is it calculated in South Africa?', a: 'Estate Duty is a tax of 20% levied on the dutiable amount of a deceased estate up to R30 million, and 25% on the value above R30 million. The first R3.5 million of the estate\'s net value is exempt. Strategic planning can legally minimize this liability.' },
-        { q: 'Why is a professional executor important for a business owner?', a: 'A professional executor brings impartiality and expertise to complex estates involving business assets. This prevents family conflicts of interest, ensures the business is managed or sold correctly, and navigates the intricate legal and tax requirements efficiently, which a family member may not be equipped to handle.' },
-        { q: 'What happens if I die without a valid will?', a: 'Dying "intestate" means your assets will be distributed according to a fixed legal formula (the Law of Intestate Succession), which may not align with your wishes. It can lead to significant delays, increased costs, and potential hardship for your loved ones.' },
-        { q: 'How can a trust help reduce estate costs?', a: 'Assets held within a properly structured trust do not form part of your personal estate upon death. This means they are not subject to executor\'s fees (typically 3.5% + VAT) or Estate Duty, resulting in significant cost savings and a much faster transfer of wealth to your beneficiaries.' },
     ],
   },
   {
@@ -266,56 +260,80 @@ export const servicesData: Service[] = [
     ],
   },
   {
-    slug: 'payroll-administration',
-    title: 'Payroll Administration: Your Team Deserves Better',
-    subtitle: 'We understand that payroll mistakes can hurt your team and your business. Let us handle it perfectly, every time, so you can focus on leading, not calculating.',
-    imageUrl: '/images/services/payroll.jpg',
-    icon: 'UserCheck',
-    details: ['Monthly Payroll Processing', 'Payslip Generation', 'EMP201 & EMP501 Submissions', 'UIF & COID Compliance'],
+    slug: 'confirmations',
+    title: 'Confirmations: Verification When You Need It',
+    subtitle: 'Income confirmations, audit reports for property purchases, and BBBEE declarations. We provide accurate, timely confirmations to support your applications and compliance needs.',
+    imageUrl: '/images/services/financial-reporting-hero.jpg',
+    icon: 'CheckSquare',
+    details: ['Income Confirmations', 'Audit Reports for Property Purchase', 'BBBEE Declarations'],
     leadExpert: teamData.find(m => m.slug === 'henry-landsberg')!,
     content: `
-      <p class="text-lg text-slate-600 mb-6">We understand that payroll is stressful. One mistake can mean unhappy employees, SARS penalties, and sleepless nights. That's why we take it off your plate completely. We handle every calculation, every submission, every payslip. Perfectly, every time. Your team gets paid accurately, and you get peace of mind. Our <strong>payroll services across South Africa</strong> ensure your business stays compliant while you focus on what matters most. We work with clients nationwide.</p>
+      <p class="text-lg text-slate-600 mb-6">When banks, landlords, or tender committees need verification of your financial position, we provide accurate and timely confirmations. Our confirmations service supports your applications for bond approvals, rental agreements, and BBBEE compliance.</p>
       
-      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Take Payroll Off Your Shoulders</h2>
-      <p class="mb-8 text-slate-600">We handle everything from monthly payslips to annual reconciliations. You just focus on your team. We\'ll make sure they\'re paid right, every time.</p>
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">What We Offer</h2>
+      <p class="mb-8 text-slate-600">From income confirmations for existing clients to audit reports for property purchases, we deliver the documentation you need.</p>
       
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Monthly Payroll Processing & SARS Submissions</h3>
-      <p class="mb-4 text-slate-600">Our core service ensures your monthly payroll is executed flawlessly. We handle all calculations, generate professional payslips, and manage your statutory submissions to SARS, keeping you compliant month after month.</p>
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Income Confirmations</h3>
+      <p class="mb-4 text-slate-600">Formal confirmation of income for bond applications, rental agreements, and other purposes. Available for existing VNR clients and new clients with the necessary documentation.</p>
+
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">BBBEE Declarations</h3>
+      <p class="mb-4 text-slate-600">BBBEE Declaration and confirmation for EMEs, supporting your tender submissions and compliance requirements.</p>
+    `,
+    faqs: [
+        { q: 'How quickly can I get an income confirmation?', a: 'For existing VNR clients, we prioritise income confirmations and can usually provide them within a few business days. For new clients, the process may take slightly longer as we verify the information.' },
+        { q: 'What do I need for a BBBEE declaration?', a: 'We use the standard VNR form for EMEs. We will guide you through the documentation required for your specific situation.' },
+    ],
+  },
+  {
+    slug: 'legacy-planning',
+    title: 'Estate & Legacy Planning: Protect What Matters',
+    subtitle: 'We understand that thinking about the future can be difficult. Let\'s make sure your family is taken care of and your legacy lives on, exactly as you envision it.',
+    imageUrl: '/images/services/estate-legacy-planning.jpg',
+    icon: 'GitBranchPlus',
+    details: ['Drafting of Last Will & Testament', 'Intergenerational Wealth Transfer', 'Executor Services', 'Trust & Estate Administration'],
+    leadExpert: teamData.find(m => m.slug === 'charlie-naude')!,
+    content: `
+      <p class="text-lg text-slate-600 mb-6">We understand that planning for the future isn\'t easy. It means thinking about difficult things. But here\'s what we know: when you take care of it now, you give your family peace of mind later. We\'ll help you create a plan that protects what you\'ve built, takes care of the people you love, and ensures your values live on. Our legacy planning services <strong>across South Africa</strong> are designed to give you confidence that everything will be handled exactly as you want. We work with clients nationwide.</p>
+      
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-12 mb-6">How We Help You Protect Your Legacy</h2>
+      <p class="mb-8 text-slate-600">A good estate plan isn\'t just about documents. It\'s about peace of mind. We\'ll work with you to create a plan that reflects your values and protects your family\'s future.</p>
+      
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Drafting of Last Will & Testament</h3>
+      <p class="mb-4 text-slate-600">For a business owner, an off-the-shelf will is insufficient and dangerous. Your will is your final business continuity plan. We specialize in <strong>drafting wills for business owners across South Africa</strong>, ensuring it addresses the complex interplay between your personal estate and company shares, and aligns perfectly with your shareholder agreements to prevent legal disputes.</p>
       <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
-          <li>Accurate calculation of salaries, wages, overtime, and commissions.</li>
-          <li>Processing of all deductions including PAYE, UIF, SDL, and employee benefits.</li>
-          <li>Generation and secure distribution of electronic payslips.</li>
-          <li>Timely preparation and submission of the monthly <strong>EMP201 return to SARS</strong> before the 7th.</li>
+          <li>Customised will drafting tailored to high-net-worth estates.</li>
+          <li>Integration of business succession clauses and testamentary trusts.</li>
+          <li>Regular reviews to ensure your will remains current with legislation and life changes.</li>
       </ul>
 
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Bi-Annual & Annual SARS Reconciliations</h3>
-      <p class="mb-4 text-slate-600">SARS requires employers to reconcile their payroll data twice a year. This is a critical control to ensure that the taxes paid over match the values declared on employee tax certificates. We manage this entire complex process to ensure a smooth and successful submission.</p>
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Intergenerational Wealth Transfer</h3>
+      <p class="mb-4 text-slate-600">Transferring wealth to the next generation requires careful planning to be effective and tax-efficient. We utilize a range of strategic tools, including trusts and planned donations, to ensure your assets are passed on smoothly, minimizing exposure to Estate Duty and Donations Tax.</p>
       <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
-          <li>Interim (August) and Final (May) <strong>EMP501 reconciliation</strong> and submission.</li>
-          <li>Generation and distribution of annual IRP5 and IT3(a) tax certificates to all employees.</li>
-          <li>Ensuring perfect alignment between monthly EMP201 payments and the final EMP501 declaration.</li>
+          <li>Strategic use of family trusts for asset protection and seamless transfer.</li>
+          <li>Advice on minimizing <strong>Estate Duty in South Africa</strong>.</li>
+          <li>Planning for liquidity to cover estate costs without forcing the sale of assets.</li>
       </ul>
 
-      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Department of Labour & COID Compliance</h3>
-      <p class="mb-4 text-slate-600">Payroll compliance extends beyond SARS. We ensure you meet your obligations to the Department of Labour, protecting your business and supporting your employees.</p>
+      <h3 class="text-2xl font-semibold text-slate-800 mt-8 mb-4">Professional Executor & Administration Services</h3>
+      <p class="mb-4 text-slate-600">Appointing an independent, professional executor is one of the wisest decisions you can make to protect your family from administrative burdens and potential conflict. As your executor, we manage the entire process of <strong>winding up deceased estates across South Africa</strong> with impartiality, expertise, and efficiency.</p>
       <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
-          <li>New employee registration with the Unemployment Insurance Fund (UIF).</li>
-          <li>Submission of monthly UI-19 declarations to the Department of Labour.</li>
-          <li>Annual submission of the Return of Earnings (W.As.8) to the Compensation Fund (COID).</li>
-          <li>Assistance in obtaining a <strong>Letter of Good Standing</strong> from the Compensation Fund, often required for tenders.</li>
+          <li>Acting as independent, professional Executors of your estate.</li>
+          <li>Reporting the estate to the Master of the High Court.</li>
+          <li>Managing estate assets, settling liabilities, and distributing inheritances.</li>
+          <li>Ensuring all legal and tax compliance throughout the administration process.</li>
       </ul>
     `,
     faqs: [
-        { q: 'What is an EMP201 and when is it due?', a: 'The EMP201 is the monthly declaration submitted to SARS that details the total Pay-As-You-Earn (PAYE), Skills Development Levy (SDL), and Unemployment Insurance Fund (UIF) deducted from your employees. The payment and submission are due by the 7th day of the month following the one in which the deductions were made.' },
-        { q: 'What is the purpose of the EMP501 reconciliation?', a: 'The EMP501 is a bi-annual reconciliation that summarizes all the monthly EMP201 submissions for a six-month period. It is used to generate the employees\' IRP5/IT3(a) tax certificates and ensures that what the company has paid to SARS matches the tax deducted from its employees for that period.' },
-        { q: 'What is COID and why do I need a Letter of Good Standing?', a: 'COID stands for Compensation for Occupational Injuries and Diseases. Businesses must submit a Return of Earnings annually and pay an assessment fee. A Letter of Good Standing from the Compensation Fund proves you are compliant and is often a mandatory requirement to be awarded contracts or tenders.' },
-        { q: 'Can you manage payroll for a business with only a few employees?', a: 'Absolutely. Our outsourced payroll services are scalable and cost-effective for businesses of all sizes, from a single employee to large teams. Outsourcing ensures compliance from day one and saves valuable founder time, regardless of company size.' },
+        { q: 'What is Estate Duty and how is it calculated in South Africa?', a: 'Estate Duty is a tax of 20% levied on the dutiable amount of a deceased estate up to R30 million, and 25% on the value above R30 million. The first R3.5 million of the estate\'s net value is exempt. Strategic planning can legally minimize this liability.' },
+        { q: 'Why is a professional executor important for a business owner?', a: 'A professional executor brings impartiality and expertise to complex estates involving business assets. This prevents family conflicts of interest, ensures the business is managed or sold correctly, and navigates the intricate legal and tax requirements efficiently, which a family member may not be equipped to handle.' },
+        { q: 'What happens if I die without a valid will?', a: 'Dying "intestate" means your assets will be distributed according to a fixed legal formula (the Law of Intestate Succession), which may not align with your wishes. It can lead to significant delays, increased costs, and potential hardship for your loved ones.' },
+        { q: 'How can a trust help reduce estate costs?', a: 'Assets held within a properly structured trust do not form part of your personal estate upon death. This means they are not subject to executor\'s fees (typically 3.5% + VAT) or Estate Duty, resulting in significant cost savings and a much faster transfer of wealth to your beneficiaries.' },
     ],
   },
   {
     slug: 'cloud-accounting',
-    title: 'Cloud Accounting: Work Smarter, Not Harder',
-    subtitle: 'We understand that manual bookkeeping eats up your time. Let\'s move you to the cloud so you can access your numbers anytime, anywhere, and make better decisions faster.',
+    title: 'Cloud Accounting & Financial Record Keeping: Work Smarter, Not Harder',
+    subtitle: 'A bespoke solution tailored to your business. We never treat you like a number in a sausage machine—every client receives personalised attention and a financial record-keeping approach designed for their unique needs.',
     imageUrl: '/images/services/cloud-accounting.jpg',
     icon: 'Cloud',
     details: ['Sage Platinum Partner Services', 'XERO & DEXT Integration', 'Software Setup & Training', 'Workflow Automation'],

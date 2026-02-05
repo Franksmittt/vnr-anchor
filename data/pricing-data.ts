@@ -139,12 +139,6 @@ export const pricingData: PricingService[] = [
   { category: 'Confirmations', subcategory: '', code: 'INC-003', description: 'Audit report for property purchase (min charge)', priceExcl: 1950, priceIncl: '' },
   { category: 'Confirmations', subcategory: '', code: 'BBBEEE-001', description: "BBBEE Declaration, for EME's, confirmation (VNR / Standard Form)", priceExcl: 585, priceIncl: 673 },
 
-  // ========== Business Structuring (Valuations) ==========
-  { category: 'Business Structuring', subcategory: '', code: 'COMVAL-001', description: 'Company Valuation - Basic Company', priceExcl: 10650, priceIncl: 12248 },
-  { category: 'Business Structuring', subcategory: '', code: 'COMVAL-002', description: 'Company Valuation - Medium to Large Enterprise Standard', priceExcl: 18450, priceIncl: 21218 },
-  { category: 'Business Structuring', subcategory: '', code: 'COMVAL-004', description: 'Company Valuation - Medium to Large Enterprise Complex', priceExcl: 28550, priceIncl: 32833 },
-  { category: 'Business Structuring', subcategory: '', code: 'COMVAL-003', description: 'Company Valuation - More Complex', priceExcl: 46550, priceIncl: 53533 },
-
   // ========== Cloud Accounting and Financial Record Keeping Solutions ==========
   { category: 'Cloud Accounting and Financial Record Keeping Solutions', subcategory: 'Hourly Tariffs', code: 'SEC-001', description: 'General Secretarial and Administration', priceExcl: 330, priceIncl: 380 },
   { category: 'Cloud Accounting and Financial Record Keeping Solutions', subcategory: 'Hourly Tariffs', code: 'JUN-001', description: 'Accountant / Bookkeeper', priceExcl: 550, priceIncl: 633 },

@@ -247,8 +247,9 @@ export function generateServiceSchema({
       name: provider || SITE_NAME,
       address: {
         '@type': 'PostalAddress',
-        streetAddress: '1022 Saxby Avenue',
-        addressLocality: 'Eldoraigne',
+        streetAddress: '1022 Saxby Avenue, Eldoraigne',
+        addressLocality: 'Centurion',
+        addressRegion: 'Gauteng',
         postalCode: '0157',
         addressCountry: 'ZA',
       },
@@ -318,7 +319,8 @@ export function generateOrganizationSchema() {
     address: {
       '@type': 'PostalAddress',
       streetAddress: '1022 Saxby Avenue, Eldoraigne',
-      addressLocality: 'Eldoraigne',
+      addressLocality: 'Centurion',
+      addressRegion: 'Gauteng',
       postalCode: '0157',
       addressCountry: 'ZA',
     },
