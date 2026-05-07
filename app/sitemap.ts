@@ -2,9 +2,10 @@ import { MetadataRoute } from 'next'
 import { servicesData, Service } from '@/data/services-data';
 import { insightsData, Article } from '@/data/insights-data';
 import { teamData, TeamMember } from '@/data/team-data';
+import { SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za';
+  const siteUrl = SITE_URL;
   const now = new Date();
 
   // High-priority static routes
@@ -47,6 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${siteUrl}/resources/expat-tax-guide`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/locations/centurion-accountants`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,

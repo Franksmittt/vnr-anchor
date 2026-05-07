@@ -3,7 +3,9 @@
  * Comprehensive SEO helpers for Next.js App Router
  */
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za';
+import { SITE_URL } from '@/lib/site';
+
+const BASE_URL = SITE_URL;
 const SITE_NAME = 'VNR Professional Accountants';
 const DEFAULT_DESCRIPTION = "Your premier partner in strategic tax advisory, business structuring, and intergenerational wealth planning for South Africa's leading families and businesses.";
 

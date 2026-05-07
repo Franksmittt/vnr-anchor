@@ -6,10 +6,45 @@ import ContactHero from '@/components/ContactHero';
 import InfoCard from '@/components/InfoCard';
 import { faqs } from '@/data/contact-data';
 import FaqAccordion from '@/components/FaqAccordion';
+import { useRouter } from 'next/navigation';
+import { trackEvent } from '@/lib/tracking';
 
-const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=1022+Saxby+Avenue,Eldoraigne,South+Africa`;
+const mapEmbedUrl = 'https://www.google.com/maps?q=1022+Saxby+Avenue,Eldoraigne,South+Africa&output=embed';
 
 const ContactPage = () => {
+  const router = useRouter();
+  const [fullName, setFullName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [message, setMessage] = React.useState('');
+  const [submitting, setSubmitting] = React.useState(false);
+  const [error, setError] = React.useState('');
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fullName, email, message }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data?.error || 'Unable to submit form.');
+      }
+
+      trackEvent('form_submit', { form_name: 'contact_form' });
+      router.push('/thank-you');
+    } catch (submitError) {
+      setError(submitError instanceof Error ? submitError.message : 'Unable to submit form.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <>
       <ContactHero />
@@ -24,13 +59,16 @@ const ContactPage = () => {
               <p className="text-xs sm:text-sm font-semibold text-brand-blue mb-1">📍 Head Office</p>
               <p className="text-xs sm:text-sm text-text-secondary">🌍 We serve clients across South Africa. Virtual consultations make us your local advisor, anywhere in SA.</p>
             </div>
-            <form action="#" method="POST" className="space-y-4 sm:space-y-6">
+            <form onSubmit={onSubmit} className="space-y-4 sm:space-y-6">
               <div>
                 <label htmlFor="full-name" className="block text-xs sm:text-sm font-medium text-text-secondary">Full Name</label>
                 <input
                   type="text"
                   name="full-name"
                   id="full-name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  required
                   autoComplete="name"
                   className="mt-1 block w-full px-3 py-2.5 text-sm bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-brand-teal focus:border-brand-blue"
                 />
@@ -41,6 +79,9 @@ const ContactPage = () => {
                   type="email"
                   name="email"
                   id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                   autoComplete="email"
                   className="mt-1 block w-full px-3 py-2.5 text-sm bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-brand-teal focus:border-brand-blue"
                 />
@@ -51,15 +92,24 @@ const ContactPage = () => {
                   id="message"
                   name="message"
                   rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
                   className="mt-1 block w-full px-3 py-2.5 text-sm bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-brand-teal focus:border-brand-blue resize-y"
                 ></textarea>
               </div>
+              {error && (
+                <p className="text-sm text-red-600" role="alert">
+                  {error}
+                </p>
+              )}
               <div>
                 <button
                   type="submit"
+                  disabled={submitting}
                   className="w-full flex justify-center py-2.5 sm:py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-blue hover:bg-brand-teal focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-teal transition-colors"
                 >
-                  Let's Start a Conversation
+                  {submitting ? 'Submitting...' : "Let's Start a Conversation"}
                 </button>
               </div>
             </form>
@@ -68,12 +118,20 @@ const ContactPage = () => {
           <div className="space-y-8 sm:space-y-12">
             <div className="space-y-6 sm:space-y-8">
               <InfoCard icon={<Mail size={24} />} title="Email Address">
-                <a href="mailto:info@vnr.co.za" className="text-brand-blue hover:underline">
+                <a
+                  href="mailto:info@vnr.co.za"
+                  onClick={() => trackEvent('email_click', { location: 'contact_page' })}
+                  className="text-brand-blue hover:underline"
+                >
                   info@vnr.co.za
                 </a>
               </InfoCard>
               <InfoCard icon={<Phone size={24} />} title="Phone Number">
-                <a href="tel:+27126531633" className="text-brand-blue hover:underline">
+                <a
+                  href="tel:+27126531633"
+                  onClick={() => trackEvent('phone_click', { location: 'contact_page' })}
+                  className="text-brand-blue hover:underline"
+                >
                    +27 12 653 1633
                 </a>
               </InfoCard>

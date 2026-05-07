@@ -8,9 +8,20 @@ import { teamData } from '@/data/team-data';
 import type { Metadata } from 'next';
 import RelatedServices from '@/components/RelatedServices';
 import { generateMetadata as generateSEOMetadata, generateArticleSchema, generateBreadcrumbSchema } from '@/lib/seo';
+import { SITE_URL } from '@/lib/site';
 
 interface InsightPageParams {
   slug: string;
+}
+
+function getPrimaryServiceLink(category: string): { href: string; label: string } {
+  const normalized = category.toLowerCase();
+  if (normalized.includes('tax')) return { href: '/services/tax-advisory', label: 'Tax Advisory Services' };
+  if (normalized.includes('compliance')) return { href: '/services/secretarial-services', label: 'Secretarial and Compliance Services' };
+  if (normalized.includes('technology')) return { href: '/services/cloud-accounting', label: 'Cloud Accounting Services' };
+  if (normalized.includes('legacy')) return { href: '/services/legacy-planning', label: 'Legacy Planning Services' };
+  if (normalized.includes('growth')) return { href: '/services/business-structuring', label: 'Business Structuring Services' };
+  return { href: '/services', label: 'Our Services' };
 }
 
 export async function generateStaticParams() {
@@ -64,6 +75,7 @@ const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) =
   if (!article) notFound();
 
   const expertBio = teamData.find(m => m.slug === article.author.slug)?.intro || '';
+  const primaryService = getPrimaryServiceLink(article.category);
 
   // Generate structured data
   let publishedTime: string | undefined;
@@ -85,9 +97,9 @@ const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) =
     publishedTime,
     author: {
       name: article.author.name,
-      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/team/${article.author.slug}`,
+      url: `${SITE_URL}/team/${article.author.slug}`,
     },
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/insights/${slug}`,
+    url: `${SITE_URL}/insights/${slug}`,
   });
 
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -116,6 +128,23 @@ const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) =
             
             <article className="lg:col-span-2 space-y-12">
               <KeyTakeaways takeaways={article.takeaways} />
+
+              <section className="rounded-xl border border-slate-200 bg-surface-light p-6">
+                <p className="text-sm text-text-secondary">
+                  Reviewed by{' '}
+                  <a className="font-semibold text-brand-blue hover:underline" href={`/team/${article.author.slug}`}>
+                    {article.author.name}
+                  </a>{' '}
+                  ({article.author.title}). Last reviewed for accuracy: {article.date}.
+                </p>
+                <p className="mt-2 text-sm text-text-secondary">
+                  Need direct support? Start with{' '}
+                  <a className="font-semibold text-brand-blue hover:underline" href={primaryService.href}>
+                    {primaryService.label}
+                  </a>
+                  .
+                </p>
+              </section>
               
               <section 
                 className="prose prose-lg max-w-none prose-h3:font-serif prose-h3:text-brand-blue-dark prose-p:text-text-secondary"

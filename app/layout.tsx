@@ -4,6 +4,9 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Schema from "@/components/Schema"; // Import the new component
+import WhatsAppFab from "@/components/WhatsAppFab";
+import Analytics from "@/components/Analytics";
+import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +26,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'),
+  metadataBase: new URL(SITE_URL),
   title: {
     template: '%s | VNR Professional Accountants',
     default: 'VNR Professional Accountants: Strategic Wealth & Tax Experts',
@@ -102,8 +105,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Schema /> {/* Add the Schema component here */}
       </head>
       <body>
+        <Analytics />
         <Header />
         <main>{children}</main>
+        <WhatsAppFab />
         <Footer />
       </body>
     </html>

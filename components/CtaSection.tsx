@@ -11,13 +11,23 @@ const CtaSection = () => {
         <p className="mt-4 text-base sm:text-lg text-white/90 max-w-2xl mx-auto">
           Let's sit down and talk about your Anchor portfolio, your tax plan, and your estate strategy. We'll help you connect all the pieces in one conversation. Whether you're planning for retirement or building wealth, we're here to make sure everything works together. We serve clients across South Africa.
         </p>
-        <Link
-          href="/contact"
-          className="mt-6 sm:mt-8 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border border-transparent text-sm sm:text-base font-bold rounded-full text-brand-blue-dark bg-white hover:bg-brand-teal/10 hover:text-brand-teal-dark transition-all duration-300 transform hover:scale-105"
-        >
-          Let's Start a Conversation
-          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-        </Link>
+        <div className="mt-6 sm:mt-8 flex flex-wrap justify-center gap-3">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border border-transparent text-sm sm:text-base font-bold rounded-full text-brand-blue-dark bg-white hover:bg-brand-teal/10 hover:text-brand-teal-dark transition-all duration-300 transform hover:scale-105"
+          >
+            Let's Start a Conversation
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+          </Link>
+          <a
+            href="https://wa.me/27126531633"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border border-white/30 text-sm sm:text-base font-bold rounded-full text-white hover:bg-white/10 transition-all duration-300"
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
       </div>
     </section>
   );

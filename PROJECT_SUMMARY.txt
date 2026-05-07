@@ -1,4 +1,226 @@
 ================================================================================
+VNR PROFESSIONAL ACCOUNTANTS - PROJECT SUMMARY (UPDATED)
+================================================================================
+Generated: 2026-05-07
+Project Status: Handover Ready (Codebase)
+Framework: Next.js 14 (App Router)
+Language: TypeScript
+Styling: Tailwind CSS
+Primary Domain: https://vnr.co.za
+
+================================================================================
+1. EXECUTIVE STATUS
+================================================================================
+
+This repository has been upgraded for production launch readiness with a strong
+technical SEO, YMYL trust, and conversion baseline.
+
+What is complete in code:
+- Canonical domain hardening to https://vnr.co.za
+- Dynamic sitemap and environment-aware robots
+- Root Edge middleware for normalization + legacy redirects + 410 handling
+- Legal/compliance pages and trust links
+- Structured data coverage across layouts and key templates
+- GA4-ready event tracking hooks for core conversion actions
+- Contact submission API + thank-you conversion flow
+- Local landing page for Centurion/Pretoria intent
+- Playwright SEO regression tests + GitHub Action SEO gate
+
+What remains outside code (manual ops):
+- Final Vercel domain + DNS cutover checks
+- Google Search Console verification + sitemap submission
+- Production environment variable confirmation
+
+================================================================================
+2. ROUTES AND INFORMATION ARCHITECTURE
+================================================================================
+
+Core routes:
+- /
+- /services
+- /services/[slug]
+- /insights
+- /insights/[slug]
+- /team
+- /team/[slug]
+- /contact
+- /anchor-wealth
+- /resources/expat-tax-guide
+- /process-flow
+- /locations/centurion-accountants
+- /thank-you (noindex, conversion completion)
+
+Legal/compliance routes:
+- /disclaimer
+- /terms-and-conditions
+- /privacy-policy
+- /cookie-policy-za
+- /access-to-information
+
+Technical routes:
+- /sitemap.xml (app/sitemap.ts)
+- /robots.txt (app/robots.ts)
+- /api/contact (POST endpoint for contact submissions)
+
+================================================================================
+3. SEO IMPLEMENTATION STATUS
+================================================================================
+
+Canonical and metadata:
+- Single domain source introduced in lib/site.ts:
+  - SITE_URL = https://vnr.co.za
+- Metadata and schema generation now consistently use SITE_URL
+- Root metadataBase aligned to production domain
+
+Robots and sitemap:
+- app/robots.ts blocks non-production environments (Disallow: /)
+- Production robots includes sitemap reference
+- app/sitemap.ts dynamically emits canonical production URLs
+- Local route included in sitemap: /locations/centurion-accountants
+
+Middleware governance (root middleware.ts):
+- Lowercase normalization with permanent redirects
+- Trailing slash normalization with permanent redirects
+- Legacy URL redirects implemented (examples):
+  - /who-we-are -> /team
+  - /what-we-do -> /services
+  - /whats-on-offer -> /services
+  - /bookkeeping -> /services/cloud-accounting
+  - /make-the-call -> /contact
+  - /privacy-policy-2 -> /privacy-policy
+- Canonical host redirect:
+  - www.vnr.co.za -> vnr.co.za
+- 410 response for deprecated path:
+  - /old-staff-profile
+- Security headers baseline set in middleware
+
+Structured data:
+- Organization schema injection present in layout
+- Service schema on service detail pages
+- Article schema on insight/resource templates
+- Person schema on team detail and team listing support
+- Breadcrumb schema implemented across key templates
+- FAQ schema used on selected templates
+
+YMYL trust and legal continuity:
+- Legal pages added and globally linked from footer
+- Team/author trust signals reinforced in insight detail template
+- NAP and core contact details retained and visible
+
+================================================================================
+4. CONVERSION AND ANALYTICS FOUNDATIONS
+================================================================================
+
+Analytics:
+- components/Analytics.tsx added
+- GA4 loading enabled when NEXT_PUBLIC_GA_MEASUREMENT_ID is set
+- Event helper added in lib/tracking.ts
+
+Tracked interaction hooks:
+- whatsapp_click (floating action button)
+- phone_click (footer and contact contexts)
+- email_click (footer and contact contexts)
+- form_submit (contact form success)
+
+Contact flow:
+- app/api/contact/route.ts validates and accepts POST submissions
+- app/contact/page.tsx uses real submission flow (no fake action URL)
+- Success redirects to /thank-you
+
+================================================================================
+5. QUALITY GATES AND VERIFICATION
+================================================================================
+
+Automated gates:
+- Playwright config added: playwright.config.ts
+- SEO E2E checks added: tests/e2e/seo.spec.ts
+- CI workflow added: .github/workflows/seo-gates.yml
+
+Verification completed locally:
+- npm run build: PASS
+- npm run test:seo: PASS
+- Lints on modified files: no diagnostics
+- Middleware behavior verified with manual status checks
+
+Notes:
+- Existing ecosystem warnings (e.g., browserslist staleness) are non-blocking
+- NPM vulnerability advisories remain informational until dependency remediation
+  is scheduled separately
+
+================================================================================
+6. KEY FILES ADDED OR HARDENED
+================================================================================
+
+New core files:
+- lib/site.ts
+- middleware.ts (root)
+- components/Analytics.tsx
+- components/WhatsAppFab.tsx
+- lib/tracking.ts
+- app/api/contact/route.ts
+- app/thank-you/page.tsx
+- app/locations/centurion-accountants/page.tsx
+- .github/workflows/seo-gates.yml
+- playwright.config.ts
+- tests/e2e/seo.spec.ts
+
+Significant updated files:
+- app/layout.tsx
+- app/robots.ts
+- app/sitemap.ts
+- app/page.tsx
+- app/contact/page.tsx
+- app/contact/layout.tsx
+- app/services/[slug]/page.tsx
+- app/insights/[slug]/page.tsx
+- app/team/page.tsx
+- app/team/[slug]/page.tsx
+- app/resources/expat-tax-guide/page.tsx
+- components/Header.tsx
+- components/Footer.tsx
+- components/CtaSection.tsx
+- lib/seo.ts
+- data/insights-data.ts
+- package.json
+- package-lock.json
+
+Cleanup:
+- Removed obsolete app/middleware.ts in favor of root middleware.ts
+
+================================================================================
+7. HANDOVER CHECKLIST
+================================================================================
+
+Codebase readiness:
+- [x] Build passing
+- [x] SEO regression tests passing
+- [x] Canonical domain hardening complete
+- [x] Robots/sitemap dynamic generation complete
+- [x] Redirect and normalization governance complete
+- [x] Core legal trust pages present and linked
+- [x] Tracking and conversion plumbing integrated
+
+Platform readiness (manual):
+- [ ] Add and verify vnr.co.za and www.vnr.co.za in Vercel
+- [ ] Confirm apex + www DNS records at domain host
+- [ ] Confirm production env vars (especially GA4 ID)
+- [ ] Verify SSL issuance and redirect behavior on live domain
+- [ ] Verify GSC domain property
+- [ ] Submit https://vnr.co.za/sitemap.xml to GSC
+- [ ] Run post-cutover smoke tests (homepage, services, insights, contact, robots, sitemap)
+
+================================================================================
+8. FINAL NOTE
+================================================================================
+
+The project is prepared for production handover from a repository and technical
+SEO perspective. Remaining tasks are deployment/platform operations and should be
+executed as a controlled launch sequence.
+
+================================================================================
+END OF UPDATED PROJECT SUMMARY
+================================================================================
+================================================================================
 VNR PROFESSIONAL ACCOUNTANTS - COMPLETE PROJECT SUMMARY
 ================================================================================
 Generated: 2025

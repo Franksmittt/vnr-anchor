@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import React from 'react';
+import { trackEvent } from '@/lib/tracking';
 
 const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <li>
@@ -53,8 +54,14 @@ const Footer = () => {
               <FooterLink href="/team">Our Leadership</FooterLink>
               <FooterLink href="/anchor-wealth">Anchor Wealth Division</FooterLink>
               <FooterLink href="/resources/expat-tax-guide">Expat & Contractor Tax Guide</FooterLink>
+              <FooterLink href="/locations/centurion-accountants">Centurion & Pretoria</FooterLink>
               <FooterLink href="/insights">Insights</FooterLink>
               <FooterLink href="/contact">Contact</FooterLink>
+              <FooterLink href="/disclaimer">Disclaimer</FooterLink>
+              <FooterLink href="/terms-and-conditions">Terms & Conditions</FooterLink>
+              <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
+              <FooterLink href="/cookie-policy-za">Cookie Policy (ZA)</FooterLink>
+              <FooterLink href="/access-to-information">Access to Information</FooterLink>
             </ul>
           </div>
 
@@ -67,11 +74,23 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={14} className="sm:w-4 sm:h-4 mr-2 sm:mr-3 flex-shrink-0 text-brand-teal-light" />
-                <a href="mailto:info@vnr.co.za" className="text-xs sm:text-sm text-text-on-dark/70 hover:text-white break-all">info@vnr.co.za</a>
+                <a
+                  href="mailto:info@vnr.co.za"
+                  onClick={() => trackEvent('email_click', { location: 'footer' })}
+                  className="text-xs sm:text-sm text-text-on-dark/70 hover:text-white break-all"
+                >
+                  info@vnr.co.za
+                </a>
               </li>
               <li className="flex items-center">
                 <Phone size={14} className="sm:w-4 sm:h-4 mr-2 sm:mr-3 flex-shrink-0 text-brand-teal-light" />
-                <a href="tel:+27126531633" className="text-xs sm:text-sm text-text-on-dark/70 hover:text-white">+27 12 653 1633</a>
+                <a
+                  href="tel:+27126531633"
+                  onClick={() => trackEvent('phone_click', { location: 'footer' })}
+                  className="text-xs sm:text-sm text-text-on-dark/70 hover:text-white"
+                >
+                  +27 12 653 1633
+                </a>
               </li>
             </ul>
           </div>

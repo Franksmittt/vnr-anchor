@@ -8,6 +8,7 @@ import { teamData } from '@/data/team-data';
 import type { Metadata } from 'next';
 import FaqAccordion from '@/components/FaqAccordion';
 import { generateMetadata as generateSEOMetadata, generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo';
+import { SITE_URL } from '@/lib/site';
 
 interface ServicePageParams {
   slug: string;
@@ -59,14 +60,14 @@ const ServicePage = async ({ params }: { params: Promise<ServicePageParams> }) =
   const serviceSchema = generateServiceSchema({
     name: service.title,
     description: service.subtitle,
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/services/${service.slug}`,
+    url: `${SITE_URL}/services/${service.slug}`,
   });
 
   const breadcrumbSchema = generateBreadcrumbSchema(
     breadcrumbs.map(b => ({ name: b.name, url: b.href }))
   );
 
-  const serviceUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/services/${service.slug}`;
+  const serviceUrl = `${SITE_URL}/services/${service.slug}`;
   const faqSchema = service.faqs?.length ? generateFAQSchema(service.faqs, serviceUrl) : null;
 
   return (

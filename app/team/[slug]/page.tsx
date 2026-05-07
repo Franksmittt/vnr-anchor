@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { Metadata } from 'next';
 import { generateMetadata as generateSEOMetadata, generatePersonSchema, generateBreadcrumbSchema } from '@/lib/seo';
+import { SITE_URL } from '@/lib/site';
 
 interface TeamPageParams {
   slug: string;
@@ -61,7 +62,7 @@ const TeamMemberPage = async ({ params }: { params: Promise<TeamPageParams> }) =
     name: member.name,
     jobTitle: member.title,
     image: member.imageUrl,
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/team/${member.slug}`,
+    url: `${SITE_URL}/team/${member.slug}`,
     email: member.email,
     sameAs: member.linkedinUrl ? [member.linkedinUrl] : [],
   });

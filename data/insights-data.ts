@@ -128,7 +128,7 @@ export const insightsData: Article[] = [
     category: "Taxation",
     date: "September 7, 2025",
     author: teamData.find(m => m.slug === 'jannie-venter')!,
-    imageUrl: "/images/insights/tax-consulting-guide.jpg",
+    imageUrl: "/images/insights/from-tax-burden-to-strategic-asset.jpg",
     takeaways: [
         "A tax consultant is a specialist who provides strategic advice to legally minimize tax liability, going beyond the compliance work of a typical accountant.",
         "Key services include tax planning, SARS dispute resolution, compliance management, and structuring for tax efficiency.",
@@ -355,7 +355,7 @@ export const insightsData: Article[] = [
     category: "Compliance",
     date: "June 22, 2025",
     author: teamData.find(m => m.slug === 'henry-landsberg')!,
-    imageUrl: "/images/insights/how-to-restore-your-dormant-company.jpg",
+    imageUrl: "/images/insights/guide-to-registering-your-npo.jpg",
     takeaways: [ "Deregistration is most often caused by failing to file CIPC annual returns for two or more consecutive years.", "The first and most critical step to re-instatement is to bring all outstanding annual returns up to date.", "The formal application is made using Form CoR 40.5, along with a signed affidavit and other supporting documents.", "You must provide proof that the company was still active or held assets at the time of deregistration."],
     toc: [ { id: "root-cause", title: "Why Was My Company Deregistered?" }, { id: "reactivation-steps", title: "How to Reactivate a Company" }, { id: "conclusion", title: "Getting Back on Track" } ],
     content: `

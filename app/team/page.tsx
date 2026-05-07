@@ -9,7 +9,8 @@ import CareersSection from '@/components/CareersSection';
 import AuthorityBar from '@/components/AuthorityBar';
 import CtaSection from '@/components/CtaSection';
 
-import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
+import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema, generatePersonSchema } from '@/lib/seo';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata = generateSEOMetadata({
   title: 'Our Leadership',
@@ -22,6 +23,16 @@ const teamBreadcrumbSchema = generateBreadcrumbSchema([
   { name: 'Home', url: '/' },
   { name: 'Our Leadership', url: '/team' },
 ]);
+const teamPersonSchemas = teamData.map((member) =>
+  generatePersonSchema({
+    name: member.name,
+    jobTitle: member.title,
+    image: member.imageUrl,
+    url: `${SITE_URL}/team/${member.slug}`,
+    email: member.email,
+    sameAs: member.linkedinUrl ? [member.linkedinUrl] : [],
+  }),
+);
 
 const TeamPage = () => {
   const breadcrumbItems = [
@@ -31,6 +42,7 @@ const TeamPage = () => {
   return (
     <div className="bg-surface-light">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(teamBreadcrumbSchema).replace(/</g, '\\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(teamPersonSchemas).replace(/</g, '\\u003c') }} />
       {/* Group Photo - Replace with full team photo when Ansu sends it */}
       <section className="relative w-full aspect-[21/9] min-h-[200px] bg-slate-800 overflow-hidden">
         <Image

@@ -111,6 +111,10 @@ const navStructure = {
       type: 'dropdown' as const,
       items: [
         { href: '/services', label: 'All Services' },
+        { href: '/services/tax-advisory', label: 'Tax Advisory' },
+        { href: '/services/payroll-administration', label: 'Payroll Administration' },
+        { href: '/services/secretarial-services', label: 'Secretarial Services' },
+        { href: '/services/cloud-accounting', label: 'Bookkeeping & Cloud Accounting' },
         { href: '/process-flow', label: 'Process Flow' },
       ],
     },
@@ -120,6 +124,7 @@ const navStructure = {
       items: [
         { href: '/anchor-wealth', label: 'Anchor Wealth' },
         { href: '/resources/expat-tax-guide', label: 'Tax Guide' },
+        { href: '/locations/centurion-accountants', label: 'Centurion & Pretoria' },
         { href: '/insights', label: 'Learning & Growth' },
       ],
     },
@@ -130,9 +135,14 @@ const navStructure = {
     { href: '/#about-us', label: 'About Us' },
     { href: '/team', label: 'Meet the Team' },
     { href: '/services', label: 'All Services' },
+    { href: '/services/tax-advisory', label: 'Tax Advisory' },
+    { href: '/services/payroll-administration', label: 'Payroll Administration' },
+    { href: '/services/secretarial-services', label: 'Secretarial Services' },
+    { href: '/services/cloud-accounting', label: 'Bookkeeping & Cloud Accounting' },
     { href: '/process-flow', label: 'Process Flow' },
     { href: '/anchor-wealth', label: 'Anchor Wealth' },
     { href: '/resources/expat-tax-guide', label: 'Tax Guide' },
+    { href: '/locations/centurion-accountants', label: 'Centurion & Pretoria' },
     { href: '/insights', label: 'Learning & Growth' },
   ],
 };

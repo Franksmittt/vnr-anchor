@@ -4,6 +4,7 @@ import { Download, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 import { generateMetadata as generateSEOMetadata, generateArticleSchema, generateBreadcrumbSchema } from '@/lib/seo';
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = generateSEOMetadata({
   title: "10 Costly Tax Mistakes for Expats & Contractors",
@@ -79,7 +80,7 @@ const mistakes = [
   },
 ];
 
-const EXPAT_GUIDE_URL = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/resources/expat-tax-guide`;
+const EXPAT_GUIDE_URL = `${SITE_URL}/resources/expat-tax-guide`;
 const breadcrumbSchema = generateBreadcrumbSchema([
   { name: 'Home', url: '/' },
   { name: 'Expat & Contractor Tax Guide', url: '/resources/expat-tax-guide' },

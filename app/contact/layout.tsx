@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo';
 import { faqs } from '@/data/contact-data';
+import { SITE_URL } from '@/lib/site';
 
-const contactUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za'}/contact`;
+const contactUrl = `${SITE_URL}/contact`;
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Contact Us',

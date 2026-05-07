@@ -1,9 +1,9 @@
 import { MetadataRoute } from 'next'
+import { SITE_URL } from '@/lib/site';
 
 export default function robots(): MetadataRoute.Robots {
-  // Determine environment context
-  const isProduction = process.env.VERCEL_ENV === 'production' || process.env.NODE_ENV === 'production';
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vnr.co.za';
+  const vercelEnv = process.env.VERCEL_ENV || process.env.NEXT_PUBLIC_VERCEL_ENV;
+  const isProduction = vercelEnv ? vercelEnv === 'production' : process.env.NODE_ENV === 'production';
 
   // Defensive posture for non-production environments
   if (!isProduction) {
@@ -24,12 +24,11 @@ export default function robots(): MetadataRoute.Robots {
       disallow: [
         '/api/',
         '/admin/',
-        '/_next/',
         '/private/',
         // Block internal Next.js routes
         '/?*_rsc=',
       ],
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }
