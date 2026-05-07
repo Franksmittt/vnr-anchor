@@ -44,11 +44,6 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(`${SITE_URL}${lowercasePath}${search}`, 308);
   }
 
-  const isVercelPreviewHost = host.endsWith('.vercel.app');
-  if (process.env.VERCEL_ENV === 'production' && isVercelPreviewHost) {
-    return NextResponse.redirect(`${SITE_URL}${lowercasePath}${search}`, 308);
-  }
-
   const response = NextResponse.next();
   response.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
   response.headers.set('X-Frame-Options', 'DENY');

@@ -59,8 +59,6 @@ const NavDropdown = ({
     <div
       ref={ref}
       className="relative"
-      onMouseEnter={() => onOpenChange(true)}
-      onMouseLeave={() => onOpenChange(false)}
     >
       <button
         type="button"
@@ -77,7 +75,7 @@ const NavDropdown = ({
         <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       {isOpen && (
-        <div className="absolute left-0 top-full z-50 pt-2 min-w-[200px] rounded-lg bg-surface-dark border border-slate-600/50 py-2 shadow-xl">
+        <div className="absolute left-0 top-full z-50 mt-2 min-w-[200px] rounded-lg bg-surface-dark border border-slate-600/50 py-2 shadow-xl">
           {items.map((item) => (
             <Link
               key={item.href}
