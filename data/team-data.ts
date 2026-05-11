@@ -76,7 +76,7 @@ export const teamData: TeamMember[] = [
     slug: "henry-landsberg",
     name: "Henry Landsberg",
     title: "Accounting & Tax Manager",
-    intro: "An award-winning professional, Henry manages our accounting and compliance divisions, ensuring meticulous accuracy and operational efficiency for our clients across South Africa.",
+    intro: "Henry manages our accounting and compliance divisions, ensuring meticulous accuracy and operational efficiency for our clients across South Africa.",
     email: "henry@vnr.co.za",
     linkedinUrl: "https://www.linkedin.com/in/henry-landsberg/",
     imageUrl: "/images/team/henry-landsberg.jpg",
@@ -92,7 +92,7 @@ export const teamData: TeamMember[] = [
     ],
     bio: `
       <p>Henry brings a fresh, energetic approach to accounting. He knows that behind every number is a real person with real dreams, and he's passionate about making sure those numbers tell the right story. Whether you're a small business owner or a growing company, Henry makes sure you understand exactly where your business stands.</p>
-      <p>His award-winning work ethic isn't just about getting things right. It's about making sure you feel confident and in control of your finances. Henry believes that when you understand your numbers, you make better decisions. And better decisions mean a brighter future for your business.</p>
+      <p>His dedicated work ethic isn't just about getting things right. It's about making sure you feel confident and in control of your finances. Henry believes that when you understand your numbers, you make better decisions. And better decisions mean a brighter future for your business.</p>
       <h3>Areas of Expertise</h3>
       <ul>
         <li>Financial Statement Preparation</li>
