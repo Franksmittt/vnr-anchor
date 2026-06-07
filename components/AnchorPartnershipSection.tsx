@@ -45,8 +45,8 @@ const AnchorPartnershipSection = () => {
             </div>
             <p className="mt-4 text-sm text-text-secondary">
               Prefer the phone? Call us on{" "}
-              <a href="tel:+27126531633" className="font-semibold text-brand-blue hover:underline">
-                +27 12 653 1633
+              <a href="tel:0126531633" className="font-semibold text-brand-blue hover:underline">
+                012 653 1633
               </a>{" "}
               and we will log the enquiry for you.
             </p>

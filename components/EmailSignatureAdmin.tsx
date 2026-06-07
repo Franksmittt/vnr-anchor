@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react';
 import {
   CheckCircle2,
   Copy,
@@ -36,7 +36,7 @@ type SignatureTemplate = {
 };
 
 const LOGIN_PASSWORD = 'admin@123';
-const LOGO_URL = 'https://vnr.co.za/images/logos/vnrlogo1.png';
+const LOGO_URL = '/logo.png';
 const BRAND_BLUE = '#234694';
 const BRAND_BLUE_DARK = '#1a3569';
 const BRAND_LIME = '#92C741';
@@ -71,9 +71,9 @@ const defaultSignature: SignatureData = {
     'Professional Accountant (SA) | B.Com Hons (Taxation) | Registered Tax Practitioner (SARS)',
   email: 'jannie@vnr.co.za',
   mobile: '072 378 9892',
-  telephone: '+27 12 653 1633',
+  telephone: '012 653 1633',
   website: 'www.vnr.co.za',
-  address: 'Centurion, Pretoria | Serving clients nationwide',
+  address: '4 Grit Ave, Zwartkop, Centurion, 0051',
   includePhoto: true,
   photoDataUrl: '/images/team/jannie-venter.jpg',
 };
@@ -126,7 +126,7 @@ function contactLine(label: string, value: string, href: string, textColor = '#4
     </tr>`;
 }
 
-function buildHorizonSignature(data: SignatureData) {
+function buildHorizonSignature(data: SignatureData, logoSrc: string) {
   const hasPhoto = data.includePhoto && data.photoDataUrl;
   const width = 720;
   const height = 190;
@@ -138,7 +138,7 @@ function buildHorizonSignature(data: SignatureData) {
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="${width}" style="width:${width}px;height:${height}px;border-collapse:separate;border-spacing:0;background:${SLATE_DARK};background:linear-gradient(135deg,#0f172a 0%,#111f3d 54%,#06111f 100%);border-radius:22px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;">
   <tr>
     <td width="${brandWidth}" style="width:${brandWidth}px;padding:22px 18px;text-align:center;vertical-align:middle;border-right:1px solid rgba(255,255,255,0.12);">
-      <img src="${LOGO_URL}" alt="VNR Professional Accountants" width="126" style="display:block;width:126px;max-width:126px;height:auto;margin:0 auto 12px;border:0;">
+      <img src="${escapeAttr(logoSrc)}" alt="VNR Professional Accountants" width="126" style="display:block;width:126px;max-width:126px;height:auto;margin:0 auto 12px;border:0;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:0.4px;color:#cbd5e1;">Professional Accountants</div>
       <div style="width:48px;height:3px;background:${BRAND_LIME};border-radius:999px;margin:12px auto 0;"></div>
     </td>
@@ -167,7 +167,7 @@ function buildHorizonSignature(data: SignatureData) {
 </table>`;
 }
 
-function buildBoardroomSignature(data: SignatureData) {
+function buildBoardroomSignature(data: SignatureData, logoSrc: string) {
   const hasPhoto = data.includePhoto && data.photoDataUrl;
   const width = 720;
   const height = 180;
@@ -199,7 +199,7 @@ function buildBoardroomSignature(data: SignatureData) {
       </table>
     </td>
     <td width="150" style="width:150px;padding:20px 20px 20px 10px;text-align:right;vertical-align:middle;background:#f8fafc;">
-      <img src="${LOGO_URL}" alt="VNR Professional Accountants" width="118" style="display:block;width:118px;max-width:118px;height:auto;margin:0 0 18px auto;border:0;">
+      <img src="${escapeAttr(logoSrc)}" alt="VNR Professional Accountants" width="118" style="display:block;width:118px;max-width:118px;height:auto;margin:0 0 18px auto;border:0;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#475569;">
         <a href="https://${escapeAttr(data.website.replace(/^https?:\/\//, ''))}" style="color:${BRAND_BLUE};text-decoration:none;font-weight:bold;">${escapeHtml(data.website)}</a>
       </div>
@@ -213,7 +213,7 @@ function buildBoardroomSignature(data: SignatureData) {
 </table>`;
 }
 
-function buildLedgerSignature(data: SignatureData) {
+function buildLedgerSignature(data: SignatureData, logoSrc: string) {
   const hasPhoto = data.includePhoto && data.photoDataUrl;
   const width = 650;
   const height = 160;
@@ -230,7 +230,7 @@ function buildLedgerSignature(data: SignatureData) {
             <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;font-weight:bold;color:${BRAND_BLUE};margin-top:2px;">${escapeHtml(data.title)}</div>
           </td>
           <td style="width:112px;text-align:right;vertical-align:middle;">
-            <img src="${LOGO_URL}" alt="VNR Professional Accountants" width="104" style="display:block;width:104px;max-width:104px;height:auto;margin:0 0 0 auto;border:0;">
+            <img src="${escapeAttr(logoSrc)}" alt="VNR Professional Accountants" width="104" style="display:block;width:104px;max-width:104px;height:auto;margin:0 0 0 auto;border:0;">
           </td>
         </tr>
       </table>
@@ -258,19 +258,19 @@ function buildLedgerSignature(data: SignatureData) {
 </table>`;
 }
 
-function buildSignatureHtml(data: SignatureData, templateKey: TemplateKey) {
+function buildSignatureHtml(data: SignatureData, templateKey: TemplateKey, logoSrc = LOGO_URL) {
   if (templateKey === 'horizon') {
-    return buildHorizonSignature(data);
+    return buildHorizonSignature(data, logoSrc);
   }
 
   if (templateKey === 'boardroom') {
-    return buildBoardroomSignature(data);
+    return buildBoardroomSignature(data, logoSrc);
   }
 
-  return buildLedgerSignature(data);
+  return buildLedgerSignature(data, logoSrc);
 }
 
-function buildDownloadDocument(data: SignatureData, template: SignatureTemplate) {
+function buildDownloadDocument(data: SignatureData, template: SignatureTemplate, logoSrc: string) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -279,7 +279,7 @@ function buildDownloadDocument(data: SignatureData, template: SignatureTemplate)
   <title>${escapeHtml(data.name)} - ${escapeHtml(template.name)} Email Signature</title>
 </head>
 <body style="margin:0;padding:24px;background:#ffffff;">
-${buildSignatureHtml(data, template.key)}
+${buildSignatureHtml(data, template.key, logoSrc)}
 </body>
 </html>`;
 }
@@ -291,6 +291,7 @@ export default function EmailSignatureAdmin() {
   const [signatureData, setSignatureData] = useState<SignatureData>(defaultSignature);
   const [activeTemplate, setActiveTemplate] = useState<TemplateKey>('horizon');
   const [copiedTemplate, setCopiedTemplate] = useState<TemplateKey | null>(null);
+  const [logoSrc, setLogoSrc] = useState(LOGO_URL);
 
   const activeTemplateDetails = useMemo(
     () => templates.find((template) => template.key === activeTemplate) ?? templates[0],
@@ -298,9 +299,35 @@ export default function EmailSignatureAdmin() {
   );
 
   const previewHtml = useMemo(
-    () => buildSignatureHtml(signatureData, activeTemplate),
-    [signatureData, activeTemplate],
+    () => buildSignatureHtml(signatureData, activeTemplate, logoSrc),
+    [signatureData, activeTemplate, logoSrc],
   );
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const embedLogo = async () => {
+      try {
+        const response = await fetch(LOGO_URL);
+        const blob = await response.blob();
+        const reader = new FileReader();
+        reader.onload = () => {
+          if (isMounted && typeof reader.result === 'string') {
+            setLogoSrc(reader.result);
+          }
+        };
+        reader.readAsDataURL(blob);
+      } catch {
+        setLogoSrc(LOGO_URL);
+      }
+    };
+
+    embedLogo();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const handleLogin = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -341,7 +368,7 @@ export default function EmailSignatureAdmin() {
   };
 
   const downloadSignature = (template: SignatureTemplate) => {
-    const documentHtml = buildDownloadDocument(signatureData, template);
+    const documentHtml = buildDownloadDocument(signatureData, template, logoSrc);
     const blob = new Blob([documentHtml], { type: 'text/html;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
@@ -354,7 +381,7 @@ export default function EmailSignatureAdmin() {
   };
 
   const copySignatureHtml = async (template: SignatureTemplate) => {
-    const documentHtml = buildDownloadDocument(signatureData, template);
+    const documentHtml = buildDownloadDocument(signatureData, template, logoSrc);
     await navigator.clipboard.writeText(documentHtml);
     setCopiedTemplate(template.key);
     window.setTimeout(() => setCopiedTemplate(null), 1800);

@@ -234,7 +234,7 @@ Styling: Tailwind CSS
 ================================================================================
 
 Company: VNR Professional Accountants
-Head Office: 1022 Saxby Avenue, Eldoraigne, 0157, South Africa
+Head Office: 4 Grit Ave, Zwartkop, Centurion, 0051, South Africa
 Service Area: Nationwide across South Africa
 Website: https://www.vnr.co.za
 
@@ -244,7 +244,7 @@ Brand Colors:
 - Background: White (#FFFFFF)
 
 Key Messaging:
-- Head office in Eldoraigne; serving clients nationwide
+- Head office in Zwartkop; serving clients nationwide
 - Serves clients across South Africa
 - Distance is no barrier to expert service
 
