@@ -9,7 +9,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 import { useRouter } from 'next/navigation';
 import { trackEvent } from '@/lib/tracking';
 
-const mapEmbedUrl = 'https://www.google.com/maps?q=1022+Saxby+Avenue,Eldoraigne,South+Africa&output=embed';
+const mapEmbedUrl = 'https://www.google.com/maps?q=4+Grit+Ave,Zwartkop,Centurion,0051,South+Africa&output=embed';
 
 const ContactPage = () => {
   const router = useRouter();
@@ -128,15 +128,15 @@ const ContactPage = () => {
               </InfoCard>
               <InfoCard icon={<Phone size={24} />} title="Phone Number">
                 <a
-                  href="tel:+27126531633"
+                  href="tel:0126531633"
                   onClick={() => trackEvent('phone_click', { location: 'contact_page' })}
                   className="text-brand-blue hover:underline"
                 >
-                   +27 12 653 1633
+                  012 653 1633
                 </a>
               </InfoCard>
               <InfoCard icon={<Building size={24} />} title="Head Office Address">
-                <p className="mb-2">1022 Saxby Avenue, Eldoraigne<br />0157, South Africa</p>
+                <p className="mb-2">4 Grit Ave, Zwartkop<br />Centurion, 0051, South Africa</p>
                 <p className="text-sm font-semibold text-brand-blue">📍 Head Office | 🌍 Serving clients nationwide across South Africa</p>
               </InfoCard>
               <InfoCard icon={<Clock size={24} />} title="Business Hours">

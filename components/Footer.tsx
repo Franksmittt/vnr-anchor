@@ -70,7 +70,7 @@ const Footer = () => {
             <ul className="mt-3 sm:mt-4 space-y-3 sm:space-y-4">
               <li className="flex items-start">
                 <MapPin size={16} className="sm:w-[18px] sm:h-[18px] mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0 text-brand-teal-light" />
-                <span className="text-xs sm:text-sm text-text-on-dark/70">1022 Saxby Avenue, Eldoraigne<br />0157, South Africa<br /><span className="text-brand-teal font-semibold">Head Office - Serving clients across South Africa</span></span>
+                <span className="text-xs sm:text-sm text-text-on-dark/70">4 Grit Ave, Zwartkop<br />Centurion, 0051, South Africa<br /><span className="text-brand-teal font-semibold">Head Office - Serving clients across South Africa</span></span>
               </li>
               <li className="flex items-center">
                 <Mail size={14} className="sm:w-4 sm:h-4 mr-2 sm:mr-3 flex-shrink-0 text-brand-teal-light" />
@@ -85,11 +85,11 @@ const Footer = () => {
               <li className="flex items-center">
                 <Phone size={14} className="sm:w-4 sm:h-4 mr-2 sm:mr-3 flex-shrink-0 text-brand-teal-light" />
                 <a
-                  href="tel:+27126531633"
+                  href="tel:0126531633"
                   onClick={() => trackEvent('phone_click', { location: 'footer' })}
                   className="text-xs sm:text-sm text-text-on-dark/70 hover:text-white"
                 >
-                  +27 12 653 1633
+                  012 653 1633
                 </a>
               </li>
             </ul>

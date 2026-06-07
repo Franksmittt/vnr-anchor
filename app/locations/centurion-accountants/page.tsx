@@ -34,18 +34,18 @@ export default function CenturionLocationPage() {
           Professional Accountants in Centurion and Pretoria
         </h1>
         <p className="mt-6 text-lg text-text-secondary">
-          VNR supports businesses and families in Centurion, Eldoraigne, Pretoria, and the wider
+          VNR supports businesses and families in Centurion, Zwartkop, Pretoria, and the wider
           Gauteng region with practical tax, accounting, and compliance support.
         </p>
         <div className="mt-8 rounded-xl border border-slate-200 p-6 bg-surface-light">
           <h2 className="font-semibold text-text-primary">Office details</h2>
           <p className="mt-2 text-text-secondary">
-            1022 Saxby Avenue, Eldoraigne, Centurion, 0157
+            4 Grit Ave, Zwartkop, Centurion, 0051
           </p>
           <p className="text-text-secondary">Mon-Fri: 08:00-16:30</p>
           <p className="mt-2">
-            <a className="text-brand-blue hover:underline" href="tel:+27126531633">
-              +27 12 653 1633
+            <a className="text-brand-blue hover:underline" href="tel:0126531633">
+              012 653 1633
             </a>{' '}
             |{' '}
             <a className="text-brand-blue hover:underline" href="mailto:info@vnr.co.za">

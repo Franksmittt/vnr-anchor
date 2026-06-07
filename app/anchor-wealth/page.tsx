@@ -127,10 +127,10 @@ const AnchorWealthPage = () => {
                 <Anchor className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
               <a
-                href="tel:+27126531633"
+                href="tel:0126531633"
                 className="inline-flex items-center justify-center rounded-full border border-white/30 px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-semibold text-white transition hover:border-white"
               >
-                Call VNR on +27 12 653 1633
+                Call VNR on 012 653 1633
                 <PhoneCall className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </a>
             </div>

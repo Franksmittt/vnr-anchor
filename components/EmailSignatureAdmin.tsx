@@ -71,9 +71,9 @@ const defaultSignature: SignatureData = {
     'Professional Accountant (SA) | B.Com Hons (Taxation) | Registered Tax Practitioner (SARS)',
   email: 'jannie@vnr.co.za',
   mobile: '072 378 9892',
-  telephone: '+27 12 653 1633',
+  telephone: '012 653 1633',
   website: 'www.vnr.co.za',
-  address: 'Centurion, Pretoria | Serving clients nationwide',
+  address: '4 Grit Ave, Zwartkop, Centurion, 0051',
   includePhoto: true,
   photoDataUrl: '/images/team/jannie-venter.jpg',
 };

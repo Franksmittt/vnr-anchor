@@ -245,7 +245,7 @@ const Header = () => {
                 Get in Touch
               </Link>
               <a
-                href="tel:+27126531633"
+                href="tel:0126531633"
                 className="mt-2 inline-flex items-center justify-center rounded-md bg-brand-blue px-4 sm:px-5 py-2.5 sm:py-3 text-sm font-semibold text-white transition-colors"
               >
                 <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
