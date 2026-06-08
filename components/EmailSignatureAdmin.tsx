@@ -36,7 +36,8 @@ type SignatureTemplate = {
 };
 
 const LOGIN_PASSWORD = 'admin@123';
-const LOGO_URL = '/logo.png';
+const LOGO_URL =
+  'https://vnr-anchor.vercel.app/_next/image?url=%2Fimages%2Flogos%2Fvnrlogo1.png&w=256&q=75';
 const BRAND_BLUE = '#234694';
 const BRAND_BLUE_DARK = '#1a3569';
 const BRAND_LIME = '#92C741';
@@ -138,7 +139,13 @@ function buildHorizonSignature(data: SignatureData, logoSrc: string) {
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="${width}" style="width:${width}px;height:${height}px;border-collapse:separate;border-spacing:0;background:${SLATE_DARK};background:linear-gradient(135deg,#0f172a 0%,#111f3d 54%,#06111f 100%);border-radius:22px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;">
   <tr>
     <td width="${brandWidth}" style="width:${brandWidth}px;padding:22px 18px;text-align:center;vertical-align:middle;border-right:1px solid rgba(255,255,255,0.12);">
-      <img src="${escapeAttr(logoSrc)}" alt="VNR Professional Accountants" width="126" style="display:block;width:126px;max-width:126px;height:auto;margin:0 auto 12px;border:0;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="border-collapse:separate;border-spacing:0;margin:0 auto 12px;background:#ffffff;border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,0.22);">
+        <tr>
+          <td style="padding:8px 10px;text-align:center;vertical-align:middle;">
+            <img src="${escapeAttr(logoSrc)}" alt="VNR Professional Accountants" width="126" style="display:block;width:126px;max-width:126px;height:auto;border:0;">
+          </td>
+        </tr>
+      </table>
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:0.4px;color:#cbd5e1;">Professional Accountants</div>
       <div style="width:48px;height:3px;background:${BRAND_LIME};border-radius:999px;margin:12px auto 0;"></div>
     </td>
