@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 import {
   CheckCircle2,
   Copy,
@@ -111,6 +111,27 @@ function initialsFromName(name: string) {
 function signatureFileName(data: SignatureData, template: SignatureTemplate) {
   const person = data.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   return `${person || 'vnr'}-${template.key}-email-signature.html`;
+}
+
+function signatureJpegFileName(data: SignatureData, template: SignatureTemplate) {
+  const person = data.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  return `${person || 'vnr'}-${template.key}-email-signature.jpg`;
+}
+
+async function waitForSignatureAssets(element: HTMLElement) {
+  const imagePromises = Array.from(element.querySelectorAll('img')).map((image) => {
+    if (image.complete && image.naturalWidth > 0) {
+      return Promise.resolve();
+    }
+
+    return new Promise<void>((resolve) => {
+      image.onload = () => resolve();
+      image.onerror = () => resolve();
+    });
+  });
+
+  await Promise.all(imagePromises);
+  await document.fonts?.ready;
 }
 
 function contactLine(label: string, value: string, href: string, textColor = '#475569') {
@@ -292,6 +313,7 @@ ${buildSignatureHtml(data, template.key, logoSrc)}
 }
 
 export default function EmailSignatureAdmin() {
+  const previewRef = useRef<HTMLDivElement>(null);
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loginError, setLoginError] = useState('');
@@ -299,6 +321,8 @@ export default function EmailSignatureAdmin() {
   const [activeTemplate, setActiveTemplate] = useState<TemplateKey>('horizon');
   const [copiedTemplate, setCopiedTemplate] = useState<TemplateKey | null>(null);
   const [logoSrc, setLogoSrc] = useState(LOGO_URL);
+  const [jpegError, setJpegError] = useState('');
+  const [downloadingJpegTemplate, setDownloadingJpegTemplate] = useState<TemplateKey | null>(null);
 
   const activeTemplateDetails = useMemo(
     () => templates.find((template) => template.key === activeTemplate) ?? templates[0],
@@ -387,6 +411,65 @@ export default function EmailSignatureAdmin() {
     URL.revokeObjectURL(url);
   };
 
+  const downloadJpegSignature = async (template: SignatureTemplate) => {
+    setJpegError('');
+    setDownloadingJpegTemplate(template.key);
+
+    let temporaryContainer: HTMLDivElement | null = null;
+
+    try {
+      const html2canvas = (await import('html2canvas')).default;
+      let signatureElement = previewRef.current?.firstElementChild as HTMLElement | null;
+
+      if (template.key !== activeTemplate || !signatureElement) {
+        temporaryContainer = document.createElement('div');
+        temporaryContainer.style.position = 'fixed';
+        temporaryContainer.style.left = '-10000px';
+        temporaryContainer.style.top = '0';
+        temporaryContainer.style.width = 'max-content';
+        temporaryContainer.style.background = '#ffffff';
+        temporaryContainer.innerHTML = buildSignatureHtml(signatureData, template.key, logoSrc);
+        document.body.appendChild(temporaryContainer);
+        signatureElement = temporaryContainer.firstElementChild as HTMLElement | null;
+      }
+
+      if (!signatureElement) {
+        throw new Error('Signature preview is not ready yet.');
+      }
+
+      await waitForSignatureAssets(signatureElement);
+
+      const canvas = await html2canvas(signatureElement, {
+        backgroundColor: '#ffffff',
+        scale: Math.min(window.devicePixelRatio || 2, 3),
+        useCORS: true,
+        logging: false,
+      });
+
+      const blob = await new Promise<Blob | null>((resolve) => {
+        canvas.toBlob(resolve, 'image/jpeg', 0.96);
+      });
+
+      if (!blob) {
+        throw new Error('Could not create the JPEG file.');
+      }
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = signatureJpegFileName(signatureData, template);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    } catch {
+      setJpegError('JPEG download failed. Please try again after the preview has fully loaded.');
+    } finally {
+      temporaryContainer?.remove();
+      setDownloadingJpegTemplate(null);
+    }
+  };
+
   const copySignatureHtml = async (template: SignatureTemplate) => {
     const documentHtml = buildDownloadDocument(signatureData, template, logoSrc);
     await navigator.clipboard.writeText(documentHtml);
@@ -449,15 +532,15 @@ export default function EmailSignatureAdmin() {
               </h1>
               <p className="mt-4 max-w-3xl text-base leading-7 text-text-on-dark/80">
                 Edit staff details once, choose whether to include a personal photo, then download one of
-                three corporate VNR signature layouts at the correct fixed display size.
+                three corporate VNR signature layouts as HTML or JPEG at the correct fixed display size.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm leading-6 text-text-on-dark/80">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-teal" />
                 <p>
-                  Downloaded files are standalone HTML signatures with inline styles, suitable for pasting
-                  into most email signature editors.
+                  HTML files remain email-service friendly, while JPEG downloads are captured from the
+                  rendered preview so the layout matches what you see on screen.
                 </p>
               </div>
             </div>
@@ -574,7 +657,7 @@ export default function EmailSignatureAdmin() {
               <div>
                 <h2 className="font-serif text-2xl font-bold text-text-primary">Choose a template</h2>
                 <p className="mt-1 text-sm text-text-secondary">
-                  Preview the exact layout before downloading the signature HTML.
+                  Preview the exact layout before downloading the signature as HTML or JPEG.
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -625,13 +708,24 @@ export default function EmailSignatureAdmin() {
                   className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-brand-blue-light"
                 >
                   <Download className="h-4 w-4" />
-                  Download
+                  Download HTML
+                </button>
+                <button
+                  type="button"
+                  onClick={() => downloadJpegSignature(activeTemplateDetails)}
+                  disabled={downloadingJpegTemplate === activeTemplateDetails.key}
+                  className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-brand-blue disabled:cursor-wait disabled:opacity-70"
+                >
+                  <Download className="h-4 w-4" />
+                  {downloadingJpegTemplate === activeTemplateDetails.key ? 'Preparing JPEG' : 'Download JPEG'}
                 </button>
               </div>
             </div>
 
+            {jpegError ? <p className="mt-4 text-sm font-semibold text-red-600">{jpegError}</p> : null}
+
             <div className="mt-6 overflow-x-auto rounded-2xl bg-slate-100 p-6">
-              <div className="min-w-max" dangerouslySetInnerHTML={{ __html: previewHtml }} />
+              <div ref={previewRef} className="min-w-max" dangerouslySetInnerHTML={{ __html: previewHtml }} />
             </div>
           </div>
 
@@ -643,14 +737,25 @@ export default function EmailSignatureAdmin() {
                 <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand-blue">
                   {template.size}
                 </p>
-                <button
-                  type="button"
-                  onClick={() => downloadSignature(template)}
-                  className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-blue"
-                >
-                  <Download className="h-4 w-4" />
-                  Download this template
-                </button>
+                <div className="mt-5 grid gap-2">
+                  <button
+                    type="button"
+                    onClick={() => downloadSignature(template)}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-blue-light"
+                  >
+                    <Download className="h-4 w-4" />
+                    Download HTML
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => downloadJpegSignature(template)}
+                    disabled={downloadingJpegTemplate === template.key}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-blue disabled:cursor-wait disabled:opacity-70"
+                  >
+                    <Download className="h-4 w-4" />
+                    {downloadingJpegTemplate === template.key ? 'Preparing JPEG' : 'Download JPEG'}
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -659,9 +764,9 @@ export default function EmailSignatureAdmin() {
             <div className="flex items-start gap-3">
               <Mail className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-blue" />
               <p>
-                For best results, open the downloaded file in a browser, select the rendered signature,
-                copy it, and paste it into the email service signature editor. The uploaded staff image is
-                embedded in the downloaded HTML.
+                For best HTML results, open the downloaded file in a browser, select the rendered
+                signature, copy it, and paste it into the email service signature editor. JPEG downloads
+                are generated directly from the rendered preview.
               </p>
             </div>
           </div>
