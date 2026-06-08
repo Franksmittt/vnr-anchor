@@ -134,6 +134,24 @@ async function waitForSignatureAssets(element: HTMLElement) {
   await document.fonts?.ready;
 }
 
+function contactIconSvg(label: string, color = BRAND_LIME, size = 15) {
+  const baseAttrs = `xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-3px;"`;
+
+  if (label === 'M') {
+    return `<svg ${baseAttrs} aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`;
+  }
+
+  if (label === 'T') {
+    return `<svg ${baseAttrs} aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`;
+  }
+
+  if (label === 'E') {
+    return `<svg ${baseAttrs} aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>`;
+  }
+
+  return `<svg ${baseAttrs} aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 0 20"></path><path d="M12 2a15.3 15.3 0 0 0 0 20"></path></svg>`;
+}
+
 function contactLine(label: string, value: string, href: string, textColor = '#475569') {
   if (!value.trim()) {
     return '';
@@ -141,7 +159,7 @@ function contactLine(label: string, value: string, href: string, textColor = '#4
 
   return `
     <tr>
-      <td style="width:22px;padding:3px 8px 3px 0;color:${BRAND_LIME};font-family:Arial,sans-serif;font-size:12px;font-weight:bold;vertical-align:middle;">${label}</td>
+      <td style="width:22px;padding:3px 8px 3px 0;color:${BRAND_LIME};vertical-align:middle;">${contactIconSvg(label)}</td>
       <td style="padding:3px 0;font-family:Arial,sans-serif;font-size:13px;line-height:17px;color:${textColor};vertical-align:middle;">
         <a href="${escapeAttr(href)}" style="color:inherit;text-decoration:none;">${escapeHtml(value)}</a>
       </td>
@@ -173,7 +191,7 @@ function buildHorizonSignature(data: SignatureData, logoSrc: string) {
     ${
       hasPhoto
         ? `<td width="${photoWidth}" style="width:${photoWidth}px;text-align:center;vertical-align:middle;background:radial-gradient(circle at center,rgba(146,199,65,0.2),transparent 62%);">
-      <img src="${escapeAttr(data.photoDataUrl)}" alt="${escapeAttr(data.name)}" width="104" height="104" style="display:block;width:104px;height:104px;object-fit:cover;border-radius:34px;border:4px solid ${BRAND_LIME};margin:0 auto;">
+      <img src="${escapeAttr(data.photoDataUrl)}" alt="${escapeAttr(data.name)}" width="104" height="104" style="display:block;width:104px;height:104px;object-fit:cover;border-radius:34px;border:4px solid #ffffff;margin:0 auto;">
     </td>`
         : ''
     }
@@ -208,7 +226,7 @@ function buildBoardroomSignature(data: SignatureData, logoSrc: string) {
     <td width="${sideWidth}" style="width:${sideWidth}px;background:${BRAND_BLUE_DARK};background:linear-gradient(150deg,${BRAND_BLUE_DARK},${SLATE_DARK});padding:18px;text-align:center;vertical-align:middle;">
       ${
         hasPhoto
-          ? `<img src="${escapeAttr(data.photoDataUrl)}" alt="${escapeAttr(data.name)}" width="96" height="96" style="display:block;width:96px;height:96px;object-fit:cover;border-radius:999px;border:3px solid ${BRAND_LIME};margin:0 auto;">`
+          ? `<img src="${escapeAttr(data.photoDataUrl)}" alt="${escapeAttr(data.name)}" width="96" height="96" style="display:block;width:96px;height:96px;object-fit:cover;border-radius:999px;border:3px solid #ffffff;margin:0 auto;">`
           : `<div style="width:82px;height:82px;border-radius:999px;background:${BRAND_LIME};color:${BRAND_BLUE_DARK};font-family:Georgia,'Times New Roman',serif;font-size:28px;line-height:82px;font-weight:bold;text-align:center;margin:0 auto;">${escapeHtml(initialsFromName(data.name) || 'VNR')}</div>`
       }
     </td>
@@ -264,10 +282,10 @@ function buildLedgerSignature(data: SignatureData, logoSrc: string) {
       </table>
       <div style="width:100%;height:1px;background:#e2e8f0;margin:12px 0 9px;"></div>
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#475569;">
-        ${data.mobile.trim() ? `<strong style="color:${SLATE_TEXT};">M</strong> <a href="tel:${normaliseTelephone(data.mobile)}" style="color:#475569;text-decoration:none;">${escapeHtml(data.mobile)}</a>&nbsp;&nbsp;` : ''}
-        ${data.telephone.trim() ? `<strong style="color:${SLATE_TEXT};">T</strong> <a href="tel:${normaliseTelephone(data.telephone)}" style="color:#475569;text-decoration:none;">${escapeHtml(data.telephone)}</a><br>` : ''}
-        ${data.email.trim() ? `<strong style="color:${SLATE_TEXT};">E</strong> <a href="mailto:${escapeAttr(data.email)}" style="color:${BRAND_BLUE};text-decoration:none;font-weight:bold;">${escapeHtml(data.email)}</a>&nbsp;&nbsp;` : ''}
-        ${data.website.trim() ? `<strong style="color:${SLATE_TEXT};">W</strong> <a href="https://${escapeAttr(data.website.replace(/^https?:\/\//, ''))}" style="color:#475569;text-decoration:none;">${escapeHtml(data.website)}</a>` : ''}
+        ${data.mobile.trim() ? `${contactIconSvg('M', BRAND_BLUE, 13)} <a href="tel:${normaliseTelephone(data.mobile)}" style="color:#475569;text-decoration:none;">${escapeHtml(data.mobile)}</a>&nbsp;&nbsp;` : ''}
+        ${data.telephone.trim() ? `${contactIconSvg('T', BRAND_BLUE, 13)} <a href="tel:${normaliseTelephone(data.telephone)}" style="color:#475569;text-decoration:none;">${escapeHtml(data.telephone)}</a><br>` : ''}
+        ${data.email.trim() ? `${contactIconSvg('E', BRAND_BLUE, 13)} <a href="mailto:${escapeAttr(data.email)}" style="color:${BRAND_BLUE};text-decoration:none;font-weight:bold;">${escapeHtml(data.email)}</a>&nbsp;&nbsp;` : ''}
+        ${data.website.trim() ? `${contactIconSvg('W', BRAND_BLUE, 13)} <a href="https://${escapeAttr(data.website.replace(/^https?:\/\//, ''))}" style="color:#475569;text-decoration:none;">${escapeHtml(data.website)}</a>` : ''}
       </div>
       ${
         data.qualifications.trim()
@@ -278,7 +296,7 @@ function buildLedgerSignature(data: SignatureData, logoSrc: string) {
     ${
       hasPhoto
         ? `<td width="105" style="width:105px;padding:16px 18px 16px 0;text-align:right;vertical-align:middle;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;">
-      <img src="${escapeAttr(data.photoDataUrl)}" alt="${escapeAttr(data.name)}" width="82" height="104" style="display:block;width:82px;height:104px;object-fit:cover;border-radius:14px;border:2px solid #e2e8f0;margin:0 0 0 auto;">
+      <img src="${escapeAttr(data.photoDataUrl)}" alt="${escapeAttr(data.name)}" width="82" height="104" style="display:block;width:82px;height:104px;object-fit:cover;border-radius:14px;border:2px solid #ffffff;margin:0 0 0 auto;">
     </td>`
         : ''
     }
