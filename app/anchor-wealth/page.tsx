@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { Anchor, CheckCircle2, ShieldCheck, Globe2, TrendingUp, ArrowUpRight, PhoneCall, BookOpen, Download } from "lucide-react";
+import { Anchor, CheckCircle2, ShieldCheck, Globe2, TrendingUp, ArrowUpRight, PhoneCall, BookOpen, Download, MapPin } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
@@ -113,9 +113,16 @@ const AnchorWealthPage = () => {
               including Retirement Annuities, Tax-Free Investments, and offshore architecture built for
               South African entrepreneurs and expats.
             </p>
-            <p className="mt-4 text-sm sm:text-base font-semibold text-brand-teal-light">
-              📍 Head Office | 🌍 Serving clients across South Africa
-            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm sm:text-base font-semibold text-brand-teal-light">
+              <span className="inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4" aria-hidden="true" />
+                Head Office
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Globe2 className="h-4 w-4" aria-hidden="true" />
+                Serving clients across South Africa
+              </span>
+            </div>
             <div className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
               <Link
                 href={anchorLandingUrl}

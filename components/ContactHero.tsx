@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Breadcrumbs from './Breadcrumbs';
+import { Globe2, MapPin } from 'lucide-react';
 
 const ContactHero = () => {
     const breadcrumbItems = [
@@ -14,11 +15,18 @@ const ContactHero = () => {
                 <Breadcrumbs items={breadcrumbItems} className="flex justify-center text-slate-500" />
                 <h1 id="contact-hero-heading" className="mt-4 font-serif text-4xl md:text-5xl font-extrabold text-text-primary">Get in Touch</h1>
                 <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
-                    We're here to help. Whether you have a quick question or want to plan a full consultation, we'd love to hear from you. No pressure, just a friendly conversation about how we can help.
+                    We&apos;re here to help. Whether you have a quick question or want to plan a full consultation, we&apos;d love to hear from you. No pressure, just a friendly conversation about how we can help.
                 </p>
-                <p className="mt-4 text-base font-semibold text-brand-blue max-w-2xl mx-auto">
-                    📍 Head Office | 🌍 Serving clients across South Africa
-                </p>
+                <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-base font-semibold text-brand-blue">
+                    <span className="inline-flex items-center gap-2">
+                        <MapPin className="h-4 w-4" aria-hidden="true" />
+                        Head Office
+                    </span>
+                    <span className="inline-flex items-center gap-2">
+                        <Globe2 className="h-4 w-4" aria-hidden="true" />
+                        Serving clients across South Africa
+                    </span>
+                </div>
             </div>
         </section>
     );

@@ -1,7 +1,7 @@
 'use client'; // <-- THIS LINE IS THE CRITICAL FIX
 
 import Link from 'next/link';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe2 } from 'lucide-react';
 import React from 'react';
 import { trackEvent } from '@/lib/tracking';
 
@@ -29,11 +29,18 @@ const Footer = () => {
           <div>
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">VNR <span className="text-brand-teal">Professional Accountants</span></h3>
             <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-text-on-dark/70">
-              Your trusted partner in strategic tax advisory, business structuring, and intergenerational wealth planning. We're here to help South African entrepreneurs build something lasting.
+              Your trusted partner in strategic tax advisory, business structuring, and intergenerational wealth planning. We&apos;re here to help South African entrepreneurs build something lasting.
             </p>
-            <p className="mt-3 text-xs sm:text-sm font-semibold text-brand-teal">
-              📍 Head Office | 🌍 We are your nationwide accounting partners across South Africa.
-            </p>
+            <div className="mt-3 space-y-1.5 text-xs sm:text-sm font-semibold text-brand-teal">
+              <span className="flex items-center gap-2">
+                <MapPin className="h-3.5 w-3.5 flex-shrink-0" aria-hidden="true" />
+                Head Office
+              </span>
+              <span className="flex items-center gap-2">
+                <Globe2 className="h-3.5 w-3.5 flex-shrink-0" aria-hidden="true" />
+                Nationwide accounting partners across South Africa
+              </span>
+            </div>
           </div>
           
           <div>
