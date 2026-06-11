@@ -58,7 +58,6 @@ const Footer = () => {
           <div>
             <h3 className="font-serif text-base sm:text-lg font-semibold text-white">Quick Links</h3>
             <ul className="mt-3 sm:mt-4 space-y-2 sm:space-y-3">
-              <FooterLink href="/team">Our Leadership</FooterLink>
               <FooterLink href="/anchor-wealth">Anchor Wealth Division</FooterLink>
               <FooterLink href="/resources/expat-tax-guide">Expat & Contractor Tax Guide</FooterLink>
               <FooterLink href="/locations/centurion-accountants">Centurion & Pretoria</FooterLink>

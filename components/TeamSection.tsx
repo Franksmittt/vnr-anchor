@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { teamData } from '../data/team-data';
-import { Linkedin, Mail, ArrowUpRight } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 import AnimateOnScroll from './AnimateOnScroll';
 
 const TeamSection = () => {
@@ -53,19 +53,11 @@ const TeamSection = () => {
                     <Link href={`mailto:${member.email}`} className="text-slate-300 hover:text-white transition-colors" aria-label={`Email ${member.name}`}>
                       <Mail size={24} />
                     </Link>
-                    <Link href={`/team/${member.slug}`} className="text-slate-300 hover:text-white transition-colors" aria-label={`View full profile for ${member.name}`}>
-                      <ArrowUpRight size={24} />
-                    </Link>
                   </div>
                 </div>
               </div>
             </AnimateOnScroll>
           ))}
-        </div>
-        <div className="mt-12 sm:mt-16 text-center">
-          <Link href="/team" className="text-sm sm:text-base font-semibold text-brand-blue hover:text-brand-blue-dark transition-colors">
-            Meet the Team <span aria-hidden="true">→</span>
-          </Link>
         </div>
       </div>
     </section>

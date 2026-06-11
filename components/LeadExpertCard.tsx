@@ -12,7 +12,7 @@ interface LeadExpertCardProps {
   children: React.ReactNode;
 }
 
-const LeadExpertCard: React.FC<LeadExpertCardProps> = ({ name, title, imageUrl, slug, children }) => (
+const LeadExpertCard: React.FC<LeadExpertCardProps> = ({ name, title, imageUrl, children }) => (
   <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6 sticky top-28">
     <h3 className="font-serif text-lg font-bold text-text-primary mb-4 tracking-wide">Lead Expert</h3>
     <div className="flex items-center space-x-4 mb-4">
@@ -20,7 +20,7 @@ const LeadExpertCard: React.FC<LeadExpertCardProps> = ({ name, title, imageUrl, 
         <Image src={imageUrl} alt={name} fill sizes="64px" className="object-cover" loading="lazy" />
       </div>
       <div>
-        <Link href={`/team/${slug}`} className="font-bold text-text-primary hover:text-brand-blue transition-colors">{name}</Link>
+        <p className="font-bold text-text-primary">{name}</p>
         <p className="text-sm text-brand-blue font-semibold">{title}</p>
       </div>
     </div>

@@ -97,7 +97,7 @@ const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) =
     publishedTime,
     author: {
       name: article.author.name,
-      url: `${SITE_URL}/team/${article.author.slug}`,
+      url: SITE_URL,
     },
     url: `${SITE_URL}/insights/${slug}`,
   });
@@ -132,9 +132,9 @@ const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) =
               <section className="rounded-xl border border-slate-200 bg-surface-light p-6">
                 <p className="text-sm text-text-secondary">
                   Reviewed by{' '}
-                  <a className="font-semibold text-brand-blue hover:underline" href={`/team/${article.author.slug}`}>
+                  <span className="font-semibold text-brand-blue">
                     {article.author.name}
-                  </a>{' '}
+                  </span>{' '}
                   ({article.author.title}). Last reviewed for accuracy: {article.date}.
                 </p>
                 <p className="mt-2 text-sm text-text-secondary">
