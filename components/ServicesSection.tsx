@@ -25,7 +25,7 @@ const ServicesSection = () => {
               A Holistic Approach to Your Financial Legacy
             </p>
             <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-base sm:text-lg text-text-secondary">
-              From company registration and trust formation to strategic tax advisory, VNR provides integrated services to empower South Africa's top entrepreneurs. We serve clients nationwide.
+              From company registration and trust formation to strategic tax advisory, VNR provides integrated services to empower South Africa&apos;s top entrepreneurs. We serve clients nationwide.
             </p>
           </div>
         </AnimateOnScroll>
@@ -46,11 +46,8 @@ const ServicesSection = () => {
                     <h3 className="mt-4 sm:mt-6 font-serif text-lg sm:text-xl font-semibold text-text-primary">
                       {service.title}
                     </h3>
-                    <p className="mt-2 text-sm sm:text-base text-text-secondary">
-                      {service.subtitle}
-                    </p>
                     <div className="mt-4 sm:mt-6 text-sm sm:text-base font-semibold text-brand-teal flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      Let's Chat <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4" />
+                      Let&apos;s Chat <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                     </div>
                   </div>
                 </Link>
