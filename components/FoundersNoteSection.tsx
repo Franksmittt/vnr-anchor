@@ -34,10 +34,10 @@ const FoundersNoteSection = () => {
                   When we started VNR, we had a simple vision: to be the kind of accountants we wished existed when we were building our own careers. We wanted to create a place where South African entrepreneurs could find not just expertise, but genuine partnership.
                 </p>
                 <p className="text-justify leading-relaxed [hyphens:auto] [text-align-last:left]">
-                  We've seen too many business owners lose sleep over tax deadlines, compliance worries, and financial uncertainty. We've watched brilliant entrepreneurs get bogged down in paperwork when they should be focused on growth. That's not how it should be.
+                  We&apos;ve seen too many business owners lose sleep over tax deadlines, compliance worries, and financial uncertainty. We&apos;ve watched brilliant entrepreneurs get bogged down in paperwork when they should be focused on growth. That&apos;s not how it should be.
                 </p>
                 <p className="text-justify leading-relaxed [hyphens:auto] [text-align-last:left]">
-                  Today, whether you're in a bustling city or a quiet town, we're here to be your trusted partner. We believe that when local businesses thrive, our communities flourish. That's why we serve clients across South Africa. Every entrepreneur deserves access to expert guidance, no matter where they are.
+                  Today, whether you&apos;re in a bustling city or a quiet town, we&apos;re here to be your trusted partner. We believe that when local businesses thrive, our communities flourish. That&apos;s why we serve clients across South Africa. Every entrepreneur deserves access to expert guidance, no matter where they are.
                 </p>
                 <p className="font-semibold text-brand-blue">
                   Jannie Venter & Charlie Naudé, Co-Founders
