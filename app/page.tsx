@@ -5,7 +5,6 @@ import FoundersNoteSection from "@/components/FoundersNoteSection";
 import AnchorPartnershipSection from "@/components/AnchorPartnershipSection";
 import ServicesSection from "@/components/ServicesSection";
 import AdvisorEstateSection from "@/components/AdvisorEstateSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import TeamSection from "@/components/TeamSection";
 import InsightsSection from "@/components/InsightsSection";
 import CtaSection from "@/components/CtaSection";
@@ -48,7 +47,6 @@ export default function Home() {
       <ServicesSection />
       <AnchorPartnershipSection />
       <AdvisorEstateSection />
-      <TestimonialsSection />
       <TeamSection />
       <InsightsSection />
       <CtaSection />
