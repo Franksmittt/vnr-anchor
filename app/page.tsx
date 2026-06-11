@@ -47,9 +47,9 @@ export default function Home() {
       <Hero />
       <AuthorityBar />
       <FoundersNoteSection />
-      <AnchorPartnershipSection />
-      <WhyVnrSection />
       <ServicesSection />
+      <WhyVnrSection />
+      <AnchorPartnershipSection />
       <AdvisorEstateSection />
       <ClientJourneySection />
       <TestimonialsSection />
