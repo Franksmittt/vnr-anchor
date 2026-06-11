@@ -46,9 +46,6 @@ const ServicesSection = () => {
                     <h3 className="mt-4 sm:mt-6 font-serif text-lg sm:text-xl font-semibold text-text-primary">
                       {service.title}
                     </h3>
-                    <p className="mt-2 text-sm sm:text-base text-text-secondary">
-                      {service.subtitle}
-                    </p>
                     <div className="mt-4 sm:mt-6 text-sm sm:text-base font-semibold text-brand-teal flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Let's Chat <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4" />
                     </div>
