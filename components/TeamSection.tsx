@@ -12,7 +12,7 @@ const TeamSection = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <AnimateOnScroll>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-xs sm:text-base font-semibold text-brand-blue tracking-wider uppercase">Our Leadership Cadre</h2>
+            <h2 className="text-xs sm:text-base font-semibold text-brand-blue tracking-wider uppercase">Our Leadership Team</h2>
             <p className="mt-2 font-serif text-2xl sm:text-3xl font-bold tracking-tight text-text-primary lg:text-4xl">
               The Architects of Your Financial Legacy
             </p>
