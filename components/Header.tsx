@@ -101,7 +101,6 @@ const navStructure = {
       items: [
         { href: '/#why', label: 'Why VNR' },
         { href: '/#about-us', label: 'About Us' },
-        { href: '/team', label: 'Meet the Team' },
       ],
     },
     {
@@ -131,7 +130,6 @@ const navStructure = {
     { href: '/', label: 'Home' },
     { href: '/#why', label: 'Why VNR' },
     { href: '/#about-us', label: 'About Us' },
-    { href: '/team', label: 'Meet the Team' },
     { href: '/services', label: 'All Services' },
     { href: '/services/tax-advisory', label: 'Tax Advisory' },
     { href: '/services/payroll-administration', label: 'Payroll Administration' },

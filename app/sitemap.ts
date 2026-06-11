@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next'
 import { servicesData, Service } from '@/data/services-data';
 import { insightsData, Article } from '@/data/insights-data';
-import { teamData, TeamMember } from '@/data/team-data';
 import { SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -30,12 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${siteUrl}/anchor-wealth`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/team`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -97,18 +90,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  // Team member pages
-  const teamRoutes: MetadataRoute.Sitemap = teamData.map((member: TeamMember) => ({
-    url: `${siteUrl}/team/${member.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }));
-
   return [
     ...staticRoutes,
     ...serviceRoutes,
     ...insightRoutes,
-    ...teamRoutes,
   ];
 }

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Mail, Phone, Building, Clock } from 'lucide-react';
-import ContactHero from '@/components/ContactHero';
 import InfoCard from '@/components/InfoCard';
 import { faqs } from '@/data/contact-data';
 import FaqAccordion from '@/components/FaqAccordion';
@@ -46,22 +45,25 @@ const ContactPage = () => {
   };
 
   return (
-    <>
-      <ContactHero />
+    <main className="bg-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-surface-light via-white to-brand-blue/10">
+        <div className="absolute -right-24 top-12 h-72 w-72 rounded-full bg-brand-teal/20 blur-3xl" aria-hidden="true" />
+        <div className="absolute -left-24 bottom-12 h-72 w-72 rounded-full bg-brand-blue/10 blur-3xl" aria-hidden="true" />
 
-      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
-          
-          <div className="bg-surface-light p-6 sm:p-8 rounded-xl shadow-lg border border-slate-200">
-            <h2 className="font-serif text-xl sm:text-2xl font-bold text-text-primary mb-4 sm:mb-6">Connect with Our Experts</h2>
-            <p className="mb-6 sm:mb-8 text-sm sm:text-base text-slate-700">We&apos;d love to hear from you. Whether you have a quick question or want to plan a full consultation, just fill out the form below and we&apos;ll get back to you within 24 hours. No pressure, no sales pitch. Just a friendly conversation about how we can help.</p>
-            <div className="mb-6 sm:mb-8 p-3 sm:p-4 bg-brand-blue/5 border-l-4 border-brand-blue rounded-lg">
-              <p className="text-xs sm:text-sm font-semibold text-brand-blue mb-1">📍 Head Office</p>
-              <p className="text-xs sm:text-sm text-slate-700">🌍 We serve clients across South Africa. Virtual consultations make us your local advisor, anywhere in SA.</p>
-            </div>
-            <form onSubmit={onSubmit} className="space-y-4 sm:space-y-6">
+        <div className="container relative mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 sm:gap-10 lg:gap-12 items-start">
+            <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 sm:p-8 lg:p-10 shadow-2xl shadow-slate-900/10 backdrop-blur">
+              <div className="mb-8">
+                <p className="text-xs sm:text-sm font-semibold tracking-[0.24em] uppercase text-brand-blue">Start a conversation</p>
+                <h1 className="mt-3 font-serif text-3xl sm:text-4xl font-bold tracking-tight text-text-primary">Connect with Our Experts</h1>
+                <p className="mt-4 text-sm sm:text-base leading-7 text-slate-700">
+                  Whether you have a quick question or want to plan a full consultation, send us the details and we&apos;ll get back to you within 24 hours.
+                </p>
+              </div>
+
+              <form onSubmit={onSubmit} className="space-y-5 sm:space-y-6">
               <div>
-                <label htmlFor="full-name" className="block text-xs sm:text-sm font-medium text-slate-700">Full Name</label>
+                <label htmlFor="full-name" className="block text-xs sm:text-sm font-semibold text-slate-800">Full Name</label>
                 <input
                   type="text"
                   name="full-name"
@@ -70,11 +72,11 @@ const ContactPage = () => {
                   onChange={(e) => setFullName(e.target.value)}
                   required
                   autoComplete="name"
-                  className="mt-1 block w-full px-3 py-2.5 text-sm text-slate-900 bg-white border border-slate-400 rounded-md shadow-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue"
+                  className="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm placeholder-slate-500 transition focus:border-brand-blue focus:outline-none focus:ring-4 focus:ring-brand-blue/15"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-slate-700">Email Address</label>
+                <label htmlFor="email" className="block text-xs sm:text-sm font-semibold text-slate-800">Email Address</label>
                 <input
                   type="email"
                   name="email"
@@ -83,11 +85,11 @@ const ContactPage = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   autoComplete="email"
-                  className="mt-1 block w-full px-3 py-2.5 text-sm text-slate-900 bg-white border border-slate-400 rounded-md shadow-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue"
+                  className="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm placeholder-slate-500 transition focus:border-brand-blue focus:outline-none focus:ring-4 focus:ring-brand-blue/15"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-slate-700">How can we assist you?</label>
+                <label htmlFor="message" className="block text-xs sm:text-sm font-semibold text-slate-800">How can we assist you?</label>
                 <textarea
                   id="message"
                   name="message"
@@ -95,7 +97,7 @@ const ContactPage = () => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   required
-                  className="mt-1 block w-full px-3 py-2.5 text-sm text-slate-900 bg-white border border-slate-400 rounded-md shadow-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue resize-y"
+                  className="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm placeholder-slate-500 transition focus:border-brand-blue focus:outline-none focus:ring-4 focus:ring-brand-blue/15 resize-y"
                 ></textarea>
               </div>
               {error && (
@@ -107,7 +109,7 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full flex justify-center py-2.5 sm:py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-blue hover:bg-brand-teal focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-teal transition-colors"
+                  className="w-full flex justify-center rounded-xl border border-transparent bg-brand-blue px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-blue/20 transition hover:-translate-y-0.5 hover:bg-brand-teal focus:outline-none focus:ring-4 focus:ring-brand-blue/20 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   {submitting ? 'Submitting...' : "Let's Start a Conversation"}
                 </button>
@@ -115,50 +117,62 @@ const ContactPage = () => {
             </form>
           </div>
 
-          <div className="space-y-8 sm:space-y-12">
-            <div className="space-y-6 sm:space-y-8">
-              <InfoCard icon={<Mail size={24} />} title="Email Address">
-                <a
-                  href="mailto:info@vnr.co.za"
-                  onClick={() => trackEvent('email_click', { location: 'contact_page' })}
-                  className="font-semibold text-brand-blue hover:text-brand-blue-dark hover:underline focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
-                >
-                  info@vnr.co.za
-                </a>
-              </InfoCard>
-              <InfoCard icon={<Phone size={24} />} title="Phone Number">
-                <a
-                  href="tel:0126531633"
-                  onClick={() => trackEvent('phone_click', { location: 'contact_page' })}
-                  className="font-semibold text-brand-blue hover:text-brand-blue-dark hover:underline focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
-                >
-                  012 653 1633
-                </a>
-              </InfoCard>
-              <InfoCard icon={<Building size={24} />} title="Head Office Address">
-                <p className="mb-2">4 Grit Ave, Zwartkop<br />Centurion, 0051, South Africa</p>
-                <p className="text-sm font-semibold text-brand-blue">📍 Head Office | 🌍 Serving clients nationwide across South Africa</p>
-              </InfoCard>
-              <InfoCard icon={<Clock size={24} />} title="Business Hours">
-                <p>Mon - Fri: 08:00 - 16:30</p>
-                <p>Sat - Sun: Closed</p>
-              </InfoCard>
-            </div>
-            <div className="h-80 sm:h-96 lg:h-[28rem] rounded-xl overflow-hidden border border-slate-300 shadow-lg">
-              <iframe
-                src={mapEmbedUrl}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="VNR Head Office Location, South Africa"
-              ></iframe>
+            <div className="space-y-6">
+              <div className="rounded-3xl bg-surface-dark p-5 sm:p-6 lg:p-8 shadow-2xl shadow-slate-900/20">
+                <p className="text-xs sm:text-sm font-semibold tracking-[0.24em] uppercase text-brand-teal-light">Direct details</p>
+                <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-bold text-white">Reach VNR</h2>
+                <p className="mt-4 text-sm sm:text-base leading-7 text-slate-200">
+                  Visit our Centurion head office or connect with us remotely from anywhere in South Africa.
+                </p>
+
+                <div className="mt-6 grid gap-4">
+                  <InfoCard icon={<Mail size={24} />} title="Email Address">
+                    <a
+                      href="mailto:info@vnr.co.za"
+                      onClick={() => trackEvent('email_click', { location: 'contact_page' })}
+                      className="font-semibold text-brand-blue hover:text-brand-blue-dark hover:underline focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
+                    >
+                      info@vnr.co.za
+                    </a>
+                  </InfoCard>
+                  <InfoCard icon={<Phone size={24} />} title="Phone Number">
+                    <a
+                      href="tel:0126531633"
+                      onClick={() => trackEvent('phone_click', { location: 'contact_page' })}
+                      className="font-semibold text-brand-blue hover:text-brand-blue-dark hover:underline focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
+                    >
+                      012 653 1633
+                    </a>
+                  </InfoCard>
+                  <InfoCard icon={<Building size={24} />} title="Head Office Address">
+                    <p className="mb-2">4 Grit Ave, Zwartkop<br />Centurion, 0051, South Africa</p>
+                    <p className="text-sm font-semibold text-brand-blue">Head Office | Serving clients nationwide across South Africa</p>
+                  </InfoCard>
+                  <InfoCard icon={<Clock size={24} />} title="Business Hours">
+                    <p>Mon - Fri: 08:00 - 16:30</p>
+                    <p>Sat - Sun: Closed</p>
+                  </InfoCard>
+                </div>
+              </div>
+
+              <div className="overflow-hidden rounded-3xl border border-slate-300 bg-white p-3 shadow-2xl shadow-slate-900/10">
+                <div className="h-80 sm:h-96 lg:h-[28rem] overflow-hidden rounded-2xl">
+                  <iframe
+                    src={mapEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="VNR Head Office Location, South Africa"
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <div className="bg-surface-light border-t border-slate-200">
         <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 max-w-4xl">
@@ -168,7 +182,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </main>
   );
 };
 

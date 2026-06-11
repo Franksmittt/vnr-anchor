@@ -827,8 +827,8 @@ Locations Updated:
 ✅ FAQ sections - Service area mentions
 
 Visual Indicators:
-- 📍 Head Office
-- 🌍 Serving clients nationwide across South Africa
+- Head Office
+- Serving clients nationwide across South Africa
 
 ================================================================================
 13. COMPLETION STATUS

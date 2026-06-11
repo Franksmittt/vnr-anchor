@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { Anchor, CheckCircle2, ShieldCheck, Globe2, TrendingUp, ArrowUpRight, PhoneCall, BookOpen, Download } from "lucide-react";
+import { Anchor, CheckCircle2, ShieldCheck, Globe2, TrendingUp, ArrowUpRight, PhoneCall, BookOpen, Download, MapPin } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
@@ -113,9 +113,16 @@ const AnchorWealthPage = () => {
               including Retirement Annuities, Tax-Free Investments, and offshore architecture built for
               South African entrepreneurs and expats.
             </p>
-            <p className="mt-4 text-sm sm:text-base font-semibold text-brand-teal-light">
-              📍 Head Office | 🌍 Serving clients across South Africa
-            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm sm:text-base font-semibold text-brand-teal-light">
+              <span className="inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4" aria-hidden="true" />
+                Head Office
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Globe2 className="h-4 w-4" aria-hidden="true" />
+                Serving clients across South Africa
+              </span>
+            </div>
             <div className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
               <Link
                 href={anchorLandingUrl}
@@ -234,7 +241,7 @@ const AnchorWealthPage = () => {
           <div>
             <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-brand-teal-light">Campaign Spotlight</p>
             <h2 className="mt-4 font-serif text-2xl sm:text-3xl font-bold lg:text-4xl">
-              The Facebook ad we're aligning the site with.
+              The Facebook ad we&apos;re aligning the site with.
             </h2>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-200">
               “This isn’t just about filing your return. It’s about not losing money that never needed to be lost.
@@ -244,7 +251,7 @@ const AnchorWealthPage = () => {
               tax position clearly. No jargon. No fluff. Real action.”
             </p>
             <p className="mt-4 sm:mt-6 text-sm sm:text-base text-slate-300">
-              This page plus our new resource hub ensure the website mirrors the ad's promise with immediate access to
+              This page plus our new resource hub ensure the website mirrors the ad&apos;s promise with immediate access to
               the checklist and direct booking options.
             </p>
           </div>
