@@ -29,14 +29,14 @@ const FoundersNoteSection = () => {
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-4 sm:mb-6">
                 Why We Do This
               </h2>
-              <div className="prose prose-sm sm:prose-lg max-w-none text-text-secondary space-y-3 sm:space-y-4">
-                <p>
+              <div className="prose prose-sm sm:prose-lg max-w-none text-text-secondary space-y-4 sm:space-y-5">
+                <p className="text-justify leading-relaxed [hyphens:auto] [text-align-last:left]">
                   When we started VNR, we had a simple vision: to be the kind of accountants we wished existed when we were building our own careers. We wanted to create a place where South African entrepreneurs could find not just expertise, but genuine partnership.
                 </p>
-                <p>
+                <p className="text-justify leading-relaxed [hyphens:auto] [text-align-last:left]">
                   We've seen too many business owners lose sleep over tax deadlines, compliance worries, and financial uncertainty. We've watched brilliant entrepreneurs get bogged down in paperwork when they should be focused on growth. That's not how it should be.
                 </p>
-                <p>
+                <p className="text-justify leading-relaxed [hyphens:auto] [text-align-last:left]">
                   Today, whether you're in a bustling city or a quiet town, we're here to be your trusted partner. We believe that when local businesses thrive, our communities flourish. That's why we serve clients across South Africa. Every entrepreneur deserves access to expert guidance, no matter where they are.
                 </p>
                 <p className="font-semibold text-brand-blue">
