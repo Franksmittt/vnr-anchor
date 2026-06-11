@@ -64,7 +64,7 @@ const TeamSection = () => {
         </div>
         <div className="mt-12 sm:mt-16 text-center">
           <Link href="/team" className="text-sm sm:text-base font-semibold text-brand-blue hover:text-brand-blue-dark transition-colors">
-            Meet the Entire Team <span aria-hidden="true">→</span>
+            Meet the Team <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>
