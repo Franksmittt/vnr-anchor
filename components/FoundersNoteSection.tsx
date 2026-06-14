@@ -3,9 +3,9 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const FoundersNoteSection = () => {
   return (
-    <section id="about-us" className="bg-white py-16 sm:py-20 lg:py-28">
+    <section id="about-us" className="bg-white py-8 sm:py-10 lg:py-12">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 items-center max-w-6xl mx-auto">
           <AnimateOnScroll>
             <div className="relative">
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">

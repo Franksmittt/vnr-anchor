@@ -4,7 +4,7 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const WhyVnrSection = () => {
   return (
-    <section id="why" className="bg-surface-light py-16 sm:py-20 lg:py-28 overflow-hidden">
+    <section id="why" className="bg-surface-light py-8 sm:py-10 lg:py-12 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
         <AnimateOnScroll>
           <div className="text-center">
@@ -16,7 +16,7 @@ const WhyVnrSection = () => {
             </p>
           </div>
         </AnimateOnScroll>
-        <div className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+        <div className="mt-6 sm:mt-8 lg:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {/* Card 1: Strategic Partnership */}
           <AnimateOnScroll>
             <div className="group relative text-center p-6 sm:p-8 bg-white rounded-xl shadow-sm border border-slate-200 transition-all duration-300 hover:shadow-lg hover:border-brand-teal/30 hover:-translate-y-1 h-full">

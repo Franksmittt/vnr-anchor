@@ -16,7 +16,7 @@ interface ServiceHeroProps {
 }
 
 const ServiceHero: React.FC<ServiceHeroProps> = ({ title, subtitle, imageUrl, breadcrumbs }) => (
-  <section className="relative bg-surface-dark text-white flex items-center justify-center min-h-[50vh] py-20">
+  <section className="relative bg-surface-dark text-white flex items-center justify-center min-h-[40vh] py-10 sm:py-12">
     <Image 
       src={imageUrl} 
       alt={title} 

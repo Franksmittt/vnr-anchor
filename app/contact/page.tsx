@@ -50,10 +50,10 @@ const ContactPage = () => {
         <div className="absolute -right-24 top-12 h-72 w-72 rounded-full bg-brand-teal/20 blur-3xl" aria-hidden="true" />
         <div className="absolute -left-24 bottom-12 h-72 w-72 rounded-full bg-brand-blue/10 blur-3xl" aria-hidden="true" />
 
-        <div className="container relative mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 sm:gap-10 lg:gap-12 items-start">
-            <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 sm:p-8 lg:p-10 shadow-2xl shadow-slate-900/10 backdrop-blur">
-              <div className="mb-8">
+        <div className="container relative mx-auto px-4 sm:px-6 py-8 sm:py-10 lg:py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-4 sm:gap-5 lg:gap-6 items-start">
+            <div className="rounded-3xl border border-slate-200 bg-white/95 p-5 sm:p-6 lg:p-8 shadow-2xl shadow-slate-900/10 backdrop-blur">
+              <div className="mb-6">
                 <p className="text-xs sm:text-sm font-semibold tracking-[0.24em] uppercase text-brand-blue">Start a conversation</p>
                 <h1 className="mt-3 font-serif text-3xl sm:text-4xl font-bold tracking-tight text-text-primary">Connect with Our Experts</h1>
                 <p className="mt-4 text-sm sm:text-base leading-7 text-slate-700">
@@ -61,7 +61,7 @@ const ContactPage = () => {
                 </p>
               </div>
 
-              <form onSubmit={onSubmit} className="space-y-5 sm:space-y-6">
+              <form onSubmit={onSubmit} className="space-y-4 sm:space-y-5">
               <div>
                 <label htmlFor="full-name" className="block text-xs sm:text-sm font-semibold text-slate-800">Full Name</label>
                 <input
@@ -117,15 +117,15 @@ const ContactPage = () => {
             </form>
           </div>
 
-            <div className="space-y-6">
-              <div className="rounded-3xl bg-surface-dark p-5 sm:p-6 lg:p-8 shadow-2xl shadow-slate-900/20">
+            <div className="space-y-4 sm:space-y-5">
+              <div className="rounded-3xl bg-surface-dark p-4 sm:p-5 lg:p-6 shadow-2xl shadow-slate-900/20">
                 <p className="text-xs sm:text-sm font-semibold tracking-[0.24em] uppercase text-brand-teal-light">Direct details</p>
                 <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-bold text-white">Reach VNR</h2>
                 <p className="mt-4 text-sm sm:text-base leading-7 text-slate-200">
                   Visit our Centurion head office or connect with us remotely from anywhere in South Africa.
                 </p>
 
-                <div className="mt-6 grid gap-4">
+                <div className="mt-4 grid gap-3">
                   <InfoCard icon={<Mail size={24} />} title="Email Address">
                     <a
                       href="mailto:info@vnr.co.za"
@@ -156,7 +156,7 @@ const ContactPage = () => {
               </div>
 
               <div className="overflow-hidden rounded-3xl border border-slate-300 bg-white p-3 shadow-2xl shadow-slate-900/10">
-                <div className="h-80 sm:h-96 lg:h-[28rem] overflow-hidden rounded-2xl">
+                <div className="h-72 sm:h-80 lg:h-96 overflow-hidden rounded-2xl">
                   <iframe
                     src={mapEmbedUrl}
                     width="100%"
@@ -175,9 +175,9 @@ const ContactPage = () => {
       </section>
 
       <div className="bg-surface-light border-t border-slate-200">
-        <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 max-w-4xl">
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-text-primary text-center mb-8 sm:mb-12">Quick Questions</h2>
-          <div className="mt-4 sm:mt-6">
+        <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 lg:py-12 max-w-4xl">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-text-primary text-center mb-6 sm:mb-8">Quick Questions</h2>
+          <div className="mt-3 sm:mt-4">
             <FaqAccordion faqs={faqs} />
           </div>
         </div>

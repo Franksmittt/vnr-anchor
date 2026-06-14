@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Article } from '@/data/insights-data';
 
 const ArticleHero = ({ article }: { article: Article }) => (
-  <section className="relative bg-surface-dark text-white flex items-end min-h-[50vh]">
+  <section className="relative bg-surface-dark text-white flex items-end min-h-[40vh]">
     <Image 
       src={article.imageUrl} 
       alt={article.title} 
@@ -13,7 +13,7 @@ const ArticleHero = ({ article }: { article: Article }) => (
       className="absolute inset-0 w-full h-full object-cover opacity-20" 
       sizes="100vw"
     />
-    <div className="relative z-10 container mx-auto px-6 py-12">
+    <div className="relative z-10 container mx-auto px-6 py-8 sm:py-10">
       <p className="font-semibold tracking-wider uppercase text-brand-teal-light">{article.category}</p>
       <h1 className="font-serif text-4xl md:text-5xl font-extrabold tracking-tight mt-2 max-w-4xl">{article.title}</h1>
       <div className="mt-6 flex items-center text-sm">

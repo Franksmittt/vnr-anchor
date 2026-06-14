@@ -95,11 +95,11 @@ const ServicePage = async ({ params }: { params: Promise<ServicePageParams> }) =
         breadcrumbs={breadcrumbs}
       />
 
-      <div className="bg-white py-16 sm:py-24">
+      <div className="bg-white py-8 sm:py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
-            <article className="lg:col-span-2 space-y-12">
+            <article className="lg:col-span-2 space-y-8">
               <section 
                 className="prose prose-lg max-w-none prose-h2:font-serif prose-h2:text-3xl prose-h2:font-bold prose-h2:text-text-primary prose-h2:tracking-tight prose-h3:font-serif prose-h3:text-brand-blue-dark prose-p:text-text-secondary"
                 dangerouslySetInnerHTML={{ __html: service.content }}
@@ -107,14 +107,14 @@ const ServicePage = async ({ params }: { params: Promise<ServicePageParams> }) =
               {service.faqs && service.faqs.length > 0 && (
                 <section>
                   <h2 className="font-serif text-3xl font-bold text-text-primary tracking-tight">Frequently Asked Questions</h2>
-                  <div className="mt-6 border-t border-slate-200">
+                  <div className="mt-4 border-t border-slate-200">
                     <FaqAccordion faqs={service.faqs} />
                   </div>
                 </section>
               )}
             </article>
 
-            <aside className="space-y-8">
+            <aside className="space-y-6">
               <LeadExpertCard
                 name={service.leadExpert.name}
                 title={service.leadExpert.title}

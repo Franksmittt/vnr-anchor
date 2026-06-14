@@ -4,7 +4,7 @@ import { servicesData } from '@/data/services-data';
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Services & Pricing',
-  description: 'Comprehensive services and pricing for tax advisory, business structuring, secretarial services, financial reporting, and more. View our 2026 price list.',
+  description: 'Comprehensive services and 2026 pricing for tax advisory, payroll, secretarial, financial reporting, estate planning, and cloud accounting across South Africa.',
   path: '/services',
   keywords: [
     'services',

@@ -95,7 +95,7 @@ const AnchorWealthPage = () => {
   return (
     <div className="bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(anchorBreadcrumbSchema).replace(/</g, '\\u003c') }} />
-      <section className="bg-gradient-to-r from-slate-900 to-slate-800 py-12 sm:py-16 lg:py-20 text-white">
+      <section className="bg-gradient-to-r from-slate-900 to-slate-800 py-8 sm:py-10 lg:py-12 text-white">
         <div className="container mx-auto px-4 sm:px-6">
           <Breadcrumbs items={breadcrumbs} className="text-slate-300" />
           <div className="mt-6 sm:mt-8 max-w-4xl">
@@ -145,7 +145,7 @@ const AnchorWealthPage = () => {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-24 bg-white border-b border-slate-200">
+      <section className="py-8 sm:py-10 lg:py-12 bg-white border-b border-slate-200">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl">
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-text-primary lg:text-4xl">
@@ -158,7 +158,7 @@ const AnchorWealthPage = () => {
               advisory team.
             </p>
           </div>
-          <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-6 md:grid-cols-3">
+          <div className="mt-6 sm:mt-8 grid gap-3 sm:gap-4 md:grid-cols-3">
             {anchorPillars.map((pillar) => (
               <div key={pillar.title} className="rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm">
                 <div className="scale-90 sm:scale-100">{pillar.icon}</div>
@@ -170,8 +170,8 @@ const AnchorWealthPage = () => {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-24 bg-surface-light border-b border-slate-200">
-        <div className="container mx-auto px-4 sm:px-6 grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center">
+      <section className="py-8 sm:py-10 lg:py-12 bg-surface-light border-b border-slate-200">
+        <div className="container mx-auto px-4 sm:px-6 grid gap-4 sm:gap-6 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-brand-blue">Tax-Efficient Architecture</p>
             <h2 className="mt-4 font-serif text-2xl sm:text-3xl font-bold text-text-primary lg:text-4xl">
@@ -197,8 +197,8 @@ const AnchorWealthPage = () => {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-24 bg-white border-b border-slate-200">
-        <div className="container mx-auto px-4 sm:px-6 grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center">
+      <section className="py-8 sm:py-10 lg:py-12 bg-white border-b border-slate-200">
+        <div className="container mx-auto px-4 sm:px-6 grid gap-4 sm:gap-6 lg:grid-cols-2 lg:items-center">
           <div className="rounded-xl bg-surface-light p-6 sm:p-8 border border-slate-200">
             <p className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-brand-blue">Independent Advisor Desk</p>
             <h3 className="mt-4 text-xl sm:text-2xl font-semibold text-text-primary">Life & risk planning on your terms.</h3>
@@ -236,8 +236,8 @@ const AnchorWealthPage = () => {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-24 bg-surface-dark text-white">
-        <div className="container mx-auto px-4 sm:px-6 grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center">
+      <section className="py-8 sm:py-10 lg:py-12 bg-surface-dark text-white">
+        <div className="container mx-auto px-4 sm:px-6 grid gap-4 sm:gap-6 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-brand-teal-light">Campaign Spotlight</p>
             <h2 className="mt-4 font-serif text-2xl sm:text-3xl font-bold lg:text-4xl">
@@ -284,7 +284,7 @@ const AnchorWealthPage = () => {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-24 bg-white border-b border-slate-200">
+      <section className="py-8 sm:py-10 lg:py-12 bg-white border-b border-slate-200">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl">
             <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-brand-blue">Top Mistakes We Tackle</p>
@@ -312,7 +312,7 @@ const AnchorWealthPage = () => {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-24 bg-surface-light">
+      <section className="py-8 sm:py-10 lg:py-12 bg-surface-light">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-text-primary lg:text-4xl">
             Ready to align your investments, tax, and estate plans?

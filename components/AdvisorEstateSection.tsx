@@ -3,7 +3,7 @@ import { HeartPulse, Shield, Briefcase, Home, FileSignature } from 'lucide-react
 
 const AdvisorEstateSection = () => {
   return (
-    <section className="bg-surface-light py-16 sm:py-20 lg:py-28">
+    <section className="bg-surface-light py-8 sm:py-10 lg:py-12">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto">
           <p className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-brand-blue">
@@ -19,7 +19,7 @@ const AdvisorEstateSection = () => {
           </p>
         </div>
 
-        <div className="mt-12 sm:mt-16 grid gap-6 sm:gap-8 md:grid-cols-2">
+        <div className="mt-6 sm:mt-8 grid gap-4 sm:gap-6 md:grid-cols-2">
           <div className="rounded-xl bg-white p-6 sm:p-8 shadow-lg border border-slate-200">
             <div className="flex items-center gap-3 sm:gap-4">
               <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue flex-shrink-0">

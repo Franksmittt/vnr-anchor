@@ -4,13 +4,13 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const AuthorityBar = () => {
   return (
-    <div className="bg-surface-light py-8 sm:py-12">
+    <div className="bg-surface-light py-6 sm:py-8">
       <AnimateOnScroll className="container mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 items-center">
           <p className="sm:col-span-1 text-center sm:text-left text-xs sm:text-sm font-semibold text-text-secondary uppercase tracking-wider">
             Accredited & Trusted By
           </p>
-          <div className="col-span-1 sm:col-span-1 md:col-span-3 flex flex-wrap justify-center sm:justify-around items-center gap-4 sm:gap-6 md:gap-8">
+          <div className="col-span-1 sm:col-span-1 md:col-span-3 flex flex-wrap justify-center sm:justify-around items-center gap-4 sm:gap-5 md:gap-6">
             <Image 
               src="/images/logos/SAIPA-LOGO-Full-Name-HighRes.jpg"
               alt="SAIPA Logo" 

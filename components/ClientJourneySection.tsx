@@ -10,7 +10,7 @@ const ClientJourneySection = () => {
   const [activeStage, setActiveStage] = useState(0);
 
   return (
-    <section className="bg-surface-dark text-text-on-dark py-16 sm:py-20 lg:py-28 overflow-hidden">
+    <section className="bg-surface-dark text-text-on-dark py-8 sm:py-10 lg:py-12 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
         <AnimateOnScroll>
           <div className="text-center">
@@ -24,7 +24,7 @@ const ClientJourneySection = () => {
           </div>
         </AnimateOnScroll>
 
-        <div className="mt-12 sm:mt-16 lg:mt-20 max-w-5xl mx-auto">
+        <div className="mt-6 sm:mt-8 lg:mt-10 max-w-5xl mx-auto">
           {/* Timeline Navigator */}
           <div className="relative flex justify-between items-start px-2 sm:px-0">
             <div className="absolute top-4 left-2 sm:left-0 right-2 sm:right-0 h-0.5 bg-slate-700" />
@@ -51,13 +51,13 @@ const ClientJourneySection = () => {
           </div>
 
           {/* Content Display */}
-          <div className="mt-8 sm:mt-12 relative min-h-[200px] sm:min-h-[240px]">
+          <div className="mt-6 sm:mt-8 relative min-h-[180px] sm:min-h-[220px]">
             {journeyData.map((item, index) => (
               <div
                 key={item.stage}
                 className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${activeStage === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
               >
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 sm:gap-8 items-center bg-slate-800/50 p-6 sm:p-8 rounded-xl border border-slate-700 backdrop-blur-sm">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6 items-center bg-slate-800/50 p-4 sm:p-6 rounded-xl border border-slate-700 backdrop-blur-sm">
                   <div className="md:col-span-3">
                     <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">{item.title}</h3>
                     <p className="mt-3 sm:mt-4 text-sm sm:text-base text-text-on-dark/80">{item.description}</p>

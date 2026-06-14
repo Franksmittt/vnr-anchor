@@ -122,14 +122,14 @@ const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) =
       
       <ArticleHero article={article} />
 
-      <div className="bg-white py-16 sm:py-24">
+      <div className="bg-white py-8 sm:py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
-            <article className="lg:col-span-2 space-y-12">
+            <article className="lg:col-span-2 space-y-8">
               <KeyTakeaways takeaways={article.takeaways} />
 
-              <section className="rounded-xl border border-slate-200 bg-surface-light p-6">
+              <section className="rounded-xl border border-slate-200 bg-surface-light p-4 sm:p-5">
                 <p className="text-sm text-text-secondary">
                   Reviewed by{' '}
                   <span className="font-semibold text-brand-blue">
@@ -152,7 +152,7 @@ const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) =
               />
             </article>
 
-            <aside className="space-y-8">
+            <aside className="space-y-6">
               <LeadExpertCard
                 name={article.author.name}
                 title={article.author.title}

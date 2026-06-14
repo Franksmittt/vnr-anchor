@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react';
 const CtaSection = () => {
   return (
     <section className="bg-gradient-to-r from-brand-blue-dark to-brand-teal-dark">
-      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24 text-center">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 lg:py-12 text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
           Bring Your Wealth Strategy Together
         </h2>

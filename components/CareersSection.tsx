@@ -4,7 +4,7 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const CareersSection = () => {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-10 md:py-12">
       <div className="container mx-auto px-6 max-w-4xl">
         <AnimateOnScroll>
           <div className="bg-surface-light border border-slate-200 rounded-2xl p-8 md:p-12 text-center">

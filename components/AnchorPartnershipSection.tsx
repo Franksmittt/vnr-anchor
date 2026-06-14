@@ -5,9 +5,9 @@ const anchorLandingUrl = 'https://landing.anchorcapital.co.za/vnr-wealth-divisio
 
 const AnchorPartnershipSection = () => {
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-28 border-b border-slate-200">
-      <div className="container mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
-        <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center">
+    <section className="bg-white py-8 sm:py-10 lg:py-12 border-b border-slate-200">
+      <div className="container mx-auto px-4 sm:px-6 space-y-6 sm:space-y-8">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-sm font-semibold tracking-widest uppercase text-brand-blue">
               Anchor Capital x VNR Wealth Division

@@ -1,13 +1,11 @@
 import type { Metadata } from 'next';
-import Hero from "@/components/Hero";
-import AuthorityBar from "@/components/AuthorityBar";
-import FoundersNoteSection from "@/components/FoundersNoteSection";
-import AnchorPartnershipSection from "@/components/AnchorPartnershipSection";
-import ServicesSection from "@/components/ServicesSection";
-import AdvisorEstateSection from "@/components/AdvisorEstateSection";
-import TeamSection from "@/components/TeamSection";
-import InsightsSection from "@/components/InsightsSection";
-import CtaSection from "@/components/CtaSection";
+import Hero from '@/components/Hero';
+import AuthorityBar from '@/components/AuthorityBar';
+import FoundersNoteSection from '@/components/FoundersNoteSection';
+import ServicesSection from '@/components/ServicesSection';
+import TeamSection from '@/components/TeamSection';
+import InsightsSection from '@/components/InsightsSection';
+import CtaSection from '@/components/CtaSection';
 import { generateMetadata as generateSEOMetadata, generateFAQSchema } from '@/lib/seo';
 
 export const metadata: Metadata = generateSEOMetadata({
@@ -44,11 +42,9 @@ export default function Home() {
       <Hero />
       <AuthorityBar />
       <FoundersNoteSection />
-      <ServicesSection />
-      <AnchorPartnershipSection />
-      <AdvisorEstateSection />
-      <TeamSection />
-      <InsightsSection />
+      <ServicesSection limit={4} compact />
+      <TeamSection limit={2} compact />
+      <InsightsSection limit={2} compact />
       <CtaSection />
     </>
   );

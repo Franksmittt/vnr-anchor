@@ -4,7 +4,7 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const TeamValuesSection = () => {
   return (
-    <section className="bg-surface-light py-20 sm:py-28 overflow-hidden">
+    <section className="bg-surface-light py-10 sm:py-12 overflow-hidden">
       <div className="container mx-auto px-6">
         <AnimateOnScroll>
           <div className="text-center">
@@ -16,7 +16,7 @@ const TeamValuesSection = () => {
             </p>
           </div>
         </AnimateOnScroll>
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1: Integrity */}
           <AnimateOnScroll>
             <div className="group relative text-center p-8 bg-white rounded-xl shadow-sm border border-slate-200 transition-all duration-300 hover:shadow-lg hover:border-brand-blue/30 hover:-translate-y-1 h-full">

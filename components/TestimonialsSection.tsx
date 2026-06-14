@@ -35,7 +35,7 @@ const testimonials: Testimonial[] = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="bg-surface-light py-16 sm:py-20 lg:py-28">
+    <section className="bg-surface-light py-8 sm:py-10 lg:py-12">
       <div className="container mx-auto px-4 sm:px-6">
         <AnimateOnScroll>
           <div className="text-center mb-12 sm:mb-16">
@@ -51,7 +51,7 @@ const TestimonialsSection = () => {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <AnimateOnScroll key={index} delay={`${index * 150}ms`}>
               <div className="bg-white p-6 sm:p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col">

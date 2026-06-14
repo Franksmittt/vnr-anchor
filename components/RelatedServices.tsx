@@ -9,10 +9,10 @@ const RelatedServices = ({ currentSlug }: { currentSlug: string }) => {
   const related = servicesData.filter(s => s.slug !== currentSlug).slice(0, 2);
 
   return (
-    <section className="bg-surface-light py-16 sm:py-24 border-t border-slate-200">
+    <section className="bg-surface-light py-8 sm:py-12 border-t border-slate-200">
       <div className="container mx-auto px-4">
-        <h2 className="font-serif text-2xl md:text-3xl font-bold text-text-primary text-center mb-10">Other Ways We Can Help</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <h2 className="font-serif text-2xl md:text-3xl font-bold text-text-primary text-center mb-6">Other Ways We Can Help</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
           {related.map(service => (
             <Link 
               key={service.slug}

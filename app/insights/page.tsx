@@ -28,11 +28,11 @@ const InsightsPage = () => {
         <>
             <InsightsHero />
             
-            <div className="py-20 sm:py-28 bg-surface-light"> {/* EDITED PADDING */}
+            <div className="py-10 sm:py-12 bg-surface-light">
                 {featuredArticle && <FeaturedArticleCard article={featuredArticle} />}
 
-                <div className="container mx-auto px-6 mt-16">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
+                <div className="container mx-auto px-6 mt-8">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
                         <div className="flex flex-wrap gap-2">
                             {categories.map(cat => (
                                 <button 
@@ -56,14 +56,14 @@ const InsightsPage = () => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                         {filteredArticles.map((article) => (
                             <ArticleCard key={article.slug} article={article} />
                         ))}
                     </div>
                     
                     {filteredArticles.length === 0 && (
-                        <div className="text-center py-16 col-span-full">
+                        <div className="text-center py-10 col-span-full">
                             <h3 className="font-serif text-xl font-semibold text-text-primary">No articles found</h3>
                             <p className="text-text-secondary mt-2">Try adjusting your search or category filters.</p>
                         </div>

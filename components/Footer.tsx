@@ -23,8 +23,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-surface-dark text-text-on-dark">
-      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <div className="grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
           
           <div>
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">VNR <span className="text-brand-teal">Professional Accountants</span></h3>
