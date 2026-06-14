@@ -1,972 +1,405 @@
 ================================================================================
-VNR PROFESSIONAL ACCOUNTANTS - PROJECT SUMMARY (UPDATED)
+VNR PROFESSIONAL ACCOUNTANTS - PROJECT SUMMARY
 ================================================================================
-Generated: 2026-05-07
-Project Status: Handover Ready (Codebase)
-Framework: Next.js 14 (App Router)
-Language: TypeScript
-Styling: Tailwind CSS
+Updated: 2026-06-14
+Project Status: Production-ready website codebase with remaining deployment and
+platform checks handled outside the repository
 Primary Domain: https://vnr.co.za
-
-================================================================================
-1. EXECUTIVE STATUS
-================================================================================
-
-This repository has been upgraded for production launch readiness with a strong
-technical SEO, YMYL trust, and conversion baseline.
-
-What is complete in code:
-- Canonical domain hardening to https://vnr.co.za
-- Dynamic sitemap and environment-aware robots
-- Root Edge middleware for normalization + legacy redirects + 410 handling
-- Legal/compliance pages and trust links
-- Structured data coverage across layouts and key templates
-- GA4-ready event tracking hooks for core conversion actions
-- Contact submission API + thank-you conversion flow
-- Local landing page for Centurion/Pretoria intent
-- Playwright SEO regression tests + GitHub Action SEO gate
-
-What remains outside code (manual ops):
-- Final Vercel domain + DNS cutover checks
-- Google Search Console verification + sitemap submission
-- Production environment variable confirmation
-
-================================================================================
-2. ROUTES AND INFORMATION ARCHITECTURE
-================================================================================
-
-Core routes:
-- /
-- /services
-- /services/[slug]
-- /insights
-- /insights/[slug]
-- /team
-- /team/[slug]
-- /contact
-- /anchor-wealth
-- /resources/expat-tax-guide
-- /process-flow
-- /locations/centurion-accountants
-- /thank-you (noindex, conversion completion)
-
-Legal/compliance routes:
-- /disclaimer
-- /terms-and-conditions
-- /privacy-policy
-- /cookie-policy-za
-- /access-to-information
-
-Technical routes:
-- /sitemap.xml (app/sitemap.ts)
-- /robots.txt (app/robots.ts)
-- /api/contact (POST endpoint for contact submissions)
-
-================================================================================
-3. SEO IMPLEMENTATION STATUS
-================================================================================
-
-Canonical and metadata:
-- Single domain source introduced in lib/site.ts:
-  - SITE_URL = https://vnr.co.za
-- Metadata and schema generation now consistently use SITE_URL
-- Root metadataBase aligned to production domain
-
-Robots and sitemap:
-- app/robots.ts blocks non-production environments (Disallow: /)
-- Production robots includes sitemap reference
-- app/sitemap.ts dynamically emits canonical production URLs
-- Local route included in sitemap: /locations/centurion-accountants
-
-Middleware governance (root middleware.ts):
-- Lowercase normalization with permanent redirects
-- Trailing slash normalization with permanent redirects
-- Legacy URL redirects implemented (examples):
-  - /who-we-are -> /team
-  - /what-we-do -> /services
-  - /whats-on-offer -> /services
-  - /bookkeeping -> /services/cloud-accounting
-  - /make-the-call -> /contact
-  - /privacy-policy-2 -> /privacy-policy
-- Canonical host redirect:
-  - www.vnr.co.za -> vnr.co.za
-- 410 response for deprecated path:
-  - /old-staff-profile
-- Security headers baseline set in middleware
-
-Structured data:
-- Organization schema injection present in layout
-- Service schema on service detail pages
-- Article schema on insight/resource templates
-- Person schema on team detail and team listing support
-- Breadcrumb schema implemented across key templates
-- FAQ schema used on selected templates
-
-YMYL trust and legal continuity:
-- Legal pages added and globally linked from footer
-- Team/author trust signals reinforced in insight detail template
-- NAP and core contact details retained and visible
-
-================================================================================
-4. CONVERSION AND ANALYTICS FOUNDATIONS
-================================================================================
-
-Analytics:
-- components/Analytics.tsx added
-- GA4 loading enabled when NEXT_PUBLIC_GA_MEASUREMENT_ID is set
-- Event helper added in lib/tracking.ts
-
-Tracked interaction hooks:
-- whatsapp_click (floating action button)
-- phone_click (footer and contact contexts)
-- email_click (footer and contact contexts)
-- form_submit (contact form success)
-
-Contact flow:
-- app/api/contact/route.ts validates and accepts POST submissions
-- app/contact/page.tsx uses real submission flow (no fake action URL)
-- Success redirects to /thank-you
-
-================================================================================
-5. QUALITY GATES AND VERIFICATION
-================================================================================
-
-Automated gates:
-- Playwright config added: playwright.config.ts
-- SEO E2E checks added: tests/e2e/seo.spec.ts
-- CI workflow added: .github/workflows/seo-gates.yml
-
-Verification completed locally:
-- npm run build: PASS
-- npm run test:seo: PASS
-- Lints on modified files: no diagnostics
-- Middleware behavior verified with manual status checks
-
-Notes:
-- Existing ecosystem warnings (e.g., browserslist staleness) are non-blocking
-- NPM vulnerability advisories remain informational until dependency remediation
-  is scheduled separately
-
-================================================================================
-6. KEY FILES ADDED OR HARDENED
-================================================================================
-
-New core files:
-- lib/site.ts
-- middleware.ts (root)
-- components/Analytics.tsx
-- components/WhatsAppFab.tsx
-- lib/tracking.ts
-- app/api/contact/route.ts
-- app/thank-you/page.tsx
-- app/locations/centurion-accountants/page.tsx
-- .github/workflows/seo-gates.yml
-- playwright.config.ts
-- tests/e2e/seo.spec.ts
-
-Significant updated files:
-- app/layout.tsx
-- app/robots.ts
-- app/sitemap.ts
-- app/page.tsx
-- app/contact/page.tsx
-- app/contact/layout.tsx
-- app/services/[slug]/page.tsx
-- app/insights/[slug]/page.tsx
-- app/team/page.tsx
-- app/team/[slug]/page.tsx
-- app/resources/expat-tax-guide/page.tsx
-- components/Header.tsx
-- components/Footer.tsx
-- components/CtaSection.tsx
-- lib/seo.ts
-- data/insights-data.ts
-- package.json
-- package-lock.json
-
-Cleanup:
-- Removed obsolete app/middleware.ts in favor of root middleware.ts
-
-================================================================================
-7. HANDOVER CHECKLIST
-================================================================================
-
-Codebase readiness:
-- [x] Build passing
-- [x] SEO regression tests passing
-- [x] Canonical domain hardening complete
-- [x] Robots/sitemap dynamic generation complete
-- [x] Redirect and normalization governance complete
-- [x] Core legal trust pages present and linked
-- [x] Tracking and conversion plumbing integrated
-
-Platform readiness (manual):
-- [ ] Add and verify vnr.co.za and www.vnr.co.za in Vercel
-- [ ] Confirm apex + www DNS records at domain host
-- [ ] Confirm production env vars (especially GA4 ID)
-- [ ] Verify SSL issuance and redirect behavior on live domain
-- [ ] Verify GSC domain property
-- [ ] Submit https://vnr.co.za/sitemap.xml to GSC
-- [ ] Run post-cutover smoke tests (homepage, services, insights, contact, robots, sitemap)
-
-================================================================================
-8. FINAL NOTE
-================================================================================
-
-The project is prepared for production handover from a repository and technical
-SEO perspective. Remaining tasks are deployment/platform operations and should be
-executed as a controlled launch sequence.
-
-================================================================================
-END OF UPDATED PROJECT SUMMARY
-================================================================================
-================================================================================
-VNR PROFESSIONAL ACCOUNTANTS - COMPLETE PROJECT SUMMARY
-================================================================================
-Generated: 2025
-Project Status: Production Ready
-Framework: Next.js 14.2.5 (App Router)
+Framework: Next.js 14.2.5 App Router
 Language: TypeScript
 Styling: Tailwind CSS
-================================================================================
-
-1. PROJECT OVERVIEW
-================================================================================
-
-Company: VNR Professional Accountants
-Head Office: 4 Grit Ave, Zwartkop, Centurion, 0051, South Africa
-Service Area: Nationwide across South Africa
-Website: https://www.vnr.co.za
-
-Brand Colors:
-- Primary: Royal Blue (#234694)
-- Secondary: Lime Green (#92C741)
-- Background: White (#FFFFFF)
-
-Key Messaging:
-- Head office in Zwartkop; serving clients nationwide
-- Serves clients across South Africa
-- Distance is no barrier to expert service
 
 ================================================================================
-2. PAGES & ROUTES
+1. WHERE THE PROJECT IS NOW
 ================================================================================
 
-STATIC PAGES:
--------------
-1. Homepage (/)
-   - File: app/page.tsx
-   - Components: Hero, AuthorityBar, AnchorPartnershipSection, WhyVnrSection,
-     ServicesSection, AdvisorEstateSection, ClientJourneySection, TeamSection,
-     InsightsSection, CtaSection
-   - SEO: Uses root layout metadata (default title/description)
-   - Features: Hero slider with 3 slides, service cards, team preview, insights preview
+This repository is the current VNR Professional Accountants marketing and lead
+generation website. It presents VNR as a Centurion-headquartered accounting,
+tax, compliance, and wealth-structuring partner serving clients across South
+Africa.
 
-2. Services Listing (/services)
-   - File: app/services/page.tsx
-   - Layout: app/services/layout.tsx
-   - Features: Interactive pricing list with:
-     * Sidebar category navigation (desktop)
-     * Horizontal scroll menu (mobile)
-     * Real-time search (searches Description, Code, Category)
-     * Dynamic service cards with pricing
-     * Price formatting: ZAR currency, "Request Quote" badges, "FREE" badges
-     * VAT Inclusive/Exclusive price display
-   - Data Source: data/pricing-data.ts (150+ services)
-   - SEO: Comprehensive metadata with keywords
+Current implementation highlights:
+- Next.js App Router application with 40 implemented app pages:
+  - 15 static/support pages
+  - 8 service detail pages
+  - 17 insight article pages
+- Homepage, services/pricing, insights, contact, Anchor Wealth, expat guide,
+  local Centurion/Pretoria landing page, legal pages, and internal email
+  signature generator are implemented.
+- Services/pricing page uses the 2026 price list from data/pricing-data.ts with
+  search, category filtering, VAT-inclusive pricing, "FREE", and quote labels.
+- Service and insight pages are generated from structured data files.
+- SEO foundations are in place: metadata helpers, canonical production domain,
+  dynamic sitemap, environment-aware robots, structured data, breadcrumbs, and
+  noindex directives for legal/internal/conversion pages where appropriate.
+- Middleware handles lowercase/trailing-slash normalization, selected legacy
+  redirects, canonical host redirect from www.vnr.co.za to vnr.co.za, one 410
+  deprecated path, and baseline security headers.
+- Contact form posts to app/api/contact/route.ts, validates required fields,
+  tracks successful submissions, and redirects to /thank-you. The API currently
+  acknowledges submissions only; no email, CRM, or database delivery is wired in
+  from the visible code.
+- Analytics hooks are GA4-ready when NEXT_PUBLIC_GA_MEASUREMENT_ID is provided.
+  Current tracked interactions include WhatsApp, phone, email, and form submit.
+- Automated SEO regression coverage exists through Playwright and a GitHub
+  Actions SEO gate.
 
-3. Service Detail Pages (/services/[slug])
-   - File: app/services/[slug]/page.tsx
-   - Dynamic Routes: 7 service pages
-   - Services:
-     * secretarial-services
-     * tax-advisory
-     * business-structuring
-     * legacy-planning
-     * financial-reporting
-     * payroll-administration
-     * cloud-accounting
-   - Features: ServiceHero, LeadExpertCard, RelatedServices, FAQ Accordion
-   - SEO: Dynamic metadata, Service schema (JSON-LD), BreadcrumbList schema
-
-4. Insights Listing (/insights)
-   - File: app/insights/page.tsx
-   - Layout: app/insights/layout.tsx
-   - Features: Featured article card, category filters, search functionality
-   - SEO: Comprehensive metadata
-
-5. Insight Detail Pages (/insights/[slug])
-   - File: app/insights/[slug]/page.tsx
-   - Dynamic Routes: 17 article pages
-   - Features: ArticleHero, KeyTakeaways, LeadExpertCard, RelatedServices
-   - SEO: Dynamic metadata, Article schema (JSON-LD), BreadcrumbList schema
-
-6. Team Listing (/team)
-   - File: app/team/page.tsx
-   - Features: Team member cards, TeamValuesSection, CareersSection, AuthorityBar
-   - SEO: Comprehensive metadata
-
-7. Team Member Pages (/team/[slug])
-   - File: app/team/[slug]/page.tsx
-   - Dynamic Routes: 3 team member pages
-   - Team Members:
-     * jannie-venter (Co-Founder & Director)
-     * charlie-naude (Co-Founder & Director)
-     * henry-landsberg (Director)
-   - Features: Profile hero, credentials, published articles
-   - SEO: Dynamic metadata, Person schema (JSON-LD), BreadcrumbList schema
-
-8. Contact Page (/contact)
-   - File: app/contact/page.tsx
-   - Layout: app/contact/layout.tsx
-   - Features: Contact form, contact information cards, Google Maps embed, FAQ accordion
-   - SEO: Comprehensive metadata, Organization schema (JSON-LD)
-
-9. Anchor Wealth Division (/anchor-wealth)
-   - File: app/anchor-wealth/page.tsx
-   - Features: Partnership information, tax tools, advisor services, estate highlights
-   - SEO: Comprehensive metadata
-
-10. Expat Tax Guide (/resources/expat-tax-guide)
-    - File: app/resources/expat-tax-guide/page.tsx
-    - Features: 10 costly tax mistakes checklist, PDF download link
-    - SEO: Article metadata
-
-TECHNICAL ROUTES:
------------------
-- /sitemap.xml (app/sitemap.ts) - Dynamic sitemap with 40+ URLs
-- /robots.txt (app/robots.ts) - Environment-aware robots.txt
-- /favicon.ico (app/favicon.ico)
-
-TOTAL PAGES: 40 static pages generated
+Known handover notes:
+- The live/contact delivery destination should be confirmed before production
+  launch because the current contact API does not persist or forward enquiries.
+- Deployment operations still need to be completed outside code: domain/DNS,
+  SSL, production environment variables, Google Search Console verification, and
+  sitemap submission.
+- The legacy redirect map still includes /who-we-are -> /team, but no /team page
+  exists in the current app tree. Review that redirect before launch if legacy
+  traffic is expected.
 
 ================================================================================
-3. COMPONENTS (29 Total)
+2. VNR SERVICES OFFERED
 ================================================================================
 
-LAYOUT COMPONENTS:
-------------------
-1. Header (components/Header.tsx)
-   - Sticky navigation with logo
-   - Mobile menu with hamburger
-   - Navigation links: Services, Anchor Wealth, Tax Guide, Team, Insights, Contact
-   - Brand colors: Royal Blue and Lime Green accents
+Primary service pages:
 
-2. Footer (components/Footer.tsx)
-   - 4-column layout: About, Services, Quick Links, Contact
-   - Prominent nationwide service messaging
-   - Contact information with icons
-   - Copyright notice
+1. Secretarial Services
+   Route: /services/secretarial-services
+   Covers CIPC annual returns, director/member changes, registered office
+   maintenance, statutory records, company amendments, and compliance support.
 
-3. Breadcrumbs (components/Breadcrumbs.tsx)
-   - Navigation breadcrumb trail
-   - Used on all detail pages
+2. Payroll Administration
+   Route: /services/payroll-administration
+   Covers monthly payroll processing, payslips, EMP201 and EMP501 submissions,
+   UIF, COID, letters of good standing, and payroll compliance support.
 
-HERO & HERO SECTIONS:
----------------------
-4. Hero (components/Hero.tsx)
-   - Client component with auto-advancing slider
-   - 3 hero slides with fade transitions
-   - Navigation arrows and dot indicators
-   - Priority image loading for LCP optimization
+3. Tax Advisory
+   Route: /services/tax-advisory
+   Covers personal and corporate income tax, provisional tax, VAT, PAYE, SDL,
+   UIF, SARS audits, objections, dispute resolution, and tax planning.
 
-5. ServiceHero (components/ServiceHero.tsx)
-   - Service page hero with background image
-   - Breadcrumbs, title, subtitle
-   - Priority image loading
+4. Business Structuring
+   Route: /services/business-structuring
+   Covers new company registrations, NPO/NPC guidance, entity selection, trust
+   formation, asset protection, and long-term structuring.
 
-6. ArticleHero (components/ArticleHero.tsx)
-   - Article page hero with background image
-   - Category badge, title, author info
-   - Priority image loading
+5. Financial Reporting
+   Route: /services/financial-reporting
+   Covers annual financial statements, management accounts, tax calculations,
+   IFRS for SMEs reporting, and independent review support.
 
-7. ContactHero (components/ContactHero.tsx)
-   - Contact page hero section
-   - Prominent nationwide service badge
+6. Confirmations
+   Route: /services/confirmations
+   Covers income confirmations, audit reports for property purchases, BBBEE
+   declarations, and other verification documents.
 
-8. InsightsHero (components/InsightsHero.tsx)
-   - Insights listing page hero
+7. Estate & Legacy Planning
+   Route: /services/legacy-planning
+   Covers wills, intergenerational wealth transfer, estate duty planning,
+   professional executor services, trust and estate administration, and business
+   continuity planning.
 
-CONTENT SECTIONS:
------------------
-9. ServicesSection (components/ServicesSection.tsx)
-   - Homepage service cards grid
-   - 3-column responsive layout
-   - Hover effects with brand colors
-   - Links to service detail pages
+8. Cloud Accounting & Financial Record Keeping
+   Route: /services/cloud-accounting
+   Covers Sage Business Cloud, Xero, Dext, cloud accounting setup, data
+   migration, software training, workflow automation, and bookkeeping/record
+   keeping solutions.
 
-10. InsightsSection (components/InsightsSection.tsx)
-    - Homepage insights preview
-    - Featured article card (2-column span)
-    - Regular article cards grid
-    - Nationwide service messaging
+Services and pricing categories also represented in the 2026 price list:
+- Tax Advisory & Compliance
+- Financial Reporting
+- Payroll Administration
+- Secretarial and Registrations
+- Estate and Legacy Planning
+- Confirmations
+- Cloud Accounting and Financial Record Keeping Solutions
+- Hourly Tariffs
+- Software Subscription Fees
+- Disbursements
 
-11. TeamSection (components/TeamSection.tsx)
-    - Homepage team preview
-    - 3 team member cards
-    - Hover effects with social links
-    - Nationwide service messaging
-
-12. WhyVnrSection (components/WhyVnrSection.tsx)
-    - 3 value proposition cards
-    - Strategic Partnership, Expertise, Legacy
-    - Brand color accents
-    - Nationwide service messaging
-
-13. ClientJourneySection (components/ClientJourneySection.tsx)
-    - Interactive timeline component
-    - 4 stages: Startup, Growth, Maturity, Legacy
-    - Clickable stage navigation
-    - Service links per stage
-    - Nationwide service messaging
-
-14. AnchorPartnershipSection (components/AnchorPartnershipSection.tsx)
-    - Anchor Capital partnership information
-    - 4 feature cards
-    - CTA buttons to landing page
-
-15. AdvisorEstateSection (components/AdvisorEstateSection.tsx)
-    - Independent advisor desk information
-    - Estate & Will clinic information
-    - Nationwide service messaging
-
-16. AuthorityBar (components/AuthorityBar.tsx)
-    - Accreditation logos: SAIPA, SAIT, Sage Platinum Partner
-
-17. CtaSection (components/CtaSection.tsx)
-    - Call-to-action section with gradient background
-    - Strategic consultation CTA
-    - Nationwide service messaging
-
-18. TeamValuesSection (components/TeamValuesSection.tsx)
-    - Team values and culture section
-
-19. CareersSection (components/CareersSection.tsx)
-    - Careers information section
-
-CARD COMPONENTS:
-----------------
-20. ArticleCard (components/ArticleCard.tsx)
-    - Article preview card
-    - Image, category, title, author, date
-
-21. FeaturedArticleCard (components/FeaturedArticleCard.tsx)
-    - Large featured article card
-    - Used in insights listing
-
-22. LeadExpertCard (components/LeadExpertCard.tsx)
-    - Expert profile card
-    - Used on service and article pages
-
-23. RelatedServices (components/RelatedServices.tsx)
-    - Related services links
-    - Used on service and article pages
-
-24. InfoCard (components/InfoCard.tsx)
-    - Icon, title, content card
-    - Used on contact page
-
-UTILITY COMPONENTS:
--------------------
-25. FaqAccordion (components/FaqAccordion.tsx)
-    - FAQ accordion component
-    - Expandable/collapsible items
-
-26. FaqItem (components/FaqItem.tsx)
-    - Individual FAQ item component
-
-27. KeyTakeaways (components/KeyTakeaways.tsx)
-    - Key takeaways list
-    - Used on article pages
-
-28. AnimateOnScroll (components/AnimateOnScroll.tsx)
-    - Scroll animation wrapper
-    - Used for fade-in animations
-
-29. Schema (components/Schema.tsx)
-    - JSON-LD structured data component
-    - Organization schema injection
-    - Used in root layout
+Additional advisory channels:
+- Anchor Wealth Division: investment structuring routed through Anchor Capital,
+  with VNR retaining tax strategy and compliance oversight.
+- Independent advisor desk: life cover, disability cover, dread disease cover,
+  buy-and-sell planning, key person cover, share buy-back funding, and short-term
+  insurance reviews.
+- Estate & Will Clinic: will drafting/refresh support when VNR or an approved
+  executor partner is appointed.
+- Expat and contractor tax guidance: residency, foreign income, provisional tax,
+  double-tax relief, and SARS compliance support.
 
 ================================================================================
-4. DATA FILES (8 Total)
+3. PAGE INVENTORY AND SHORT SUMMARIES
 ================================================================================
 
-1. services-data.ts
-   - 7 service definitions
-   - Each includes: slug, title, subtitle, imageUrl, icon, details, leadExpert,
-     content (HTML), FAQs
-   - Services: Secretarial Services, Tax Advisory, Business Structuring,
-     Legacy Planning, Financial Reporting, Payroll Administration, Cloud Accounting
+Core public pages:
 
-2. insights-data.ts
-   - 17 article definitions
-   - Each includes: slug, featured flag, title, excerpt, category, date, author,
-     imageUrl, takeaways, toc, content (HTML)
-   - Categories: Tax Planning, Business Strategy, Compliance, Estate Planning
+1. /
+   Homepage for VNR. Introduces the firm, trust signals, founder positioning,
+   service pillars, Anchor Wealth partnership, advisor/estate support, team
+   preview, insights preview, and calls to action.
 
-3. team-data.ts
-   - 3 team member definitions
-   - Each includes: slug, name, title, intro, email, linkedinUrl, imageUrl,
-     credentials, articles, bio (HTML)
+2. /services
+   Services and pricing hub. Shows the 2026 price list with category navigation,
+   keyword search, service codes, VAT pricing, quote labels, and pricing cards.
 
-4. pricing-data.ts
-   - 150+ service pricing entries
-   - Categories: Tax Advisory & Compliance, Persons earning Business Income,
-     Financial / Statutory Reporting, Payroll Administration, Registrations and
-     Secretarial Services, Confirmations, Business Valuations, Estate and Legacy
-     Planning, Hourly Tariffs, Software Subscription Fees, Disbursements
-   - Each includes: category, subcategory, code, description, priceExcl, priceIncl
+3. /contact
+   Lead capture page. Includes contact form, direct email/phone/address details,
+   business hours, Google Map embed, nationwide service messaging, and FAQs.
 
-5. hero-slides.ts
-   - 3 hero slide definitions
-   - Each includes: id, imageUrl, altText, headline, description, ctaText,
-     ctaHref, accreditation
+4. /anchor-wealth
+   Anchor Wealth Division landing page. Explains the Anchor Capital partnership,
+   tax-efficient investment structuring, independent advisor desk, estate/will
+   clinic, expat/contractor positioning, and next-step CTAs.
 
-6. journey-data.ts
-   - 4 client journey stage definitions
-   - Each includes: stage, title, description, icon, services array
+5. /resources/expat-tax-guide
+   Campaign resource page for expats and independent contractors. Lists the 10
+   costly tax mistakes, links to a downloadable PDF, and routes users to VNR and
+   Anchor Wealth support.
 
-7. contact-data.ts
-   - FAQ definitions for contact page
+6. /locations/centurion-accountants
+   Local SEO landing page for Centurion, Zwartkop, Pretoria, and greater Gauteng.
+   Highlights local accounting, tax, payroll, bookkeeping, and consultation
+   support with office details.
 
-8. services-faq-data.ts
-   - General service FAQ definitions
+7. /process-flow
+   Educational process-flow page. Shows how day-to-day transactions become
+   reconciled records, journals, schedules, income statements, and balance
+   sheets through an interactive "confused to confident" journey.
 
-================================================================================
-5. SEO IMPLEMENTATION
-================================================================================
+8. /insights
+   Insights listing page. Shows a featured article plus filterable/searchable
+   article cards across tax, compliance, business growth, legacy planning, and
+   technology topics.
 
-ROOT LAYOUT SEO (app/layout.tsx):
----------------------------------
-✅ metadataBase: Defined with environment variable
-✅ Title Template: "%s | VNR Professional Accountants"
-✅ Default Title: "VNR Professional Accountants: Strategic Wealth & Tax Experts"
-✅ Description: Comprehensive with nationwide service messaging
-✅ Keywords: 15+ strategic keywords
-✅ OpenGraph: Complete configuration with default image
-✅ Twitter Cards: summary_large_image configured
-✅ Robots: Indexing allowed with Googlebot settings
-✅ Canonical URLs: Set on all pages
-✅ Structured Data: Organization schema via Schema component
+Service detail pages:
 
-PAGE-LEVEL SEO:
----------------
-✅ All 10 pages have comprehensive metadata
-✅ All dynamic routes use generateMetadata function
-✅ All pages include:
-   - Unique titles and descriptions
-   - OpenGraph tags
-   - Twitter Card tags
-   - Canonical URLs
-   - Keywords
-   - Proper robots directives
+9. /services/secretarial-services
+   Details VNR's CIPC, annual return, director/member amendment, registered
+   office, statutory record, and business compliance support.
 
-STRUCTURED DATA (JSON-LD):
---------------------------
-✅ Organization Schema: Root layout (components/Schema.tsx)
-✅ Article Schema: All insight pages
-✅ Service Schema: All service pages
-✅ Person Schema: All team member pages
-✅ BreadcrumbList Schema: All pages with breadcrumbs
+10. /services/payroll-administration
+    Details payroll processing, payslips, SARS submissions, UIF, COID, letters of
+    good standing, and payroll compliance workflows.
 
-TECHNICAL SEO:
---------------
-✅ Sitemap: app/sitemap.ts
-   - 40+ URLs with proper priorities
-   - Change frequencies set appropriately
-   - lastModified dates from actual content
+11. /services/tax-advisory
+    Details personal/corporate tax, provisional tax, VAT, SARS dispute handling,
+    and proactive tax planning for South African clients.
 
-✅ Robots.txt: app/robots.ts
-   - Environment-aware (blocks non-production)
-   - Points to sitemap
-   - Disallows /api/, /admin/, /_next/, /private/
+12. /services/business-structuring
+    Details company registration, NPO/NPC guidance, trust formation, business
+    setup, asset protection, and entity structuring.
 
-✅ Canonical URLs: Helper function in lib/seo.ts
-   - Consistent URL construction
-   - Trailing slash handling
+13. /services/financial-reporting
+    Details annual financial statements, management accounts, IFRS for SMEs,
+    independent reviews, and actionable business reporting.
 
-✅ Image Optimization:
-   - All images use next/image component
-   - Priority prop on hero images (LCP optimization)
-   - Proper alt text on all images
-   - AVIF and WebP format support
+14. /services/confirmations
+    Details income confirmations, property-purchase audit reports, BBBEE
+    declarations, and verification support.
 
-✅ Font Optimization:
-   - next/font with display: 'swap'
-   - Inter and Lora fonts
-   - Local hosting (no external requests)
+15. /services/legacy-planning
+    Details wills, estate planning, intergenerational wealth transfer, executor
+    services, trust administration, and business-owner continuity planning.
 
-✅ Performance:
-   - Server Components by default
-   - Client Components only where needed (leaf pattern)
-   - Image lazy loading (except hero images)
-   - Compression enabled
+16. /services/cloud-accounting
+    Details Sage, Xero, Dext, cloud accounting setup, financial record keeping,
+    migration, training, workflow automation, and ongoing support.
 
-SEO UTILITY LIBRARY (lib/seo.ts):
-----------------------------------
-✅ constructCanonicalUrl() - Canonical URL helper
-✅ generateMetadata() - Comprehensive metadata generator
-✅ generateArticleSchema() - Article JSON-LD generator
-✅ generateServiceSchema() - Service JSON-LD generator
-✅ generateBreadcrumbSchema() - Breadcrumb JSON-LD generator
-✅ generateOrganizationSchema() - Organization JSON-LD generator
-✅ generatePersonSchema() - Person JSON-LD generator
+Insight article pages:
 
-================================================================================
-6. CONFIGURATION FILES
-================================================================================
+17. /insights/from-tax-burden-to-strategic-asset
+    Entrepreneur-focused guide that reframes tax from a compliance burden into a
+    strategic tool for growth, asset protection, and sustainable wealth.
 
-next.config.mjs:
-----------------
-✅ reactStrictMode: true
-✅ trailingSlash: false
-✅ compress: true
-✅ Image optimization: AVIF, WebP formats
-✅ Device sizes configured
+18. /insights/10-costly-tax-mistakes-expats-contractors
+    Article version of the expat and contractor campaign checklist, covering
+    residency, foreign income, contractor status, provisional tax, and SARS risk.
 
-tailwind.config.ts:
--------------------
-✅ Brand colors defined:
-   - brand-blue: #234694 (Royal Blue)
-   - brand-teal: #92C741 (Lime Green)
-✅ Custom color variants (light, dark)
-✅ Font families: Inter, Lora
+19. /insights/ultimate-guide-to-tax-consulting-south-africa
+    Explains what tax consultants do, how they differ from general accountants,
+    how to choose one, and expected South African consulting costs.
 
-tsconfig.json:
---------------
-✅ TypeScript strict mode
-✅ Path aliases configured (@/)
+20. /insights/avoiding-critical-governance-errors
+    Governance guide for SMEs covering MOIs, CIPC annual returns, separation of
+    company/personal finances, and shareholder agreements.
 
-package.json:
--------------
-✅ Next.js 14.2.5
-✅ React 18.2.0
-✅ TypeScript
-✅ Tailwind CSS
-✅ Lucide React Icons
-✅ Framer Motion
+21. /insights/guide-to-registering-your-npo
+    Step-by-step guide to registering a Non-Profit Organisation in South Africa
+    and moving toward SARS/PBO readiness.
 
-================================================================================
-7. STYLING & DESIGN
-================================================================================
+22. /insights/are-you-overpaying-sars-sme-tax-deductions
+    SME tax deductions guide showing common missed deductions and how business
+    owners can improve cash flow through legitimate tax optimisation.
 
-COLOR SCHEME:
--------------
-Primary Brand Colors:
-- Royal Blue (#234694) - Primary CTAs, icons, accents
-- Lime Green (#92C741) - Supporting accents, highlights
+23. /insights/business-valuations
+    Business valuation article explaining why profit alone is not enough and how
+    systems, customer diversification, governance, and readiness affect value.
 
-Color Variants:
-- brand-blue-light: #3d5ba8
-- brand-blue-dark: #1a3569
-- brand-teal-light: #a8d45f
-- brand-teal-dark: #7ab033
+24. /insights/guide-to-avoiding-sars-penalties
+    Compliance guide covering Income Tax, VAT, PAYE, deadlines, penalties, and
+    how businesses can stay in good standing with SARS.
 
-Typography:
-- Primary Font: Inter (sans-serif)
-- Serif Font: Lora (headings)
-- Font loading: display: 'swap' for performance
+25. /insights/how-to-restore-your-dormant-company
+    Guide for restoring a deregistered or dormant CC/company after missed CIPC
+    annual returns and related compliance failures.
 
-Design System:
-- Responsive breakpoints (sm, md, lg, xl)
-- Consistent spacing system
-- Shadow system (sm, md, lg, xl, 2xl)
-- Border radius system
-- Custom scrollbar styles
+26. /insights/building-sustainable-wealth-in-south-africa
+    Legacy planning article about shifting from income generation to purposeful,
+    sustainable wealth and long-term family/business significance.
 
-================================================================================
-8. KEY FEATURES
-================================================================================
+27. /insights/sage-vs-xero-south-african-guide
+    Technology guide comparing Sage and Xero for South African businesses, with
+    decision criteria for accounting, payroll, integrations, and usability.
 
-1. Interactive Services Pricing Page:
-   - Client-side filtering and search
-   - Category sidebar navigation
-   - Real-time search across multiple fields
-   - Dynamic price formatting
-   - Responsive design
+28. /insights/your-will-the-ultimate-business-continuity-plan
+    Explains why a will is a critical business-continuity document for owners and
+    how it should align with shares, succession, family, and estate planning.
 
-2. Hero Slider:
-   - Auto-advancing slides
-   - Manual navigation
-   - Smooth transitions
-   - Priority image loading
+29. /insights/guide-to-payroll-compliance-emp201-irp5
+    Payroll compliance checklist covering monthly EMP201 obligations, employee
+    certificates, IRP5/IT3(a), and bi-annual EMP501 reconciliation.
 
-3. Client Journey Timeline:
-   - Interactive stage selection
-   - Visual progress indicator
-   - Service recommendations per stage
+30. /insights/facing-a-sars-dispute-step-by-step-guide
+    SARS dispute guide explaining objections, appeals, timing, evidence, and
+    professional handling of notices and assessments.
 
-4. Dynamic Content:
-   - 7 service pages with detailed content
-   - 17 insight articles
-   - 3 team member profiles
-   - 150+ pricing entries
+31. /insights/role-of-trusts-in-2025
+    Trusts article covering asset protection, estate planning, tax considerations,
+    and the continued role of trusts in modern South African planning.
 
-5. Nationwide Service Messaging:
-   - Prominent badges on key pages
-   - Consistent messaging throughout
-   - Clear indication of service area
+32. /insights/the-true-cost-of-diy-accounting
+    Business-growth article showing the hidden costs and risks of DIY accounting,
+    including compliance errors, poor decisions, and lost founder time.
 
-6. SEO Optimization:
-   - 100% metadata coverage
-   - Structured data on all pages
-   - Optimized images
-   - Fast loading times
+33. /insights/startup-accounting-to-exit-strategy
+    Founder's roadmap from startup setup through traction, scale-up, governance,
+    reporting, and preparation for a future exit.
+
+Support, conversion, internal, and legal pages:
+
+34. /thank-you
+    Noindex conversion completion page shown after successful contact form
+    submission, with links back to the homepage and services.
+
+35. /email-signatures
+    Noindex internal back-office page for generating VNR email signatures.
+
+36. /disclaimer
+    Noindex legal disclaimer explaining that site content is general guidance and
+    not a substitute for direct professional advice.
+
+37. /terms-and-conditions
+    Noindex website terms page covering informational use, content ownership, and
+    restrictions on unauthorized copying/distribution.
+
+38. /privacy-policy
+    Noindex privacy page explaining POPIA-aligned handling of personal
+    information collected for enquiries, services, and legal obligations.
+
+39. /cookie-policy-za
+    Noindex cookie policy explaining functional, experience, and performance
+    cookies plus user/browser preference controls.
+
+40. /access-to-information
+    Noindex PAIA/POPIA information access page directing record requests to
+    info@vnr.co.za.
+
+Technical endpoints and generated files:
+- /api/contact
+  POST endpoint for contact form submissions. Validates fullName, email, and
+  message, then returns JSON success or validation errors.
+- /sitemap.xml
+  Generated by app/sitemap.ts. Includes core static routes, all service detail
+  pages, and all insight article pages.
+- /robots.txt
+  Generated by app/robots.ts. Uses environment-aware indexing rules and links to
+  the production sitemap.
 
 ================================================================================
-9. FILE STRUCTURE
+4. KEY DATA SOURCES
 ================================================================================
 
-app/
-├── anchor-wealth/
-│   └── page.tsx
-├── contact/
-│   ├── layout.tsx
-│   └── page.tsx
-├── favicon.ico
-├── globals.css
-├── insights/
-│   ├── [slug]/
-│   │   └── page.tsx
-│   ├── layout.tsx
-│   └── page.tsx
-├── layout.tsx
-├── middleware.ts
-├── page.tsx
-├── resources/
-│   └── expat-tax-guide/
-│       └── page.tsx
-├── robots.ts
-├── services/
-│   ├── [slug]/
-│   │   └── page.tsx
-│   ├── layout.tsx
-│   └── page.tsx
-├── sitemap.ts
-└── team/
-    ├── [slug]/
-    │   └── page.tsx
-    └── page.tsx
+- data/services-data.ts
+  Source of the 8 service detail pages, service metadata, lead experts, content,
+  and FAQs.
 
-components/ (29 files)
-data/ (8 files)
-lib/
-└── seo.ts (SEO utility functions)
+- data/pricing-data.ts
+  Source of the 2026 services/pricing table and category list used on /services.
 
-public/
-├── images/
-│   ├── core_services/ (4 images)
-│   ├── insights/ (21 images)
-│   ├── logos/ (7 images)
-│   ├── services/ (20 images)
-│   ├── slider/ (3 images)
-│   └── team/ (3 images)
-├── manifest.json
-└── [other assets]
+- data/insights-data.ts
+  Source of the 17 insight article pages, featured status, categories, excerpts,
+  authors, takeaways, and article content.
+
+- data/contact-data.ts
+  Source of the contact page FAQ content.
+
+- data/hero-slides.ts
+  Source of homepage hero slides.
+
+- data/journey-data.ts
+  Source of the client journey section.
+
+- data/team-data.ts
+  Source of team/advisor profiles used in homepage, service pages, and articles.
 
 ================================================================================
-10. BUILD & DEPLOYMENT
+5. TECHNICAL STATUS
 ================================================================================
 
-Build Status: ✅ PASSING
-- TypeScript: 0 errors
-- Linting: 0 warnings
-- Static Pages Generated: 40
-- Build Time: Optimized
+Production/domain:
+- Canonical production domain is locked in lib/site.ts as https://vnr.co.za.
+- Root metadata uses SITE_URL as metadataBase.
+- Middleware redirects www.vnr.co.za to vnr.co.za.
 
-Environment Variables Required:
-- NEXT_PUBLIC_SITE_URL (defaults to https://www.vnr.co.za)
+SEO:
+- Metadata helper functions live in lib/seo.ts.
+- Organization, service, article, FAQ, breadcrumb, and person schema helpers are
+  available and used across key templates.
+- Service and insight pages generate metadata dynamically from data files.
+- Sitemap includes public core, service, and insight pages.
+- Robots can block non-production environments and reference the production
+  sitemap.
 
-Deployment Ready:
-- All pages statically generated
-- Optimized images
-- Compressed assets
-- Security headers via middleware
-- Environment-aware robots.txt
+Conversion and tracking:
+- Contact form submits to /api/contact and redirects to /thank-you on success.
+- GA4 loads when NEXT_PUBLIC_GA_MEASUREMENT_ID is set.
+- Tracking helper lives in lib/tracking.ts.
+- WhatsApp floating action button and contact links include event tracking hooks.
 
-================================================================================
-11. DOCUMENTATION FILES
-================================================================================
-
-✅ VNR_STYLE_GUIDE.txt
-   - Complete brand guidelines
-   - Color specifications
-   - Typography rules
-   - Component usage guidelines
-
-✅ SEO_AUDIT.md
-   - Comprehensive SEO checklist
-   - Implementation status
-   - Quality gates
-   - Recommendations
-
-✅ PROJECT_SUMMARY.txt (this file)
-   - Complete project documentation
-   - All pages, components, features
-   - SEO implementation details
+Quality gates:
+- npm run build builds the Next.js app.
+- npm run test:seo runs Playwright SEO regression tests.
+- .github/workflows/seo-gates.yml runs the SEO gate in CI.
 
 ================================================================================
-12. NATIONWIDE SERVICE MESSAGING
+6. DEPLOYMENT AND HANDOVER CHECKLIST
 ================================================================================
 
-Key Message: "Head Office | Serving clients across South Africa"
+Already implemented in code:
+- [x] Current page structure and dynamic routes
+- [x] Service and insight data-driven pages
+- [x] 2026 services/pricing interface
+- [x] Canonical production domain helper
+- [x] Dynamic sitemap
+- [x] Environment-aware robots
+- [x] Middleware redirects and security headers
+- [x] Legal/compliance pages linked from footer
+- [x] Contact form UI and API acknowledgement flow
+- [x] Thank-you conversion page
+- [x] Analytics/tracking hooks
+- [x] SEO regression tests and CI workflow
 
-Locations Updated:
-✅ Footer - Prominent badge
-✅ ContactHero - Badge in hero section
-✅ Contact Page - Highlighted info box
-✅ All service pages - Content mentions
-✅ All insight articles - Content mentions
-✅ CtaSection - Service area mention
-✅ ServicesSection - Service area mention
-✅ WhyVnrSection - Service area mention
-✅ ClientJourneySection - Service area mention
-✅ AdvisorEstateSection - Service area mention
-✅ Anchor Wealth Page - Service area mention
-✅ FAQ sections - Service area mentions
-
-Visual Indicators:
-- Head Office
-- Serving clients nationwide across South Africa
-
-================================================================================
-13. COMPLETION STATUS
-================================================================================
-
-✅ All Pages Implemented: 10/10
-✅ All Components Implemented: 29/29
-✅ All Data Files Created: 8/8
-✅ SEO Implementation: 100% Complete
-✅ Nationwide Messaging: 100% Complete
-✅ Build Status: Passing
-✅ Type Safety: 100%
-✅ Performance Optimizations: Complete
-✅ Accessibility: Semantic HTML, ARIA labels
-✅ Responsive Design: Mobile, Tablet, Desktop
-
-PROJECT STATUS: ✅ PRODUCTION READY
-
-================================================================================
-14. REMOVED FILES (Housekeeping)
-================================================================================
-
-The following unnecessary files have been removed:
-- index7.html (example/reference file)
-- compiled_output.txt (temporary compiled output)
-- changes.txt (temporary changelog)
-- combined_seo_knowledge.txt (reference documentation)
-- 0001 Next.js SEO Checklist for AI.txt (reference documentation)
-- compile_files.py (Python compilation script)
-
-Files Kept:
-✅ VNR_STYLE_GUIDE.txt (Brand guidelines)
-✅ SEO_AUDIT.md (SEO implementation status)
-✅ PROJECT_SUMMARY.txt (This comprehensive summary)
-
-================================================================================
-15. TECHNICAL SPECIFICATIONS
-================================================================================
-
-Framework: Next.js 14.2.5
-- App Router architecture
-- Server Components by default
-- Static Site Generation (SSG)
-- Incremental Static Regeneration (ISR) ready
-
-TypeScript: Strict mode enabled
-React: 18.2.0 with Server Components
-Styling: Tailwind CSS 3.4.4
-Icons: Lucide React 0.525.0
-Animations: Framer Motion 12.23.12
-
-Performance:
-- Image optimization: AVIF, WebP
-- Font optimization: Local hosting
-- Code splitting: Automatic
-- Compression: Enabled
-- Static generation: 40 pages
-
-Security:
-- Content Security Policy (CSP) via middleware
-- Security headers: HSTS, X-Frame-Options, etc.
-- Environment-aware robots.txt
-
-================================================================================
-16. CONTENT STATISTICS
-================================================================================
-
-Pages: 10 static routes + 30 dynamic routes = 40 total pages
-Components: 29 reusable components
-Data Entries:
-- Services: 7 detailed service pages
-- Insights: 17 articles
-- Team Members: 3 profiles
-- Pricing Services: 150+ entries
-- Hero Slides: 3 slides
-- Journey Stages: 4 stages
-
-Images:
-- Service images: 20
-- Insight images: 21
-- Team images: 3
-- Logo images: 7
-- Hero slider images: 3
-- Core service images: 4
-Total: 58+ optimized images
-
-================================================================================
-17. SEO METRICS
-================================================================================
-
-Metadata Coverage: 100%
-- All pages have unique titles
-- All pages have unique descriptions
-- All pages have OpenGraph tags
-- All pages have Twitter Cards
-- All pages have canonical URLs
-
-Structured Data Coverage: 100%
-- Organization schema: 1
-- Article schemas: 17
-- Service schemas: 7
-- Person schemas: 3
-- BreadcrumbList schemas: 30+
-
-Sitemap: 40+ URLs with proper priorities
-Robots.txt: Environment-aware configuration
-
-Core Web Vitals Optimizations:
-✅ LCP: Priority images on hero sections
-✅ CLS: Image size reservation, font optimization
-✅ INP: Server Components, minimal client JS
-✅ FCP: Font preloading, optimized CSS
-
-================================================================================
-18. DEPLOYMENT CHECKLIST
-================================================================================
-
-Pre-Deployment:
-✅ Build passes with 0 errors
-✅ All TypeScript types valid
-✅ All linting checks pass
-✅ All pages generate successfully
-✅ Sitemap generates correctly
-✅ Robots.txt configured for production
-
-Environment Variables:
-- NEXT_PUBLIC_SITE_URL (set to production domain)
-
-Post-Deployment:
-□ Submit sitemap to Google Search Console
-□ Verify DNS and domain property
-□ Run Lighthouse audit
-□ Test all pages load correctly
-□ Verify OpenGraph images display
-□ Test contact form functionality
-□ Verify all internal links work
+Still required outside the repository:
+- [ ] Confirm production environment variables, especially GA4 measurement ID
+      and any future contact-delivery credentials.
+- [ ] Wire contact API to the chosen delivery path if enquiries must be emailed,
+      stored, or pushed into a CRM.
+- [ ] Add/verify vnr.co.za and www.vnr.co.za in Vercel.
+- [ ] Confirm apex and www DNS records at the domain host.
+- [ ] Verify SSL issuance and canonical redirect behavior after cutover.
+- [ ] Verify Google Search Console property.
+- [ ] Submit https://vnr.co.za/sitemap.xml to Google Search Console.
+- [ ] Run post-launch smoke checks for homepage, services, insights, contact,
+      robots.txt, sitemap.xml, and the contact form.
 
 ================================================================================
 END OF PROJECT SUMMARY
 ================================================================================
-
