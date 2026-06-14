@@ -333,7 +333,7 @@ export const servicesData: Service[] = [
   {
     slug: 'cloud-accounting',
     title: 'Cloud Accounting & Financial Record Keeping: Work Smarter, Not Harder',
-    subtitle: 'A bespoke solution tailored to your business. We never treat you like a number in a sausage machine—every client receives personalised attention and a financial record-keeping approach designed for their unique needs.',
+    subtitle: 'A bespoke solution tailored to your business. We never treat you like a number in a sausage machine. Every client receives personalised attention and a financial record-keeping approach designed for their unique needs.',
     imageUrl: '/images/services/cloud-accounting.jpg',
     icon: 'Cloud',
     details: ['Sage Platinum Partner Services', 'XERO & DEXT Integration', 'Software Setup & Training', 'Workflow Automation'],

@@ -2,9 +2,9 @@
 VNR PROFESSIONAL ACCOUNTANTS - PROJECT SUMMARY
 ================================================================================
 Updated: 2026-06-14
-Project Status: Production-ready website codebase with remaining deployment and
-platform checks handled outside the repository
+Project Status: Production-ready marketing and lead-generation website
 Primary Domain: https://vnr.co.za
+Repository: https://github.com/Franksmittt/vnr-anchor
 Framework: Next.js 14.2.5 App Router
 Language: TypeScript
 Styling: Tailwind CSS
@@ -13,10 +13,23 @@ Styling: Tailwind CSS
 1. WHERE THE PROJECT IS NOW
 ================================================================================
 
-This repository is the current VNR Professional Accountants marketing and lead
-generation website. It presents VNR as a Centurion-headquartered accounting,
-tax, compliance, and wealth-structuring partner serving clients across South
-Africa.
+This repository is the VNR Professional Accountants marketing and lead-generation
+website. VNR is presented as a Centurion-headquartered accounting, tax,
+compliance, and wealth-structuring partner serving clients across South Africa.
+
+Recent UI and content updates (2026):
+- Slimmer homepage with a static full-viewport hero and compact preview sections
+  for services, team, and insights
+- Header shows the VNR logo with "Professional Accountants" beside it
+- Services/pricing page uses category sidebar navigation, in-category search,
+  sorting, and clean name + price rows (internal SKU codes are not shown on site)
+- Homepage authority bar shows SAIPA, Dext, and Sage partner logos on white tiles
+- Contact page uses equal-height form/details columns and a working Google Maps
+  embed (CSP updated for map iframes)
+- Footer includes Endpoint Media credit and Facebook social link
+- Mobile responsiveness pass across header, services, contact, insights, and
+  shared components
+- User-facing copy cleaned to avoid em dash punctuation
 
 Current implementation highlights:
 - Next.js App Router application with 40 implemented app pages:
@@ -26,21 +39,23 @@ Current implementation highlights:
 - Homepage, services/pricing, insights, contact, Anchor Wealth, expat guide,
   local Centurion/Pretoria landing page, legal pages, and internal email
   signature generator are implemented.
-- Services/pricing page uses the 2026 price list from data/pricing-data.ts with
-  search, category filtering, VAT-inclusive pricing, "FREE", and quote labels.
+- Services/pricing page uses the July 2026 price list from data/pricing-data.ts
+  with category filtering, keyword search, sort options, VAT-inclusive pricing,
+  "FREE", and quote labels.
 - Service and insight pages are generated from structured data files.
 - SEO foundations are in place: metadata helpers, canonical production domain,
   dynamic sitemap, environment-aware robots, structured data, breadcrumbs, and
   noindex directives for legal/internal/conversion pages where appropriate.
-- Middleware handles lowercase/trailing-slash normalization, selected legacy
-  redirects, canonical host redirect from www.vnr.co.za to vnr.co.za, one 410
-  deprecated path, and baseline security headers.
+- Middleware handles lowercase URL normalization (excluding static image paths),
+  selected legacy redirects, canonical host redirect from www.vnr.co.za to
+  vnr.co.za, one 410 deprecated path, and baseline security headers.
 - Contact form posts to app/api/contact/route.ts, validates required fields,
   tracks successful submissions, and redirects to /thank-you. The API currently
   acknowledges submissions only; no email, CRM, or database delivery is wired in
   from the visible code.
 - Analytics hooks are GA4-ready when NEXT_PUBLIC_GA_MEASUREMENT_ID is provided.
-  Current tracked interactions include WhatsApp, phone, email, and form submit.
+  Tracked interactions include WhatsApp, phone, email, social clicks, and form
+  submit.
 - Automated SEO regression coverage exists through Playwright and a GitHub
   Actions SEO gate.
 
@@ -102,17 +117,15 @@ Primary service pages:
    migration, software training, workflow automation, and bookkeeping/record
    keeping solutions.
 
-Services and pricing categories also represented in the 2026 price list:
+Services and pricing categories in the July 2026 price list:
 - Tax Advisory & Compliance
 - Financial Reporting
 - Payroll Administration
-- Secretarial and Registrations
-- Estate and Legacy Planning
+- Registrations & Secretarial Services
+- Estate & Legacy Planning
 - Confirmations
-- Cloud Accounting and Financial Record Keeping Solutions
-- Hourly Tariffs
-- Software Subscription Fees
-- Disbursements
+- Business Structuring
+- Cloud Accounting & Financial Record Keeping Solutions
 
 Additional advisory channels:
 - Anchor Wealth Division: investment structuring routed through Anchor Capital,
@@ -132,273 +145,143 @@ Additional advisory channels:
 Core public pages:
 
 1. /
-   Homepage for VNR. Introduces the firm, trust signals, founder positioning,
-   service pillars, Anchor Wealth partnership, advisor/estate support, team
-   preview, insights preview, and calls to action.
+   Homepage. Static hero, SAIPA/Dext/Sage trust bar, founder note, compact
+   service/team/insight previews, and CTA.
 
 2. /services
-   Services and pricing hub. Shows the 2026 price list with category navigation,
-   keyword search, service codes, VAT pricing, quote labels, and pricing cards.
+   Services and pricing hub. Category sidebar, search within category, sort
+   options, and clean pricing table (name + price only).
 
 3. /contact
-   Lead capture page. Includes contact form, direct email/phone/address details,
-   business hours, Google Map embed, nationwide service messaging, and FAQs.
+   Lead capture page. Contact form, direct details, Google Map embed, business
+   hours, nationwide service messaging, and FAQs.
 
 4. /anchor-wealth
-   Anchor Wealth Division landing page. Explains the Anchor Capital partnership,
-   tax-efficient investment structuring, independent advisor desk, estate/will
-   clinic, expat/contractor positioning, and next-step CTAs.
+   Anchor Wealth Division landing page. Anchor Capital partnership, tax-efficient
+   structuring, advisor desk, estate/will clinic, expat/contractor positioning.
 
 5. /resources/expat-tax-guide
-   Campaign resource page for expats and independent contractors. Lists the 10
-   costly tax mistakes, links to a downloadable PDF, and routes users to VNR and
-   Anchor Wealth support.
+   Campaign resource page for expats and independent contractors with the 10
+   costly tax mistakes checklist and PDF download links.
 
 6. /locations/centurion-accountants
    Local SEO landing page for Centurion, Zwartkop, Pretoria, and greater Gauteng.
-   Highlights local accounting, tax, payroll, bookkeeping, and consultation
-   support with office details.
 
 7. /process-flow
-   Educational process-flow page. Shows how day-to-day transactions become
-   reconciled records, journals, schedules, income statements, and balance
-   sheets through an interactive "confused to confident" journey.
+   Educational process-flow page showing how transactions become financial
+   statements.
 
 8. /insights
-   Insights listing page. Shows a featured article plus filterable/searchable
-   article cards across tax, compliance, business growth, legacy planning, and
-   technology topics.
+   Insights listing with featured article, category filters, and search.
 
-Service detail pages:
+Service detail pages: /services/[slug] for all 8 primary services listed above.
 
-9. /services/secretarial-services
-   Details VNR's CIPC, annual return, director/member amendment, registered
-   office, statutory record, and business compliance support.
-
-10. /services/payroll-administration
-    Details payroll processing, payslips, SARS submissions, UIF, COID, letters of
-    good standing, and payroll compliance workflows.
-
-11. /services/tax-advisory
-    Details personal/corporate tax, provisional tax, VAT, SARS dispute handling,
-    and proactive tax planning for South African clients.
-
-12. /services/business-structuring
-    Details company registration, NPO/NPC guidance, trust formation, business
-    setup, asset protection, and entity structuring.
-
-13. /services/financial-reporting
-    Details annual financial statements, management accounts, IFRS for SMEs,
-    independent reviews, and actionable business reporting.
-
-14. /services/confirmations
-    Details income confirmations, property-purchase audit reports, BBBEE
-    declarations, and verification support.
-
-15. /services/legacy-planning
-    Details wills, estate planning, intergenerational wealth transfer, executor
-    services, trust administration, and business-owner continuity planning.
-
-16. /services/cloud-accounting
-    Details Sage, Xero, Dext, cloud accounting setup, financial record keeping,
-    migration, training, workflow automation, and ongoing support.
-
-Insight article pages:
-
-17. /insights/from-tax-burden-to-strategic-asset
-    Entrepreneur-focused guide that reframes tax from a compliance burden into a
-    strategic tool for growth, asset protection, and sustainable wealth.
-
-18. /insights/10-costly-tax-mistakes-expats-contractors
-    Article version of the expat and contractor campaign checklist, covering
-    residency, foreign income, contractor status, provisional tax, and SARS risk.
-
-19. /insights/ultimate-guide-to-tax-consulting-south-africa
-    Explains what tax consultants do, how they differ from general accountants,
-    how to choose one, and expected South African consulting costs.
-
-20. /insights/avoiding-critical-governance-errors
-    Governance guide for SMEs covering MOIs, CIPC annual returns, separation of
-    company/personal finances, and shareholder agreements.
-
-21. /insights/guide-to-registering-your-npo
-    Step-by-step guide to registering a Non-Profit Organisation in South Africa
-    and moving toward SARS/PBO readiness.
-
-22. /insights/are-you-overpaying-sars-sme-tax-deductions
-    SME tax deductions guide showing common missed deductions and how business
-    owners can improve cash flow through legitimate tax optimisation.
-
-23. /insights/business-valuations
-    Business valuation article explaining why profit alone is not enough and how
-    systems, customer diversification, governance, and readiness affect value.
-
-24. /insights/guide-to-avoiding-sars-penalties
-    Compliance guide covering Income Tax, VAT, PAYE, deadlines, penalties, and
-    how businesses can stay in good standing with SARS.
-
-25. /insights/how-to-restore-your-dormant-company
-    Guide for restoring a deregistered or dormant CC/company after missed CIPC
-    annual returns and related compliance failures.
-
-26. /insights/building-sustainable-wealth-in-south-africa
-    Legacy planning article about shifting from income generation to purposeful,
-    sustainable wealth and long-term family/business significance.
-
-27. /insights/sage-vs-xero-south-african-guide
-    Technology guide comparing Sage and Xero for South African businesses, with
-    decision criteria for accounting, payroll, integrations, and usability.
-
-28. /insights/your-will-the-ultimate-business-continuity-plan
-    Explains why a will is a critical business-continuity document for owners and
-    how it should align with shares, succession, family, and estate planning.
-
-29. /insights/guide-to-payroll-compliance-emp201-irp5
-    Payroll compliance checklist covering monthly EMP201 obligations, employee
-    certificates, IRP5/IT3(a), and bi-annual EMP501 reconciliation.
-
-30. /insights/facing-a-sars-dispute-step-by-step-guide
-    SARS dispute guide explaining objections, appeals, timing, evidence, and
-    professional handling of notices and assessments.
-
-31. /insights/role-of-trusts-in-2025
-    Trusts article covering asset protection, estate planning, tax considerations,
-    and the continued role of trusts in modern South African planning.
-
-32. /insights/the-true-cost-of-diy-accounting
-    Business-growth article showing the hidden costs and risks of DIY accounting,
-    including compliance errors, poor decisions, and lost founder time.
-
-33. /insights/startup-accounting-to-exit-strategy
-    Founder's roadmap from startup setup through traction, scale-up, governance,
-    reporting, and preparation for a future exit.
+Insight article pages: 17 articles generated from data/insights-data.ts.
 
 Support, conversion, internal, and legal pages:
+- /thank-you, /email-signatures, /disclaimer, /terms-and-conditions,
+  /privacy-policy, /cookie-policy-za, /access-to-information
 
-34. /thank-you
-    Noindex conversion completion page shown after successful contact form
-    submission, with links back to the homepage and services.
-
-35. /email-signatures
-    Noindex internal back-office page for generating VNR email signatures.
-
-36. /disclaimer
-    Noindex legal disclaimer explaining that site content is general guidance and
-    not a substitute for direct professional advice.
-
-37. /terms-and-conditions
-    Noindex website terms page covering informational use, content ownership, and
-    restrictions on unauthorized copying/distribution.
-
-38. /privacy-policy
-    Noindex privacy page explaining POPIA-aligned handling of personal
-    information collected for enquiries, services, and legal obligations.
-
-39. /cookie-policy-za
-    Noindex cookie policy explaining functional, experience, and performance
-    cookies plus user/browser preference controls.
-
-40. /access-to-information
-    Noindex PAIA/POPIA information access page directing record requests to
-    info@vnr.co.za.
-
-Technical endpoints and generated files:
-- /api/contact
-  POST endpoint for contact form submissions. Validates fullName, email, and
-  message, then returns JSON success or validation errors.
-- /sitemap.xml
-  Generated by app/sitemap.ts. Includes core static routes, all service detail
-  pages, and all insight article pages.
-- /robots.txt
-  Generated by app/robots.ts. Uses environment-aware indexing rules and links to
-  the production sitemap.
+Technical endpoints:
+- /api/contact (POST contact form handler)
+- /sitemap.xml (generated)
+- /robots.txt (environment-aware)
 
 ================================================================================
 4. KEY DATA SOURCES
 ================================================================================
 
 - data/services-data.ts
-  Source of the 8 service detail pages, service metadata, lead experts, content,
-  and FAQs.
+  8 service detail pages, metadata, lead experts, content, and FAQs.
 
 - data/pricing-data.ts
-  Source of the 2026 services/pricing table and category list used on /services.
+  July 2026 services/pricing table and categories for /services.
+  Regenerate via scripts/generate-pricing-data.mjs from client spreadsheet export.
 
 - data/insights-data.ts
-  Source of the 17 insight article pages, featured status, categories, excerpts,
-  authors, takeaways, and article content.
+  17 insight articles, featured status, categories, excerpts, authors, content.
 
 - data/contact-data.ts
-  Source of the contact page FAQ content.
-
-- data/hero-slides.ts
-  Source of homepage hero slides.
-
-- data/journey-data.ts
-  Source of the client journey section.
+  Contact page FAQ content.
 
 - data/team-data.ts
-  Source of team/advisor profiles used in homepage, service pages, and articles.
+  Team/advisor profiles for homepage, service pages, and articles.
+
+- lib/service-display.ts
+  Cleans service description prefixes and sorting helpers for pricing UI.
+
+- lib/format-price.tsx
+  Price display helper for pricing table.
 
 ================================================================================
-5. TECHNICAL STATUS
+5. BRANDING, PARTNERS, AND FOOTER
+================================================================================
+
+Homepage authority bar (under hero):
+- SAIPA (professional accreditation)
+- Dext (receipt/invoice capture partner)
+- Sage (Platinum Partner)
+
+Logo assets (public/images/logos/):
+- saipa-logo.jpg, dext-logo.png, sage-logo.png
+- vnrlogo1.png (header/footer branding)
+
+Footer:
+- VNR contact details and key navigation links
+- Facebook: https://www.facebook.com/vnracc
+- Credit: Designed, Developed and Maintained by Endpoint Media
+  (https://www.endpointmedia.co.za/)
+
+================================================================================
+6. TECHNICAL STATUS
 ================================================================================
 
 Production/domain:
-- Canonical production domain is locked in lib/site.ts as https://vnr.co.za.
-- Root metadata uses SITE_URL as metadataBase.
-- Middleware redirects www.vnr.co.za to vnr.co.za.
+- Canonical production domain: https://vnr.co.za (lib/site.ts)
+- Middleware redirects www.vnr.co.za to vnr.co.za
+- Static assets under /images/ are excluded from URL lowercasing
 
 SEO:
-- Metadata helper functions live in lib/seo.ts.
-- Organization, service, article, FAQ, breadcrumb, and person schema helpers are
-  available and used across key templates.
-- Service and insight pages generate metadata dynamically from data files.
-- Sitemap includes public core, service, and insight pages.
-- Robots can block non-production environments and reference the production
-  sitemap.
+- Metadata helpers in lib/seo.ts
+- Organization, service, article, FAQ, breadcrumb, and person schema on key pages
+- Dynamic sitemap and environment-aware robots.txt
 
 Conversion and tracking:
-- Contact form submits to /api/contact and redirects to /thank-you on success.
-- GA4 loads when NEXT_PUBLIC_GA_MEASUREMENT_ID is set.
-- Tracking helper lives in lib/tracking.ts.
-- WhatsApp floating action button and contact links include event tracking hooks.
+- Contact form -> /api/contact -> /thank-you
+- GA4 via NEXT_PUBLIC_GA_MEASUREMENT_ID
+- WhatsApp FAB, phone/email/social click tracking in lib/tracking.ts
 
 Quality gates:
-- npm run build builds the Next.js app.
-- npm run test:seo runs Playwright SEO regression tests.
-- .github/workflows/seo-gates.yml runs the SEO gate in CI.
+- npm run build
+- npm run test:seo (Playwright)
+- .github/workflows/seo-gates.yml
 
 ================================================================================
-6. DEPLOYMENT AND HANDOVER CHECKLIST
+7. DEPLOYMENT AND HANDOVER CHECKLIST
 ================================================================================
 
 Already implemented in code:
 - [x] Current page structure and dynamic routes
 - [x] Service and insight data-driven pages
-- [x] 2026 services/pricing interface
+- [x] July 2026 services/pricing interface
+- [x] Slim homepage and responsive layout pass
+- [x] Partner logos and Facebook footer link
 - [x] Canonical production domain helper
-- [x] Dynamic sitemap
-- [x] Environment-aware robots
+- [x] Dynamic sitemap and robots
 - [x] Middleware redirects and security headers
 - [x] Legal/compliance pages linked from footer
-- [x] Contact form UI and API acknowledgement flow
+- [x] Contact form UI, map embed, and API acknowledgement flow
 - [x] Thank-you conversion page
 - [x] Analytics/tracking hooks
 - [x] SEO regression tests and CI workflow
 
 Still required outside the repository:
-- [ ] Confirm production environment variables, especially GA4 measurement ID
-      and any future contact-delivery credentials.
-- [ ] Wire contact API to the chosen delivery path if enquiries must be emailed,
-      stored, or pushed into a CRM.
-- [ ] Add/verify vnr.co.za and www.vnr.co.za in Vercel.
-- [ ] Confirm apex and www DNS records at the domain host.
-- [ ] Verify SSL issuance and canonical redirect behavior after cutover.
-- [ ] Verify Google Search Console property.
-- [ ] Submit https://vnr.co.za/sitemap.xml to Google Search Console.
-- [ ] Run post-launch smoke checks for homepage, services, insights, contact,
-      robots.txt, sitemap.xml, and the contact form.
+- [ ] Confirm production environment variables (GA4, future contact delivery)
+- [ ] Wire contact API to email/CRM if enquiries must be forwarded
+- [ ] Add/verify vnr.co.za and www.vnr.co.za in hosting platform
+- [ ] Confirm DNS and SSL after cutover
+- [ ] Verify Google Search Console and submit sitemap
+- [ ] Post-launch smoke checks for homepage, services, contact, map, and logos
 
 ================================================================================
 END OF PROJECT SUMMARY

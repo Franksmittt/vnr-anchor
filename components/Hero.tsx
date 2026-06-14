@@ -8,7 +8,7 @@ const heroContent = {
     'VNR Professional Accountants team providing tax advisory and business structuring across South Africa.',
   headline: 'Clear accounting. Confident decisions.',
   description:
-    'SAIPA-accredited tax, compliance, payroll, and business advisory for entrepreneurs across South Africa — without the overwhelm.',
+    'SAIPA-accredited tax, compliance, payroll, and business advisory for entrepreneurs across South Africa, without the overwhelm.',
   primaryCta: { text: 'Explore Services', href: '/services' },
   secondaryCta: { text: 'Get in Touch', href: '/contact' },
   accreditation: 'SAIPA-Accredited Tax and Accounting Experts',

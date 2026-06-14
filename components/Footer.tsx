@@ -1,7 +1,7 @@
 'use client'; // <-- THIS LINE IS THE CRITICAL FIX
 
 import Link from 'next/link';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook } from 'lucide-react';
 import React from 'react';
 import { trackEvent } from '@/lib/tracking';
 
@@ -31,6 +31,19 @@ const Footer = () => {
             <p className="mt-2 max-w-sm text-xs text-text-on-dark/75 sm:text-sm">
               Strategic tax, compliance, and wealth planning for South African entrepreneurs.
             </p>
+            <div className="mt-4">
+              <a
+                href="https://www.facebook.com/vnracc"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow VNR on Facebook"
+                onClick={() => trackEvent('social_click', { network: 'facebook', location: 'footer' })}
+                className="inline-flex items-center gap-2 text-sm text-text-on-dark/80 transition-colors hover:text-white"
+              >
+                <Facebook size={18} className="flex-shrink-0 text-brand-teal-light" />
+                <span>Facebook</span>
+              </a>
+            </div>
           </div>
 
           <div>

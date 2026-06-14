@@ -5,7 +5,7 @@ import AnimateOnScroll from './AnimateOnScroll';
 const partnerLogos = [
   {
     src: '/images/logos/saipa-logo.jpg',
-    alt: 'SAIPA — South African Institute of Professional Accountants',
+    alt: 'SAIPA, South African Institute of Professional Accountants',
     width: 160,
     height: 52,
   },

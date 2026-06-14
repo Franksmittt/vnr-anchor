@@ -36,7 +36,7 @@ The site has a **strong SEO foundation**: metadata, structured data, sitemap, ro
 
 ## 1. Page-by-Page SEO Rating
 
-### 1.1 Homepage (`/`) — **7.5/10**
+### 1.1 Homepage (`/`), **7.5/10**
 
 | Aspect | Status | Notes |
 |--------|--------|--------|
@@ -52,7 +52,7 @@ The site has a **strong SEO foundation**: metadata, structured data, sitemap, ro
 
 ---
 
-### 1.2 Services Listing (`/services`) — **8/10**
+### 1.2 Services Listing (`/services`), **8/10**
 
 | Aspect | Status | Notes |
 |--------|--------|--------|
@@ -68,7 +68,7 @@ The site has a **strong SEO foundation**: metadata, structured data, sitemap, ro
 
 ---
 
-### 1.3 Service Detail (`/services/[slug]`) — **8.5/10**
+### 1.3 Service Detail (`/services/[slug]`), **8.5/10**
 
 | Aspect | Status | Notes |
 |--------|--------|--------|
@@ -84,7 +84,7 @@ The site has a **strong SEO foundation**: metadata, structured data, sitemap, ro
 
 ---
 
-### 1.4 Insights Listing (`/insights`) — **8/10**
+### 1.4 Insights Listing (`/insights`), **8/10**
 
 | Aspect | Status | Notes |
 |--------|--------|--------|
@@ -100,7 +100,7 @@ The site has a **strong SEO foundation**: metadata, structured data, sitemap, ro
 
 ---
 
-### 1.5 Insight Detail (`/insights/[slug]`) — **8/10**
+### 1.5 Insight Detail (`/insights/[slug]`), **8/10**
 
 | Aspect | Status | Notes |
 |--------|--------|--------|
@@ -116,7 +116,7 @@ The site has a **strong SEO foundation**: metadata, structured data, sitemap, ro
 
 ---
 
-### 1.6 Team Listing (`/team`) — **8/10**
+### 1.6 Team Listing (`/team`), **8/10**
 
 | Aspect | Status | Notes |
 |--------|--------|--------|
@@ -132,7 +132,7 @@ The site has a **strong SEO foundation**: metadata, structured data, sitemap, ro
 
 ---
 
-### 1.7 Team Member (`/team/[slug]`) — **8.5/10**
+### 1.7 Team Member (`/team/[slug]`), **8.5/10**
 
 | Aspect | Status | Notes |
 |--------|--------|--------|
@@ -148,7 +148,7 @@ The site has a **strong SEO foundation**: metadata, structured data, sitemap, ro
 
 ---
 
-### 1.8 Contact (`/contact`) — **8.5/10**
+### 1.8 Contact (`/contact`), **8.5/10**
 
 | Aspect | Status | Notes |
 |--------|--------|--------|
@@ -164,7 +164,7 @@ The site has a **strong SEO foundation**: metadata, structured data, sitemap, ro
 
 ---
 
-### 1.9 Anchor Wealth (`/anchor-wealth`) — **8.5/10**
+### 1.9 Anchor Wealth (`/anchor-wealth`), **8.5/10**
 
 | Aspect | Status | Notes |
 |--------|--------|--------|
@@ -180,7 +180,7 @@ The site has a **strong SEO foundation**: metadata, structured data, sitemap, ro
 
 ---
 
-### 1.10 Expat Tax Guide (`/resources/expat-tax-guide`) — **8.5/10**
+### 1.10 Expat Tax Guide (`/resources/expat-tax-guide`), **8.5/10**
 
 | Aspect | Status | Notes |
 |--------|--------|--------|

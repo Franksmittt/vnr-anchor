@@ -147,7 +147,7 @@ const ExpatTaxGuidePage = () => {
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-widest text-brand-blue">The Checklist</p>
             <h2 className="mt-3 font-serif text-3xl font-bold text-text-primary sm:text-4xl">
-              Every mistake we see—spelled out with action steps.
+              Every mistake we see, spelled out with action steps.
             </h2>
             <p className="mt-4 text-text-secondary">
               Use this list during onboarding, annual reviews, or campaign follow-ups so prospects feel the exact

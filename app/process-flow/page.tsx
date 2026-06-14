@@ -9,7 +9,7 @@ const flowSteps = [
   {
     id: 'start',
     title: 'You start confused',
-    content: 'Managing debtors, creditors, cashbook, journals—it all feels overwhelming. Where do I even begin?',
+    content: 'Managing debtors, creditors, cashbook, journals, it all feels overwhelming. Where do I even begin?',
     expanded: false,
   },
   {
@@ -27,7 +27,7 @@ const flowSteps = [
   {
     id: 'journals',
     title: 'Journals & schedules',
-    content: 'Salary control journals, depreciation, fixed asset register, VAT reports, inventory valuation, loan accounts—the pieces that complete the picture.',
+    content: 'Salary control journals, depreciation, fixed asset register, VAT reports, inventory valuation, loan accounts, the pieces that complete the picture.',
     expanded: false,
   },
   {
@@ -79,7 +79,7 @@ export default function ProcessFlowPage() {
             From Confused to Confident
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-center text-text-on-dark/80">
-            See how your day-to-day transactions become clear financial statements. A little journey—with a happy ending.
+            See how your day-to-day transactions become clear financial statements. A little journey, with a happy ending.
           </p>
         </div>
       </section>
