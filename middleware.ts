@@ -25,7 +25,11 @@ export function middleware(request: NextRequest) {
   const normalizedLowercasePath = normalizedPath.toLowerCase();
   const host = request.headers.get('host') || '';
 
-  if (pathname !== normalizedLowercasePath) {
+  if (
+    pathname !== normalizedLowercasePath &&
+    !pathname.startsWith('/images/') &&
+    !/\.(jpg|jpeg|png|gif|webp|svg|ico|avif|mp4|pdf|woff2?)$/i.test(pathname)
+  ) {
     return NextResponse.redirect(new URL(`${normalizedLowercasePath}${search}`, request.url), 308);
   }
 

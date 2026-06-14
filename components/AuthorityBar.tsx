@@ -4,21 +4,21 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const partnerLogos = [
   {
-    src: '/images/logos/SAIPA-LOGO-Full-Name-HighRes.jpg',
+    src: '/images/logos/saipa-logo.jpg',
     alt: 'SAIPA — South African Institute of Professional Accountants',
-    width: 140,
-    height: 40,
+    width: 160,
+    height: 52,
   },
   {
     src: '/images/logos/dext-logo.png',
     alt: 'Dext',
-    width: 100,
+    width: 120,
     height: 40,
   },
   {
-    src: '/images/logos/Sage-Logo.png',
+    src: '/images/logos/sage-logo.png',
     alt: 'Sage Platinum Partner',
-    width: 110,
+    width: 120,
     height: 40,
   },
 ];
