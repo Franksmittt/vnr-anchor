@@ -96,17 +96,17 @@ const ServicePage = async ({ params }: { params: Promise<ServicePageParams> }) =
       />
 
       <div className="bg-white py-8 sm:py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-6">
             
             <article className="lg:col-span-2 space-y-8">
               <section 
-                className="prose prose-lg max-w-none prose-h2:font-serif prose-h2:text-3xl prose-h2:font-bold prose-h2:text-text-primary prose-h2:tracking-tight prose-h3:font-serif prose-h3:text-brand-blue-dark prose-p:text-text-secondary"
+                className="prose prose-sm sm:prose-lg max-w-none prose-h2:font-serif prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:font-bold prose-h2:text-text-primary prose-h2:tracking-tight prose-h3:font-serif prose-h3:text-brand-blue-dark prose-p:text-text-secondary"
                 dangerouslySetInnerHTML={{ __html: service.content }}
               />
               {service.faqs && service.faqs.length > 0 && (
                 <section>
-                  <h2 className="font-serif text-3xl font-bold text-text-primary tracking-tight">Frequently Asked Questions</h2>
+                  <h2 className="font-serif text-2xl font-bold tracking-tight text-text-primary sm:text-3xl">Frequently Asked Questions</h2>
                   <div className="mt-4 border-t border-slate-200">
                     <FaqAccordion faqs={service.faqs} />
                   </div>

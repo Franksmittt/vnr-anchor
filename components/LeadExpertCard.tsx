@@ -13,7 +13,7 @@ interface LeadExpertCardProps {
 }
 
 const LeadExpertCard: React.FC<LeadExpertCardProps> = ({ name, title, imageUrl, children }) => (
-  <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-5 sticky top-24">
+  <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-lg lg:sticky lg:top-24">
     <h3 className="font-serif text-lg font-bold text-text-primary mb-3 tracking-wide">Lead Expert</h3>
     <div className="flex items-center space-x-4 mb-3">
       <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-offset-2 ring-brand-blue-light">

@@ -39,16 +39,24 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-surface-dark text-text-on-dark shadow-lg">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
-        <Link href="/" aria-label="VNR Professional Accountants Home Page">
+      <div className="container mx-auto flex h-16 items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6">
+        <Link
+          href="/"
+          aria-label="VNR Professional Accountants Home Page"
+          className="flex min-w-0 items-center gap-2 sm:gap-3"
+        >
           <Image
             src="/images/logos/vnrlogo1.png"
             alt="VNR Professional Accountants Logo"
             width={150}
             height={50}
-            className="h-10 w-auto object-contain sm:h-11"
+            className="h-9 w-auto flex-shrink-0 object-contain sm:h-11"
             priority
           />
+          <span className="min-w-0 font-serif text-[10px] font-semibold leading-tight text-white sm:text-sm md:text-base">
+            <span className="block sm:inline">Professional</span>{' '}
+            <span className="block sm:inline">Accountants</span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" role="navigation" aria-label="Main Navigation">
@@ -59,7 +67,7 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex flex-shrink-0 items-center gap-2 sm:gap-4">
           <Link
             href="/contact"
             className="hidden rounded-md bg-brand-teal px-5 py-2 text-xs font-semibold text-white shadow-md transition-colors hover:bg-brand-teal-dark lg:inline-flex lg:text-sm"
@@ -91,9 +99,24 @@ const Header = () => {
             className="absolute right-0 top-0 h-full w-full max-w-xs bg-surface-light p-6 text-text-primary shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between">
-              <h2 className="font-serif text-lg font-bold">Menu</h2>
-              <button onClick={() => setMobileMenuOpen(false)} aria-label="Close menu">
+            <div className="flex items-center justify-between gap-3">
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex min-w-0 items-center gap-2"
+              >
+                <Image
+                  src="/images/logos/vnrlogo1.png"
+                  alt="VNR Professional Accountants Logo"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto flex-shrink-0 object-contain"
+                />
+                <span className="min-w-0 font-serif text-xs font-semibold leading-snug text-text-primary">
+                  Professional Accountants
+                </span>
+              </Link>
+              <button onClick={() => setMobileMenuOpen(false)} aria-label="Close menu" className="flex-shrink-0">
                 <X className="h-6 w-6" />
               </button>
             </div>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Article } from '@/data/insights-data';
 
 const FeaturedArticleCard = ({ article }: { article: Article }) => (
-  <div className="container mx-auto px-6">
+  <div className="container mx-auto px-4 sm:px-6">
     <Link href={`/insights/${article.slug}`} className="block group bg-white rounded-2xl shadow-xl overflow-hidden md:grid md:grid-cols-2 hover:shadow-2xl transition-shadow duration-300">
       <div className="relative h-52 md:h-auto">
         <Image src={article.imageUrl} alt={article.title} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" loading="lazy" />

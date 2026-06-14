@@ -31,14 +31,14 @@ const InsightsPage = () => {
             <div className="py-10 sm:py-12 bg-surface-light">
                 {featuredArticle && <FeaturedArticleCard article={featuredArticle} />}
 
-                <div className="container mx-auto px-6 mt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
-                        <div className="flex flex-wrap gap-2">
+                <div className="container mx-auto mt-8 px-4 sm:px-6">
+                    <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                        <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 md:flex-wrap">
                             {categories.map(cat => (
                                 <button 
                                     key={cat}
                                     onClick={() => setActiveCategory(cat)}
-                                    className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors duration-200 ${activeCategory === cat ? 'bg-brand-blue text-white shadow-md' : 'bg-white text-text-secondary hover:bg-slate-200 shadow-sm'}`}
+                                    className={`flex-shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-200 sm:flex-shrink ${activeCategory === cat ? 'bg-brand-blue text-white shadow-md' : 'bg-white text-text-secondary hover:bg-slate-200 shadow-sm'}`}
                                 >
                                     {cat}
                                 </button>

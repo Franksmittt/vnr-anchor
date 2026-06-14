@@ -121,7 +121,7 @@ const ServicesPage = () => {
             <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-brand-blue">
               Categories
             </p>
-            <div className="flex gap-2 overflow-x-auto pb-1 lg:flex-col lg:overflow-visible lg:pb-0">
+            <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 snap-x snap-mandatory sm:mx-0 sm:px-0 lg:flex-col lg:overflow-visible lg:pb-0 lg:snap-none">
               {pricingCategories.map((category) => {
                 const Icon = categoryIcons[category];
                 const isActive = category === activeCategory;
@@ -132,7 +132,7 @@ const ServicesPage = () => {
                     key={category}
                     type="button"
                     onClick={() => setActiveCategory(category)}
-                    className={`flex min-w-[220px] items-center gap-3 rounded-lg border px-3 py-2.5 text-left text-sm transition-colors lg:min-w-0 lg:w-full ${
+                    className={`flex min-w-[200px] flex-shrink-0 snap-start items-center gap-3 rounded-lg border px-3 py-2.5 text-left text-sm transition-colors sm:min-w-[220px] lg:min-w-0 lg:w-full lg:flex-shrink ${
                       isActive
                         ? 'border-brand-blue bg-brand-blue/10 text-brand-blue-dark'
                         : 'border-slate-200 bg-white text-text-secondary hover:border-brand-blue/30 hover:bg-surface-light'
@@ -160,7 +160,7 @@ const ServicesPage = () => {
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
                   <label className="sr-only" htmlFor="service-sort">
                     Sort services
                   </label>
@@ -168,7 +168,7 @@ const ServicesPage = () => {
                     id="service-sort"
                     value={sortBy}
                     onChange={(event) => setSortBy(event.target.value as ServiceSortOption)}
-                    className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-text-primary focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
+                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-text-primary focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20 sm:w-auto"
                   >
                     {sortOptions.map((option) => (
                       <option key={option.value} value={option.value}>
@@ -177,7 +177,7 @@ const ServicesPage = () => {
                     ))}
                   </select>
 
-                  <div className="relative min-w-[220px]">
+                  <div className="relative w-full sm:min-w-[220px] sm:w-auto">
                     <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                     <input
                       type="search"
@@ -205,12 +205,17 @@ const ServicesPage = () => {
                     {visibleServices.map((service, index) => (
                       <li
                         key={`${service.description}-${index}`}
-                        className="grid grid-cols-1 gap-2 px-4 py-3 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-4 sm:py-3.5"
+                        className="grid grid-cols-1 gap-1 px-4 py-3 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-4 sm:py-3.5"
                       >
                         <p className="text-sm leading-snug text-text-primary">
                           {cleanServiceDescription(service.description)}
                         </p>
-                        <div className="sm:pt-0.5">{formatServicePrice(service)}</div>
+                        <div className="sm:pt-0.5">
+                          <span className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-text-secondary sm:hidden">
+                            Price
+                          </span>
+                          {formatServicePrice(service)}
+                        </div>
                       </li>
                     ))}
                   </ul>

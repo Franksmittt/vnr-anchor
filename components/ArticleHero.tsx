@@ -13,9 +13,9 @@ const ArticleHero = ({ article }: { article: Article }) => (
       className="absolute inset-0 w-full h-full object-cover opacity-20" 
       sizes="100vw"
     />
-    <div className="relative z-10 container mx-auto px-6 py-8 sm:py-10">
-      <p className="font-semibold tracking-wider uppercase text-brand-teal-light">{article.category}</p>
-      <h1 className="font-serif text-4xl md:text-5xl font-extrabold tracking-tight mt-2 max-w-4xl">{article.title}</h1>
+    <div className="relative z-10 container mx-auto px-4 py-8 sm:px-6 sm:py-10">
+      <p className="font-semibold tracking-wider uppercase text-brand-teal-light text-xs sm:text-sm">{article.category}</p>
+      <h1 className="mt-2 max-w-4xl font-serif text-2xl font-extrabold tracking-tight sm:text-3xl md:text-5xl">{article.title}</h1>
       <div className="mt-6 flex items-center text-sm">
         <div className="flex items-center">
           <Image 

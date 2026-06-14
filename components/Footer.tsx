@@ -84,7 +84,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-5 border-t border-slate-700 pt-4 text-center text-xs text-text-on-dark/60">
+        <div className="mt-5 break-words border-t border-slate-700 pt-4 text-center text-xs text-text-on-dark/60">
           © {currentYear} VNR Professional Accountants (Pty) Ltd. All Rights Reserved.
         </div>
       </div>

@@ -33,7 +33,7 @@ export function formatServicePrice(service: Pick<PricingService, 'priceExcl' | '
   ) {
     if (typeof priceExcl === 'number') {
       return (
-        <div className="text-right">
+        <div className="text-left sm:text-right">
           <span className="text-base font-bold text-text-primary">{formatAmount(priceExcl)}</span>
           <span className="mt-0.5 block text-xs text-text-secondary">excl. VAT</span>
         </div>
@@ -56,7 +56,7 @@ export function formatServicePrice(service: Pick<PricingService, 'priceExcl' | '
 
   if (typeof priceExcl === 'string' && priceExcl.includes('%')) {
     return (
-      <div className="text-right">
+      <div className="text-left sm:text-right">
         <span className="text-base font-bold text-text-primary">{priceExcl}</span>
         <span className="mt-0.5 block text-xs text-text-secondary">of Gross Assets</span>
       </div>
@@ -71,7 +71,7 @@ export function formatServicePrice(service: Pick<PricingService, 'priceExcl' | '
   }
 
   return (
-    <div className="text-right">
+    <div className="text-left sm:text-right">
       <span className="text-base font-bold text-text-primary">{formatAmount(inclVal)}</span>
       <span className="mt-0.5 block text-xs text-text-secondary">excl. {formatAmount(exclVal)}</span>
     </div>
