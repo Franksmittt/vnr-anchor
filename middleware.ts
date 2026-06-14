@@ -55,7 +55,7 @@ export function middleware(request: NextRequest) {
   );
   response.headers.set(
     'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline' https://*.vercel-insights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.vercel-insights.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';",
+    "default-src 'self'; script-src 'self' 'unsafe-inline' https://*.vercel-insights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.vercel-insights.com; frame-src 'self' https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';",
   );
 
   return response;

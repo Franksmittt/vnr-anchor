@@ -16,7 +16,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, children }) => {
         <ChevronDown className={`h-5 w-5 text-slate-500 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       {isOpen && (
-        <div className="mt-4 text-slate-600">
+        <div className="mt-4 text-base leading-relaxed text-slate-800">
           {children}
         </div>
       )}

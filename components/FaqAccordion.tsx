@@ -35,7 +35,7 @@ const FaqAccordion = ({ faqs }: { faqs: FAQ[] }) => {
             }`}
           >
             <div 
-              className="prose prose-slate max-w-none pt-4" 
+              className="faq-answer pt-4 text-base leading-relaxed text-slate-800 [&_a]:font-semibold [&_a]:text-brand-blue [&_li]:text-slate-800 [&_p]:text-slate-800 [&_strong]:text-slate-900" 
               dangerouslySetInnerHTML={{ __html: faq.a }} 
             />
           </div>

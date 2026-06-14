@@ -16,7 +16,7 @@ const heroContent = {
 
 const Hero = () => {
   return (
-    <section className="relative flex min-h-[420px] items-center overflow-hidden text-white sm:min-h-[480px] lg:min-h-[520px]">
+    <section className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden text-white">
       <Image
         src={heroContent.imageUrl}
         alt={heroContent.altText}
@@ -51,10 +51,13 @@ const Hero = () => {
             </Link>
           </div>
 
-          <div className="mt-5 flex items-center gap-2 text-xs text-text-on-dark/80 sm:text-sm">
+          <div className="mt-8 flex items-center gap-2 text-xs text-text-on-dark/80 sm:text-sm">
             <ShieldCheck size={16} className="text-brand-teal" />
             <span>{heroContent.accreditation}</span>
           </div>
+          <p className="mt-10 text-xs uppercase tracking-[0.2em] text-text-on-dark/60">
+            Scroll to explore
+          </p>
         </div>
       </div>
     </section>
