@@ -25,7 +25,7 @@ export function cleanServiceDescription(description: string): string {
   return text || description.trim();
 }
 
-export type ServiceSortOption = 'name-asc' | 'name-desc' | 'price-asc' | 'price-desc';
+export type ServiceSortOption = 'sheet-order' | 'name-asc' | 'name-desc' | 'price-asc' | 'price-desc';
 
 function sortPrice(service: PricingService): number {
   if (typeof service.priceIncl === 'number') return service.priceIncl;
@@ -38,6 +38,8 @@ export function sortPricingServices(
   services: PricingService[],
   sort: ServiceSortOption,
 ): PricingService[] {
+  if (sort === 'sheet-order') return services;
+
   const sorted = [...services];
 
   sorted.sort((a, b) => {

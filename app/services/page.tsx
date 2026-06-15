@@ -1,11 +1,13 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
   pricingCategories,
   pricingData,
+  pricingSubcategories,
   type PricingCategory,
+  type PricingService,
 } from '@/data/pricing-data';
 import { formatServicePrice } from '@/lib/format-price';
 import {
@@ -51,16 +53,44 @@ const categoryLinks: Partial<Record<PricingCategory, string>> = {
 };
 
 const sortOptions: { value: ServiceSortOption; label: string }[] = [
+  { value: 'sheet-order', label: 'Listed order' },
   { value: 'name-asc', label: 'Name (A–Z)' },
   { value: 'name-desc', label: 'Name (Z–A)' },
   { value: 'price-asc', label: 'Price (low to high)' },
   { value: 'price-desc', label: 'Price (high to low)' },
 ];
 
+function ServicePriceRow({ service, index }: { service: PricingService; index: number }) {
+  return (
+    <li
+      key={`${service.code || service.description}-${index}`}
+      className="grid grid-cols-1 gap-1 px-4 py-3 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-4 sm:py-3.5"
+    >
+      <p className="text-sm leading-snug text-text-primary">
+        {cleanServiceDescription(service.description)}
+      </p>
+      <div className="sm:pt-0.5">
+        <span className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-text-secondary sm:hidden">
+          Price
+        </span>
+        {formatServicePrice(service)}
+      </div>
+    </li>
+  );
+}
+
 const ServicesPage = () => {
   const [activeCategory, setActiveCategory] = useState<PricingCategory>(pricingCategories[0]);
-  const [sortBy, setSortBy] = useState<ServiceSortOption>('name-asc');
+  const [activeSubcategory, setActiveSubcategory] = useState<string>('all');
+  const [sortBy, setSortBy] = useState<ServiceSortOption>('sheet-order');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const subcategories = pricingSubcategories[activeCategory];
+
+  useEffect(() => {
+    setActiveSubcategory('all');
+    setSearchQuery('');
+  }, [activeCategory]);
 
   const servicesByCategory = useMemo(() => {
     const map = new Map<PricingCategory, typeof pricingData>();
@@ -77,14 +107,42 @@ const ServicesPage = () => {
     const categoryServices = servicesByCategory.get(activeCategory) || [];
     const query = searchQuery.trim().toLowerCase();
 
-    const filtered = query
-      ? categoryServices.filter((service) =>
-          cleanServiceDescription(service.description).toLowerCase().includes(query),
-        )
-      : categoryServices;
+    let filtered = categoryServices;
+
+    if (activeSubcategory !== 'all') {
+      filtered = filtered.filter((service) => service.subcategory === activeSubcategory);
+    }
+
+    if (query) {
+      filtered = filtered.filter((service) =>
+        cleanServiceDescription(service.description).toLowerCase().includes(query),
+      );
+    }
 
     return sortPricingServices(filtered, sortBy);
-  }, [activeCategory, searchQuery, servicesByCategory, sortBy]);
+  }, [activeCategory, activeSubcategory, searchQuery, servicesByCategory, sortBy]);
+
+  const groupedServices = useMemo(() => {
+    if (activeSubcategory !== 'all' || subcategories.length === 0 || sortBy !== 'sheet-order') {
+      return null;
+    }
+
+    const groups: { label: string; services: PricingService[] }[] = [];
+
+    for (const subcategory of subcategories) {
+      const services = visibleServices.filter((service) => service.subcategory === subcategory);
+      if (services.length > 0) {
+        groups.push({ label: subcategory, services });
+      }
+    }
+
+    const uncategorized = visibleServices.filter((service) => !service.subcategory);
+    if (uncategorized.length > 0) {
+      groups.push({ label: 'Other services', services: uncategorized });
+    }
+
+    return groups.length > 0 ? groups : null;
+  }, [activeSubcategory, sortBy, subcategories, visibleServices]);
 
   const detailHref = categoryLinks[activeCategory];
 
@@ -103,7 +161,7 @@ const ServicesPage = () => {
             Services & Pricing
           </h1>
           <p className="mt-2 max-w-2xl text-sm text-text-secondary sm:text-base">
-            Choose a category, sort the list, or search within that category. Prices include VAT at 15% unless marked as price on request.
+            Choose a main category, then narrow by sub-category if available. Services are listed in the same order as our official price list unless you change the sort.
           </p>
           <div className="mt-3 flex items-center gap-2 text-xs text-text-secondary sm:text-sm">
             <Clock className="h-4 w-4" />
@@ -150,50 +208,112 @@ const ServicesPage = () => {
 
           <div className="min-w-0 flex-1">
             <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <h2 className="font-serif text-xl font-bold text-text-primary sm:text-2xl">
-                    {activeCategory}
-                  </h2>
-                  <p className="mt-1 text-sm text-text-secondary">
-                    {visibleServices.length} service{visibleServices.length === 1 ? '' : 's'} shown
-                  </p>
-                </div>
+              <div className="space-y-4">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <h2 className="font-serif text-xl font-bold text-text-primary sm:text-2xl">
+                      {activeCategory}
+                    </h2>
+                    <p className="mt-1 text-sm text-text-secondary">
+                      {visibleServices.length} service{visibleServices.length === 1 ? '' : 's'} shown
+                      {activeSubcategory !== 'all' ? ` in ${activeSubcategory}` : ''}
+                    </p>
+                  </div>
 
-                <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
-                  <label className="sr-only" htmlFor="service-sort">
-                    Sort services
-                  </label>
-                  <select
-                    id="service-sort"
-                    value={sortBy}
-                    onChange={(event) => setSortBy(event.target.value as ServiceSortOption)}
-                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-text-primary focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20 sm:w-auto"
-                  >
-                    {sortOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        Sort: {option.label}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
+                    <label className="sr-only" htmlFor="service-sort">
+                      Sort services
+                    </label>
+                    <select
+                      id="service-sort"
+                      value={sortBy}
+                      onChange={(event) => setSortBy(event.target.value as ServiceSortOption)}
+                      className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-text-primary focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20 sm:w-auto"
+                    >
+                      {sortOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          Sort: {option.label}
+                        </option>
+                      ))}
+                    </select>
 
-                  <div className="relative w-full sm:min-w-[220px] sm:w-auto">
-                    <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                    <input
-                      type="search"
-                      value={searchQuery}
-                      onChange={(event) => setSearchQuery(event.target.value)}
-                      placeholder="Search this category..."
-                      className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm text-text-primary placeholder:text-slate-400 focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
-                    />
+                    <div className="relative w-full sm:min-w-[220px] sm:w-auto">
+                      <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                      <input
+                        type="search"
+                        value={searchQuery}
+                        onChange={(event) => setSearchQuery(event.target.value)}
+                        placeholder="Search this category..."
+                        className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm text-text-primary placeholder:text-slate-400 focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
+                      />
+                    </div>
                   </div>
                 </div>
+
+                {subcategories.length > 0 && (
+                  <div>
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-brand-blue">
+                      Sub-categories
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setActiveSubcategory('all')}
+                        className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
+                          activeSubcategory === 'all'
+                            ? 'border-brand-blue bg-brand-blue text-white'
+                            : 'border-slate-200 bg-white text-text-secondary hover:border-brand-blue/30 hover:text-brand-blue-dark'
+                        }`}
+                        aria-pressed={activeSubcategory === 'all'}
+                      >
+                        All
+                      </button>
+                      {subcategories.map((subcategory) => {
+                        const count = (servicesByCategory.get(activeCategory) || []).filter(
+                          (service) => service.subcategory === subcategory,
+                        ).length;
+
+                        return (
+                          <button
+                            key={subcategory}
+                            type="button"
+                            onClick={() => setActiveSubcategory(subcategory)}
+                            className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${
+                              activeSubcategory === subcategory
+                                ? 'border-brand-blue bg-brand-blue text-white'
+                                : 'border-slate-200 bg-white text-text-secondary hover:border-brand-blue/30 hover:text-brand-blue-dark'
+                            }`}
+                            aria-pressed={activeSubcategory === subcategory}
+                          >
+                            {subcategory}
+                            <span className="ml-1 text-xs opacity-80">({count})</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {visibleServices.length === 0 ? (
                 <div className="mt-6 rounded-lg border border-dashed border-slate-200 bg-surface-light px-4 py-10 text-center">
                   <p className="font-medium text-text-primary">No services match your search.</p>
                   <p className="mt-1 text-sm text-text-secondary">Try another keyword or clear the search.</p>
+                </div>
+              ) : groupedServices ? (
+                <div className="mt-4 space-y-5">
+                  {groupedServices.map((group) => (
+                    <section key={group.label} className="overflow-hidden rounded-lg border border-slate-200">
+                      <div className="border-b border-slate-200 bg-surface-light px-4 py-2.5">
+                        <h3 className="font-serif text-base font-semibold text-text-primary">{group.label}</h3>
+                      </div>
+                      <ul className="divide-y divide-slate-100">
+                        {group.services.map((service, index) => (
+                          <ServicePriceRow key={`${group.label}-${service.code}-${index}`} service={service} index={index} />
+                        ))}
+                      </ul>
+                    </section>
+                  ))}
                 </div>
               ) : (
                 <div className="mt-4 overflow-hidden rounded-lg border border-slate-200">
@@ -203,20 +323,7 @@ const ServicesPage = () => {
                   </div>
                   <ul className="divide-y divide-slate-100">
                     {visibleServices.map((service, index) => (
-                      <li
-                        key={`${service.description}-${index}`}
-                        className="grid grid-cols-1 gap-1 px-4 py-3 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-4 sm:py-3.5"
-                      >
-                        <p className="text-sm leading-snug text-text-primary">
-                          {cleanServiceDescription(service.description)}
-                        </p>
-                        <div className="sm:pt-0.5">
-                          <span className="mb-0.5 block text-xs font-semibold uppercase tracking-wider text-text-secondary sm:hidden">
-                            Price
-                          </span>
-                          {formatServicePrice(service)}
-                        </div>
-                      </li>
+                      <ServicePriceRow key={`${service.code || service.description}-${index}`} service={service} index={index} />
                     ))}
                   </ul>
                 </div>
