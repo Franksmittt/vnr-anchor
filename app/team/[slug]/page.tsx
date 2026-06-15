@@ -110,19 +110,19 @@ const TeamMemberPage = async ({ params }: { params: Promise<TeamPageParams> }) =
         </div>
       </section>
 
-      <div className="bg-white py-8 sm:py-12">
+      <div className="bg-white py-8 text-text-primary sm:py-12">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-8">
               <section
-                className="prose prose-lg max-w-none prose-h3:font-serif prose-h3:text-brand-blue-dark prose-p:text-text-secondary prose-li:text-text-secondary"
+                className="max-w-none text-base leading-relaxed text-slate-700 [&_h3]:mb-4 [&_h3]:mt-8 [&_h3]:font-serif [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-brand-blue-dark [&_li]:text-slate-700 [&_p]:leading-relaxed [&_p]:text-slate-700 [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6"
                 dangerouslySetInnerHTML={{ __html: member.bio }}
               />
 
               {member.funFact && (
-                <blockquote className="rounded-xl border-l-4 border-brand-blue bg-surface-light p-5 text-text-secondary">
+                <blockquote className="rounded-xl border-l-4 border-brand-blue bg-surface-light p-5 text-slate-700">
                   <p className="text-sm font-semibold uppercase tracking-wide text-brand-blue">Did you know?</p>
-                  <p className="mt-2 text-base">{member.funFact}</p>
+                  <p className="mt-2 text-base text-slate-700">{member.funFact}</p>
                 </blockquote>
               )}
             </div>
@@ -132,7 +132,7 @@ const TeamMemberPage = async ({ params }: { params: Promise<TeamPageParams> }) =
                 <h2 className="font-serif text-lg font-bold text-text-primary">Credentials</h2>
                 <ul className="mt-3 space-y-2">
                   {member.credentials.map((credential) => (
-                    <li key={credential} className="text-sm text-text-secondary">
+                    <li key={credential} className="text-sm text-slate-700">
                       {credential}
                     </li>
                   ))}
@@ -151,7 +151,7 @@ const TeamMemberPage = async ({ params }: { params: Promise<TeamPageParams> }) =
                         >
                           {article.title}
                         </Link>
-                        <p className="text-xs text-text-secondary">{article.category}</p>
+                        <p className="text-xs text-slate-600">{article.category}</p>
                       </li>
                     ))}
                   </ul>
