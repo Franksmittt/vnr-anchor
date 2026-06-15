@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { servicesData, Service } from '@/data/services-data';
 import { insightsData, Article } from '@/data/insights-data';
+import { teamData } from '@/data/team-data';
 import { SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -67,6 +68,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: service.slug === 'secretarial-services' || service.slug === 'tax-advisory' ? 0.9 : 0.7,
   }));
 
+  const teamRoutes: MetadataRoute.Sitemap = teamData.map((member) => ({
+    url: `${siteUrl}/team/${member.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   // Insight articles - use actual date if available
   const insightRoutes: MetadataRoute.Sitemap = insightsData.map((insight: Article) => {
     // Try to parse date from article, fallback to now
@@ -93,6 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticRoutes,
     ...serviceRoutes,
+    ...teamRoutes,
     ...insightRoutes,
   ];
 }

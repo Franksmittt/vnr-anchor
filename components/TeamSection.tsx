@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { teamData } from '../data/team-data';
-import { ArrowRight } from 'lucide-react';
 import AnimateOnScroll from './AnimateOnScroll';
 
 interface TeamSectionProps {
@@ -42,28 +41,34 @@ const TeamSection = ({ limit = 3, compact = false }: TeamSectionProps) => {
 
         <div
           className={`grid grid-cols-1 ${
-            compact ? 'mt-6 gap-4 sm:grid-cols-2' : 'mt-6 gap-4 sm:mt-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-3'
+            compact ? 'mt-6 gap-4 sm:grid-cols-3' : 'mt-6 gap-4 sm:mt-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-3'
           }`}
         >
           {featuredMembers.map((member, index) => (
             <AnimateOnScroll key={member.slug} delay={`${index * 100}ms`}>
               {compact ? (
-                <div className="flex items-center gap-4 rounded-lg border border-slate-200 bg-surface-light p-4">
+                <Link
+                  href={`/team/${member.slug}`}
+                  className="group flex flex-col items-center rounded-lg border border-slate-200 bg-surface-light p-4 text-center transition-colors hover:border-brand-blue/40 hover:bg-white"
+                >
                   <Image
-                    className="h-16 w-16 flex-shrink-0 rounded-full object-cover ring-2 ring-brand-blue/20"
+                    className="h-20 w-20 rounded-full object-cover ring-2 ring-brand-blue/20 transition-all group-hover:ring-brand-blue/40"
                     src={member.imageUrl}
                     alt={`${member.name}, ${member.title} at VNR Professional Accountants`}
-                    width={64}
-                    height={64}
+                    width={80}
+                    height={80}
                     loading="lazy"
                   />
-                  <div className="min-w-0 text-left">
-                    <h3 className="font-serif text-base font-semibold text-text-primary">{member.name}</h3>
-                    <p className="mt-0.5 text-sm text-text-secondary">{member.title}</p>
-                  </div>
-                </div>
+                  <h3 className="mt-3 font-serif text-base font-semibold text-text-primary group-hover:text-brand-blue">
+                    {member.name}
+                  </h3>
+                  <p className="mt-0.5 text-sm text-text-secondary">{member.title}</p>
+                </Link>
               ) : (
-                <div className="group relative flex h-full flex-col overflow-hidden rounded-xl bg-surface-dark text-center shadow-lg">
+                <Link
+                  href={`/team/${member.slug}`}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-xl bg-surface-dark text-center shadow-lg transition-transform hover:-translate-y-1"
+                >
                   <div className="flex-grow p-6 sm:p-8">
                     <Image
                       className="mx-auto h-28 w-28 rounded-full object-cover ring-4 ring-slate-700 transition-all duration-300 group-hover:ring-brand-blue-light sm:h-36 sm:w-36"
@@ -78,23 +83,11 @@ const TeamSection = ({ limit = 3, compact = false }: TeamSectionProps) => {
                       <p className="mt-1 text-sm text-brand-blue-light sm:text-base">{member.title}</p>
                     </div>
                   </div>
-                </div>
+                </Link>
               )}
             </AnimateOnScroll>
           ))}
         </div>
-
-        {compact && (
-          <div className="mt-5 text-center">
-            <Link
-              href="/#about-us"
-              className="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:text-brand-blue-dark"
-            >
-              Meet the full team
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        )}
       </div>
     </section>
   );

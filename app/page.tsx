@@ -43,7 +43,7 @@ export default function Home() {
       <AuthorityBar />
       <FoundersNoteSection />
       <ServicesSection limit={4} compact />
-      <TeamSection limit={2} compact />
+      <TeamSection limit={3} compact />
       <InsightsSection limit={2} compact />
       <CtaSection />
     </>
