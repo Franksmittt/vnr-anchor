@@ -29,14 +29,12 @@ const advisorServices = [
 
 const breadcrumbSchema = generateBreadcrumbSchema([
   { name: 'Home', url: '/' },
-  { name: 'Anchor Wealth Division', url: '/anchor-wealth' },
   { name: 'Independent Advisor Desk', url: '/anchor-wealth/independent-advisor' },
 ]);
 
 const IndependentAdvisorPage = () => {
   const breadcrumbs = [
     { name: 'Home', href: '/' },
-    { name: 'Anchor Wealth Division', href: '/anchor-wealth' },
     { name: 'Independent Advisor Desk', href: '/anchor-wealth/independent-advisor' },
   ];
 
@@ -49,7 +47,7 @@ const IndependentAdvisorPage = () => {
 
       <section className="border-b border-slate-200 bg-surface-light py-8 sm:py-10 lg:py-12">
         <div className="container mx-auto px-4 sm:px-6">
-          <Breadcrumbs items={breadcrumbs} className="text-slate-500" />
+          <Breadcrumbs items={breadcrumbs} />
           <div className="mt-6 max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue sm:text-sm">
               Independent Advisor Desk
@@ -58,7 +56,7 @@ const IndependentAdvisorPage = () => {
               Life & risk planning on your terms.
             </h1>
             <p className="mt-4 text-base text-text-secondary sm:mt-6 sm:text-lg">
-              Our independent financial advisor (not affiliated with Anchor) works exclusively with VNR clients.
+              Our independent financial advisor works exclusively with VNR clients.
               He can meet at our head office or travel to you anywhere in South Africa, ensuring personal cover aligns with
               business realities. We serve clients nationwide - distance is no barrier to expert service.
             </p>
@@ -90,10 +88,10 @@ const IndependentAdvisorPage = () => {
                 <ArrowUpRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
-                href="/anchor-wealth"
+                href="/"
                 className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-text-primary transition hover:border-brand-blue hover:text-brand-blue"
               >
-                Back to Anchor Wealth
+                Back to home
               </Link>
             </div>
           </div>

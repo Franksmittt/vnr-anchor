@@ -21,21 +21,19 @@ export const metadata: Metadata = generateSEOMetadata({
 
 const estateHighlights = [
   'Complimentary will drafting when VNR or our specialist partner is appointed executor',
-  'Dedicated estate planning partners (kept anonymous online) for winding-up support',
+  'Dedicated estate planning partners for winding-up support',
   'Executor appointments aligned with shareholder agreements and trust deeds',
-  'Quarterly reminders to confirm that wills, beneficiary nominations, and trusts stay current',
+  'Frequent reminders to confirm that wills, beneficiary nominations, and trusts stay current',
 ];
 
 const breadcrumbSchema = generateBreadcrumbSchema([
   { name: 'Home', url: '/' },
-  { name: 'Anchor Wealth Division', url: '/anchor-wealth' },
   { name: 'Estate & Will Clinic', url: '/anchor-wealth/estate-will-clinic' },
 ]);
 
 const EstateWillClinicPage = () => {
   const breadcrumbs = [
     { name: 'Home', href: '/' },
-    { name: 'Anchor Wealth Division', href: '/anchor-wealth' },
     { name: 'Estate & Will Clinic', href: '/anchor-wealth/estate-will-clinic' },
   ];
 
@@ -48,7 +46,7 @@ const EstateWillClinicPage = () => {
 
       <section className="border-b border-slate-200 bg-surface-light py-8 sm:py-10 lg:py-12">
         <div className="container mx-auto px-4 sm:px-6">
-          <Breadcrumbs items={breadcrumbs} className="text-slate-500" />
+          <Breadcrumbs items={breadcrumbs} />
           <div className="mt-6 max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue sm:text-sm">
               Estate & Will Clinic
@@ -89,10 +87,10 @@ const EstateWillClinicPage = () => {
                 <ArrowUpRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
-                href="/anchor-wealth"
+                href="/"
                 className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-text-primary transition hover:border-brand-blue hover:text-brand-blue"
               >
-                Back to Anchor Wealth
+                Back to home
               </Link>
             </div>
           </div>

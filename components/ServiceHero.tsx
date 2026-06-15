@@ -26,7 +26,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({ title, subtitle, imageUrl, br
       sizes="100vw"
     />
     <div className="relative z-10 text-center px-4">
-      <Breadcrumbs items={breadcrumbs} className="flex justify-center" />
+      <Breadcrumbs items={breadcrumbs} className="flex justify-center" tone="dark" />
       <h1 className="mx-auto mt-4 max-w-4xl font-serif text-2xl font-extrabold tracking-tight text-white sm:text-3xl md:text-5xl lg:text-6xl">
         {title}
       </h1>

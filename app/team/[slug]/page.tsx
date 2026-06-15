@@ -75,7 +75,7 @@ const TeamMemberPage = async ({ params }: { params: Promise<TeamPageParams> }) =
 
       <section className="bg-surface-dark py-10 text-white sm:py-12">
         <div className="container mx-auto px-4 text-center sm:px-6">
-          <Breadcrumbs items={breadcrumbs} className="flex justify-center" />
+          <Breadcrumbs items={breadcrumbs} className="flex justify-center" tone="dark" />
           <div className="mx-auto mt-6 max-w-3xl">
             <Image
               src={member.imageUrl}

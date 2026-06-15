@@ -81,7 +81,7 @@ const AnchorWealthPage = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(anchorBreadcrumbSchema).replace(/</g, '\\u003c') }} />
       <section className="bg-gradient-to-r from-slate-900 to-slate-800 py-8 sm:py-10 lg:py-12 text-white">
         <div className="container mx-auto px-4 sm:px-6">
-          <Breadcrumbs items={breadcrumbs} className="text-slate-300" />
+          <Breadcrumbs items={breadcrumbs} tone="dark" />
           <div className="mt-6 sm:mt-8 max-w-4xl">
             <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-brand-teal-light">
               Anchor Capital x VNR Professional Accountants
@@ -184,54 +184,6 @@ const AnchorWealthPage = () => {
       <section className="py-8 sm:py-10 lg:py-12 bg-white border-b border-slate-200">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl">
-            <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-brand-blue">Related services</p>
-            <h2 className="mt-4 font-serif text-2xl sm:text-3xl font-bold text-text-primary lg:text-4xl">
-              Life, risk, and estate planning with VNR.
-            </h2>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-text-secondary">
-              Beyond Anchor portfolios, explore our independent advisor desk and estate & will clinic on dedicated pages.
-            </p>
-          </div>
-          <div className="mt-6 sm:mt-8 grid gap-4 sm:gap-6 md:grid-cols-2">
-            <Link
-              href="/anchor-wealth/independent-advisor"
-              className="group rounded-xl border border-slate-200 bg-surface-light p-6 transition hover:border-brand-blue/40 hover:bg-white"
-            >
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">Independent Advisor Desk</p>
-              <h3 className="mt-3 font-serif text-xl font-semibold text-text-primary group-hover:text-brand-blue">
-                Life & risk planning on your terms
-              </h3>
-              <p className="mt-2 text-sm text-text-secondary">
-                Life cover, succession planning, and short-term insurance reviews with an independent advisor for VNR clients.
-              </p>
-              <span className="mt-4 inline-flex items-center text-sm font-semibold text-brand-blue">
-                Learn more
-                <ArrowUpRight className="ml-1 h-4 w-4" />
-              </span>
-            </Link>
-            <Link
-              href="/anchor-wealth/estate-will-clinic"
-              className="group rounded-xl border border-slate-200 bg-surface-light p-6 transition hover:border-brand-blue/40 hover:bg-white"
-            >
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">Estate & Will Clinic</p>
-              <h3 className="mt-3 font-serif text-xl font-semibold text-text-primary group-hover:text-brand-blue">
-                Your wills stay current, free of charge
-              </h3>
-              <p className="mt-2 text-sm text-text-secondary">
-                Complimentary will drafting, executor appointments, and estate planning support when VNR is appointed.
-              </p>
-              <span className="mt-4 inline-flex items-center text-sm font-semibold text-brand-blue">
-                Learn more
-                <ArrowUpRight className="ml-1 h-4 w-4" />
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-8 sm:py-10 lg:py-12 bg-white border-b border-slate-200">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl">
             <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-brand-blue">Top Mistakes We Tackle</p>
             <h2 className="mt-4 font-serif text-2xl sm:text-3xl font-bold text-text-primary lg:text-4xl">
               10 costly errors expats & independent contractors keep making.
@@ -264,7 +216,7 @@ const AnchorWealthPage = () => {
           </h2>
           <p className="mt-4 text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
             Submit your enquiry via the Anchor landing page or contact us directly so we can scope your needs and bring
-            in the right combination of Anchor portfolio managers, our independent advisor, and our estate specialists.
+            in the right combination of Anchor portfolio managers and VNR tax specialists.
           </p>
           <div className="mt-6 sm:mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
             <Link
