@@ -23,7 +23,7 @@ const estateHighlights = [
   'Complimentary will drafting when VNR or our specialist partner is appointed executor',
   'Dedicated estate planning partners for winding-up support',
   'Executor appointments aligned with shareholder agreements and trust deeds',
-  'Frequent reminders to confirm that wills, beneficiary nominations, and trusts stay current',
+  'Reminders to confirm that wills, beneficiary nominations, and trusts stay current',
 ];
 
 const breadcrumbSchema = generateBreadcrumbSchema([

@@ -53,18 +53,6 @@ const taxTools = [
   "Dedicated SARS compliance oversight from VNR",
 ];
 
-const mistakes = [
-  "Assuming you are exempt from SA tax because you work abroad without formally ceasing residency.",
-  "Ignoring the SARS ordinary residence or physical presence tests when relocating temporarily.",
-  "Mis-using the foreign employment income exemption as a contractor or when day-count rules are not met.",
-  "Misclassifying yourself as a contractor when SARS will deem you an employee (and vice versa).",
-  "Skipping provisional tax registrations and IRP6 payments despite earning non-PAYE income.",
-  "Claiming the wrong expenses (or none at all) without documentation, triggering audits.",
-  "Paying foreign tax without claiming Section 6quat credits, resulting in double taxation.",
-  "Creating a permanent establishment risk for foreign clients or employers because of remote work arrangements.",
-  "Missing deadlines or data-matching flags thanks to SARS analytics-driven compliance.",
-];
-
 const anchorBreadcrumbSchema = generateBreadcrumbSchema([
   { name: 'Home', url: '/' },
   { name: 'Anchor Wealth Division', url: '/anchor-wealth' },
@@ -177,34 +165,6 @@ const AnchorWealthPage = () => {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-8 sm:py-10 lg:py-12 bg-white border-b border-slate-200">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl">
-            <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-brand-blue">Top Mistakes We Tackle</p>
-            <h2 className="mt-4 font-serif text-2xl sm:text-3xl font-bold text-text-primary lg:text-4xl">
-              10 costly errors expats & independent contractors keep making.
-            </h2>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-text-secondary">
-              These are the exact problem statements behind the Facebook ad and the downloadable resource. Use this
-              section to educate clients during onboarding or review meetings.
-            </p>
-          </div>
-          <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 md:grid-cols-2">
-            {mistakes.map((mistake) => (
-              <div key={mistake} className="rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm bg-surface-light">
-                <p className="text-xs sm:text-sm text-text-secondary">{mistake}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 sm:mt-8 text-xs sm:text-sm text-text-secondary">
-            <p>
-              Action plan: DIY the checklist (time consuming), hand everything back to the accountant who missed it, or
-              call VNR so our experts who already know expats and contractors can take the entire burden off your hands.
-            </p>
           </div>
         </div>
       </section>
