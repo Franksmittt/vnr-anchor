@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { Anchor, CheckCircle2, ShieldCheck, Globe2, TrendingUp, ArrowUpRight, PhoneCall, BookOpen, Download, MapPin } from "lucide-react";
+import { Anchor, CheckCircle2, ShieldCheck, Globe2, TrendingUp, ArrowUpRight, PhoneCall, BookOpen, MapPin } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
@@ -23,8 +23,6 @@ export const metadata: Metadata = generateSEOMetadata({
 });
 
 const anchorLandingUrl = "https://landing.anchorcapital.co.za/vnr-wealth-division";
-const pdfDownloadUrl = "https://drive.google.com/file/d/1n9UrKyDvR8nWT9j8X2aQPi6sHSETbf6F/view?usp=drive_link";
-const marketingUrl = "https://marketing.vnr.co.za/expats-contractors?fbclid=IwY2xjawORGzVleHRuA2FlbQIxMABicmlkETBpR2h1dmZXMkZQTlBFaWxuc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHjLoS2AcTuGmBBQaa-NLjTNdKeeeiPvVj6j_-wZHlmXZriUp8UYsoLIkIVbz_aem_2vey8ij1xay9z3OuOTOxGA";
 
 const anchorPillars = [
   {
@@ -232,54 +230,6 @@ const AnchorWealthPage = () => {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-8 sm:py-10 lg:py-12 bg-surface-dark text-white">
-        <div className="container mx-auto px-4 sm:px-6 grid gap-4 sm:gap-6 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-brand-teal-light">Campaign Spotlight</p>
-            <h2 className="mt-4 font-serif text-2xl sm:text-3xl font-bold lg:text-4xl">
-              The Facebook ad we&apos;re aligning the site with.
-            </h2>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-200">
-              “This isn’t just about filing your return. It’s about not losing money that never needed to be lost.
-              If you’re a South African expat or contractor, your tax game is different. If you don’t play it right
-              you’ll pay more, stress more, waste more. We created the checklist <em>10 Costly Tax Mistakes Expats &
-              Contractors Make and How To Avoid Them.</em> Bonus: download now and book a free consultation to map your
-              tax position clearly. No jargon. No fluff. Real action.”
-            </p>
-            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-slate-300">
-              This page plus our new resource hub ensure the website mirrors the ad&apos;s promise with immediate access to
-              the checklist and direct booking options.
-            </p>
-          </div>
-          <div className="rounded-xl bg-white/5 p-6 sm:p-8 border border-white/10 backdrop-blur">
-            <h3 className="text-lg sm:text-xl font-semibold">Download the checklist</h3>
-            <p className="mt-3 text-xs sm:text-sm text-slate-200">
-              Share the PDF or the interactive landing page with prospects straight from here.
-            </p>
-            <div className="mt-5 sm:mt-6 flex flex-wrap gap-3 sm:gap-4">
-              <Link
-                href={pdfDownloadUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-white px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-brand-blue-dark transition hover:bg-slate-100"
-              >
-                Download PDF
-                <Download className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Link>
-              <Link
-                href={marketingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-white/40 px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white transition hover:border-white"
-              >
-                View Interactive Guide
-                <ArrowUpRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Link>
-            </div>
           </div>
         </div>
       </section>
