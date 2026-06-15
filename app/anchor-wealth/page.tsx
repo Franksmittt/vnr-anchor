@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { Anchor, CheckCircle2, ShieldCheck, Globe2, TrendingUp, ArrowUpRight, PhoneCall, BookOpen, MapPin } from "lucide-react";
+import { Anchor, CheckCircle2, Globe2, TrendingUp, ArrowUpRight, PhoneCall, BookOpen, MapPin } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 import { generateMetadata as generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
@@ -53,30 +53,16 @@ const taxTools = [
   "Dedicated SARS compliance oversight from VNR",
 ];
 
-const advisorServices = [
-  "Life cover, disability, and dread disease solutions sized for complex corporate structures",
-  "Succession planning via Buy & Sell agreements, Keyman policies, and share buy-back funding",
-  "Short-term insurance reviews for both personal and commercial risk, including site visits",
-              "Flexible consultations at our head office or at your premises anywhere in South Africa - we serve clients nationwide",
-];
-
-const estateHighlights = [
-  "Complimentary will drafting when VNR or our specialist partner is appointed executor",
-  "Dedicated estate planning partners (kept anonymous online) for winding-up support",
-  "Executor appointments aligned with shareholder agreements and trust deeds",
-  "Quarterly reminders to confirm that wills, beneficiary nominations, and trusts stay current",
-];
-
 const mistakes = [
-  "Assuming you’re exempt from SA tax because you work abroad without formally ceasing residency.",
+  "Assuming you are exempt from SA tax because you work abroad without formally ceasing residency.",
   "Ignoring the SARS ordinary residence or physical presence tests when relocating temporarily.",
-  "Mis-using the foreign employment income exemption as a contractor or when day-count rules aren’t met.",
+  "Mis-using the foreign employment income exemption as a contractor or when day-count rules are not met.",
   "Misclassifying yourself as a contractor when SARS will deem you an employee (and vice versa).",
   "Skipping provisional tax registrations and IRP6 payments despite earning non-PAYE income.",
   "Claiming the wrong expenses (or none at all) without documentation, triggering audits.",
   "Paying foreign tax without claiming Section 6quat credits, resulting in double taxation.",
   "Creating a permanent establishment risk for foreign clients or employers because of remote work arrangements.",
-  "Missing deadlines or data-matching flags thanks to SARS’ analytics-driven compliance.",
+  "Missing deadlines or data-matching flags thanks to SARS analytics-driven compliance.",
 ];
 
 const anchorBreadcrumbSchema = generateBreadcrumbSchema([
@@ -196,40 +182,49 @@ const AnchorWealthPage = () => {
       </section>
 
       <section className="py-8 sm:py-10 lg:py-12 bg-white border-b border-slate-200">
-        <div className="container mx-auto px-4 sm:px-6 grid gap-4 sm:gap-6 lg:grid-cols-2 lg:items-center">
-          <div className="rounded-xl bg-surface-light p-6 sm:p-8 border border-slate-200">
-            <p className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-brand-blue">Independent Advisor Desk</p>
-            <h3 className="mt-4 text-xl sm:text-2xl font-semibold text-text-primary">Life & risk planning on your terms.</h3>
-            <p className="mt-4 text-sm sm:text-base text-text-secondary">
-              Our independent financial advisor (not affiliated with Anchor) works exclusively with VNR clients.
-              He can meet at our head office or travel to you anywhere in South Africa, ensuring personal cover aligns with
-              business realities. We serve clients nationwide - distance is no barrier to expert service.
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-3xl">
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-brand-blue">Related services</p>
+            <h2 className="mt-4 font-serif text-2xl sm:text-3xl font-bold text-text-primary lg:text-4xl">
+              Life, risk, and estate planning with VNR.
+            </h2>
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-text-secondary">
+              Beyond Anchor portfolios, explore our independent advisor desk and estate & will clinic on dedicated pages.
             </p>
-            <ul className="mt-5 sm:mt-6 space-y-2 sm:space-y-3 text-sm sm:text-base text-text-secondary">
-              {advisorServices.map((service) => (
-                <li key={service} className="flex items-start gap-2 sm:gap-3">
-                  <ShieldCheck className="mt-0.5 sm:mt-1 h-4 w-4 sm:h-5 sm:w-5 text-brand-blue flex-shrink-0" />
-                  <span>{service}</span>
-                </li>
-              ))}
-            </ul>
           </div>
-          <div className="rounded-xl bg-surface-light p-6 sm:p-8 border border-slate-200">
-            <p className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-brand-blue">Estate & Will Clinic</p>
-            <h3 className="mt-4 text-xl sm:text-2xl font-semibold text-text-primary">Your wills stay current, free of charge.</h3>
-            <p className="mt-4 text-sm sm:text-base text-text-secondary">
-              We now ask every client if their will is up to date. If it is not, we draft or refresh it at no cost
-              when VNR or our trusted executor partner is appointed. Specialist partners manage estate planning
-              and administration, without naming them publicly per your request.
-            </p>
-            <ul className="mt-5 sm:mt-6 space-y-2 sm:space-y-3 text-sm sm:text-base text-text-secondary">
-              {estateHighlights.map((highlight) => (
-                <li key={highlight} className="flex items-start gap-2 sm:gap-3">
-                  <CheckCircle2 className="mt-0.5 sm:mt-1 h-4 w-4 sm:h-5 sm:w-5 text-brand-blue flex-shrink-0" />
-                  <span>{highlight}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="mt-6 sm:mt-8 grid gap-4 sm:gap-6 md:grid-cols-2">
+            <Link
+              href="/anchor-wealth/independent-advisor"
+              className="group rounded-xl border border-slate-200 bg-surface-light p-6 transition hover:border-brand-blue/40 hover:bg-white"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">Independent Advisor Desk</p>
+              <h3 className="mt-3 font-serif text-xl font-semibold text-text-primary group-hover:text-brand-blue">
+                Life & risk planning on your terms
+              </h3>
+              <p className="mt-2 text-sm text-text-secondary">
+                Life cover, succession planning, and short-term insurance reviews with an independent advisor for VNR clients.
+              </p>
+              <span className="mt-4 inline-flex items-center text-sm font-semibold text-brand-blue">
+                Learn more
+                <ArrowUpRight className="ml-1 h-4 w-4" />
+              </span>
+            </Link>
+            <Link
+              href="/anchor-wealth/estate-will-clinic"
+              className="group rounded-xl border border-slate-200 bg-surface-light p-6 transition hover:border-brand-blue/40 hover:bg-white"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">Estate & Will Clinic</p>
+              <h3 className="mt-3 font-serif text-xl font-semibold text-text-primary group-hover:text-brand-blue">
+                Your wills stay current, free of charge
+              </h3>
+              <p className="mt-2 text-sm text-text-secondary">
+                Complimentary will drafting, executor appointments, and estate planning support when VNR is appointed.
+              </p>
+              <span className="mt-4 inline-flex items-center text-sm font-semibold text-brand-blue">
+                Learn more
+                <ArrowUpRight className="ml-1 h-4 w-4" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
