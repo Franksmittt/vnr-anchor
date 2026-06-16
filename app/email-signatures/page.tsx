@@ -1,15 +1,5 @@
-import type { Metadata } from 'next';
-import EmailSignatureAdmin from '@/components/EmailSignatureAdmin';
+import { redirect } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Email Signature Back Office',
-  description: 'Internal VNR email signature generator.',
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
-
-export default function EmailSignaturesPage() {
-  return <EmailSignatureAdmin />;
+export default function EmailSignaturesRedirectPage() {
+  redirect('/back-office?tab=signatures');
 }

@@ -35,9 +35,13 @@ type SignatureTemplate = {
   size: string;
 };
 
-const LOGIN_PASSWORD = 'admin@123';
 const LOGO_URL =
   'https://vnr-anchor.vercel.app/_next/image?url=%2Fimages%2Flogos%2Fvnrlogo1.png&w=256&q=75';
+
+type EmailSignatureAdminProps = {
+  skipAuth?: boolean;
+  embedded?: boolean;
+};
 const BRAND_BLUE = '#234694';
 const BRAND_BLUE_DARK = '#1a3569';
 const BRAND_LIME = '#92C741';
@@ -330,10 +334,10 @@ ${buildSignatureHtml(data, template.key, logoSrc)}
 </html>`;
 }
 
-export default function EmailSignatureAdmin() {
+export default function EmailSignatureAdmin({ skipAuth = false, embedded = false }: EmailSignatureAdminProps) {
   const previewRef = useRef<HTMLDivElement>(null);
   const [password, setPassword] = useState('');
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(skipAuth);
   const [loginError, setLoginError] = useState('');
   const [signatureData, setSignatureData] = useState<SignatureData>(defaultSignature);
   const [activeTemplate, setActiveTemplate] = useState<TemplateKey>('horizon');
@@ -378,16 +382,29 @@ export default function EmailSignatureAdmin() {
     };
   }, []);
 
-  const handleLogin = (event: FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (password === LOGIN_PASSWORD) {
+    try {
+      const response = await fetch('/api/back-office/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data?.error || 'Incorrect password.');
+      }
+
       setIsAuthenticated(true);
       setLoginError('');
-      return;
+    } catch (loginError) {
+      setLoginError(
+        loginError instanceof Error ? loginError.message : 'Incorrect password. Please try again.',
+      );
     }
-
-    setLoginError('Incorrect password. Please try again.');
   };
 
   const updateField = (field: keyof SignatureData, value: string | boolean) => {
@@ -495,7 +512,7 @@ export default function EmailSignatureAdmin() {
     window.setTimeout(() => setCopiedTemplate(null), 1800);
   };
 
-  if (!isAuthenticated) {
+  if (!skipAuth && !isAuthenticated) {
     return (
       <section className="min-h-[calc(100vh-5rem)] bg-surface-light px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-xl">
@@ -537,7 +554,8 @@ export default function EmailSignatureAdmin() {
   }
 
   return (
-    <section className="bg-surface-light">
+    <section className={embedded ? '' : 'bg-surface-light'}>
+      {!embedded && (
       <div className="bg-surface-dark px-4 py-14 text-text-on-dark sm:px-6">
         <div className="container mx-auto max-w-6xl">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-teal">
@@ -565,6 +583,7 @@ export default function EmailSignatureAdmin() {
           </div>
         </div>
       </div>
+      )}
 
       <div className="container mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[380px_1fr]">
         <aside className="space-y-6">

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { BACK_OFFICE_COOKIE, verifySessionToken } from '@/lib/back-office/auth';
 import { SITE_URL } from '@/lib/site';
 
 const LEGACY_REDIRECTS: Record<string, string> = {
@@ -19,7 +20,7 @@ function normalizePath(pathname: string): string {
   return pathname.replace(/\/+$/, '');
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
   const normalizedPath = normalizePath(pathname);
   const normalizedLowercasePath = normalizedPath.toLowerCase();
@@ -46,6 +47,16 @@ export function middleware(request: NextRequest) {
 
   if (host === 'www.vnr.co.za') {
     return NextResponse.redirect(`${SITE_URL}${lowercasePath}${search}`, 308);
+  }
+
+  if (
+    lowercasePath.startsWith('/back-office') &&
+    lowercasePath !== '/back-office/login'
+  ) {
+    const token = request.cookies.get(BACK_OFFICE_COOKIE)?.value;
+    if (!(await verifySessionToken(token))) {
+      return NextResponse.redirect(new URL('/back-office/login', request.url));
+    }
   }
 
   const response = NextResponse.next();

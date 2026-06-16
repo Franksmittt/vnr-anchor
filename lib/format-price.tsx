@@ -72,8 +72,8 @@ export function formatServicePrice(service: Pick<PricingService, 'priceExcl' | '
 
   return (
     <div className="text-left sm:text-right">
-      <span className="text-base font-bold text-text-primary">{formatAmount(inclVal)}</span>
-      <span className="mt-0.5 block text-xs text-text-secondary">excl. {formatAmount(exclVal)}</span>
+      <span className="text-base font-bold text-text-primary">{formatAmount(exclVal)}</span>
+      <span className="mt-0.5 block text-xs text-text-secondary">incl. {formatAmount(inclVal)}</span>
     </div>
   );
 }
