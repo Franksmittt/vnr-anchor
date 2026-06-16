@@ -52,6 +52,8 @@ const Footer = () => {
               <FooterLink href="/services/tax-advisory">Tax Advisory</FooterLink>
               <FooterLink href="/services/secretarial-services">Secretarial</FooterLink>
               <FooterLink href="/services/payroll-administration">Payroll</FooterLink>
+              <FooterLink href="/anchor-wealth/independent-advisor">Independent Advisor</FooterLink>
+              <FooterLink href="/anchor-wealth/estate-will-clinic">Estate & Will Clinic</FooterLink>
               <FooterLink href="/services">All Services</FooterLink>
             </ul>
           </div>

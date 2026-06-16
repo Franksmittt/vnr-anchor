@@ -4,6 +4,7 @@ import AuthorityBar from '@/components/AuthorityBar';
 import FoundersNoteSection from '@/components/FoundersNoteSection';
 import ServicesSection from '@/components/ServicesSection';
 import TeamSection from '@/components/TeamSection';
+import AdvisorServicesSection from '@/components/AdvisorServicesSection';
 import InsightsSection from '@/components/InsightsSection';
 import CtaSection from '@/components/CtaSection';
 import { generateMetadata as generateSEOMetadata, generateFAQSchema } from '@/lib/seo';
@@ -44,6 +45,7 @@ export default function Home() {
       <FoundersNoteSection />
       <ServicesSection limit={4} compact />
       <TeamSection limit={3} compact />
+      <AdvisorServicesSection />
       <InsightsSection limit={2} compact />
       <CtaSection />
     </>
