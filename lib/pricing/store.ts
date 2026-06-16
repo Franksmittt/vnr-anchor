@@ -1,4 +1,4 @@
-import { head, put } from '@vercel/blob';
+import { get, head, put } from '@vercel/blob';
 import { pricingData as staticPricingData, type PricingService } from '@/data/pricing-data';
 
 export const PRICING_BLOB_PATHNAME = 'vnr/pricing-services.json';
@@ -9,8 +9,14 @@ function getBlobToken(): string | undefined {
     return undefined;
   }
 
-  // Vercel env values are sometimes pasted with wrapping quotes by mistake.
   return raw.replace(/^['"]|['"]$/g, '');
+}
+
+function getPrivateBlobOptions(token: string) {
+  return {
+    access: 'private' as const,
+    token,
+  };
 }
 
 export async function readPricingFromBlob(): Promise<PricingService[] | null> {
@@ -19,15 +25,22 @@ export async function readPricingFromBlob(): Promise<PricingService[] | null> {
     return null;
   }
 
-  try {
-    const metadata = await head(PRICING_BLOB_PATHNAME, { token });
-    const response = await fetch(metadata.url, { cache: 'no-store' });
+  const options = getPrivateBlobOptions(token);
 
-    if (!response.ok) {
+  try {
+    await head(PRICING_BLOB_PATHNAME, options);
+
+    const result = await get(PRICING_BLOB_PATHNAME, {
+      ...options,
+      useCache: false,
+    });
+
+    if (!result?.stream) {
       return null;
     }
 
-    const data = (await response.json()) as PricingService[];
+    const text = await new Response(result.stream).text();
+    const data = JSON.parse(text) as PricingService[];
 
     if (!Array.isArray(data)) {
       return null;
@@ -48,11 +61,10 @@ export async function savePricingToBlob(services: PricingService[]): Promise<voi
   const body = JSON.stringify(services);
 
   await put(PRICING_BLOB_PATHNAME, body, {
-    access: 'public',
+    ...getPrivateBlobOptions(token),
     contentType: 'application/json',
     addRandomSuffix: false,
     allowOverwrite: true,
-    token,
   });
 }
 
