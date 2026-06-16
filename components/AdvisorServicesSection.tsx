@@ -15,7 +15,9 @@ const advisorOfferings = [
     description: 'Complimentary will drafting, executor appointments, and estate planning support when VNR is appointed.',
     icon: FileSignature,
   },
-];
+] as const;
+
+export { advisorOfferings };
 
 const AdvisorServicesSection = () => {
   return (
