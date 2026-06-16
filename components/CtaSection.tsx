@@ -20,7 +20,7 @@ const CtaSection = () => {
             <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
           </Link>
           <a
-            href="https://wa.me/27126531633"
+            href="https://wa.me/27768165533"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border border-white/30 text-sm sm:text-base font-bold rounded-full text-white hover:bg-white/10 transition-all duration-300"

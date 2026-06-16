@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { trackEvent } from '@/lib/tracking';
 
 export default function WhatsAppFab() {
-  const whatsappHref = 'https://wa.me/27126531633';
+  const whatsappHref = 'https://wa.me/27768165533';
 
   return (
     <Link

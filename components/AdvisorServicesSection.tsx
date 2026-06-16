@@ -4,16 +4,16 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const advisorOfferings = [
   {
-    href: '/anchor-wealth/independent-advisor',
-    title: 'Independent Advisor Desk',
-    description: 'Life cover, succession planning, and short-term insurance reviews with an independent advisor for VNR clients.',
-    icon: ShieldCheck,
-  },
-  {
     href: '/anchor-wealth/estate-will-clinic',
     title: 'Estate & Will Clinic',
     description: 'Complimentary will drafting, executor appointments, and estate planning support when VNR is appointed.',
     icon: FileSignature,
+  },
+  {
+    href: '/anchor-wealth/independent-advisor',
+    title: 'Independent Advisor Desk',
+    description: 'Life cover, succession planning, and short-term insurance reviews with an independent advisor for VNR clients.',
+    icon: ShieldCheck,
   },
 ] as const;
 
