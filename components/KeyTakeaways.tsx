@@ -9,7 +9,7 @@ const KeyTakeaways = ({ takeaways }: { takeaways: string[] }) => (
             {takeaways.map((item, index) => (
                 <li key={index} className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-brand-blue mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-text-secondary">{item}</span>
+                    <span className="text-slate-700">{item}</span>
                 </li>
             ))}
         </ul>

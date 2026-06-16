@@ -122,22 +122,22 @@ const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) =
       
       <ArticleHero article={article} />
 
-      <div className="bg-white py-8 sm:py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="bg-white py-8 text-text-primary sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             
-            <article className="lg:col-span-2 space-y-8">
+            <article className="space-y-8 lg:col-span-2">
               <KeyTakeaways takeaways={article.takeaways} />
 
               <section className="rounded-xl border border-slate-200 bg-surface-light p-4 sm:p-5">
-                <p className="text-sm text-text-secondary">
+                <p className="text-sm text-slate-700">
                   Reviewed by{' '}
                   <span className="font-semibold text-brand-blue">
                     {article.author.name}
                   </span>{' '}
                   ({article.author.title}). Last reviewed for accuracy: {article.date}.
                 </p>
-                <p className="mt-2 text-sm text-text-secondary">
+                <p className="mt-2 text-sm text-slate-700">
                   Need direct support? Start with{' '}
                   <a className="font-semibold text-brand-blue hover:underline" href={primaryService.href}>
                     {primaryService.label}
@@ -146,8 +146,8 @@ const InsightPage = async ({ params }: { params: Promise<InsightPageParams> }) =
                 </p>
               </section>
               
-              <section 
-                className="prose prose-lg max-w-none prose-h3:font-serif prose-h3:text-brand-blue-dark prose-p:text-text-secondary"
+              <section
+                className="max-w-none text-base leading-relaxed text-slate-700 [&_a]:font-semibold [&_a]:text-brand-blue [&_a]:hover:underline [&_em]:text-slate-700 [&_h3]:mb-4 [&_h3]:mt-8 [&_h3]:font-serif [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-slate-800 [&_h4]:mb-3 [&_h4]:mt-6 [&_h4]:text-lg [&_h4]:font-semibold [&_h4]:text-slate-800 [&_li]:text-slate-700 [&_ol]:mb-6 [&_ol]:mt-4 [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:pl-6 [&_p]:leading-relaxed [&_p]:text-slate-700 [&_strong]:font-semibold [&_strong]:text-slate-800 [&_ul]:mb-6 [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6"
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
             </article>
