@@ -104,9 +104,11 @@ export async function PUT(request: Request) {
   } catch (error) {
     console.error('Failed to save pricing:', error);
 
-    return NextResponse.json(
-      { ok: false, error: 'Could not save prices. Please try again.' },
-      { status: 500 },
-    );
+    const message =
+      error instanceof Error && error.message
+        ? error.message
+        : 'Could not save prices. Please try again.';
+
+    return NextResponse.json({ ok: false, error: message }, { status: 500 });
   }
 }

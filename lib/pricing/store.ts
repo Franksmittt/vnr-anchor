@@ -1,16 +1,26 @@
-import { head } from '@vercel/blob';
-import { put } from '@vercel/blob';
+import { head, put } from '@vercel/blob';
 import { pricingData as staticPricingData, type PricingService } from '@/data/pricing-data';
 
 export const PRICING_BLOB_PATHNAME = 'vnr/pricing-services.json';
 
+function getBlobToken(): string | undefined {
+  const raw = process.env.BLOB_READ_WRITE_TOKEN?.trim();
+  if (!raw) {
+    return undefined;
+  }
+
+  // Vercel env values are sometimes pasted with wrapping quotes by mistake.
+  return raw.replace(/^['"]|['"]$/g, '');
+}
+
 export async function readPricingFromBlob(): Promise<PricingService[] | null> {
-  if (!process.env.BLOB_READ_WRITE_TOKEN) {
+  const token = getBlobToken();
+  if (!token) {
     return null;
   }
 
   try {
-    const metadata = await head(PRICING_BLOB_PATHNAME);
+    const metadata = await head(PRICING_BLOB_PATHNAME, { token });
     const response = await fetch(metadata.url, { cache: 'no-store' });
 
     if (!response.ok) {
@@ -30,15 +40,19 @@ export async function readPricingFromBlob(): Promise<PricingService[] | null> {
 }
 
 export async function savePricingToBlob(services: PricingService[]): Promise<void> {
-  if (!process.env.BLOB_READ_WRITE_TOKEN) {
+  const token = getBlobToken();
+  if (!token) {
     throw new Error('BLOB_READ_WRITE_TOKEN is not configured.');
   }
 
-  await put(PRICING_BLOB_PATHNAME, JSON.stringify(services), {
+  const body = JSON.stringify(services);
+
+  await put(PRICING_BLOB_PATHNAME, body, {
     access: 'public',
     contentType: 'application/json',
     addRandomSuffix: false,
     allowOverwrite: true,
+    token,
   });
 }
 
@@ -48,5 +62,5 @@ export async function getPricingServices(): Promise<PricingService[]> {
 }
 
 export function isPricingBlobConfigured(): boolean {
-  return Boolean(process.env.BLOB_READ_WRITE_TOKEN?.trim());
+  return Boolean(getBlobToken());
 }
