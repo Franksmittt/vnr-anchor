@@ -40,7 +40,7 @@ export default function CenturionLocationPage() {
         <div className="mt-8 rounded-xl border border-slate-200 p-6 bg-surface-light">
           <h2 className="font-semibold text-text-primary">Office details</h2>
           <p className="mt-2 text-text-secondary">
-            4 Grit Ave, Zwartkop, Centurion, 0051
+            4 Grit Ave, Zwartkop, Centurion, 0157
           </p>
           <p className="text-text-secondary">Mon-Fri: 08:00-16:30</p>
           <p className="mt-2">

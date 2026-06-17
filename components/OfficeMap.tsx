@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { MapPin, Navigation } from 'lucide-react';
 
-const OFFICE_ADDRESS = 'VNR (Pty) Ltd, 4 Grit Ave, Zwartkop, Centurion, 0051, South Africa';
-const MAP_QUERY = encodeURIComponent('4 Grit Ave, Zwartkop, Centurion, 0051, South Africa');
+const OFFICE_ADDRESS = 'VNR (Pty) Ltd, 4 Grit Ave, Zwartkop, Centurion, 0157, South Africa';
+const MAP_QUERY = encodeURIComponent('4 Grit Ave, Zwartkop, Centurion, 0157, South Africa');
 const MAP_EMBED_URL = `https://maps.google.com/maps?q=${MAP_QUERY}&hl=en&z=16&output=embed`;
 const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${MAP_QUERY}`;
 

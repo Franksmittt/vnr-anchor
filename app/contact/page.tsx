@@ -159,7 +159,7 @@ const ContactPage = () => {
                   </a>
                 </InfoCard>
                 <InfoCard icon={<Building size={24} />} title="Head Office Address">
-                  <p className="mb-2 text-slate-800">4 Grit Ave, Zwartkop<br />Centurion, 0051, South Africa</p>
+                  <p className="mb-2 text-slate-800">4 Grit Ave, Zwartkop<br />Centurion, 0157, South Africa</p>
                   <p className="text-sm font-semibold text-brand-blue">
                     Head Office | Serving clients nationwide across South Africa
                   </p>

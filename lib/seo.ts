@@ -252,7 +252,7 @@ export function generateServiceSchema({
         streetAddress: '4 Grit Ave, Zwartkop',
         addressLocality: 'Centurion',
         addressRegion: 'Gauteng',
-        postalCode: '0051',
+        postalCode: '0157',
         addressCountry: 'ZA',
       },
       telephone: '012 653 1633',
@@ -323,7 +323,7 @@ export function generateOrganizationSchema() {
       streetAddress: '4 Grit Ave, Zwartkop',
       addressLocality: 'Centurion',
       addressRegion: 'Gauteng',
-      postalCode: '0051',
+      postalCode: '0157',
       addressCountry: 'ZA',
     },
     geo: {

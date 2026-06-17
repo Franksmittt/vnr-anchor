@@ -1,9 +1,10 @@
 ================================================================================
 VNR PROFESSIONAL ACCOUNTANTS - PROJECT SUMMARY
 ================================================================================
-Updated: 2026-06-14
+Updated: 2026-06-15
 Project Status: Production-ready marketing and lead-generation website
 Primary Domain: https://vnr.co.za
+Preview Deployment: https://vnr-anchor.vercel.app
 Repository: https://github.com/Franksmittt/vnr-anchor
 Framework: Next.js 14.2.5 App Router
 Language: TypeScript
@@ -17,204 +18,317 @@ This repository is the VNR Professional Accountants marketing and lead-generatio
 website. VNR is presented as a Centurion-headquartered accounting, tax,
 compliance, and wealth-structuring partner serving clients across South Africa.
 
-Recent UI and content updates (2026):
-- Slimmer homepage with a static full-viewport hero and compact preview sections
-  for services, team, and insights
-- Header shows the VNR logo with "Professional Accountants" beside it
-- Services/pricing page uses category sidebar navigation, in-category search,
-  sorting, and clean name + price rows (internal SKU codes are not shown on site)
-- Homepage authority bar shows SAIPA, Dext, and Sage partner logos on white tiles
-- Contact page uses equal-height form/details columns and a working Google Maps
-  embed (CSP updated for map iframes)
-- Footer includes Endpoint Media credit and Facebook social link
-- Mobile responsiveness pass across header, services, contact, insights, and
-  shared components
-- User-facing copy cleaned to avoid em dash punctuation
+The site includes 48 public-facing routes (10 core landing pages, 8 service
+detail pages, 17 insight articles, 3 team profiles, plus legal and conversion
+pages), a password-protected back office for internal tools, and five API
+endpoints. Content is driven from structured TypeScript data files with SEO
+metadata, structured data, sitemap generation, and Playwright SEO regression
+tests.
 
-Current implementation highlights:
-- Next.js App Router application with 40 implemented app pages:
-  - 15 static/support pages
-  - 8 service detail pages
-  - 17 insight article pages
-- Homepage, services/pricing, insights, contact, Anchor Wealth, expat guide,
-  local Centurion/Pretoria landing page, legal pages, and internal email
-  signature generator are implemented.
-- Services/pricing page uses the July 2026 price list from data/pricing-data.ts
-  with category filtering, keyword search, sort options, VAT-inclusive pricing,
-  "FREE", and quote labels.
-- Service and insight pages are generated from structured data files.
-- SEO foundations are in place: metadata helpers, canonical production domain,
-  dynamic sitemap, environment-aware robots, structured data, breadcrumbs, and
-  noindex directives for legal/internal/conversion pages where appropriate.
-- Middleware handles lowercase URL normalization (excluding static image paths),
-  selected legacy redirects, canonical host redirect from www.vnr.co.za to
-  vnr.co.za, one 410 deprecated path, and baseline security headers.
-- Contact form posts to app/api/contact/route.ts, validates required fields,
-  tracks successful submissions, and redirects to /thank-you. The API currently
-  acknowledges submissions only; no email, CRM, or database delivery is wired in
-  from the visible code.
-- Analytics hooks are GA4-ready when NEXT_PUBLIC_GA_MEASUREMENT_ID is provided.
-  Tracked interactions include WhatsApp, phone, email, social clicks, and form
-  submit.
-- Automated SEO regression coverage exists through Playwright and a GitHub
-  Actions SEO gate.
+Recent updates (June 2026):
+- Header navigation: Risk & Estate dropdown (Estate & Will Clinic, Independent
+  Advisor Desk); Anchor Wealth uses exact-path active state; duplicate Contact
+  link removed (Get in Touch CTA retained); dropdown hover bridge and close
+  delay for better usability
+- WhatsApp: +27 76 816 5533 (wa.me/27768165533) with official logo icon
+- Contact form: Resend email delivery wired (returns 503 until API key and
+  domain are configured in Vercel)
+- Back office (/back-office): password-protected hub with Email Signatures tab
+  and Service Prices tab; live prices stored in Vercel Blob (private store)
+- Public /services page reads live prices from Blob with fallback to
+  data/pricing-data.ts
+- /email-signatures redirects to /back-office?tab=signatures
+- Pricing display: excl. VAT shown bold, incl. VAT shown below
+- Blog authors aligned to client assignments across all 17 insight articles
+- Slim homepage, responsive layout pass, partner logos (SAIPA, Dext, Sage),
+  Google Maps embed on contact page, Endpoint Media footer credit
 
 Known handover notes:
-- The live/contact delivery destination should be confirmed before production
-  launch because the current contact API does not persist or forward enquiries.
-- Deployment operations still need to be completed outside code: domain/DNS,
-  SSL, production environment variables, Google Search Console verification, and
-  sitemap submission.
-- The legacy redirect map still includes /who-we-are -> /team, but no /team page
-  exists in the current app tree. Review that redirect before launch if legacy
-  traffic is expected.
+- DNS cutover to Vercel in progress: update A/CNAME in cPanel only; keep MX,
+  SPF, DKIM, and DMARC records untouched for email
+- Resend requires RESEND_API_KEY plus verified vnr.co.za domain in Vercel
+- Legacy redirect /who-we-are -> /team exists, but there is no /team index
+  page (only /team/[slug] profiles). Consider adding a team listing page or
+  redirecting to homepage if legacy traffic is expected
 
 ================================================================================
 2. VNR SERVICES OFFERED
 ================================================================================
 
-Primary service pages:
+Eight primary service detail pages (/services/[slug]):
 
 1. Secretarial Services
    Route: /services/secretarial-services
-   Covers CIPC annual returns, director/member changes, registered office
-   maintenance, statutory records, company amendments, and compliance support.
+   CIPC annual returns, director/member changes, registered office maintenance,
+   statutory records, company amendments, and compliance support.
 
 2. Payroll Administration
    Route: /services/payroll-administration
-   Covers monthly payroll processing, payslips, EMP201 and EMP501 submissions,
-   UIF, COID, letters of good standing, and payroll compliance support.
+   Monthly payroll processing, payslips, EMP201 and EMP501 submissions, UIF,
+   COID, letters of good standing, and payroll compliance support.
 
 3. Tax Advisory
    Route: /services/tax-advisory
-   Covers personal and corporate income tax, provisional tax, VAT, PAYE, SDL,
-   UIF, SARS audits, objections, dispute resolution, and tax planning.
+   Personal and corporate income tax, provisional tax, VAT, PAYE, SDL, UIF,
+   SARS audits, objections, dispute resolution, and tax planning.
 
 4. Business Structuring
    Route: /services/business-structuring
-   Covers new company registrations, NPO/NPC guidance, entity selection, trust
+   New company registrations, NPO/NPC guidance, entity selection, trust
    formation, asset protection, and long-term structuring.
 
 5. Financial Reporting
    Route: /services/financial-reporting
-   Covers annual financial statements, management accounts, tax calculations,
-   IFRS for SMEs reporting, and independent review support.
+   Annual financial statements, management accounts, tax calculations, IFRS for
+   SMEs reporting, and independent review support.
 
 6. Confirmations
    Route: /services/confirmations
-   Covers income confirmations, audit reports for property purchases, BBBEE
+   Income confirmations, audit reports for property purchases, BBBEE
    declarations, and other verification documents.
 
 7. Estate & Legacy Planning
    Route: /services/legacy-planning
-   Covers wills, intergenerational wealth transfer, estate duty planning,
-   professional executor services, trust and estate administration, and business
-   continuity planning.
+   Wills, intergenerational wealth transfer, estate duty planning, professional
+   executor services, trust and estate administration, and business continuity
+   planning.
 
 8. Cloud Accounting & Financial Record Keeping
    Route: /services/cloud-accounting
-   Covers Sage Business Cloud, Xero, Dext, cloud accounting setup, data
-   migration, software training, workflow automation, and bookkeeping/record
-   keeping solutions.
+   Sage Business Cloud, Xero, Dext, cloud accounting setup, data migration,
+   software training, workflow automation, and bookkeeping/record keeping.
 
-Services and pricing categories in the July 2026 price list:
-- Tax Advisory & Compliance
-- Financial Reporting
-- Payroll Administration
-- Registrations & Secretarial Services
-- Estate & Legacy Planning
-- Confirmations
-- Business Structuring
-- Cloud Accounting & Financial Record Keeping Solutions
+Services and pricing hub (/services):
+- July 2026 price list with ~100 line items across 8 categories
+- Category sidebar navigation, in-category search, sort options
+- Clean name + price rows (internal SKU codes hidden on public site)
+- Live prices editable in back office; persisted to Vercel Blob
 
-Additional advisory channels:
-- Anchor Wealth Division: investment structuring routed through Anchor Capital,
-  with VNR retaining tax strategy and compliance oversight.
-- Independent advisor desk: life cover, disability cover, dread disease cover,
-  buy-and-sell planning, key person cover, share buy-back funding, and short-term
-  insurance reviews.
-- Estate & Will Clinic: will drafting/refresh support when VNR or an approved
-  executor partner is appointed.
-- Expat and contractor tax guidance: residency, foreign income, provisional tax,
-  double-tax relief, and SARS compliance support.
+Pricing categories (data/pricing-data.ts):
+1. Tax Advisory & Compliance
+2. Financial Reporting
+3. Payroll Administration
+4. Registrations & Secretarial Services
+5. Estate & Legacy Planning
+6. Confirmations
+7. Business Structuring
+8. Cloud Accounting & Financial Record Keeping Solutions
 
-================================================================================
-3. PAGE INVENTORY AND SHORT SUMMARIES
-================================================================================
+Additional advisory channels (Anchor Wealth):
+- /anchor-wealth — Anchor Capital partnership landing page
+- /anchor-wealth/estate-will-clinic — Will drafting, executor appointments,
+  estate planning when VNR is appointed
+- /anchor-wealth/independent-advisor — Life cover, disability, dread disease,
+  buy-and-sell, key person cover, share buy-back funding, short-term insurance
 
-Core public pages:
-
-1. /
-   Homepage. Static hero, SAIPA/Dext/Sage trust bar, founder note, compact
-   service/team/insight previews, and CTA.
-
-2. /services
-   Services and pricing hub. Category sidebar, search within category, sort
-   options, and clean pricing table (name + price only).
-
-3. /contact
-   Lead capture page. Contact form, direct details, Google Map embed, business
-   hours, nationwide service messaging, and FAQs.
-
-4. /anchor-wealth
-   Anchor Wealth Division landing page. Anchor Capital partnership, tax-efficient
-   structuring, advisor desk, estate/will clinic, expat/contractor positioning.
-
-5. /resources/expat-tax-guide
-   Campaign resource page for expats and independent contractors with the 10
-   costly tax mistakes checklist and PDF download links.
-
-6. /locations/centurion-accountants
-   Local SEO landing page for Centurion, Zwartkop, Pretoria, and greater Gauteng.
-
-7. /process-flow
-   Educational process-flow page showing how transactions become financial
-   statements.
-
-8. /insights
-   Insights listing with featured article, category filters, and search.
-
-Service detail pages: /services/[slug] for all 8 primary services listed above.
-
-Insight article pages: 17 articles generated from data/insights-data.ts.
-
-Support, conversion, internal, and legal pages:
-- /thank-you, /email-signatures, /disclaimer, /terms-and-conditions,
-  /privacy-policy, /cookie-policy-za, /access-to-information
-
-Technical endpoints:
-- /api/contact (POST contact form handler)
-- /sitemap.xml (generated)
-- /robots.txt (environment-aware)
+Other specialist content:
+- /resources/expat-tax-guide — Expat and contractor tax mistakes checklist
+- /locations/centurion-accountants — Local SEO for Centurion, Zwartkop, Pretoria
+- /process-flow — How transactions become financial statements
 
 ================================================================================
-4. KEY DATA SOURCES
+3. COMPLETE PAGE INVENTORY
 ================================================================================
 
-- data/services-data.ts
-  8 service detail pages, metadata, lead experts, content, and FAQs.
+CORE PUBLIC PAGES
+-----------------
 
-- data/pricing-data.ts
-  July 2026 services/pricing table and categories for /services.
+/  Homepage
+   Static hero, SAIPA/Dext/Sage trust bar, founder note, compact service/team/
+   insight previews, and CTA.
+
+/services  Services and pricing hub
+   Category sidebar, search within category, sort options, live pricing table.
+
+/contact  Lead capture
+   Contact form (Resend email), direct details, Google Map embed, business hours,
+   nationwide service messaging, and FAQs.
+
+/insights  Insights listing
+   Featured article, category filters, and search.
+
+/anchor-wealth  Anchor Wealth Division
+   Anchor Capital partnership, tax-efficient structuring, advisor desk, estate/
+   will clinic, expat/contractor positioning.
+
+/anchor-wealth/estate-will-clinic  Estate & Will Clinic
+   Complimentary will drafting and estate planning support.
+
+/anchor-wealth/independent-advisor  Independent Advisor Desk
+   Life cover, succession planning, and short-term insurance reviews.
+
+/resources/expat-tax-guide  Expat tax guide
+   10 costly tax mistakes checklist and PDF download links.
+
+/locations/centurion-accountants  Local SEO landing page
+   Centurion, Zwartkop, Pretoria, and greater Gauteng.
+
+/process-flow  Educational process-flow page
+   How transactions become financial statements.
+
+SERVICE DETAIL PAGES (8)
+------------------------
+
+/services/secretarial-services
+/services/payroll-administration
+/services/tax-advisory
+/services/business-structuring
+/services/financial-reporting
+/services/confirmations
+/services/legacy-planning
+/services/cloud-accounting
+
+TEAM PROFILE PAGES (3)
+----------------------
+
+/team/jannie-venter       Co-Founder & Director (tax advisory lead)
+/team/charlie-naude       Co-Founder & Director (business structuring lead)
+/team/henry-landsberg     Director (compliance and payroll lead)
+
+Note: No /team index page exists. Legacy redirect /who-we-are -> /team may 404.
+
+INSIGHT ARTICLE PAGES (17)
+--------------------------
+
+/insights/from-tax-burden-to-strategic-asset
+   From Tax Burden to Strategic Asset: An Entrepreneur's Guide to Taxation
+
+/insights/10-costly-tax-mistakes-expats-contractors
+   10 Costly Tax Mistakes Expats & Independent Contractors Make
+
+/insights/ultimate-guide-to-tax-consulting-south-africa
+   The Ultimate Guide to Tax Consulting in South Africa (2025)
+
+/insights/avoiding-critical-governance-errors
+   From the SAIPA Board to Your Business: Avoiding Critical Governance Errors
+
+/insights/guide-to-registering-your-npo
+   How to Register an NPO in South Africa: A Step-by-Step Guide
+
+/insights/are-you-overpaying-sars-sme-tax-deductions
+   Are You Overpaying SARS? A Guide to SME Tax Deductions
+
+/insights/business-valuations
+   Beyond Profit: The Key Drivers of Business Valuation in South Africa
+
+/insights/guide-to-avoiding-sars-penalties
+   Is Your Business Compliant? A Guide to Avoiding SARS Penalties in South Africa
+
+/insights/how-to-restore-your-dormant-company
+   Company Deregistered? A Guide to Restore Your Dormant CC in South Africa
+
+/insights/building-sustainable-wealth-in-south-africa
+   From Success to Significance: Building Sustainable Wealth in South Africa
+
+/insights/sage-vs-xero-south-african-guide
+   Sage or Xero? A South African Business Leader's Guide
+
+/insights/your-will-the-ultimate-business-continuity-plan
+   A Business Owner's Guide to Drafting a Will in South Africa
+
+/insights/guide-to-payroll-compliance-emp201-irp5
+   The Ultimate Payroll Compliance Checklist for South African Businesses
+
+/insights/facing-a-sars-dispute-step-by-step-guide
+   Facing a SARS Dispute? A Step-by-Step Guide for Businesses in South Africa
+
+/insights/role-of-trusts-in-2025
+   Asset Protection, Tax, and Legacy: The Role of Trusts in 2025
+
+/insights/the-true-cost-of-diy-accounting
+   Penny Wise, Pound Foolish? The True Cost of DIY Accounting for SMEs
+
+/insights/startup-accounting-to-exit-strategy
+   Startup Accounting to Exit Strategy: A Founder's Financial Roadmap in South Africa
+
+CONVERSION, LEGAL, AND INTERNAL PAGES
+------------------------------------
+
+/thank-you              Post-form submission conversion page (noindex)
+/privacy-policy         POPIA privacy policy (noindex, follow)
+/terms-and-conditions   Terms and conditions (noindex, follow)
+/disclaimer             Legal disclaimer (noindex, follow)
+/cookie-policy-za       Cookie policy (noindex, follow)
+/access-to-information  PAIA manual (noindex, follow)
+
+/back-office            Internal tools hub — email signatures + service prices
+                        (password-protected, noindex)
+/back-office/login      Back office login (noindex)
+/email-signatures       Redirects to /back-office?tab=signatures
+
+API ENDPOINTS
+-------------
+
+POST /api/contact                  Contact form submission (Resend email)
+GET  /api/pricing                  Public pricing JSON (Blob or static fallback)
+POST /api/back-office/login        Back office authentication
+POST /api/back-office/logout       End back office session
+GET  /api/back-office/pricing      Read pricing for back office editor
+PUT  /api/back-office/pricing      Save pricing to Vercel Blob
+
+GENERATED ROUTES
+----------------
+
+/sitemap.xml    Dynamic sitemap (core pages, services, team, insights)
+/robots.txt     Environment-aware robots rules
+
+================================================================================
+4. SITE NAVIGATION
+================================================================================
+
+Header (components/Header.tsx):
+- Home (/)
+- Services (/services)
+- Risk & Estate (dropdown)
+    - Estate & Will Clinic (/anchor-wealth/estate-will-clinic)
+    - Independent Advisor Desk (/anchor-wealth/independent-advisor)
+- Anchor Wealth (/anchor-wealth) — exact-path active match only
+- Insights (/insights)
+- Get in Touch CTA (/contact)
+
+Footer: key links, contact details, Facebook (facebook.com/vnracc), legal pages,
+Endpoint Media credit (endpointmedia.co.za).
+
+Floating WhatsApp button: +27 76 816 5533.
+
+================================================================================
+5. KEY DATA SOURCES
+================================================================================
+
+data/services-data.ts
+  8 service detail pages: metadata, lead experts, content, FAQs.
+
+data/pricing-data.ts
+  July 2026 services/pricing table (~100 items) and 8 categories for /services.
   Regenerate via scripts/generate-pricing-data.mjs from client spreadsheet export.
+  Live overrides stored in Vercel Blob at vnr/pricing-services.json.
 
-- data/insights-data.ts
-  17 insight articles, featured status, categories, excerpts, authors, content.
+data/insights-data.ts
+  17 insight articles: featured status, categories, excerpts, authors, content.
 
-- data/contact-data.ts
+data/contact-data.ts
   Contact page FAQ content.
 
-- data/team-data.ts
-  Team/advisor profiles for homepage, service pages, and articles.
+data/team-data.ts
+  Team/advisor profiles for homepage, service pages, articles, and /team/[slug].
 
-- lib/service-display.ts
+lib/pricing/store.ts
+  Vercel Blob read/write for live service prices (private store access).
+
+lib/format-price.tsx
+  Price display: excl. VAT bold, incl. VAT below; FREE and quote labels.
+
+lib/service-display.ts
   Cleans service description prefixes and sorting helpers for pricing UI.
 
-- lib/format-price.tsx
-  Price display helper for pricing table.
+lib/email/
+  Resend configuration and send-contact-email for contact form delivery.
+
+lib/back-office/auth.ts
+  Password session cookie authentication for /back-office.
 
 ================================================================================
-5. BRANDING, PARTNERS, AND FOOTER
+6. BRANDING, PARTNERS, AND FOOTER
 ================================================================================
 
 Homepage authority bar (under hero):
@@ -226,6 +340,8 @@ Logo assets (public/images/logos/):
 - saipa-logo.jpg, dext-logo.png, sage-logo.png
 - vnrlogo1.png (header/footer branding)
 
+WhatsApp icon: public/images/icons/whatsapp-icon.png
+
 Footer:
 - VNR contact details and key navigation links
 - Facebook: https://www.facebook.com/vnracc
@@ -233,23 +349,34 @@ Footer:
   (https://www.endpointmedia.co.za/)
 
 ================================================================================
-6. TECHNICAL STATUS
+7. TECHNICAL STATUS
 ================================================================================
 
 Production/domain:
 - Canonical production domain: https://vnr.co.za (lib/site.ts)
 - Middleware redirects www.vnr.co.za to vnr.co.za
-- Static assets under /images/ are excluded from URL lowercasing
+- Static assets under /images/ excluded from URL lowercasing
+- Legacy redirects: /who-we-are -> /team, /what-we-do -> /services,
+  /whats-on-offer -> /services, /bookkeeping -> /services/cloud-accounting,
+  /make-the-call -> /contact, /privacy-policy-2 -> /privacy-policy
+- 410 Gone for /old-staff-profile
+- Security headers: HSTS, CSP, X-Frame-Options, Referrer-Policy, etc.
 
 SEO:
 - Metadata helpers in lib/seo.ts
-- Organization, service, article, FAQ, breadcrumb, and person schema on key pages
-- Dynamic sitemap and environment-aware robots.txt
+- Organization, service, article, FAQ, breadcrumb, and person schema
+- Dynamic sitemap (app/sitemap.ts) and environment-aware robots.txt
+- Legal, thank-you, and back-office pages set to noindex where appropriate
 
 Conversion and tracking:
-- Contact form -> /api/contact -> /thank-you
+- Contact form -> POST /api/contact -> Resend email -> /thank-you
 - GA4 via NEXT_PUBLIC_GA_MEASUREMENT_ID
-- WhatsApp FAB, phone/email/social click tracking in lib/tracking.ts
+- WhatsApp, phone, email, social click tracking in lib/tracking.ts
+
+Back office:
+- Password: BACK_OFFICE_PASSWORD (session cookie via middleware)
+- Tabs: Email Signatures (EmailSignatureAdmin), Service Prices (Blob-backed)
+- /email-signatures legacy URL redirects into back office
 
 Quality gates:
 - npm run build
@@ -257,31 +384,60 @@ Quality gates:
 - .github/workflows/seo-gates.yml
 
 ================================================================================
-7. DEPLOYMENT AND HANDOVER CHECKLIST
+8. ENVIRONMENT VARIABLES
+================================================================================
+
+See .env.example for full list. Required for production:
+
+Resend (contact form email):
+- RESEND_API_KEY
+- RESEND_FROM_EMAIL (e.g. info@vnr.co.za)
+- RESEND_FROM_NAME (e.g. VNR Professional Accountants)
+- CONTACT_TO_EMAIL (e.g. info@vnr.co.za)
+
+Back office:
+- BACK_OFFICE_PASSWORD
+- BACK_OFFICE_SECRET (optional; defaults to BACK_OFFICE_PASSWORD)
+
+Vercel Blob (live service prices):
+- BLOB_READ_WRITE_TOKEN (private Blob store)
+
+Analytics (optional):
+- NEXT_PUBLIC_GA_MEASUREMENT_ID
+
+================================================================================
+9. DEPLOYMENT AND HANDOVER CHECKLIST
 ================================================================================
 
 Already implemented in code:
-- [x] Current page structure and dynamic routes
-- [x] Service and insight data-driven pages
-- [x] July 2026 services/pricing interface
+- [x] Complete page structure and dynamic routes (48 public routes + internal)
+- [x] 8 service detail pages and 17 insight articles from data files
+- [x] 3 team profile pages
+- [x] July 2026 services/pricing interface with live Blob editing
+- [x] Back office (email signatures + service prices)
+- [x] Contact form with Resend integration
+- [x] Header navigation (Risk & Estate dropdown, Anchor Wealth, Get in Touch)
+- [x] WhatsApp FAB and CTA with correct number and logo
 - [x] Slim homepage and responsive layout pass
 - [x] Partner logos and Facebook footer link
 - [x] Canonical production domain helper
 - [x] Dynamic sitemap and robots
-- [x] Middleware redirects and security headers
+- [x] Middleware redirects, back-office auth, and security headers
 - [x] Legal/compliance pages linked from footer
-- [x] Contact form UI, map embed, and API acknowledgement flow
 - [x] Thank-you conversion page
 - [x] Analytics/tracking hooks
 - [x] SEO regression tests and CI workflow
 
 Still required outside the repository:
-- [ ] Confirm production environment variables (GA4, future contact delivery)
-- [ ] Wire contact API to email/CRM if enquiries must be forwarded
-- [ ] Add/verify vnr.co.za and www.vnr.co.za in hosting platform
-- [ ] Confirm DNS and SSL after cutover
+- [ ] Add RESEND_API_KEY and verify vnr.co.za domain in Resend dashboard
+- [ ] Confirm BACK_OFFICE_PASSWORD and BLOB_READ_WRITE_TOKEN in Vercel
+- [ ] DNS cutover: A record for vnr.co.za, CNAME for www -> Vercel
+      (keep MX/SPF/DKIM/DMARC on cPanel for email)
+- [ ] Confirm SSL after DNS propagation
 - [ ] Verify Google Search Console and submit sitemap
-- [ ] Post-launch smoke checks for homepage, services, contact, map, and logos
+- [ ] Resolve /who-we-are -> /team redirect (add team index or change target)
+- [ ] Post-launch smoke checks: homepage, services, pricing save, contact form,
+      map embed, WhatsApp, back office login, and partner logos
 
 ================================================================================
 END OF PROJECT SUMMARY

@@ -78,7 +78,7 @@ const defaultSignature: SignatureData = {
   mobile: '072 378 9892',
   telephone: '012 653 1633',
   website: 'www.vnr.co.za',
-  address: '4 Grit Ave, Zwartkop, Centurion, 0051',
+  address: '4 Grit Ave, Zwartkop, Centurion, 0157',
   includePhoto: true,
   photoDataUrl: '/images/team/jannie-venter.jpg',
 };
