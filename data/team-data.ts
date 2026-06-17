@@ -84,7 +84,6 @@ export const teamData: TeamMember[] = [
       "B.Com (Financial Management)",
       "Professional Accountant (SA)",
       "Registered Tax Practitioner (SARS)",
-      "SAIPA National Top Achiever 2017"
     ],
     articles: [
       { title: "Understanding Your Management Accounts", category: "Business Growth", url: "/insights/understanding-management-accounts" },
@@ -101,6 +100,6 @@ export const teamData: TeamMember[] = [
         <li>CIPC and Secretarial Duties</li>
       </ul>
     `,
-    funFact: "Henry is a coffee enthusiast who loves discovering new local roasteries across South Africa. When he's not crunching numbers, he's often exploring the vibrant coffee scene in Pretoria and sharing his latest finds with the team. He believes that great accounting, like great coffee, should be accessible to everyone."
+    funFact: "Away from the office, Henry keeps tropical fish and collects novelty items — from vintage tins to quirky curios picked up on weekend trips. He enjoys the patience fish keeping demands and the hunt for that one unusual piece to add to his shelf, and he often shares his latest tank setup or find with the team."
   }
 ];
