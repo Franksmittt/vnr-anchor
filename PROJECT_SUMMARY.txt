@@ -114,12 +114,15 @@ Pricing categories (data/pricing-data.ts):
 7. Business Structuring
 8. Cloud Accounting & Financial Record Keeping Solutions
 
-Additional advisory channels (Anchor Wealth):
-- /anchor-wealth — Anchor Capital partnership landing page
-- /anchor-wealth/estate-will-clinic — Will drafting, executor appointments,
-  estate planning when VNR is appointed
-- /anchor-wealth/independent-advisor — Life cover, disability, dread disease,
-  buy-and-sell, key person cover, share buy-back funding, short-term insurance
+Additional advisory channels:
+- /anchor-wealth — Anchor Capital partnership landing page (investments only)
+- /estate-will-clinic — Will drafting, executor appointments, estate planning
+  when VNR is appointed
+- /independent-advisor — Life cover, disability, dread disease, buy-and-sell,
+  key person cover, share buy-back funding, short-term insurance
+
+Legacy redirects: /anchor-wealth/estate-will-clinic -> /estate-will-clinic,
+/anchor-wealth/independent-advisor -> /independent-advisor
 
 Other specialist content:
 - /resources/expat-tax-guide — Expat and contractor tax mistakes checklist
@@ -148,13 +151,12 @@ CORE PUBLIC PAGES
    Featured article, category filters, and search.
 
 /anchor-wealth  Anchor Wealth Division
-   Anchor Capital partnership, tax-efficient structuring, advisor desk, estate/
-   will clinic, expat/contractor positioning.
+   Anchor Capital partnership and tax-efficient investment structuring.
 
-/anchor-wealth/estate-will-clinic  Estate & Will Clinic
+/estate-will-clinic  Estate & Will Clinic
    Complimentary will drafting and estate planning support.
 
-/anchor-wealth/independent-advisor  Independent Advisor Desk
+/independent-advisor  Independent Advisor Desk
    Life cover, succession planning, and short-term insurance reviews.
 
 /resources/expat-tax-guide  Expat tax guide
@@ -280,8 +282,8 @@ Header (components/Header.tsx):
 - Home (/)
 - Services (/services)
 - Risk & Estate (dropdown)
-    - Estate & Will Clinic (/anchor-wealth/estate-will-clinic)
-    - Independent Advisor Desk (/anchor-wealth/independent-advisor)
+    - Estate & Will Clinic (/estate-will-clinic)
+    - Independent Advisor Desk (/independent-advisor)
 - Anchor Wealth (/anchor-wealth) — exact-path active match only
 - Insights (/insights)
 - Get in Touch CTA (/contact)

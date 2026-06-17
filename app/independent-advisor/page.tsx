@@ -8,7 +8,7 @@ export const metadata: Metadata = generateSEOMetadata({
   title: 'Independent Advisor Desk',
   description:
     'Uncompromised risk management and structuring for business owners. Life cover, succession planning, and short-term insurance reviews integrated with your VNR accounting profile.',
-  path: '/anchor-wealth/independent-advisor',
+  path: '/independent-advisor',
   keywords: [
     'independent financial advisor',
     'life cover',
@@ -52,15 +52,13 @@ const advantagePoints = [
 
 const breadcrumbSchema = generateBreadcrumbSchema([
   { name: 'Home', url: '/' },
-  { name: 'Anchor Wealth Division', url: '/anchor-wealth' },
-  { name: 'Independent Advisor Desk', url: '/anchor-wealth/independent-advisor' },
+  { name: 'Independent Advisor Desk', url: '/independent-advisor' },
 ]);
 
 const IndependentAdvisorPage = () => {
   const breadcrumbs = [
     { name: 'Home', href: '/' },
-    { name: 'Anchor Wealth Division', href: '/anchor-wealth' },
-    { name: 'Independent Advisor Desk', href: '/anchor-wealth/independent-advisor' },
+    { name: 'Independent Advisor Desk', href: '/independent-advisor' },
   ];
 
   return (
@@ -162,10 +160,10 @@ const IndependentAdvisorPage = () => {
               <ArrowUpRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Link>
             <Link
-              href="/anchor-wealth"
+              href="/"
               className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-text-primary transition hover:border-brand-blue hover:text-brand-blue sm:px-6 sm:py-3 sm:text-base"
             >
-              Back to Anchor Wealth
+              Back to Home
             </Link>
           </div>
         </div>

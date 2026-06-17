@@ -35,13 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${siteUrl}/anchor-wealth/independent-advisor`,
+      url: `${siteUrl}/independent-advisor`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${siteUrl}/anchor-wealth/estate-will-clinic`,
+      url: `${siteUrl}/estate-will-clinic`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.7,

@@ -9,6 +9,8 @@ const LEGACY_REDIRECTS: Record<string, string> = {
   '/bookkeeping': '/services/cloud-accounting',
   '/make-the-call': '/contact',
   '/privacy-policy-2': '/privacy-policy',
+  '/anchor-wealth/estate-will-clinic': '/estate-will-clinic',
+  '/anchor-wealth/independent-advisor': '/independent-advisor',
 };
 
 const GONE_PATHS = new Set<string>([

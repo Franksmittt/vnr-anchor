@@ -8,7 +8,7 @@ export const metadata: Metadata = generateSEOMetadata({
   title: 'Estate & Will Clinic',
   description:
     'Professional estate planning and complimentary will drafting when VNR is appointed executor. Secure generational wealth without the friction.',
-  path: '/anchor-wealth/estate-will-clinic',
+  path: '/estate-will-clinic',
   keywords: [
     'estate planning',
     'will drafting',
@@ -29,15 +29,13 @@ const continuityPoints = [
 
 const breadcrumbSchema = generateBreadcrumbSchema([
   { name: 'Home', url: '/' },
-  { name: 'Anchor Wealth Division', url: '/anchor-wealth' },
-  { name: 'Estate & Will Clinic', url: '/anchor-wealth/estate-will-clinic' },
+  { name: 'Estate & Will Clinic', url: '/estate-will-clinic' },
 ]);
 
 const EstateWillClinicPage = () => {
   const breadcrumbs = [
     { name: 'Home', href: '/' },
-    { name: 'Anchor Wealth Division', href: '/anchor-wealth' },
-    { name: 'Estate & Will Clinic', href: '/anchor-wealth/estate-will-clinic' },
+    { name: 'Estate & Will Clinic', href: '/estate-will-clinic' },
   ];
 
   return (
@@ -77,10 +75,9 @@ const EstateWillClinicPage = () => {
               </h2>
             </div>
             <p className="text-base text-text-secondary sm:text-lg">
-              We remove the administrative barriers to proper estate planning. Through our Anchor Wealth division, we
-              provide complimentary, professionally drafted wills when VNR is appointed as your executor. We ensure your
-              final wishes are legally sound, clearly articulated, and structurally aligned with your existing financial
-              blueprint.
+              We remove the administrative barriers to proper estate planning. At VNR, we provide complimentary,
+              professionally drafted wills when VNR is appointed as your executor. We ensure your final wishes are
+              legally sound, clearly articulated, and structurally aligned with your existing financial blueprint.
             </p>
           </div>
         </div>
@@ -171,10 +168,10 @@ const EstateWillClinicPage = () => {
               <ArrowUpRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Link>
             <Link
-              href="/anchor-wealth"
+              href="/"
               className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-text-primary transition hover:border-brand-blue hover:text-brand-blue sm:px-6 sm:py-3 sm:text-base"
             >
-              Back to Anchor Wealth
+              Back to Home
             </Link>
           </div>
         </div>
