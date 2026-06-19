@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { BACK_OFFICE_COOKIE, verifySessionToken } from '@/lib/back-office/auth';
-import { SITE_URL } from '@/lib/site';
 
 const LEGACY_REDIRECTS: Record<string, string> = {
   '/who-we-are': '/team',
@@ -26,8 +25,6 @@ export async function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
   const normalizedPath = normalizePath(pathname);
   const normalizedLowercasePath = normalizedPath.toLowerCase();
-  const host = request.headers.get('host') || '';
-
   if (
     pathname !== normalizedLowercasePath &&
     !pathname.startsWith('/images/') &&
@@ -45,10 +42,6 @@ export async function middleware(request: NextRequest) {
   const mappedRedirect = LEGACY_REDIRECTS[lowercasePath];
   if (mappedRedirect) {
     return NextResponse.redirect(new URL(`${mappedRedirect}${search}`, request.url), 308);
-  }
-
-  if (host === 'www.vnr.co.za') {
-    return NextResponse.redirect(`${SITE_URL}${lowercasePath}${search}`, 308);
   }
 
   if (
