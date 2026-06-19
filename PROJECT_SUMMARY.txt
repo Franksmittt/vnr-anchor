@@ -356,7 +356,8 @@ Footer:
 
 Production/domain:
 - Canonical production domain: https://vnr.co.za (lib/site.ts)
-- Middleware redirects www.vnr.co.za to vnr.co.za
+- Host-level redirects are delegated to Vercel primary-domain settings to avoid
+  conflicts between platform redirects and app middleware.
 - Static assets under /images/ excluded from URL lowercasing
 - Legacy redirects: /who-we-are -> /team, /what-we-do -> /services,
   /whats-on-offer -> /services, /bookkeeping -> /services/cloud-accounting,
@@ -424,7 +425,7 @@ Already implemented in code:
 - [x] Partner logos and Facebook footer link
 - [x] Canonical production domain helper
 - [x] Dynamic sitemap and robots
-- [x] Middleware redirects, back-office auth, and security headers
+- [x] Middleware path redirects, back-office auth, and security headers
 - [x] Legal/compliance pages linked from footer
 - [x] Thank-you conversion page
 - [x] Analytics/tracking hooks
