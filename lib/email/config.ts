@@ -1,4 +1,6 @@
-export const CONTACT_TO_EMAIL = 'info@vnr.co.za';
+import { CONTACT_EMAIL } from '@/lib/site';
+
+export const CONTACT_TO_EMAIL = CONTACT_EMAIL;
 
 const DEFAULT_FROM_NAME = 'VNR Professional Accountants';
 

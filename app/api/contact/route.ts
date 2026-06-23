@@ -32,6 +32,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           ok: false,
+          code: 'EMAIL_NOT_CONFIGURED',
           error: `Email service is not configured yet. Please email ${CONTACT_TO_EMAIL} directly.`,
         },
         { status: 503 }
