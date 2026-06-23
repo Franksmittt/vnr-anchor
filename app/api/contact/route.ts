@@ -1,19 +1,14 @@
 import { NextResponse } from 'next/server';
-import { isEmailConfigured } from '@/lib/email/config';
+import { CONTACT_TO_EMAIL, getEmailConfigurationError } from '@/lib/email/config';
 import { sendContactFormEmail } from '@/lib/email/send-contact-email';
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+export const runtime = 'nodejs';
+
 export async function POST(request: Request) {
   try {
-    if (!isEmailConfigured()) {
-      return NextResponse.json(
-        { ok: false, error: 'Email service is not configured yet. Please try again later or contact us directly.' },
-        { status: 503 }
-      );
-    }
-
-    const body = await request.json();
+    const body = (await request.json().catch(() => null)) as Record<string, unknown> | null;
     const fullName = String(body?.fullName || '').trim();
     const email = String(body?.email || '').trim();
     const message = String(body?.message || '').trim();
@@ -28,6 +23,19 @@ export async function POST(request: Request) {
 
     if (fullName.length > 120 || email.length > 254 || message.length > 5000) {
       return NextResponse.json({ ok: false, error: 'One or more fields are too long.' }, { status: 400 });
+    }
+
+    const configurationError = getEmailConfigurationError();
+    if (configurationError) {
+      console.error(`Contact form email is not configured: ${configurationError}`);
+
+      return NextResponse.json(
+        {
+          ok: false,
+          error: `Email service is not configured yet. Please email ${CONTACT_TO_EMAIL} directly.`,
+        },
+        { status: 503 }
+      );
     }
 
     await sendContactFormEmail({ fullName, email, message });

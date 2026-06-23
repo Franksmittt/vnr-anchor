@@ -16,6 +16,20 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Contact form email
+
+The contact form sends through Resend and delivers website enquiries to `info@vnr.co.za`.
+
+Required production environment variables:
+
+```bash
+RESEND_API_KEY=your_resend_api_key
+RESEND_FROM_EMAIL=info@vnr.co.za
+RESEND_FROM_NAME="VNR Professional Accountants"
+```
+
+The `vnr.co.za` domain must also be verified in Resend. DNS verification alone does not enable the form; the hosting provider must set `RESEND_API_KEY` as a server/runtime environment variable.
+
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
