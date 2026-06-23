@@ -8,6 +8,20 @@ import { faqs } from '@/data/contact-data';
 import FaqAccordion from '@/components/FaqAccordion';
 import { useRouter } from 'next/navigation';
 import { trackEvent } from '@/lib/tracking';
+import { CONTACT_EMAIL } from '@/lib/site';
+
+type ContactFallbackInput = {
+  fullName: string;
+  email: string;
+  message: string;
+};
+
+function buildContactMailtoUrl({ fullName, email, message }: ContactFallbackInput): string {
+  const subject = `Website enquiry from ${fullName}`;
+  const body = [`Name: ${fullName}`, `Email: ${email}`, '', 'Message:', message].join('\n');
+
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 const ContactPage = () => {
   const router = useRouter();
@@ -30,7 +44,15 @@ const ContactPage = () => {
       });
 
       if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
+        const data = (await response.json().catch(() => ({}))) as { code?: string; error?: string };
+
+        if (response.status === 503 && data?.code === 'EMAIL_NOT_CONFIGURED') {
+          window.location.href = buildContactMailtoUrl({ fullName, email, message });
+          throw new Error(
+            `We could not send automatically, so we opened a prefilled email to ${CONTACT_EMAIL}. Please send it from your email app.`
+          );
+        }
+
         throw new Error(data?.error || 'Unable to submit form.');
       }
 

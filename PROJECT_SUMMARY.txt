@@ -396,7 +396,7 @@ Resend (contact form email):
 - RESEND_API_KEY
 - RESEND_FROM_EMAIL (e.g. info@vnr.co.za)
 - RESEND_FROM_NAME (e.g. VNR Professional Accountants)
-- CONTACT_TO_EMAIL (e.g. info@vnr.co.za)
+- Contact form recipient is fixed in code to info@vnr.co.za
 
 Back office:
 - BACK_OFFICE_PASSWORD

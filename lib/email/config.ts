@@ -1,5 +1,7 @@
-const DEFAULT_FROM_EMAIL = 'info@vnr.co.za';
-const DEFAULT_TO_EMAIL = 'info@vnr.co.za';
+import { CONTACT_EMAIL } from '@/lib/site';
+
+export const CONTACT_TO_EMAIL = CONTACT_EMAIL;
+
 const DEFAULT_FROM_NAME = 'VNR Professional Accountants';
 
 export function getResendApiKey(): string | undefined {
@@ -7,11 +9,11 @@ export function getResendApiKey(): string | undefined {
 }
 
 export function getFromEmail(): string {
-  return process.env.RESEND_FROM_EMAIL?.trim() || DEFAULT_FROM_EMAIL;
+  return process.env.RESEND_FROM_EMAIL?.trim() || CONTACT_TO_EMAIL;
 }
 
 export function getContactToEmail(): string {
-  return process.env.CONTACT_TO_EMAIL?.trim() || DEFAULT_TO_EMAIL;
+  return CONTACT_TO_EMAIL;
 }
 
 export function getFromAddress(): string {
@@ -21,4 +23,12 @@ export function getFromAddress(): string {
 
 export function isEmailConfigured(): boolean {
   return Boolean(getResendApiKey());
+}
+
+export function getEmailConfigurationError(): string | null {
+  if (!getResendApiKey()) {
+    return 'RESEND_API_KEY is not configured.';
+  }
+
+  return null;
 }
