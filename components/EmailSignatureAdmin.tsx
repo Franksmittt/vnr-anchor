@@ -139,32 +139,24 @@ async function waitForSignatureAssets(element: HTMLElement) {
 
 const CONTACT_ICON_SIZE = 14;
 const CONTACT_ICON_COLUMN_WIDTH = 28;
-const CONTACT_ICON_GAP = 10;
-const CONTACT_ROW_HEIGHT = 24;
+const CONTACT_ICON_GAP = 12;
 
-function contactIconSvg(label: string, color = BRAND_LIME, size = CONTACT_ICON_SIZE) {
-  const baseAttrs = `xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"`;
+function contactIconAsset(label: string, iconColor: string) {
+  const colorKey = iconColor === BRAND_BLUE ? 'blue' : 'lime';
+  const iconNames: Record<string, string> = {
+    M: 'mobile',
+    T: 'phone',
+    E: 'email',
+    W: 'web',
+  };
 
-  if (label === 'M') {
-    return `<svg ${baseAttrs}><rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`;
-  }
-
-  if (label === 'T') {
-    return `<svg ${baseAttrs}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`;
-  }
-
-  if (label === 'E') {
-    return `<svg ${baseAttrs}><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>`;
-  }
-
-  return `<svg ${baseAttrs}><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 0 20"></path><path d="M12 2a15.3 15.3 0 0 0 0 20"></path></svg>`;
+  return `/images/signature-icons/${iconNames[label] ?? 'web'}-${colorKey}.png`;
 }
 
-function contactIconImg(label: string, color = BRAND_LIME, size = CONTACT_ICON_SIZE) {
-  const svg = contactIconSvg(label, color, size).replace(/\s+/g, ' ').trim();
-  const src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+function contactIconImg(label: string, iconColor = BRAND_LIME) {
+  const iconPath = contactIconAsset(label, iconColor);
 
-  return `<img src="${src}" alt="" width="${size}" height="${size}" border="0" style="display:block;width:${size}px;height:${size}px;border:0;margin:0;" />`;
+  return `<img src="${escapeAttr(iconPath)}" alt="" width="${CONTACT_ICON_SIZE}" height="${CONTACT_ICON_SIZE}" border="0" style="display:inline-block;vertical-align:middle;width:${CONTACT_ICON_SIZE}px;height:${CONTACT_ICON_SIZE}px;max-width:${CONTACT_ICON_SIZE}px;margin:0;padding:0;border:0;outline:none;text-decoration:none;" />`;
 }
 
 function contactLine(
@@ -181,17 +173,11 @@ function contactLine(
 
   return `
     <tr>
-      <td style="padding:2px 0;">
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
-          <tr>
-            <td width="${CONTACT_ICON_COLUMN_WIDTH}" valign="middle" style="width:${CONTACT_ICON_COLUMN_WIDTH}px;height:${CONTACT_ROW_HEIGHT}px;padding:0 ${CONTACT_ICON_GAP}px 0 0;vertical-align:middle;text-align:left;line-height:0;">
-              ${contactIconImg(label, iconColor)}
-            </td>
-            <td valign="middle" style="height:${CONTACT_ROW_HEIGHT}px;padding:0;font-family:Arial,sans-serif;font-size:13px;line-height:${CONTACT_ROW_HEIGHT}px;color:${textColor};vertical-align:middle;white-space:nowrap;">
-              <a href="${escapeAttr(href)}" style="color:inherit;text-decoration:none;font-weight:${linkWeight};line-height:${CONTACT_ROW_HEIGHT}px;display:inline-block;">${escapeHtml(value)}</a>
-            </td>
-          </tr>
-        </table>
+      <td width="${CONTACT_ICON_COLUMN_WIDTH}" valign="middle" style="width:${CONTACT_ICON_COLUMN_WIDTH}px;min-width:${CONTACT_ICON_COLUMN_WIDTH}px;padding:0 ${CONTACT_ICON_GAP}px 0 0;vertical-align:middle;">
+        ${contactIconImg(label, iconColor)}
+      </td>
+      <td valign="middle" style="padding:2px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.4;color:${textColor};vertical-align:middle;white-space:nowrap;">
+        <a href="${escapeAttr(href)}" style="color:inherit;text-decoration:none;font-weight:${linkWeight};">${escapeHtml(value)}</a>
       </td>
     </tr>`;
 }
@@ -205,28 +191,39 @@ function buildContactTable(rows: string, marginTop = '0') {
   return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin-top:${marginTop};">${trimmedRows}</table>`;
 }
 
+function getTemplateWidth(templateKey: TemplateKey) {
+  return templateKey === 'ledger' ? 650 : 720;
+}
+
 function getTemplateCaptureBackground(templateKey: TemplateKey) {
   return templateKey === 'horizon' ? '#0f172a' : '#ffffff';
 }
 
 function buildCaptureElement(signatureHtml: string, templateKey: TemplateKey) {
-  const container = document.createElement('div');
-  container.style.position = 'fixed';
-  container.style.left = '0';
-  container.style.top = '0';
-  container.style.width = 'max-content';
-  container.style.padding = '0';
-  container.style.margin = '0';
-  container.style.opacity = '0';
-  container.style.pointerEvents = 'none';
-  container.style.zIndex = '-1';
-  container.style.background = getTemplateCaptureBackground(templateKey);
-  container.innerHTML = signatureHtml;
-  document.body.appendChild(container);
+  const width = getTemplateWidth(templateKey);
+  const outer = document.createElement('div');
+  outer.style.position = 'absolute';
+  outer.style.top = '0';
+  outer.style.left = '0';
+  outer.style.height = '0';
+  outer.style.overflow = 'hidden';
+  outer.style.pointerEvents = 'none';
+  outer.style.zIndex = '-9999';
+  outer.setAttribute('aria-hidden', 'true');
+
+  const inner = document.createElement('div');
+  inner.style.width = `${width}px`;
+  inner.style.backgroundColor = getTemplateCaptureBackground(templateKey);
+  inner.style.boxSizing = 'border-box';
+  inner.innerHTML = signatureHtml;
+
+  outer.appendChild(inner);
+  document.body.appendChild(outer);
 
   return {
-    container,
-    signatureElement: container.firstElementChild as HTMLElement | null,
+    container: outer,
+    signatureElement: inner.firstElementChild as HTMLElement | null,
+    captureWidth: width,
   };
 }
 
@@ -505,10 +502,14 @@ export default function EmailSignatureAdmin({ skipAuth = false, embedded = false
     setJpegError('');
     setDownloadingJpegTemplate(template.key);
 
-    let captureTarget: { container: HTMLDivElement; signatureElement: HTMLElement | null } | null = null;
+    let captureTarget: {
+      container: HTMLDivElement;
+      signatureElement: HTMLElement | null;
+      captureWidth: number;
+    } | null = null;
 
     try {
-      const html2canvas = (await import('html2canvas')).default;
+      const { domToJpeg } = await import('modern-screenshot');
       const signatureHtml = buildSignatureHtml(signatureData, template.key, logoSrc);
       captureTarget = buildCaptureElement(signatureHtml, template.key);
       const signatureElement = captureTarget.signatureElement;
@@ -517,34 +518,25 @@ export default function EmailSignatureAdmin({ skipAuth = false, embedded = false
         throw new Error('Signature preview is not ready yet.');
       }
 
+      await document.fonts?.ready;
       await waitForSignatureAssets(signatureElement);
       await new Promise<void>((resolve) => {
         window.requestAnimationFrame(() => resolve());
       });
 
-      const canvas = await html2canvas(signatureElement, {
-        backgroundColor: getTemplateCaptureBackground(template.key),
+      const dataUrl = await domToJpeg(signatureElement, {
         scale: 2,
-        useCORS: true,
-        logging: false,
+        quality: 0.95,
+        backgroundColor: getTemplateCaptureBackground(template.key),
+        width: captureTarget.captureWidth,
       });
 
-      const blob = await new Promise<Blob | null>((resolve) => {
-        canvas.toBlob(resolve, 'image/jpeg', 0.96);
-      });
-
-      if (!blob) {
-        throw new Error('Could not create the JPEG file.');
-      }
-
-      const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
-      link.href = url;
+      link.href = dataUrl;
       link.download = signatureJpegFileName(signatureData, template);
       document.body.appendChild(link);
       link.click();
       link.remove();
-      URL.revokeObjectURL(url);
     } catch {
       setJpegError('JPEG download failed. Please try again after the preview has fully loaded.');
     } finally {
