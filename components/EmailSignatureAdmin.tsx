@@ -137,22 +137,34 @@ async function waitForSignatureAssets(element: HTMLElement) {
   await document.fonts?.ready;
 }
 
-function contactIconSvg(label: string, color = BRAND_LIME, size = 14) {
-  const baseAttrs = `xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;width:${size}px;height:${size}px;"`;
+const CONTACT_ICON_SIZE = 14;
+const CONTACT_ICON_COLUMN_WIDTH = 28;
+const CONTACT_ICON_GAP = 10;
+const CONTACT_ROW_HEIGHT = 24;
+
+function contactIconSvg(label: string, color = BRAND_LIME, size = CONTACT_ICON_SIZE) {
+  const baseAttrs = `xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"`;
 
   if (label === 'M') {
-    return `<svg ${baseAttrs} aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`;
+    return `<svg ${baseAttrs}><rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`;
   }
 
   if (label === 'T') {
-    return `<svg ${baseAttrs} aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`;
+    return `<svg ${baseAttrs}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`;
   }
 
   if (label === 'E') {
-    return `<svg ${baseAttrs} aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>`;
+    return `<svg ${baseAttrs}><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>`;
   }
 
-  return `<svg ${baseAttrs} aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 0 20"></path><path d="M12 2a15.3 15.3 0 0 0 0 20"></path></svg>`;
+  return `<svg ${baseAttrs}><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 0 20"></path><path d="M12 2a15.3 15.3 0 0 0 0 20"></path></svg>`;
+}
+
+function contactIconImg(label: string, color = BRAND_LIME, size = CONTACT_ICON_SIZE) {
+  const svg = contactIconSvg(label, color, size).replace(/\s+/g, ' ').trim();
+  const src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+
+  return `<img src="${src}" alt="" width="${size}" height="${size}" border="0" style="display:block;width:${size}px;height:${size}px;border:0;margin:0;" />`;
 }
 
 function contactLine(
@@ -169,9 +181,17 @@ function contactLine(
 
   return `
     <tr>
-      <td style="width:20px;padding:5px 12px 5px 0;vertical-align:middle;line-height:0;">${contactIconSvg(label, iconColor)}</td>
-      <td style="padding:5px 0;font-family:Arial,sans-serif;font-size:13px;line-height:18px;color:${textColor};vertical-align:middle;">
-        <a href="${escapeAttr(href)}" style="color:inherit;text-decoration:none;font-weight:${linkWeight};">${escapeHtml(value)}</a>
+      <td style="padding:2px 0;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+          <tr>
+            <td width="${CONTACT_ICON_COLUMN_WIDTH}" valign="middle" style="width:${CONTACT_ICON_COLUMN_WIDTH}px;height:${CONTACT_ROW_HEIGHT}px;padding:0 ${CONTACT_ICON_GAP}px 0 0;vertical-align:middle;text-align:left;line-height:0;">
+              ${contactIconImg(label, iconColor)}
+            </td>
+            <td valign="middle" style="height:${CONTACT_ROW_HEIGHT}px;padding:0;font-family:Arial,sans-serif;font-size:13px;line-height:${CONTACT_ROW_HEIGHT}px;color:${textColor};vertical-align:middle;white-space:nowrap;">
+              <a href="${escapeAttr(href)}" style="color:inherit;text-decoration:none;font-weight:${linkWeight};line-height:${CONTACT_ROW_HEIGHT}px;display:inline-block;">${escapeHtml(value)}</a>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>`;
 }
@@ -187,6 +207,27 @@ function buildContactTable(rows: string, marginTop = '0') {
 
 function getTemplateCaptureBackground(templateKey: TemplateKey) {
   return templateKey === 'horizon' ? '#0f172a' : '#ffffff';
+}
+
+function buildCaptureElement(signatureHtml: string, templateKey: TemplateKey) {
+  const container = document.createElement('div');
+  container.style.position = 'fixed';
+  container.style.left = '0';
+  container.style.top = '0';
+  container.style.width = 'max-content';
+  container.style.padding = '0';
+  container.style.margin = '0';
+  container.style.opacity = '0';
+  container.style.pointerEvents = 'none';
+  container.style.zIndex = '-1';
+  container.style.background = getTemplateCaptureBackground(templateKey);
+  container.innerHTML = signatureHtml;
+  document.body.appendChild(container);
+
+  return {
+    container,
+    signatureElement: container.firstElementChild as HTMLElement | null,
+  };
 }
 
 function buildHorizonSignature(data: SignatureData, logoSrc: string) {
@@ -464,38 +505,28 @@ export default function EmailSignatureAdmin({ skipAuth = false, embedded = false
     setJpegError('');
     setDownloadingJpegTemplate(template.key);
 
-    let temporaryContainer: HTMLDivElement | null = null;
+    let captureTarget: { container: HTMLDivElement; signatureElement: HTMLElement | null } | null = null;
 
     try {
       const html2canvas = (await import('html2canvas')).default;
-      let signatureElement = previewRef.current?.firstElementChild as HTMLElement | null;
-
-      if (template.key !== activeTemplate || !signatureElement) {
-        temporaryContainer = document.createElement('div');
-        temporaryContainer.style.position = 'fixed';
-        temporaryContainer.style.left = '-10000px';
-        temporaryContainer.style.top = '0';
-        temporaryContainer.style.width = 'max-content';
-        temporaryContainer.style.padding = '0';
-        temporaryContainer.style.background = getTemplateCaptureBackground(template.key);
-        temporaryContainer.innerHTML = buildSignatureHtml(signatureData, template.key, logoSrc);
-        document.body.appendChild(temporaryContainer);
-        signatureElement = temporaryContainer.firstElementChild as HTMLElement | null;
-      }
+      const signatureHtml = buildSignatureHtml(signatureData, template.key, logoSrc);
+      captureTarget = buildCaptureElement(signatureHtml, template.key);
+      const signatureElement = captureTarget.signatureElement;
 
       if (!signatureElement) {
         throw new Error('Signature preview is not ready yet.');
       }
 
       await waitForSignatureAssets(signatureElement);
+      await new Promise<void>((resolve) => {
+        window.requestAnimationFrame(() => resolve());
+      });
 
       const canvas = await html2canvas(signatureElement, {
         backgroundColor: getTemplateCaptureBackground(template.key),
-        scale: Math.min(window.devicePixelRatio || 2, 3),
+        scale: 2,
         useCORS: true,
         logging: false,
-        width: signatureElement.offsetWidth,
-        height: signatureElement.offsetHeight,
       });
 
       const blob = await new Promise<Blob | null>((resolve) => {
@@ -517,7 +548,7 @@ export default function EmailSignatureAdmin({ skipAuth = false, embedded = false
     } catch {
       setJpegError('JPEG download failed. Please try again after the preview has fully loaded.');
     } finally {
-      temporaryContainer?.remove();
+      captureTarget?.container.remove();
       setDownloadingJpegTemplate(null);
     }
   };
