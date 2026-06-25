@@ -35,8 +35,7 @@ type SignatureTemplate = {
   size: string;
 };
 
-const LOGO_URL =
-  'https://vnr-anchor.vercel.app/_next/image?url=%2Fimages%2Flogos%2Fvnrlogo1.png&w=256&q=75';
+const LOGO_PATH = '/images/logos/vnrlogo1.png';
 
 type EmailSignatureAdminProps = {
   skipAuth?: boolean;
@@ -138,8 +137,8 @@ async function waitForSignatureAssets(element: HTMLElement) {
   await document.fonts?.ready;
 }
 
-function contactIconSvg(label: string, color = BRAND_LIME, size = 15) {
-  const baseAttrs = `xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-3px;"`;
+function contactIconSvg(label: string, color = BRAND_LIME, size = 14) {
+  const baseAttrs = `xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;width:${size}px;height:${size}px;"`;
 
   if (label === 'M') {
     return `<svg ${baseAttrs} aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`;
@@ -156,18 +155,38 @@ function contactIconSvg(label: string, color = BRAND_LIME, size = 15) {
   return `<svg ${baseAttrs} aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 0 20"></path><path d="M12 2a15.3 15.3 0 0 0 0 20"></path></svg>`;
 }
 
-function contactLine(label: string, value: string, href: string, textColor = '#475569') {
+function contactLine(
+  label: string,
+  value: string,
+  href: string,
+  textColor = '#475569',
+  iconColor = BRAND_LIME,
+  linkWeight: 'normal' | 'bold' = 'normal',
+) {
   if (!value.trim()) {
     return '';
   }
 
   return `
     <tr>
-      <td style="width:22px;padding:3px 8px 3px 0;color:${BRAND_LIME};vertical-align:middle;">${contactIconSvg(label)}</td>
-      <td style="padding:3px 0;font-family:Arial,sans-serif;font-size:13px;line-height:17px;color:${textColor};vertical-align:middle;">
-        <a href="${escapeAttr(href)}" style="color:inherit;text-decoration:none;">${escapeHtml(value)}</a>
+      <td style="width:20px;padding:5px 12px 5px 0;vertical-align:middle;line-height:0;">${contactIconSvg(label, iconColor)}</td>
+      <td style="padding:5px 0;font-family:Arial,sans-serif;font-size:13px;line-height:18px;color:${textColor};vertical-align:middle;">
+        <a href="${escapeAttr(href)}" style="color:inherit;text-decoration:none;font-weight:${linkWeight};">${escapeHtml(value)}</a>
       </td>
     </tr>`;
+}
+
+function buildContactTable(rows: string, marginTop = '0') {
+  const trimmedRows = rows.trim();
+  if (!trimmedRows) {
+    return '';
+  }
+
+  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin-top:${marginTop};">${trimmedRows}</table>`;
+}
+
+function getTemplateCaptureBackground(templateKey: TemplateKey) {
+  return templateKey === 'horizon' ? '#0f172a' : '#ffffff';
 }
 
 function buildHorizonSignature(data: SignatureData, logoSrc: string) {
@@ -182,13 +201,7 @@ function buildHorizonSignature(data: SignatureData, logoSrc: string) {
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="${width}" style="width:${width}px;height:${height}px;border-collapse:separate;border-spacing:0;background:${SLATE_DARK};background:linear-gradient(135deg,#0f172a 0%,#111f3d 54%,#06111f 100%);border-radius:22px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;">
   <tr>
     <td width="${brandWidth}" style="width:${brandWidth}px;padding:22px 18px;text-align:center;vertical-align:middle;border-right:1px solid rgba(255,255,255,0.12);">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="border-collapse:separate;border-spacing:0;margin:0 auto 12px;background:#ffffff;border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,0.22);">
-        <tr>
-          <td style="padding:8px 10px;text-align:center;vertical-align:middle;">
-            <img src="${escapeAttr(logoSrc)}" alt="VNR Professional Accountants" width="126" style="display:block;width:126px;max-width:126px;height:auto;border:0;">
-          </td>
-        </tr>
-      </table>
+      <img src="${escapeAttr(logoSrc)}" alt="VNR Professional Accountants" width="126" style="display:block;width:126px;max-width:126px;height:auto;border:0;margin:0 auto 12px;">
       <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;letter-spacing:0.4px;color:#cbd5e1;">Professional Accountants</div>
       <div style="width:48px;height:3px;background:${BRAND_LIME};border-radius:999px;margin:12px auto 0;"></div>
     </td>
@@ -207,11 +220,12 @@ function buildHorizonSignature(data: SignatureData, logoSrc: string) {
           ? `<div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;color:#cbd5e1;margin-top:8px;">${escapeHtml(data.qualifications)}</div>`
           : ''
       }
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin-top:10px;">
-        ${contactLine('M', data.mobile, `tel:${normaliseTelephone(data.mobile)}`, '#e2e8f0')}
-        ${contactLine('T', data.telephone, `tel:${normaliseTelephone(data.telephone)}`, '#e2e8f0')}
-        ${contactLine('E', data.email, `mailto:${data.email}`, '#e2e8f0')}
-      </table>
+      ${buildContactTable(
+        `${contactLine('M', data.mobile, `tel:${normaliseTelephone(data.mobile)}`, '#e2e8f0', BRAND_LIME)}
+        ${contactLine('T', data.telephone, `tel:${normaliseTelephone(data.telephone)}`, '#e2e8f0', BRAND_LIME)}
+        ${contactLine('E', data.email, `mailto:${data.email}`, '#e2e8f0', BRAND_LIME)}`,
+        '10px',
+      )}
     </td>
   </tr>
 </table>`;
@@ -243,10 +257,10 @@ function buildBoardroomSignature(data: SignatureData, logoSrc: string) {
           ? `<div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;color:#64748b;margin-bottom:7px;">${escapeHtml(data.qualifications)}</div>`
           : ''
       }
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
-        ${contactLine('M', data.mobile, `tel:${normaliseTelephone(data.mobile)}`)}
-        ${contactLine('E', data.email, `mailto:${data.email}`)}
-      </table>
+      ${buildContactTable(
+        `${contactLine('M', data.mobile, `tel:${normaliseTelephone(data.mobile)}`)}
+        ${contactLine('E', data.email, `mailto:${data.email}`)}`,
+      )}
     </td>
     <td width="150" style="width:150px;padding:20px 20px 20px 10px;text-align:right;vertical-align:middle;background:#f8fafc;">
       <img src="${escapeAttr(logoSrc)}" alt="VNR Professional Accountants" width="118" style="display:block;width:118px;max-width:118px;height:auto;margin:0 0 18px auto;border:0;">
@@ -285,12 +299,12 @@ function buildLedgerSignature(data: SignatureData, logoSrc: string) {
         </tr>
       </table>
       <div style="width:100%;height:1px;background:#e2e8f0;margin:12px 0 9px;"></div>
-      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#475569;">
-        ${data.mobile.trim() ? `${contactIconSvg('M', BRAND_BLUE, 13)} <a href="tel:${normaliseTelephone(data.mobile)}" style="color:#475569;text-decoration:none;">${escapeHtml(data.mobile)}</a>&nbsp;&nbsp;` : ''}
-        ${data.telephone.trim() ? `${contactIconSvg('T', BRAND_BLUE, 13)} <a href="tel:${normaliseTelephone(data.telephone)}" style="color:#475569;text-decoration:none;">${escapeHtml(data.telephone)}</a><br>` : ''}
-        ${data.email.trim() ? `${contactIconSvg('E', BRAND_BLUE, 13)} <a href="mailto:${escapeAttr(data.email)}" style="color:${BRAND_BLUE};text-decoration:none;font-weight:bold;">${escapeHtml(data.email)}</a>&nbsp;&nbsp;` : ''}
-        ${data.website.trim() ? `${contactIconSvg('W', BRAND_BLUE, 13)} <a href="https://${escapeAttr(data.website.replace(/^https?:\/\//, ''))}" style="color:#475569;text-decoration:none;">${escapeHtml(data.website)}</a>` : ''}
-      </div>
+      ${buildContactTable(
+        `${contactLine('M', data.mobile, `tel:${normaliseTelephone(data.mobile)}`, '#475569', BRAND_BLUE)}
+        ${contactLine('T', data.telephone, `tel:${normaliseTelephone(data.telephone)}`, '#475569', BRAND_BLUE)}
+        ${contactLine('E', data.email, `mailto:${data.email}`, BRAND_BLUE, BRAND_BLUE, 'bold')}
+        ${contactLine('W', data.website, `https://${data.website.replace(/^https?:\/\//, '')}`, '#475569', BRAND_BLUE)}`,
+      )}
       ${
         data.qualifications.trim()
           ? `<div style="font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;color:#64748b;margin-top:7px;">${escapeHtml(data.qualifications)}</div>`
@@ -308,7 +322,7 @@ function buildLedgerSignature(data: SignatureData, logoSrc: string) {
 </table>`;
 }
 
-function buildSignatureHtml(data: SignatureData, templateKey: TemplateKey, logoSrc = LOGO_URL) {
+function buildSignatureHtml(data: SignatureData, templateKey: TemplateKey, logoSrc = LOGO_PATH) {
   if (templateKey === 'horizon') {
     return buildHorizonSignature(data, logoSrc);
   }
@@ -342,7 +356,7 @@ export default function EmailSignatureAdmin({ skipAuth = false, embedded = false
   const [signatureData, setSignatureData] = useState<SignatureData>(defaultSignature);
   const [activeTemplate, setActiveTemplate] = useState<TemplateKey>('horizon');
   const [copiedTemplate, setCopiedTemplate] = useState<TemplateKey | null>(null);
-  const [logoSrc, setLogoSrc] = useState(LOGO_URL);
+  const [logoSrc, setLogoSrc] = useState(LOGO_PATH);
   const [jpegError, setJpegError] = useState('');
   const [downloadingJpegTemplate, setDownloadingJpegTemplate] = useState<TemplateKey | null>(null);
 
@@ -361,7 +375,7 @@ export default function EmailSignatureAdmin({ skipAuth = false, embedded = false
 
     const embedLogo = async () => {
       try {
-        const response = await fetch(LOGO_URL);
+        const response = await fetch(LOGO_PATH);
         const blob = await response.blob();
         const reader = new FileReader();
         reader.onload = () => {
@@ -371,7 +385,7 @@ export default function EmailSignatureAdmin({ skipAuth = false, embedded = false
         };
         reader.readAsDataURL(blob);
       } catch {
-        setLogoSrc(LOGO_URL);
+        setLogoSrc(LOGO_PATH);
       }
     };
 
@@ -462,7 +476,8 @@ export default function EmailSignatureAdmin({ skipAuth = false, embedded = false
         temporaryContainer.style.left = '-10000px';
         temporaryContainer.style.top = '0';
         temporaryContainer.style.width = 'max-content';
-        temporaryContainer.style.background = '#ffffff';
+        temporaryContainer.style.padding = '0';
+        temporaryContainer.style.background = getTemplateCaptureBackground(template.key);
         temporaryContainer.innerHTML = buildSignatureHtml(signatureData, template.key, logoSrc);
         document.body.appendChild(temporaryContainer);
         signatureElement = temporaryContainer.firstElementChild as HTMLElement | null;
@@ -475,10 +490,12 @@ export default function EmailSignatureAdmin({ skipAuth = false, embedded = false
       await waitForSignatureAssets(signatureElement);
 
       const canvas = await html2canvas(signatureElement, {
-        backgroundColor: '#ffffff',
+        backgroundColor: getTemplateCaptureBackground(template.key),
         scale: Math.min(window.devicePixelRatio || 2, 3),
         useCORS: true,
         logging: false,
+        width: signatureElement.offsetWidth,
+        height: signatureElement.offsetHeight,
       });
 
       const blob = await new Promise<Blob | null>((resolve) => {
