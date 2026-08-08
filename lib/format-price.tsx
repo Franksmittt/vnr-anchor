@@ -40,10 +40,33 @@ export function formatServicePrice(service: Pick<PricingService, 'priceExcl' | '
       );
     }
 
+    if (typeof priceExcl === 'string' && /included/i.test(priceExcl)) {
+      return (
+        <span className="inline-flex max-w-[220px] items-center rounded-full border border-brand-teal/30 bg-brand-teal/15 px-3 py-1 text-xs font-medium leading-snug text-brand-teal-dark">
+          {priceExcl}
+        </span>
+      );
+    }
+
+    if (typeof priceExcl === 'string' && /per hour/i.test(priceExcl)) {
+      return (
+        <div className="text-left sm:text-right">
+          <span className="text-base font-bold text-text-primary">{priceExcl}</span>
+          {typeof priceIncl === 'string' && priceIncl && priceIncl !== priceExcl ? (
+            <span className="mt-0.5 block text-xs text-text-secondary">incl. {priceIncl}</span>
+          ) : (
+            <span className="mt-0.5 block text-xs text-text-secondary">excl. VAT</span>
+          )}
+        </div>
+      );
+    }
+
     const porLabel =
-      category === 'Business Structuring' || category === 'Tax Advisory & Compliance'
+      category === 'Personal Tax Services' ||
+      category === 'Yearly Statutory Compliance Services' ||
+      category === 'Hourly Tariffs'
         ? 'Per Quote / Hourly Tariff'
-        : category === 'Cloud Accounting & Financial Record Keeping Solutions'
+        : category === 'Subscription Fees & Disbursements'
           ? 'Per Quote'
           : "Let's Chat";
 
@@ -59,6 +82,27 @@ export function formatServicePrice(service: Pick<PricingService, 'priceExcl' | '
       <div className="text-left sm:text-right">
         <span className="text-base font-bold text-text-primary">{priceExcl}</span>
         <span className="mt-0.5 block text-xs text-text-secondary">of Gross Assets</span>
+      </div>
+    );
+  }
+
+  if (typeof priceExcl === 'string' && /included/i.test(priceExcl)) {
+    return (
+      <span className="inline-flex max-w-[220px] items-center rounded-full border border-brand-teal/30 bg-brand-teal/15 px-3 py-1 text-xs font-medium leading-snug text-brand-teal-dark">
+        {priceExcl}
+      </span>
+    );
+  }
+
+  if (typeof priceExcl === 'string' && /per hour/i.test(priceExcl)) {
+    return (
+      <div className="text-left sm:text-right">
+        <span className="text-base font-bold text-text-primary">{priceExcl}</span>
+        {typeof priceIncl === 'string' && priceIncl && priceIncl !== priceExcl ? (
+          <span className="mt-0.5 block text-xs text-text-secondary">incl. {priceIncl}</span>
+        ) : (
+          <span className="mt-0.5 block text-xs text-text-secondary">excl. VAT</span>
+        )}
       </div>
     );
   }

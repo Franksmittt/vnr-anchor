@@ -1,8 +1,16 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
-import type { PricingService } from '@/data/pricing-data';
+import {
+  defaultPricingCatalog,
+  type PricingCatalog,
+  type PricingService,
+} from '@/data/pricing-data';
 import { BACK_OFFICE_COOKIE, verifySessionToken } from '@/lib/back-office/auth';
-import { getPricingServices, isPricingBlobConfigured, savePricingToBlob } from '@/lib/pricing/store';
+import {
+  getPricingCatalog,
+  isPricingBlobConfigured,
+  savePricingCatalogToBlob,
+} from '@/lib/pricing/store';
 
 export const dynamic = 'force-dynamic';
 
@@ -25,8 +33,10 @@ function parsePriceValue(value: unknown): string | number {
     return '';
   }
 
-  if (text.toUpperCase() === 'POR' || text.toUpperCase() === 'FREE' || text.includes('%')) {
-    return text.toUpperCase() === 'POR' ? 'POR' : text.toUpperCase() === 'FREE' ? 'FREE' : text;
+  if (text.toUpperCase() === 'POR') return 'POR';
+  if (text.toUpperCase() === 'FREE') return 'FREE';
+  if (text.includes('%') || /per hour/i.test(text) || /included/i.test(text)) {
+    return text;
   }
 
   const parsed = Number(text.replace(/,/g, ''));
@@ -44,13 +54,66 @@ function normalizeService(input: unknown): PricingService | null {
     return null;
   }
 
+  const category = record.category.trim();
+  const description = record.description.trim();
+
+  if (!category || !description) {
+    return null;
+  }
+
   return {
-    category: record.category,
-    subcategory: typeof record.subcategory === 'string' ? record.subcategory : '',
-    code: typeof record.code === 'string' ? record.code : '',
-    description: record.description,
+    category,
+    subcategory: typeof record.subcategory === 'string' ? record.subcategory.trim() : '',
+    code: typeof record.code === 'string' ? record.code.trim() : '',
+    description,
     priceExcl: parsePriceValue(record.priceExcl),
     priceIncl: parsePriceValue(record.priceIncl),
+  };
+}
+
+function normalizeCatalogPayload(body: unknown): PricingCatalog | null {
+  if (!body || typeof body !== 'object') {
+    return null;
+  }
+
+  const record = body as Record<string, unknown>;
+  const rawServices = Array.isArray(record.services) ? record.services : null;
+  if (!rawServices) {
+    return null;
+  }
+
+  const services = rawServices
+    .map((item) => normalizeService(item))
+    .filter((item): item is PricingService => item !== null);
+
+  if (services.length === 0) {
+    return null;
+  }
+
+  const categories = Array.isArray(record.categories)
+    ? record.categories
+        .filter((category): category is string => typeof category === 'string')
+        .map((category) => category.trim())
+        .filter(Boolean)
+    : [];
+
+  const derivedCategories = Array.from(new Set(services.map((service) => service.category)));
+  const mergedCategories = [...categories];
+
+  for (const category of derivedCategories) {
+    if (!mergedCategories.includes(category)) {
+      mergedCategories.push(category);
+    }
+  }
+
+  return {
+    version: 1,
+    effectiveLabel:
+      typeof record.effectiveLabel === 'string' && record.effectiveLabel.trim()
+        ? record.effectiveLabel.trim()
+        : defaultPricingCatalog.effectiveLabel,
+    categories: mergedCategories,
+    services,
   };
 }
 
@@ -59,10 +122,13 @@ export async function GET() {
     return unauthorized();
   }
 
-  const services = await getPricingServices();
+  const catalog = await getPricingCatalog();
 
   return NextResponse.json({
-    services,
+    catalog,
+    services: catalog.services,
+    categories: catalog.categories,
+    effectiveLabel: catalog.effectiveLabel,
     blobConfigured: isPricingBlobConfigured(),
   });
 }
@@ -84,23 +150,19 @@ export async function PUT(request: Request) {
 
   try {
     const body = await request.json();
-    const rawServices = body?.services;
+    const catalog = normalizeCatalogPayload(body);
 
-    if (!Array.isArray(rawServices)) {
+    if (!catalog) {
       return NextResponse.json({ ok: false, error: 'Invalid pricing payload.' }, { status: 400 });
     }
 
-    const services = rawServices
-      .map((item) => normalizeService(item))
-      .filter((item): item is PricingService => item !== null);
+    await savePricingCatalogToBlob(catalog);
 
-    if (services.length === 0) {
-      return NextResponse.json({ ok: false, error: 'No valid services to save.' }, { status: 400 });
-    }
-
-    await savePricingToBlob(services);
-
-    return NextResponse.json({ ok: true, count: services.length });
+    return NextResponse.json({
+      ok: true,
+      count: catalog.services.length,
+      categoryCount: catalog.categories.length,
+    });
   } catch (error) {
     console.error('Failed to save pricing:', error);
 
