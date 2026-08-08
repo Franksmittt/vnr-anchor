@@ -11,6 +11,7 @@ import {
   FolderPlus,
   Loader2,
   Plus,
+  RefreshCw,
   Save,
   Search,
   Trash2,
@@ -235,6 +236,23 @@ export default function PricingEditor() {
     markDirty();
   };
 
+  const loadDefaultCatalog = () => {
+    const confirmed = window.confirm(
+      'Replace the current editor contents with the default 2027 PDF price list? You still need to click Save catalog afterwards to publish it live.',
+    );
+    if (!confirmed) return;
+
+    setCategories([...defaultPricingCatalog.categories]);
+    setServices(defaultPricingCatalog.services.map((service) => ({ ...service })));
+    setEffectiveLabel(defaultPricingCatalog.effectiveLabel);
+    setActiveCategory(defaultPricingCatalog.categories[0] || '');
+    setSearchQuery('');
+    setError('');
+    setSuccess(
+      'Loaded the default 2027 price list into the editor. Click Save catalog to publish it to the live website.',
+    );
+  };
+
   const handleSave = async () => {
     setSaving(true);
     setError('');
@@ -287,16 +305,32 @@ export default function PricingEditor() {
             </p>
           </div>
 
-          <button
-            type="button"
-            onClick={handleSave}
-            disabled={saving || !blobConfigured}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-blue px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-brand-blue-dark disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-            {saving ? 'Saving...' : 'Save catalog'}
-          </button>
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <button
+              type="button"
+              onClick={loadDefaultCatalog}
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-text-primary transition hover:border-brand-blue hover:text-brand-blue"
+            >
+              <RefreshCw className="h-4 w-4" />
+              Load 2027 default list
+            </button>
+            <button
+              type="button"
+              onClick={handleSave}
+              disabled={saving || !blobConfigured}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-blue px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-brand-blue-dark disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
+              {saving ? 'Saving...' : 'Save catalog'}
+            </button>
+          </div>
         </div>
+
+        <p className="mt-4 rounded-xl border border-brand-blue/20 bg-brand-blue/5 px-4 py-3 text-sm text-text-secondary">
+          The live website currently reads prices from Vercel Blob storage. If you still see old categories like
+          &quot;Cloud Accounting &amp; Financial Record Keeping Solutions&quot;, click <strong>Load 2027 default list</strong>,
+          then <strong>Save catalog</strong>.
+        </p>
 
         <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto]">
           <label className="block text-xs font-semibold text-text-secondary">
