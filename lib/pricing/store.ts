@@ -159,9 +159,23 @@ export async function savePricingToBlob(services: PricingService[]): Promise<voi
   });
 }
 
+function isObsoleteCatalog(catalog: PricingCatalog): boolean {
+  const categories = new Set(catalog.categories);
+  const hasLegacyCategory = categories.has('Cloud Accounting & Financial Record Keeping Solutions');
+  const hasNewCategory = categories.has('Personal Tax Services');
+  return hasLegacyCategory && !hasNewCategory;
+}
+
 export async function getPricingCatalog(): Promise<PricingCatalog> {
   const blobData = await readPricingCatalogFromBlob();
-  return blobData ?? defaultPricingCatalog;
+
+  // Older Blob snapshots still contain the pre-2027 category structure.
+  // Prefer the seeded 2027 catalog until the back office publishes an updated Blob.
+  if (!blobData || isObsoleteCatalog(blobData)) {
+    return defaultPricingCatalog;
+  }
+
+  return blobData;
 }
 
 export async function getPricingServices(): Promise<PricingService[]> {
