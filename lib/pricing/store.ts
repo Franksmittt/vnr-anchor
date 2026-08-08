@@ -1,5 +1,9 @@
 import { get, head, put } from '@vercel/blob';
-import { pricingData as staticPricingData, type PricingService } from '@/data/pricing-data';
+import {
+  defaultPricingCatalog,
+  type PricingCatalog,
+  type PricingService,
+} from '@/data/pricing-data';
 
 export const PRICING_BLOB_PATHNAME = 'vnr/pricing-services.json';
 
@@ -19,7 +23,81 @@ function getPrivateBlobOptions(token: string) {
   };
 }
 
-export async function readPricingFromBlob(): Promise<PricingService[] | null> {
+function normalizeCatalog(input: unknown): PricingCatalog | null {
+  if (!input) {
+    return null;
+  }
+
+  if (Array.isArray(input)) {
+    const services = input.filter(isPricingService);
+    if (services.length === 0) {
+      return null;
+    }
+
+    const categories = Array.from(
+      new Set(services.map((service) => service.category).filter(Boolean)),
+    );
+
+    return {
+      version: 1,
+      effectiveLabel: defaultPricingCatalog.effectiveLabel,
+      categories: categories.length > 0 ? categories : [...defaultPricingCatalog.categories],
+      services,
+    };
+  }
+
+  if (typeof input !== 'object') {
+    return null;
+  }
+
+  const record = input as Record<string, unknown>;
+  const services = Array.isArray(record.services)
+    ? record.services.filter(isPricingService)
+    : [];
+
+  if (services.length === 0) {
+    return null;
+  }
+
+  const categories = Array.isArray(record.categories)
+    ? record.categories
+        .filter((category): category is string => typeof category === 'string')
+        .map((category) => category.trim())
+        .filter(Boolean)
+    : [];
+
+  const derivedCategories = Array.from(
+    new Set(services.map((service) => service.category).filter(Boolean)),
+  );
+
+  const mergedCategories = [...categories];
+  for (const category of derivedCategories) {
+    if (!mergedCategories.includes(category)) {
+      mergedCategories.push(category);
+    }
+  }
+
+  return {
+    version: 1,
+    effectiveLabel:
+      typeof record.effectiveLabel === 'string' && record.effectiveLabel.trim()
+        ? record.effectiveLabel.trim()
+        : defaultPricingCatalog.effectiveLabel,
+    categories: mergedCategories.length > 0 ? mergedCategories : [...defaultPricingCatalog.categories],
+    services,
+  };
+}
+
+function isPricingService(input: unknown): input is PricingService {
+  if (!input || typeof input !== 'object') {
+    return false;
+  }
+
+  const record = input as Record<string, unknown>;
+  return typeof record.category === 'string' && typeof record.description === 'string';
+}
+
+export async function readPricingCatalogFromBlob(): Promise<PricingCatalog | null> {
   const token = getBlobToken();
   if (!token) {
     return null;
@@ -40,25 +118,20 @@ export async function readPricingFromBlob(): Promise<PricingService[] | null> {
     }
 
     const text = await new Response(result.stream).text();
-    const data = JSON.parse(text) as PricingService[];
-
-    if (!Array.isArray(data)) {
-      return null;
-    }
-
-    return data;
+    const data = JSON.parse(text) as unknown;
+    return normalizeCatalog(data);
   } catch {
     return null;
   }
 }
 
-export async function savePricingToBlob(services: PricingService[]): Promise<void> {
+export async function savePricingCatalogToBlob(catalog: PricingCatalog): Promise<void> {
   const token = getBlobToken();
   if (!token) {
     throw new Error('BLOB_READ_WRITE_TOKEN is not configured.');
   }
 
-  const body = JSON.stringify(services);
+  const body = JSON.stringify(catalog);
 
   await put(PRICING_BLOB_PATHNAME, body, {
     ...getPrivateBlobOptions(token),
@@ -68,9 +141,32 @@ export async function savePricingToBlob(services: PricingService[]): Promise<voi
   });
 }
 
+/** @deprecated Prefer getPricingCatalog */
+export async function readPricingFromBlob(): Promise<PricingService[] | null> {
+  const catalog = await readPricingCatalogFromBlob();
+  return catalog?.services ?? null;
+}
+
+/** @deprecated Prefer savePricingCatalogToBlob */
+export async function savePricingToBlob(services: PricingService[]): Promise<void> {
+  const categories = Array.from(new Set(services.map((service) => service.category).filter(Boolean)));
+
+  await savePricingCatalogToBlob({
+    version: 1,
+    effectiveLabel: defaultPricingCatalog.effectiveLabel,
+    categories: categories.length > 0 ? categories : [...defaultPricingCatalog.categories],
+    services,
+  });
+}
+
+export async function getPricingCatalog(): Promise<PricingCatalog> {
+  const blobData = await readPricingCatalogFromBlob();
+  return blobData ?? defaultPricingCatalog;
+}
+
 export async function getPricingServices(): Promise<PricingService[]> {
-  const blobData = await readPricingFromBlob();
-  return blobData ?? staticPricingData;
+  const catalog = await getPricingCatalog();
+  return catalog.services;
 }
 
 export function isPricingBlobConfigured(): boolean {

@@ -3,9 +3,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
-  pricingCategories,
-  pricingSubcategories,
-  type PricingCategory,
+  deriveSubcategories,
+  type PricingCatalog,
   type PricingService,
 } from '@/data/pricing-data';
 import { formatServicePrice } from '@/lib/format-price';
@@ -20,35 +19,39 @@ import {
   BarChart3,
   ScrollText,
   CheckSquare,
-  Network,
   Landmark,
   Monitor,
   Clock,
   Search,
   ArrowRight,
+  Building2,
+  HeartHandshake,
+  Timer,
+  Home,
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
-const categoryIcons: Record<PricingCategory, React.ElementType> = {
-  'Tax Advisory & Compliance': FileText,
-  'Financial Reporting': BarChart3,
+const categoryIcons: Record<string, React.ElementType> = {
+  'Personal Tax Services': FileText,
+  'Domestic Registrations and Returns': Home,
+  'VAT Administration': CheckSquare,
   'Payroll Administration': Users,
-  'Registrations & Secretarial Services': ScrollText,
-  Confirmations: CheckSquare,
-  'Business Structuring': Network,
-  'Estate & Legacy Planning': Landmark,
-  'Cloud Accounting & Financial Record Keeping Solutions': Monitor,
+  'Yearly Statutory Compliance Services': BarChart3,
+  'CIPC Compliance': Building2,
+  'SARS and Secretarial Assistance': ScrollText,
+  'Trusts & Last Will & Testament': Landmark,
+  'Non-Profit Organisations': HeartHandshake,
+  'Hourly Tariffs': Timer,
+  'Subscription Fees & Disbursements': Monitor,
 };
 
-const categoryLinks: Partial<Record<PricingCategory, string>> = {
-  'Tax Advisory & Compliance': '/services/tax-advisory',
-  'Financial Reporting': '/services/financial-reporting',
+const categoryLinks: Record<string, string> = {
+  'Personal Tax Services': '/services/tax-advisory',
   'Payroll Administration': '/services/payroll-administration',
-  'Registrations & Secretarial Services': '/services/secretarial-services',
-  'Estate & Legacy Planning': '/services/legacy-planning',
-  Confirmations: '/services/confirmations',
-  'Business Structuring': '/services/business-structuring',
-  'Cloud Accounting & Financial Record Keeping Solutions': '/services/cloud-accounting',
+  'Yearly Statutory Compliance Services': '/services/financial-reporting',
+  'CIPC Compliance': '/services/secretarial-services',
+  'Trusts & Last Will & Testament': '/services/legacy-planning',
+  'Subscription Fees & Disbursements': '/services/cloud-accounting',
 };
 
 const sortOptions: { value: ServiceSortOption; label: string }[] = [
@@ -78,29 +81,39 @@ function ServicePriceRow({ service, index }: { service: PricingService; index: n
   );
 }
 
-const ServicesPageClient = ({ initialPricing }: { initialPricing: PricingService[] }) => {
-  const [activeCategory, setActiveCategory] = useState<PricingCategory>(pricingCategories[0]);
+const ServicesPageClient = ({ initialCatalog }: { initialCatalog: PricingCatalog }) => {
+  const categories = initialCatalog.categories;
+  const [activeCategory, setActiveCategory] = useState(categories[0] || '');
   const [activeSubcategory, setActiveSubcategory] = useState<string>('all');
   const [sortBy, setSortBy] = useState<ServiceSortOption>('sheet-order');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const subcategories = pricingSubcategories[activeCategory];
+  const subcategories = useMemo(
+    () => deriveSubcategories(initialCatalog.services, activeCategory),
+    [activeCategory, initialCatalog.services],
+  );
 
   useEffect(() => {
     setActiveSubcategory('all');
     setSearchQuery('');
   }, [activeCategory]);
 
+  useEffect(() => {
+    if (!categories.includes(activeCategory) && categories[0]) {
+      setActiveCategory(categories[0]);
+    }
+  }, [activeCategory, categories]);
+
   const servicesByCategory = useMemo(() => {
-    const map = new Map<PricingCategory, PricingService[]>();
-    for (const category of pricingCategories) {
+    const map = new Map<string, PricingService[]>();
+    for (const category of categories) {
       map.set(
         category,
-        initialPricing.filter((service) => service.category === category),
+        initialCatalog.services.filter((service) => service.category === category),
       );
     }
     return map;
-  }, [initialPricing]);
+  }, [categories, initialCatalog.services]);
 
   const visibleServices = useMemo(() => {
     const categoryServices = servicesByCategory.get(activeCategory) || [];
@@ -164,23 +177,20 @@ const ServicesPageClient = ({ initialPricing }: { initialPricing: PricingService
           </p>
           <div className="mt-3 flex items-center gap-2 text-xs text-text-secondary sm:text-sm">
             <Clock className="h-4 w-4" />
-            Effective July 2026
+            Effective {initialCatalog.effectiveLabel}
           </div>
         </div>
       </section>
 
       <div className="container mx-auto px-4 py-6 sm:px-6 sm:py-8">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
-          <nav
-            className="lg:w-64 lg:flex-shrink-0"
-            aria-label="Service categories"
-          >
+          <nav className="lg:w-64 lg:flex-shrink-0" aria-label="Service categories">
             <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-brand-blue">
               Categories
             </p>
             <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 snap-x snap-mandatory sm:mx-0 sm:px-0 lg:flex-col lg:overflow-visible lg:pb-0 lg:snap-none">
-              {pricingCategories.map((category) => {
-                const Icon = categoryIcons[category];
+              {categories.map((category) => {
+                const Icon = categoryIcons[category] || FileText;
                 const isActive = category === activeCategory;
                 const count = servicesByCategory.get(category)?.length ?? 0;
 
@@ -337,16 +347,6 @@ const ServicesPageClient = ({ initialPricing }: { initialPricing: PricingService
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               )}
-            </div>
-
-            <div className="mt-4 rounded-lg border border-slate-200 bg-white p-4 text-center text-xs text-text-secondary sm:p-5 sm:text-sm">
-              <p>Prices subject to change. Terms & Conditions apply. Accounts payable upon presentation.</p>
-              <Link
-                href="/contact"
-                className="mt-3 inline-flex items-center justify-center rounded-md bg-brand-teal px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-teal-dark"
-              >
-                Request a tailored quote
-              </Link>
             </div>
           </div>
         </div>
