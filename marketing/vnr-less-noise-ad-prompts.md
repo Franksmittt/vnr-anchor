@@ -404,6 +404,85 @@ people portraits as hero, cemetery, flowers on grave, dramatic night cinematic s
 
 ---
 
+## Ad 7 — The blue boat (stand out)
+
+**Object:** One cobalt origami sailboat among a fleet of white paper boats  
+**Poster text:**
+- Most accountants sound the same.
+- That’s the problem.
+- VNR. Less noise.
+
+### Prompt
+
+```
+Vertical 9:16 social media advertisement, 1080x1920, minimalist conceptual brand ad in the style of modern premium branding campaigns (clean high-key studio object photography + bold typography). Differentiation metaphor. Quiet confidence, not aggressive “dominate the market” energy.
+
+Background:
+Bright clean white / off-white studio surface, high-key, lots of negative space. Soft even lighting. No gradients, no purple, no neon, no busy textures, no water, no ocean scene — this is a dry studio still life of paper boats on a white surface.
+
+Main visual metaphor (lower half / lower-middle):
+Foreground: one large, sharply focused origami sailboat made of textured cobalt / royal blue paper, more considered construction than the others (a proper sail, clean folds). Soft realistic contact shadow underneath. Angled slightly, clearly the hero object.
+
+Background: a receding fleet of many small, generic white paper boats, all similar, all pointing the same direction, arranged in loose rows. Strong shallow depth of field so they blur into sameness. They should feel interchangeable and cheap compared to the blue boat.
+
+No people. No offices. No laptops. No water splash. No logos on the boats except the implied color difference.
+
+Composition:
+Typography owns the upper third. Blue boat is the clear focal point in the lower-middle. White boats fill depth behind it. Full-bleed vertical poster, no borders, frames, or paper mockups. Generous whitespace around the headline.
+
+Typography and layout:
+Top right corner, small clean wordmark:
+VNR
+(deep navy, modern geometric sans-serif)
+
+Upper / upper-middle, large bold stacked headline in modern sans-serif:
+Most accountants
+sound the same.
+That’s the problem.
+
+Make “That’s the problem.” in rich royal blue (same family as the blue boat).
+“Most accountants sound the same.” in deep charcoal / near-black.
+
+Optional very small, quiet line under the headline, lighter weight, mid gray — only if it still looks premium:
+Everyone lists the same services.
+Values is how you stop looking like the white boats.
+
+If the layout feels crowded, drop that optional line.
+
+Bottom center, small restrained closer:
+VNR. Less noise.
+
+Do NOT include any of this copy:
+- Break the Pattern
+- Dominate the Market
+- Powerful Brand Identity
+- BRANDIKONIC
+- Lead the Game
+
+Design rules:
+- One idea: sameness is the enemy
+- High-end minimal advertising
+- Object is the metaphor
+- Text is the emotion
+- No icons, charts, badges, pills, QR codes, prices, service lists
+- No SA flag, handshake, skyline, calculators
+- No lime-green underline gimmicks unless extremely subtle; prefer color in the type instead
+
+Color palette:
+White background, cobalt/royal blue hero boat, white paper fleet, deep navy type, royal blue accent on “That’s the problem.”, soft natural shadows.
+
+Mood:
+Premium. Clear. A little sharp. The one they remember.
+
+Style keywords:
+fluc-style conceptual advertising, origami boat differentiation metaphor, high-key studio still life, fintech-clean, Apple-adjacent restraint, premium vertical poster, photoreal paper objects, shallow depth of field, generous whitespace, Magritte-simple
+
+Avoid:
+oceans, real sailboats, yacht luxury flex, crowds of people, boardrooms, night cinematic scenes, crypto neon, cartoon faces, clutter, stickers, watermark, low resolution, busy collage, “dominate” energy, hustle-bro typography
+```
+
+---
+
 ## Quick series map
 
 | # | Object | Emotion | Line |
@@ -414,5 +493,6 @@ people portraits as hero, cemetery, flowers on grave, dramatic night cinematic s
 | 4 | Laptop | Freedom | eFiling is not a personality. |
 | 5 | Payslip | Trust | Trust is a payslip that arrives on time. |
 | 6 | Empty chair | Legacy | It rarely survives a messy ending. |
+| 7 | Blue boat | Differentiation | Most accountants sound the same. That’s the problem. |
 
 **Tip:** If the model mangling typography, generate the image without text, then set type in Canva/Figma using the locked copy above.
