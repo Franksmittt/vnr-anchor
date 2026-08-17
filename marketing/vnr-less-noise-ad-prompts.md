@@ -550,6 +550,75 @@ crypto neon, clutter, cartoon overload, night cinematic scenes, boardrooms, yach
 
 ---
 
+## Ad 9 — The sloth, secretarial (CIPC)
+
+**Object:** Exhausted grayscale sloth next to keyboard, mouse, and a small stack of official company forms  
+**Poster text:**
+- Still leaving CIPC for later?
+- YOU'RE LOSING THE COMPANY.
+- VNR. Less noise.
+
+### Prompt
+
+```
+Vertical 9:16 social media advertisement, 1080x1920, clean modern humorous brand ad. Professional, minimal, dry wit — not meme-page chaotic. Same layout system as a previous exhausted-sloth ad, but this one is about company secretarial / CIPC compliance, not tax.
+
+Background:
+Clean white / very light gray with a subtle light-blue graph-paper grid. Soft, even, premium. No gradients, no purple, no neon, no busy textures.
+
+Top branding:
+Top center, small and clean:
+VNR
+in deep royal blue, modern geometric sans-serif. No bird logo. No extra icons.
+
+Headline block (upper-middle, centered):
+Line 1, medium weight, medium royal blue:
+Still leaving CIPC for later?
+
+Line 2, very large, bold, deep navy:
+YOU'RE LOSING
+
+Line 3, even larger, bold, deep navy, with a graphic gag:
+THE COMPANY.
+
+Put a gray dotted-line selection bounding box around the words THE COMPANY, with small square transform handles on all four corners, like a Photoshop / Illustrator selection. The box is the joke: this is the thing being selected, the thing being taken. Annual returns ignored long enough and CIPC can strike the company off.
+
+Bottom still life (lower third):
+A detailed grayscale photoreal sloth lying on its back, completely exhausted, eyes closed, head tilted back, long-clawed arms splayed. Next to it: a slim modern dark-gray wireless keyboard, matching mouse, and a small neat stack of official-looking manila / white company forms (annual return paperwork vibe — unreadable fine print, maybe a paperclip). Soft studio shadows. Cut-out product-photo feel on the grid — not a jungle, not a full office.
+
+Small restrained closer, bottom center, deep navy:
+VNR. Less noise.
+
+Do NOT include:
+- Robin Reach
+- Still Editing Manually
+- Still doing SARS yourself
+- YOU'RE LOSING EVENINGS
+- service lists, prices, QR codes, phone numbers
+- SARS logos, South African flag, calculators
+
+Design rules:
+- One joke, one cost: delayed CIPC admin can cost you the company itself
+- Generous space between logo, headline, and sloth
+- High-end but human
+- No extra animals, no people, no jungle background
+- No badges, pills, stickers, sparkles
+
+Color palette:
+White + light blue grid, royal blue logo and question, deep navy punchline, grayscale sloth, keyboard, and forms.
+
+Mood:
+Funny because it’s true. Then slightly chilling. Then a quiet brand close.
+
+Style keywords:
+clean SaaS social ad, graph-paper grid, Photoshop selection box typography gag, exhausted grayscale sloth, keyboard and company forms still life, CIPC secretarial, premium humor, vertical poster, VNR Less noise campaign
+
+Avoid:
+crypto neon, clutter, cartoon overload, night cinematic scenes, boardrooms, yacht luxury, tax/SARS wording, watermark, low resolution, busy collage
+```
+
+---
+
 ## Quick series map
 
 | # | Object | Emotion | Line |
@@ -561,6 +630,7 @@ crypto neon, clutter, cartoon overload, night cinematic scenes, boardrooms, yach
 | 5 | Payslip | Trust | Trust is a payslip that arrives on time. |
 | 6 | Empty chair | Legacy | It rarely survives a messy ending. |
 | 7 | Blue boat | Differentiation | Most accountants sound the same. That’s the problem. |
-| 8 | Sloth | Exhaustion / DIY | Still doing SARS yourself? You're losing evenings. |
+| 8 | Sloth | Exhaustion / DIY tax | Still doing SARS yourself? You're losing evenings. |
+| 9 | Sloth + forms | Secretarial / CIPC | Still leaving CIPC for later? You're losing the company. |
 
 **Tip:** If the model mangling typography, generate the image without text, then set type in Canva/Figma using the locked copy above.
