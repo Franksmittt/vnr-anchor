@@ -483,6 +483,73 @@ oceans, real sailboats, yacht luxury flex, crowds of people, boardrooms, night c
 
 ---
 
+## Ad 8 — The sloth (DIY exhaustion)
+
+**Object:** Exhausted grayscale sloth next to keyboard and mouse, light grid background  
+**Poster text:**
+- Still doing SARS yourself?
+- YOU'RE LOSING EVENINGS.
+- VNR. Less noise.
+
+### Prompt
+
+```
+Vertical 9:16 social media advertisement, 1080x1920, clean modern humorous brand ad. Professional, minimal, dry wit — not meme-page chaotic. Inspired by SaaS ads that pair a sharp headline with one exhausted animal still-life.
+
+Background:
+Clean white / very light gray with a subtle light-blue graph-paper grid. Soft, even, premium. No gradients, no purple, no neon, no busy textures.
+
+Top branding:
+Top center, small and clean:
+VNR
+in deep royal blue, modern geometric sans-serif. No bird logo. No extra icons.
+
+Headline block (upper-middle, centered):
+Line 1, medium weight, medium royal blue:
+Still doing SARS yourself?
+
+Line 2, very large, bold, deep navy:
+YOU'RE LOSING
+
+Line 3, even larger, bold, deep navy, with a graphic gag:
+EVENINGS.
+
+Put a gray dotted-line selection bounding box around the word EVENINGS, with small square transform handles on all four corners, like a Photoshop / Illustrator selection. The box is the joke: this is the thing being selected, the thing being taken.
+
+Bottom still life (lower third):
+A detailed grayscale photoreal sloth lying on its back, completely exhausted, eyes closed, head tilted back, long-clawed arms splayed. Next to it: a slim modern dark-gray wireless keyboard and matching mouse. Soft studio shadows. The sloth and peripherals should feel like a cut-out product photo on the grid — not a jungle scene, not a full office.
+
+Small restrained closer, bottom center, deep navy:
+VNR. Less noise.
+
+Do NOT include:
+- Robin Reach
+- Still Editing Manually
+- service lists, prices, QR codes, phone numbers
+- calculators, spreadsheets on screen, SARS logos, South African flag
+
+Design rules:
+- One joke, one cost: DIY tax admin steals your evenings
+- Generous space between logo, headline, and sloth
+- High-end but human
+- No extra animals, no people, no jungle background
+- No badges, pills, stickers, sparkles
+
+Color palette:
+White + light blue grid, royal blue logo and question, deep navy punchline, grayscale sloth and keyboard.
+
+Mood:
+Funny because it’s true. Tired owner energy. Then a quiet brand close.
+
+Style keywords:
+clean SaaS social ad, graph-paper grid, Photoshop selection box typography gag, exhausted grayscale sloth, keyboard still life, premium humor, vertical poster, VNR Less noise campaign
+
+Avoid:
+crypto neon, clutter, cartoon overload, night cinematic scenes, boardrooms, yacht luxury, watermark, low resolution, busy collage
+```
+
+---
+
 ## Quick series map
 
 | # | Object | Emotion | Line |
@@ -494,5 +561,6 @@ oceans, real sailboats, yacht luxury flex, crowds of people, boardrooms, night c
 | 5 | Payslip | Trust | Trust is a payslip that arrives on time. |
 | 6 | Empty chair | Legacy | It rarely survives a messy ending. |
 | 7 | Blue boat | Differentiation | Most accountants sound the same. That’s the problem. |
+| 8 | Sloth | Exhaustion / DIY | Still doing SARS yourself? You're losing evenings. |
 
 **Tip:** If the model mangling typography, generate the image without text, then set type in Canva/Figma using the locked copy above.
