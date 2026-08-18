@@ -716,6 +716,7 @@ tax software UI, chatbot search bar, Indian tax/regulation text, Solique-style b
 | 11 | Buried at the desk | Secretarial / burnout | You started a company. Not a filing cabinet. |
 | 12 | Hands on the file | Secretarial / choice | File it or lose it? CIPC doesn't wait. |
 | 13 | Six arms, flying paper | Secretarial / scramble | CIPC is not the time to hunt for the paperwork. |
+| 14 | Six arms, flying paper | VAT / busy owner | Busy is not a VAT holiday. |
 
 **Tip:** If the model mangling typography, generate the image without text, then set type in Canva/Figma using the locked copy above.
 
@@ -982,6 +983,111 @@ Full bleed, no borders, no frames. Strong negative space at the top. Subject is 
 
 Style keywords:
 six-arm secretarial whirlwind, floating envelopes, off-white paper studio, photoreal advertising composite, vertical plate for typography overlay, no text
+
+Avoid:
+any letters as headlines, A2D, VNR, emails, red CTA buttons, dark navy consult lighting, sloths, extra people, watermark
+```
+
+---
+
+## Ad 14 — Six arms (busy is not a VAT holiday)
+
+**Object:** Same six-armed busy owner, flying papers — now VAT / SARS dates, not CIPC scramble  
+**Poster text:**
+- Busy is not a **VAT** holiday.
+- You were running the business. The 25th still arrived.
+- VNR. Less noise.
+
+Use **Prompt A** with type. **Prompt B** for overlay.
+
+### Prompt A — with text
+
+```
+Vertical 9:16 social media advertisement, 1080x1920, premium conceptual brand ad. Clean off-white paper-textured studio. Bold charcoal type with one sharp red accent word. Surreal six-arm busy business-owner metaphor — VAT compliance, not audit, not CIPC strike-off.
+
+Background:
+Off-white / warm parchment textured paper surface, high-key, lots of negative space. Soft even studio light. No purple, no neon, no dark navy consult look.
+
+Top branding:
+Top right, small clean wordmark in deep charcoal:
+VNR
+
+Headline (upper left / upper-middle, large bold modern sans-serif, dark charcoal):
+Busy is not a
+VAT holiday.
+
+Make only the word “VAT” a bold vibrant red. The rest stays charcoal/black.
+No red boxes. No cyan highlight boxes. No email buttons. No websites.
+
+Sub-headline under it, smaller regular-weight charcoal:
+You were running the business.
+The 25th still arrived.
+
+Main visual (center / lower two-thirds):
+Medium shot of a South African business owner, dark suit, white shirt, dark tie, calm but overloaded, looking slightly down. Six photoreal arms (premium advertising surrealism, not cartoon, not deity cliché).
+
+Arms hold the life of a busy owner plus the VAT admin he should not be doing:
+- smartphone to his ear (client / site call)
+- car keys or bakkie keys
+- open laptop
+- notebook and pen
+- a VAT201-style return form (unreadable fine print, no SARS logo lockup)
+- a coffee mug
+
+Atmospheric detail:
+White papers, envelopes, and a couple of invoices floating around him, motion-blurred. Whirlwind of a working month, not a trash dump.
+
+No A2D branding. No red contact buttons. No phone numbers. No SA flag. No readable SARS branding.
+
+Bottom center, small restrained closer, charcoal:
+VNR. Less noise.
+
+Do NOT include:
+- An Audit is not the time to fix your books
+- CIPC is not the time to hunt for the paperwork
+- A2D BIZ SOLUTIONS
+- emails or CTA arrows
+
+Color palette:
+Off-white, charcoal type, one punch of red on “VAT”, dark suit, white flying paper.
+
+Mood:
+He’s busy for a reason. VAT does not care. VNR takes the date.
+
+Style keywords:
+premium six-arm advertising metaphor, busy owner, VAT return deadline, floating invoices, off-white studio, red accent word, vertical poster, VNR Less noise campaign
+
+Avoid:
+audit wording, CIPC strike-off wording, sloth, buried desk, crypto neon, watermark, low resolution
+```
+
+### Prompt B — no text
+
+```
+Vertical 9:16 social media photograph, 1080x1920, premium conceptual still for a brand ad. Image only. No typography, no logos, no watermarks, no captions, no website, no UI, no buttons.
+
+Leave generous empty off-white space in the upper third for type to be added later in Canva/Figma. Subject lives in the center and lower two-thirds.
+
+Scene:
+Medium shot of a South African business owner, dark suit, white shirt, dark tie, calm but overloaded, looking slightly down. Six photoreal arms (premium advertising surrealism, not cartoon, not religious iconography).
+
+Arms hold:
+- smartphone to his ear
+- bakkie / car keys
+- open laptop
+- notebook and pen
+- VAT201-style return form with unreadable fine print and no visible SARS logo
+- coffee mug
+
+White papers, envelopes, and invoices float and swirl around him, some slightly motion-blurred. High-key off-white / warm parchment studio backdrop. Soft even light. Clean, expensive, slightly absurd. Busy owner energy.
+
+No extra people. No SA flag. No readable brand names.
+
+Composition:
+Full bleed, no borders, no frames. Strong negative space at the top.
+
+Style keywords:
+six-arm busy owner, floating invoices, VAT admin whirlwind, off-white paper studio, photoreal advertising composite, vertical plate for typography overlay, no text
 
 Avoid:
 any letters as headlines, A2D, VNR, emails, red CTA buttons, dark navy consult lighting, sloths, extra people, watermark
