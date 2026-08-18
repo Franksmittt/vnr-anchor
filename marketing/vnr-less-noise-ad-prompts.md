@@ -1024,20 +1024,20 @@ You were running the business.
 The 25th still arrived.
 
 Main visual (center / lower two-thirds):
-Medium shot of a South African business owner, dark suit, white shirt, dark tie, calm but overloaded, looking slightly down. Six photoreal arms (premium advertising surrealism, not cartoon, not deity cliché).
+Medium shot of a white Caucasian South African business owner, fair skin, short light-brown or sandy hair, clean-shaven or light stubble, dark suit, white shirt, dark tie, calm but overloaded, looking slightly down. Six photoreal arms (premium advertising surrealism, not cartoon, not deity cliché).
 
 Arms hold the life of a busy owner plus the VAT admin he should not be doing:
 - smartphone to his ear (client / site call)
 - car keys or bakkie keys
-- open laptop
-- notebook and pen
-- a VAT201-style return form (unreadable fine print, no SARS logo lockup)
+- open laptop with a completely blurred / out-of-focus screen — no readable UI, no letters
+- notebook with blurred unreadable marks, not real writing
+- a VAT201-style return form: all printed text, numbers, logos, and stamps heavily gaussian-blurred / defocused so nothing is legible — paper looks official, words do not
 - a coffee mug
 
 Atmospheric detail:
-White papers, envelopes, and a couple of invoices floating around him, motion-blurred. Whirlwind of a working month, not a trash dump.
+White papers, envelopes, and a couple of invoices floating around him, motion-blurred. Any text on floating paper is also blurred into unreadable grey marks. Whirlwind of a working month, not a trash dump.
 
-No A2D branding. No red contact buttons. No phone numbers. No SA flag. No readable SARS branding.
+No A2D branding. No red contact buttons. No phone numbers. No SA flag. No readable SARS branding. No readable words anywhere on props.
 
 Bottom center, small restrained closer, charcoal:
 VNR. Less noise.
@@ -1058,7 +1058,7 @@ Style keywords:
 premium six-arm advertising metaphor, busy owner, VAT return deadline, floating invoices, off-white studio, red accent word, vertical poster, VNR Less noise campaign
 
 Avoid:
-audit wording, CIPC strike-off wording, sloth, buried desk, crypto neon, watermark, low resolution
+audit wording, CIPC strike-off wording, sloth, buried desk, crypto neon, watermark, low resolution, readable form text, readable laptop UI, extra faces
 ```
 
 ### Prompt B — no text
@@ -1069,19 +1069,19 @@ Vertical 9:16 social media photograph, 1080x1920, premium conceptual still for a
 Leave generous empty off-white space in the upper third for type to be added later in Canva/Figma. Subject lives in the center and lower two-thirds.
 
 Scene:
-Medium shot of a South African business owner, dark suit, white shirt, dark tie, calm but overloaded, looking slightly down. Six photoreal arms (premium advertising surrealism, not cartoon, not religious iconography).
+Medium shot of a white Caucasian South African business owner, fair skin, short light-brown or sandy hair, clean-shaven or light stubble, dark suit, white shirt, dark tie, calm but overloaded, looking slightly down. Six photoreal arms (premium advertising surrealism, not cartoon, not religious iconography).
 
 Arms hold:
 - smartphone to his ear
 - bakkie / car keys
-- open laptop
-- notebook and pen
-- VAT201-style return form with unreadable fine print and no visible SARS logo
+- open laptop with a completely blurred / out-of-focus screen — no readable UI
+- notebook with blurred unreadable marks
+- VAT201-style return form with ALL text, numbers, logos, and stamps heavily gaussian-blurred / defocused — official-looking paper, zero legible words
 - coffee mug
 
-White papers, envelopes, and invoices float and swirl around him, some slightly motion-blurred. High-key off-white / warm parchment studio backdrop. Soft even light. Clean, expensive, slightly absurd. Busy owner energy.
+White papers, envelopes, and invoices float and swirl around him, some slightly motion-blurred. Any text on floating paper is also blurred into unreadable grey. High-key off-white / warm parchment studio backdrop. Soft even light. Clean, expensive, slightly absurd. Busy owner energy.
 
-No extra people. No SA flag. No readable brand names.
+No extra people. No SA flag. No readable brand names. No readable letters on any document.
 
 Composition:
 Full bleed, no borders, no frames. Strong negative space at the top.
@@ -1090,5 +1090,5 @@ Style keywords:
 six-arm busy owner, floating invoices, VAT admin whirlwind, off-white paper studio, photoreal advertising composite, vertical plate for typography overlay, no text
 
 Avoid:
-any letters as headlines, A2D, VNR, emails, red CTA buttons, dark navy consult lighting, sloths, extra people, watermark
+any letters as headlines, A2D, VNR, emails, red CTA buttons, dark navy consult lighting, sloths, extra people, watermark, sharp readable form text, sharp laptop UI
 ```
