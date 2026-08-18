@@ -714,6 +714,7 @@ tax software UI, chatbot search bar, Indian tax/regulation text, Solique-style b
 | 9 | Sloth + forms | Secretarial / CIPC | Still leaving CIPC for later? You're losing the company. |
 | 10 | Six arms | Secretarial / overwhelm | Too busy for the paperwork? Focus on the business. |
 | 11 | Buried at the desk | Secretarial / burnout | You started a company. Not a filing cabinet. |
+| 12 | Hands on the file | Secretarial / choice | File it or lose it? CIPC doesn't wait. |
 
 **Tip:** If the model mangling typography, generate the image without text, then set type in Canva/Figma using the locked copy above.
 
@@ -788,4 +789,93 @@ premium advertising humor, high-angle desk collapse, drowning in paperwork, CIPC
 
 Avoid:
 tax software UI, chatbot search bar, Indian tax/regulation text, six-arm metaphor, sloth, crypto neon, cemetery, watermark, low resolution, busy infographic overlays
+```
+
+---
+
+## Ad 12 — File it or lose it (dark consult)
+
+**Object:** Close-up of two professionals reviewing CIPC / statutory documents under dramatic cyan light  
+**Poster text:**
+- **File it** or **Lose it?**
+- CIPC doesn’t wait for a quiet week.
+- VNR. Less noise.
+
+Use **Prompt A** if you want type baked in. Use **Prompt B** if you want a clean plate for Canva/Figma.
+
+### Prompt A — with text
+
+```
+Vertical 9:16 social media advertisement, 1080x1920, dark premium professional brand ad. High-contrast navy/black with cyan and white type. Serious consult energy, not comedy, not SaaS cartoon.
+
+Background:
+Deep navy to black studio. Dramatic cool cyan / teal rim light on hands and paper. Moody, expensive, high-tech professional. No purple, no neon glow, no crypto aesthetic.
+
+Top branding:
+Top right, small clean wordmark in white / cyan:
+VNR
+
+Headline (upper third, centered, bold modern sans-serif):
+File it or Lose it?
+
+Treat “File it” and “Lose it” as white text sitting inside bright cyan rectangular highlight boxes (like selected keywords).
+The words “or” and the question mark stay plain white, no boxes.
+
+Sub-header directly under, smaller, cyan sans-serif:
+CIPC doesn’t wait for a quiet week.
+
+Main visual (center / lower-middle):
+Close-up, dimly lit photograph of two people in dark professional suits at a desk covered in reports. Faces mostly cropped out — focus on hands and documents. One hand holds a silver pen, pointing at a specific clause on a statutory / annual-return style form (unreadable fine print). Another hand in the foreground holds a pen over an open notebook. Papers, folders, a quiet sense of review. South African office, not a generic US boardroom cliché.
+
+No readable SARS logos. No tax act titles. No audit branding. No KLOUDAC. No websites. No phone numbers.
+
+Bottom:
+Small restrained closer, white:
+VNR. Less noise.
+
+Do NOT include:
+- Internal Audit or External Audit
+- KLOUDAC
+- www.kloudac.com
+- service lists, prices, QR codes, contact details
+- SA flag, calculators, glowing laptop screens
+
+Color palette:
+Near-black navy, cyan highlight boxes, white type, cool cyan practical light on paper and hands.
+
+Mood:
+Adult. Direct. The choice is already on the table.
+
+Style keywords:
+dark premium professional ad, cyan keyword highlight boxes, hands-on-documents consult photo, CIPC secretarial, high-contrast vertical poster, VNR Less noise campaign
+
+Avoid:
+mint comedy set, sloth, six arms, origami boats, busy infographics, watermark, low resolution
+```
+
+### Prompt B — no text (type it later)
+
+```
+Vertical 9:16 social media photograph, 1080x1920, dark premium professional still for a brand ad. Image only. No typography, no logos, no watermarks, no captions, no website, no UI.
+
+Leave generous empty dark space in the upper third of the frame for type to be added later in Canva/Figma. The photograph lives in the center and lower two-thirds.
+
+Scene:
+Close-up, dimly lit photograph of two people in dark professional suits at a desk covered in reports. Faces mostly cropped out — focus on hands and documents. One hand holds a silver pen, pointing at a specific clause on a statutory / annual-return style form (unreadable fine print, no logos). Another hand in the foreground holds a pen over an open notebook. Folders and stacked papers. Quiet, serious review. South African professional setting.
+
+Lighting:
+Deep navy / black surround. Dramatic cool cyan / teal light catching the hands, silver pen, and paper edges. Moody, expensive, cinematic but still an advertising still — not horror.
+
+Composition:
+High-contrast. Strong negative space at the top. Hands and documents as the only focal point. Full bleed. No borders. No mockup frames.
+
+Do NOT include:
+- any text, letters, readable headlines, numbers as headlines
+- logos, brand marks, KLOUDAC, VNR, websites
+- SARS branding, SA flag, calculators, glowing screens
+- people looking at camera
+- comedy, sloths, extra arms
+
+Style keywords:
+dark consult photography, cyan rim light, cropped hands on paperwork, CIPC secretarial mood, premium vertical plate for typography overlay, no text
 ```
