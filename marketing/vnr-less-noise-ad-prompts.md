@@ -634,3 +634,102 @@ crypto neon, clutter, cartoon overload, night cinematic scenes, boardrooms, yach
 | 9 | Sloth + forms | Secretarial / CIPC | Still leaving CIPC for later? You're losing the company. |
 
 **Tip:** If the model mangling typography, generate the image without text, then set type in Canva/Figma using the locked copy above.
+
+---
+
+## Ad 10 — Six arms (too busy for paperwork)
+
+**Object:** Multi-armed business owner drowning in CIPC/secretarial admin, floor cluttered with compliance books and files  
+**Poster text:**
+- Too busy for the paperwork?
+- Focus on the business.
+- We handle the filing. You handle what pays.
+- VNR. Less noise.
+
+### Prompt
+
+```
+Vertical 9:16 social media advertisement, 1080x1920, premium conceptual brand ad with dry humor. Inspired by “too many arms, not enough hours” multitasking imagery — but for South African company secretarial work, not tax software or Indian regulations.
+
+Background:
+Clean light gray / off-white studio backdrop in the upper half. Lower half: dark wood floor surface with realistic clutter. High-end advertising photography feel. No purple, no neon, no SaaS dashboard UI, no search bar, no “Ask anything about tax” pill button.
+
+Top branding:
+Top right corner, small and clean:
+VNR
+(deep navy, modern geometric sans-serif)
+
+Headline block (upper left / upper area, bold modern sans-serif):
+Line 1, medium royal blue:
+Too busy for the paperwork?
+
+Line 2, very large, deep charcoal / navy:
+Focus on the business.
+
+Small subline under headline, lighter weight, mid gray:
+We handle the filing.
+You handle what pays.
+
+Main visual (center / lower two-thirds):
+A South African business owner in their 40s, professional navy suit, glasses, salt-and-pepper hair, sitting cross-legged on the floor — depicted with six arms in a surreal but photoreal premium-ad style (not cartoon, not Hindu deity cliché — think clever advertising visual metaphor).
+
+Each arm holds one secretarial/admin object:
+- coffee mug
+- ringing smartphone
+- analog alarm clock
+- CIPC annual return form
+- director change / amendment document
+- pen signing statutory paperwork
+
+Expression: focused but overwhelmed. Humorous but dignified. Real person energy, not stock-photo grin.
+
+Floor clutter around them (photoreal, messy but art-directed):
+- tall stack of thick books with readable spines: COMPANIES ACT, CIPC COMPLIANCE, ANNUAL RETURNS, STATUTORY RECORDS
+- wooden desk nameplate or small sign: COMPLIANCE | FILING | ON TIME
+- scattered forms, paperclips, open folder labeled STATUTORY FILES
+- thick binder labeled CLIENT FILES
+- closed laptop pushed aside by paperwork
+
+No Indian tax books. No audit/tax act titles. No Solique branding. No AI chat UI. No calculator hero shot.
+
+Bottom center, small restrained closer:
+VNR. Less noise.
+
+Design rules:
+- One idea: secretarial admin steals the owner from the actual business
+- Surreal multitasking metaphor, but premium and South African
+- No service price lists, QR codes, phone numbers
+- No SARS logos, SA flag, handshake clichés
+- No 3D cartoon render, no meme aesthetic
+
+Color palette:
+Light gray studio backdrop, navy suit, warm wood floor, white/cream paperwork, deep navy and royal blue type, natural shadows.
+
+Mood:
+Relatable chaos → clear relief in the copy. Funny because every owner has lived this.
+
+Style keywords:
+premium advertising surrealism, six-arm multitasking metaphor, CIPC secretarial clutter, South African business owner, photoreal composite, conceptual humor, vertical poster, VNR Less noise campaign
+
+Avoid:
+tax software UI, chatbot search bar, Indian tax/regulation text, Solique-style branding, crypto neon, boardroom stock photos, cartoon arms, watermark, low resolution, busy infographic overlays
+```
+
+---
+
+## Quick series map (updated)
+
+| # | Object | Emotion | Line |
+|---|---|---|---|
+| 1 | Knot | Chaos | SARS shouldn't live rent-free in your head. |
+| 2 | Envelope | Guilt / later | Remember when we said we’d sort this later. |
+| 3 | Rope | Relief | Calm. Clear. Handled. |
+| 4 | Laptop | Freedom | eFiling is not a personality. |
+| 5 | Payslip | Trust | Trust is a payslip that arrives on time. |
+| 6 | Empty chair | Legacy | It rarely survives a messy ending. |
+| 7 | Blue boat | Differentiation | Most accountants sound the same. That’s the problem. |
+| 8 | Sloth | Exhaustion / DIY tax | Still doing SARS yourself? You're losing evenings. |
+| 9 | Sloth + forms | Secretarial / CIPC | Still leaving CIPC for later? You're losing the company. |
+| 10 | Six arms | Secretarial / overwhelm | Too busy for the paperwork? Focus on the business. |
+
+**Tip:** If the model mangling typography, generate the image without text, then set type in Canva/Figma using the locked copy above.
