@@ -715,6 +715,7 @@ tax software UI, chatbot search bar, Indian tax/regulation text, Solique-style b
 | 10 | Six arms | Secretarial / overwhelm | Too busy for the paperwork? Focus on the business. |
 | 11 | Buried at the desk | Secretarial / burnout | You started a company. Not a filing cabinet. |
 | 12 | Hands on the file | Secretarial / choice | File it or lose it? CIPC doesn't wait. |
+| 13 | Six arms, flying paper | Secretarial / scramble | CIPC is not the time to hunt for the paperwork. |
 
 **Tip:** If the model mangling typography, generate the image without text, then set type in Canva/Figma using the locked copy above.
 
@@ -878,4 +879,110 @@ Do NOT include:
 
 Style keywords:
 dark consult photography, cyan rim light, cropped hands on paperwork, CIPC secretarial mood, premium vertical plate for typography overlay, no text
+```
+
+---
+
+## Ad 13 — Six arms, flying paper (CIPC scramble)
+
+**Object:** Calm six-armed professional in a whirlwind of floating envelopes and forms, off-white studio  
+**Poster text:**
+- **CIPC** is not the time to hunt for the paperwork.
+- A scramble is expensive. Quiet filing is the point.
+- VNR. Less noise.
+
+Use **Prompt A** if you want type baked in. Use **Prompt B** for a clean plate.
+
+### Prompt A — with text
+
+```
+Vertical 9:16 social media advertisement, 1080x1920, premium conceptual brand ad. Clean off-white paper-textured studio. Bold charcoal type with one sharp red accent word. Surreal six-arm multitasking metaphor for company secretarial overload — not audit, not tax software.
+
+Background:
+Off-white / warm parchment textured paper surface, high-key, lots of negative space. Soft even studio light. No purple, no neon, no dark navy consult look, no mint comedy set.
+
+Top branding:
+Top right, small clean wordmark in deep charcoal:
+VNR
+
+Headline (upper left / upper-middle, large bold modern sans-serif, dark charcoal):
+CIPC is not the time
+to hunt for the paperwork.
+
+Make only the word “CIPC” a bold vibrant red. The rest stays charcoal/black.
+No red boxes. No cyan highlight boxes. No email buttons.
+
+Sub-headline under it, smaller regular-weight charcoal:
+A scramble is expensive.
+Quiet filing is the point.
+
+Main visual (center / lower two-thirds):
+Medium shot of a South African professional man, dark suit, white shirt, dark tie, brown curly hair and beard, calm focused expression looking slightly down. He has six photoreal arms (premium advertising surrealism, not cartoon, not deity cliché).
+
+Arms hold secretarial/admin objects only:
+- smartphone to his ear
+- open laptop
+- notebook and pen
+- black pen
+- slim white tablet
+- a clipped stack of CIPC / annual-return style forms (unreadable fine print)
+
+Atmospheric detail:
+Several white papers and white envelopes floating / swirling in mid-air around him, motion-blurred, a whirlwind of filing. Art-directed, not messy-trash.
+
+No calculators as hero objects. No A2D branding. No red contact buttons. No websites. No phone numbers. No SARS logos. No SA flag.
+
+Bottom center, small restrained closer, charcoal:
+VNR. Less noise.
+
+Do NOT include:
+- An Audit is not the time to fix your books
+- A2D BIZ SOLUTIONS
+- ATTENTION 2 DETAIL
+- info@ emails or CTA arrows
+- Internal/External Audit wording
+
+Color palette:
+Off-white, charcoal type, one punch of red on “CIPC”, dark suit, white flying paper.
+
+Mood:
+Calm face, chaotic paper. The company is supposed to be running. The filing is eating the day.
+
+Style keywords:
+premium six-arm advertising metaphor, floating paperwork, off-white studio, red accent word, CIPC secretarial, vertical poster, VNR Less noise campaign
+
+Avoid:
+dark cyan KLOUDAC look, sloth, buried desk comedy, crypto neon, watermark, low resolution, busy infographics
+```
+
+### Prompt B — no text
+
+```
+Vertical 9:16 social media photograph, 1080x1920, premium conceptual still for a brand ad. Image only. No typography, no logos, no watermarks, no captions, no website, no UI, no buttons.
+
+Leave generous empty off-white space in the upper third for type to be added later in Canva/Figma. Subject lives in the center and lower two-thirds.
+
+Scene:
+Medium shot of a South African professional man, dark suit, white shirt, dark tie, brown curly hair and beard, calm focused expression looking slightly down. Six photoreal arms (premium advertising surrealism, not cartoon, not religious iconography).
+
+Arms hold:
+- smartphone to his ear
+- open laptop
+- notebook and pen
+- black pen
+- slim white tablet
+- clipped CIPC / annual-return style forms with unreadable fine print
+
+White papers and white envelopes float and swirl around him in mid-air, some slightly motion-blurred. High-key off-white / warm parchment studio backdrop. Soft even light. Clean, expensive, slightly absurd.
+
+No calculators as the main prop. No readable brand names on paper. No SARS logos. No SA flag. No extra people.
+
+Composition:
+Full bleed, no borders, no frames. Strong negative space at the top. Subject is the whirlwind, not a boardroom.
+
+Style keywords:
+six-arm secretarial whirlwind, floating envelopes, off-white paper studio, photoreal advertising composite, vertical plate for typography overlay, no text
+
+Avoid:
+any letters as headlines, A2D, VNR, emails, red CTA buttons, dark navy consult lighting, sloths, extra people, watermark
 ```
