@@ -619,24 +619,6 @@ crypto neon, clutter, cartoon overload, night cinematic scenes, boardrooms, yach
 
 ---
 
-## Quick series map
-
-| # | Object | Emotion | Line |
-|---|---|---|---|
-| 1 | Knot | Chaos | SARS shouldn't live rent-free in your head. |
-| 2 | Envelope | Guilt / later | Remember when we said we’d sort this later. |
-| 3 | Rope | Relief | Calm. Clear. Handled. |
-| 4 | Laptop | Freedom | eFiling is not a personality. |
-| 5 | Payslip | Trust | Trust is a payslip that arrives on time. |
-| 6 | Empty chair | Legacy | It rarely survives a messy ending. |
-| 7 | Blue boat | Differentiation | Most accountants sound the same. That’s the problem. |
-| 8 | Sloth | Exhaustion / DIY tax | Still doing SARS yourself? You're losing evenings. |
-| 9 | Sloth + forms | Secretarial / CIPC | Still leaving CIPC for later? You're losing the company. |
-
-**Tip:** If the model mangling typography, generate the image without text, then set type in Canva/Figma using the locked copy above.
-
----
-
 ## Ad 10 — Six arms (too busy for paperwork)
 
 **Object:** Multi-armed business owner drowning in CIPC/secretarial admin, floor cluttered with compliance books and files  
@@ -731,5 +713,79 @@ tax software UI, chatbot search bar, Indian tax/regulation text, Solique-style b
 | 8 | Sloth | Exhaustion / DIY tax | Still doing SARS yourself? You're losing evenings. |
 | 9 | Sloth + forms | Secretarial / CIPC | Still leaving CIPC for later? You're losing the company. |
 | 10 | Six arms | Secretarial / overwhelm | Too busy for the paperwork? Focus on the business. |
+| 11 | Buried at the desk | Secretarial / burnout | You started a company. Not a filing cabinet. |
 
 **Tip:** If the model mangling typography, generate the image without text, then set type in Canva/Figma using the locked copy above.
+
+---
+
+## Ad 11 — Buried at the desk (you started a company)
+
+**Object:** Owner collapsed face-down across a desk, drowning in secretarial paperwork  
+**Poster text:**
+- You started a company.
+- Not a filing cabinet.
+- Annual returns. Director changes. Statutory records. We’ll take the paper. You take the work.
+- VNR. Less noise.
+
+### Prompt
+
+```
+Vertical 9:16 social media advertisement, 1080x1920, premium conceptual brand ad with dry humor. High-angle studio photograph of total administrative collapse — company secretarial overload, not tax software, not generic “busy CEO.”
+
+Background:
+Solid pale mint / light sage studio backdrop and matching floor, bright clean lighting. High-key, slightly absurd advertising set. No purple, no neon, no office cubicle, no city skyline.
+
+Top branding:
+Top right corner, small and clean:
+VNR
+(deep navy, modern geometric sans-serif)
+
+Headline block (upper left / upper area, bold modern sans-serif):
+Line 1, medium royal blue:
+You started a company.
+
+Line 2, very large, deep charcoal / navy:
+Not a filing cabinet.
+
+Small subline under headline, lighter weight, mid gray:
+Annual returns. Director changes. Statutory records.
+We’ll take the paper.
+You take the work.
+
+Main visual (center / lower two-thirds):
+High camera angle looking down. A South African business owner in their 30s–40s, dark navy suit, white shirt, dark hair, lying face-down across the full length of a mid-century wooden desk, collapsed from exhaustion. Face turned to the side, eyes closed, resting on a pile of papers. Arms dangling limply off both sides of the desk. Humorous but not cartoon. Dignified burnout.
+
+Desk and floor chaos (art-directed, photoreal):
+- desk completely covered in white papers, manila folders, crumpled paper balls
+- overflowing drawer spilling forms
+- small white coffee mug tipped over near the feet
+- floor buried in a carpet of loose sheets, open folders, discarded crumpled paper
+- a single abandoned pen on the floor
+- a few documents with unreadable official-looking headers suggesting CIPC / annual return / director amendment paperwork — no readable SARS branding, no tax act titles
+
+No people besides the one collapsed owner. No six extra arms. No AI chat UI. No laptop glowing. No calculators as hero objects.
+
+Bottom center, small restrained closer:
+VNR. Less noise.
+
+Design rules:
+- One idea: secretarial paper buried the person who was meant to run the business
+- Different wording from “Too busy for the paperwork? Focus on the business.”
+- Premium, funny, a little brutal
+- No service price lists, QR codes, phone numbers
+- No SARS logos, SA flag, handshake clichés
+- No 3D cartoon render
+
+Color palette:
+Pale mint / sage studio, walnut desk, navy suit, white paper storm, royal blue question line, deep navy punchline, natural shadows.
+
+Mood:
+Burnout you can laugh at — then hand the filing to someone else.
+
+Style keywords:
+premium advertising humor, high-angle desk collapse, drowning in paperwork, CIPC secretarial burnout, South African business owner, photoreal studio set, vertical poster, VNR Less noise campaign
+
+Avoid:
+tax software UI, chatbot search bar, Indian tax/regulation text, six-arm metaphor, sloth, crypto neon, cemetery, watermark, low resolution, busy infographic overlays
+```
